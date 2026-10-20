@@ -2,7 +2,7 @@
 const API_BASE_URL = 'http://127.0.0.1:5000/api';
 const GITHUB_USER = '808kirai';
 const CONTRIB_API = `https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`;
-const CONTRIB_REFRESH_MS = 10 * 60 * 1000;
+const CONTRIB_REFRESH_MS = 5 * 60 * 1000;
 
 // Language Translations Object
 const translations = {
@@ -435,16 +435,91 @@ function renderContributions() {
     if (scroller) scroller.scrollLeft = scroller.scrollWidth;
 }
 
+// GitHub's own calendar can take hours to count new pushes, so commits from the last few
+// days are also read straight from the repos (the REST API updates within about a minute)
+const RECENT_COMMIT_DAYS = 3;
+let githubBlockedUntil = 0;
+
+async function githubApi(path) {
+    if (Date.now() < githubBlockedUntil) throw new Error('GitHub API rate limited');
+    const response = await fetch(`https://api.github.com${path}`, { headers: { Accept: 'application/vnd.github+json' } });
+    if (response.status === 403 || response.status === 429) {
+        const reset = Number(response.headers.get('x-ratelimit-reset'));
+        githubBlockedUntil = reset ? reset * 1000 : Date.now() + 15 * 60 * 1000;
+        throw new Error('GitHub API rate limited');
+    }
+    if (!response.ok) throw new Error(`GitHub API HTTP ${response.status}`);
+    return response.json();
+}
+
+// Commits per UTC day (the calendar is in UTC too), across non-fork repos pushed recently
+async function fetchRecentCommitCounts() {
+    const since = new Date(Date.now() - RECENT_COMMIT_DAYS * 86400000);
+    const repos = await githubApi(`/users/${GITHUB_USER}/repos?per_page=100&sort=pushed`);
+    const active = repos.filter(repo => !repo.fork && new Date(repo.pushed_at) >= since);
+
+    const counts = {};
+    await Promise.all(active.map(async repo => {
+        const commits = await githubApi(
+            `/repos/${repo.full_name}/commits?author=${GITHUB_USER}&since=${since.toISOString()}&per_page=100`);
+        commits.forEach(commit => {
+            const day = commit.commit.author.date.slice(0, 10);
+            counts[day] = (counts[day] || 0) + 1;
+        });
+    }));
+    return counts;
+}
+
+// Map a count to a 0-4 level using the thresholds the calendar itself uses for this profile
+function levelFor(count, days) {
+    if (count <= 0) return 0;
+    let level = 1;
+    for (let l = 2; l <= 4; l++) {
+        const counts = days.filter(day => day.level === l).map(day => day.count);
+        if (counts.length && count >= Math.min(...counts)) level = l;
+    }
+    return level;
+}
+
+// Take the higher of the calendar count and the live commit count for each recent day
+function mergeRecentCommits(baseDays, baseTotal, recent) {
+    const days = baseDays.map(day => ({ ...day }));
+    let total = baseTotal;
+
+    Object.entries(recent).forEach(([date, count]) => {
+        let day = days.find(d => d.date === date);
+        if (!day) {
+            if (date <= days[days.length - 1].date) return;
+            day = { date, count: 0, level: 0 };
+            days.push(day);
+        }
+        if (count > day.count) {
+            total += count - day.count;
+            day.count = count;
+            day.level = Math.max(day.level, levelFor(count, baseDays));
+        }
+    });
+    return { days, total };
+}
+
 async function loadContributions() {
     try {
-        const response = await fetch(CONTRIB_API);
+        const response = await fetch(CONTRIB_API, { cache: 'no-store' });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
         if (!Array.isArray(data.contributions) || !data.contributions.length) throw new Error('No data');
 
-        contribDays = data.contributions;
-        contribTotal = (data.total && data.total.lastYear) ??
-            contribDays.reduce((sum, day) => sum + day.count, 0);
+        let days = data.contributions;
+        let total = (data.total && data.total.lastYear) ?? days.reduce((sum, day) => sum + day.count, 0);
+
+        try {
+            ({ days, total } = mergeRecentCommits(days, total, await fetchRecentCommitCounts()));
+        } catch (err) {
+            console.warn('Recent commits unavailable, showing the calendar only:', err.message);
+        }
+
+        contribDays = days;
+        contribTotal = total;
         contribState = 'ready';
         contribFetchedAt = Date.now();
     } catch (err) {
@@ -463,7 +538,7 @@ setInterval(() => {
 }, CONTRIB_REFRESH_MS);
 
 document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible' && Date.now() - contribFetchedAt > CONTRIB_REFRESH_MS) {
+    if (document.visibilityState === 'visible' && Date.now() - contribFetchedAt > 2 * 60 * 1000) {
         loadContributions();
     }
 });
