@@ -1,5 +1,8 @@
 // GitHub Profile & Local API Configuration
 const API_BASE_URL = 'http://127.0.0.1:5000/api';
+const GITHUB_USER = '808kirai';
+const CONTRIB_API = `https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`;
+const CONTRIB_REFRESH_MS = 10 * 60 * 1000;
 
 // Language Translations Object
 const translations = {
@@ -11,20 +14,41 @@ const translations = {
         letsTalk: "Let's Talk",
         heroStatus: "Available for projects and collaborations",
         heroTitle: "Building Intelligent Web and AI Systems",
-        heroSubtitle: "Specialized in Python, Flask, computer vision, and backend software.",
+        heroSubtitle: "Python, C and C++ developer working on AI and machine learning, computer vision, and backend systems.",
         btnProjects: "Projects",
         btnContact: "Contact",
         clickConnect: "Click a platform to connect",
-        skillsTitle: "Languages & Frameworks",
-        skillsSubtitle: "Full-stack backend architecture & modern tooling",
+        skillsTitle: "Skills & Tools",
+        skillsSubtitle: "The languages and frameworks behind my projects",
+        skillGroupLang: "Languages",
+        skillGroupAI: "AI & Machine Learning",
+        skillGroupBackend: "Backend & Tools",
+        skillAiml: "AI & Machine Learning",
+        skillAimlDesc: "Computer vision · LLM risk triage · model export",
         projectsTitle: "Featured Projects",
-        projectsSubtitle: "Selected backend & computer vision systems",
-        proj1Title: "Celestial Image Identifier",
-        proj1Desc: "Astronomical object identification and feature extraction powered by deep learning models.",
-        proj2Title: "Face Tracking Filter",
-        proj2Desc: "Low-latency computer vision pipeline applying dynamic spatial filters on real-time video streams.",
-        proj3Title: "Nairobi Parking System",
-        proj3Desc: "Automated urban parking management platform handling real-time spot allocation & payment logging.",
+        projectsSubtitle: "My strongest work on GitHub, from AI triage to real-time computer vision",
+        proj1Badge: "AI · Social Impact",
+        proj1Title: "AmaniHaven",
+        proj1Desc: "Free, confidential mental health support over USSD and SMS for any basic phone, in English or Kiswahili. Offline rules and Claude triage risk and alert human counselors within seconds.",
+        proj2Badge: "Real-Time CV",
+        proj2Title: "Hand Portal Face Filter",
+        proj2Desc: "Frame your face with both hands and the space between your fingers becomes a live filter portal. MediaPipe hand tracking drives eight effects, from halftone to thermal.",
+        proj3Badge: "Computer Vision",
+        proj3Title: "Celestial Image Identifier",
+        proj3Desc: "Upload a sky photo or stream a webcam and it boxes and catalogs stars, nebulae and galaxy cores using classical OpenCV analysis behind a FastAPI backend.",
+        proj4Badge: "Backend",
+        proj4Title: "Nairobi SmartPark",
+        proj4Desc: "Flask and SQLite parking system for Kenyan lots: real-time slot counts, barrier gate control, and tiered Kshs billing from 30 free minutes up to Kshs 500.",
+        contribTitle: "Contribution activity",
+        contribTotal: "{n} contributions in the last year",
+        contribDay: "{n} contributions on {date}",
+        contribDayOne: "1 contribution on {date}",
+        contribDayNone: "No contributions on {date}",
+        contribLearn: "Learn how we count contributions",
+        contribLess: "Less",
+        contribMore: "More",
+        contribError: "Couldn't load live activity right now.",
+        contribView: "View on GitHub",
         contactTitle: "Get In Touch",
         contactSubtitle: "Let's collaborate on your next project or backend system",
         emailLabel: "Direct Email",
@@ -34,64 +58,115 @@ const translations = {
     zh: {
         navHome: "首页", navSkills: "技能", navProjects: "项目", navContact: "联系",
         letsTalk: "沟通合作", heroStatus: "可承接项目与合作", heroTitle: "构建智能 Web 与人工智能系统",
-        heroSubtitle: "专注于 Python、Flask、计算机视觉及后端架构开发。", btnProjects: "查看项目",
-        btnContact: "联系我", clickConnect: "点击社交平台进行连接", skillsTitle: "编程语言与框架",
-        skillsSubtitle: "全栈后端架构与现代开发工具", projectsTitle: "精选项目", projectsSubtitle: "核心后端与计算机视觉系统",
-        proj1Title: "天体图像识别系统", proj1Desc: "基于深度学习模型的天体识别与特征提取分析系统。",
-        proj2Title: "人脸追踪滤镜", proj2Desc: "用于实时视频流动态空间滤镜处理的低延迟计算机视觉管道。",
-        proj3Title: "内罗毕智能停车系统", proj3Desc: "处理实时车位分配与支付记录的自动化城市停车管理平台。",
+        heroSubtitle: "Python、C 与 C++ 开发者，专注于人工智能与机器学习、计算机视觉及后端系统。", btnProjects: "查看项目",
+        btnContact: "联系我", clickConnect: "点击社交平台进行连接",
+        skillsTitle: "技能与工具", skillsSubtitle: "支撑我项目的编程语言与框架",
+        skillGroupLang: "编程语言", skillGroupAI: "人工智能与机器学习", skillGroupBackend: "后端与工具",
+        skillAiml: "人工智能与机器学习", skillAimlDesc: "计算机视觉 · LLM 风险分诊 · 模型导出",
+        projectsTitle: "精选项目", projectsSubtitle: "我在 GitHub 上的代表作，从 AI 风险分诊到实时计算机视觉",
+        proj1Badge: "AI · 社会公益", proj1Title: "AmaniHaven",
+        proj1Desc: "通过 USSD 和短信为任何普通手机提供免费、保密的心理健康支持，支持英语和斯瓦希里语。离线规则与 Claude 共同评估风险，并在数秒内通知人工咨询师。",
+        proj2Badge: "实时视觉", proj2Title: "手势传送门滤镜",
+        proj2Desc: "用双手框住脸，手指之间的区域就会变成实时滤镜传送门。MediaPipe 手部追踪驱动八种效果，从半色调到热成像。",
+        proj3Badge: "计算机视觉", proj3Title: "天体图像识别系统",
+        proj3Desc: "上传星空照片或开启摄像头，系统会基于 FastAPI 后端和经典 OpenCV 分析，框选并编目恒星、星云和星系核心。",
+        proj4Badge: "后端", proj4Title: "内罗毕智能停车系统",
+        proj4Desc: "面向肯尼亚停车场的 Flask 与 SQLite 系统：实时车位统计、道闸控制，以及从前 30 分钟免费到最高 500 先令的分级计费。",
+        contribTitle: "贡献活动", contribTotal: "过去一年共 {n} 次贡献", contribDay: "{date}：{n} 次贡献",
+        contribDayOne: "{date}：1 次贡献", contribDayNone: "{date}：无贡献", contribLearn: "了解贡献的统计方式",
+        contribLess: "少", contribMore: "多", contribError: "暂时无法加载实时活动。", contribView: "在 GitHub 上查看",
         contactTitle: "取得联系", contactSubtitle: "让我们在您的下一个项目或后端系统上展开合作",
         emailLabel: "电子邮箱", appearanceLabel: "外观主题", repoLabel: "代码仓库"
     },
     hi: {
         navHome: "होम", navSkills: "कौशल", navProjects: "परियोजनाएं", navContact: "संपर्क",
         letsTalk: "बातचीत करें", heroStatus: "परियोजनाओं और सहयोग के लिए उपलब्ध", heroTitle: "इंटेलिजेंट वेब और एआई सिस्टम का निर्माण",
-        heroSubtitle: "पायथन, फ्लास्क, कंप्यूटर विज़न और बैकएंड सॉफ्टवेयर में विशेषज्ञ।", btnProjects: "परियोजनाएं",
-        btnContact: "संपर्क करें", clickConnect: "जुड़ने के लिए प्लेटफ़ॉर्म पर क्लिक करें", skillsTitle: "भाषाएं और फ्रेमवर्क",
-        skillsSubtitle: "फुल-स्टैक बैकएंड आर्किटेक्चर और आधुनिक टूल्स", projectsTitle: "प्रमुख परियोजनाएं",
-        projectsSubtitle: "चयनित बैकएंड और कंप्यूटर विज़न सिस्टम", proj1Title: "खगोलीय छवि पहचानकर्ता",
-        proj1Desc: "डीप लर्निंग मॉडल द्वारा संचालित खगोलीय वस्तु पहचान और विशेषता निष्कर्षण।",
-        proj2Title: "फेस ट्रैकिंग फ़िल्टर", proj2Desc: "रियल-टाइम वीडियो स्ट्रीम पर डायनेमिक स्थानिक फ़िल्टर लागू करने वाली कंप्यूटर विज़न पाइपलाइन।",
-        proj3Title: "नैरोबी पार्किंग सिस्टम", proj3Desc: "स्वचालित शहरी पार्किंग प्रबंधन मंच जो रियल-टाइम स्थान आवंटन और भुगतान लॉगिंग को संभालता है।",
+        heroSubtitle: "Python, C और C++ डेवलपर — AI और मशीन लर्निंग, कंप्यूटर विज़न और बैकएंड सिस्टम।", btnProjects: "परियोजनाएं",
+        btnContact: "संपर्क करें", clickConnect: "जुड़ने के लिए प्लेटफ़ॉर्म पर क्लिक करें",
+        skillsTitle: "कौशल और टूल्स", skillsSubtitle: "मेरी परियोजनाओं के पीछे की भाषाएं और फ्रेमवर्क",
+        skillGroupLang: "प्रोग्रामिंग भाषाएं", skillGroupAI: "AI और मशीन लर्निंग", skillGroupBackend: "बैकएंड और टूल्स",
+        skillAiml: "AI और मशीन लर्निंग", skillAimlDesc: "कंप्यूटर विज़न · LLM जोखिम आकलन · मॉडल एक्सपोर्ट",
+        projectsTitle: "प्रमुख परियोजनाएं", projectsSubtitle: "GitHub पर मेरा सबसे मज़बूत काम, AI जोखिम आकलन से लेकर रियल-टाइम कंप्यूटर विज़न तक",
+        proj1Badge: "AI · सामाजिक प्रभाव", proj1Title: "AmaniHaven",
+        proj1Desc: "किसी भी साधारण फ़ोन के लिए USSD और SMS पर मुफ़्त, गोपनीय मानसिक स्वास्थ्य सहायता, अंग्रेज़ी या स्वाहिली में। ऑफ़लाइन नियम और Claude जोखिम का आकलन करते हैं और कुछ ही सेकंड में मानव काउंसलर को सूचित करते हैं।",
+        proj2Badge: "रियल-टाइम CV", proj2Title: "हैंड पोर्टल फेस फ़िल्टर",
+        proj2Desc: "दोनों हाथों से अपना चेहरा फ्रेम करें और उंगलियों के बीच की जगह एक लाइव फ़िल्टर पोर्टल बन जाती है। MediaPipe हैंड ट्रैकिंग हाफ़टोन से थर्मल तक आठ इफ़ेक्ट चलाती है।",
+        proj3Badge: "कंप्यूटर विज़न", proj3Title: "खगोलीय छवि पहचानकर्ता",
+        proj3Desc: "आकाश की फ़ोटो अपलोड करें या वेबकैम चलाएं, और यह FastAPI बैकएंड पर क्लासिकल OpenCV विश्लेषण से तारों, नीहारिकाओं और आकाशगंगा केंद्रों को चिह्नित और सूचीबद्ध करता है।",
+        proj4Badge: "बैकएंड", proj4Title: "नैरोबी स्मार्टपार्क",
+        proj4Desc: "केन्याई पार्किंग के लिए Flask और SQLite सिस्टम: रियल-टाइम खाली स्थान, बैरियर गेट नियंत्रण, और पहले 30 मिनट मुफ़्त से लेकर Kshs 500 तक की स्तरीय बिलिंग।",
+        contribTitle: "योगदान गतिविधि", contribTotal: "पिछले एक वर्ष में {n} योगदान", contribDay: "{date} को {n} योगदान",
+        contribDayOne: "{date} को 1 योगदान", contribDayNone: "{date} को कोई योगदान नहीं", contribLearn: "जानें कि योगदान कैसे गिने जाते हैं",
+        contribLess: "कम", contribMore: "अधिक", contribError: "लाइव गतिविधि अभी लोड नहीं हो सकी।", contribView: "GitHub पर देखें",
         contactTitle: "संपर्क में रहें", contactSubtitle: "आइए अपनी अगली परियोजना या बैकएंड सिस्टम पर एक साथ काम करें",
         emailLabel: "डायरेक्ट ईमेल", appearanceLabel: "दिखावट", repoLabel: "रिपॉजिटरी"
     },
     es: {
         navHome: "Inicio", navSkills: "Habilidades", navProjects: "Proyectos", navContact: "Contacto",
         letsTalk: "Hablemos", heroStatus: "Disponible para proyectos y colaboraciones", heroTitle: "Construyendo Sistemas Web e Inteligencia Artificial",
-        heroSubtitle: "Especializado en Python, Flask, visión por computadora y software backend.", btnProjects: "Proyectos",
-        btnContact: "Contacto", clickConnect: "Haz clic en una plataforma para conectar", skillsTitle: "Lenguajes y Frameworks",
-        skillsSubtitle: "Arquitectura backend full-stack y herramientas modernas", projectsTitle: "Proyectos Destacados",
-        projectsSubtitle: "Sistemas backend y de visión por computadora seleccionados", proj1Title: "Identificador de Imágenes Celestiales",
-        proj1Desc: "Identificación de objetos astronómicos y extracción de características impulsada por modelos de aprendizaje profundo.",
-        proj2Title: "Filtro de Seguimiento Facial", proj2Desc: "Pipeline de visión por computadora de baja latencia para filtros espaciales en transmisiones de video en tiempo real.",
-        proj3Title: "Sistema de Estacionamiento de Nairobi", proj3Desc: "Plataforma automatizada de gestión de estacionamiento urbano con asignación de plazas y registro de pagos en tiempo real.",
+        heroSubtitle: "Desarrollo en Python, C y C++ con enfoque en inteligencia artificial, aprendizaje automático, visión por computadora y sistemas backend.", btnProjects: "Proyectos",
+        btnContact: "Contacto", clickConnect: "Haz clic en una plataforma para conectar",
+        skillsTitle: "Habilidades y Herramientas", skillsSubtitle: "Los lenguajes y frameworks detrás de mis proyectos",
+        skillGroupLang: "Lenguajes", skillGroupAI: "IA y Aprendizaje Automático", skillGroupBackend: "Backend y Herramientas",
+        skillAiml: "IA y Aprendizaje Automático", skillAimlDesc: "Visión por computadora · triaje con LLM · exportación de modelos",
+        projectsTitle: "Proyectos Destacados", projectsSubtitle: "Mi mejor trabajo en GitHub, desde triaje con IA hasta visión por computadora en tiempo real",
+        proj1Badge: "IA · Impacto Social", proj1Title: "AmaniHaven",
+        proj1Desc: "Apoyo de salud mental gratuito y confidencial por USSD y SMS para cualquier teléfono básico, en inglés o suajili. Reglas sin conexión y Claude evalúan el riesgo y alertan a consejeros humanos en segundos.",
+        proj2Badge: "Visión en Tiempo Real", proj2Title: "Filtro Portal de Manos",
+        proj2Desc: "Enmarca tu cara con ambas manos y el espacio entre tus dedos se convierte en un portal con filtro en vivo. El seguimiento de manos de MediaPipe controla ocho efectos, del semitono al térmico.",
+        proj3Badge: "Visión por Computadora", proj3Title: "Identificador de Imágenes Celestiales",
+        proj3Desc: "Sube una foto del cielo o usa la webcam y el sistema enmarca y cataloga estrellas, nebulosas y núcleos galácticos con análisis clásico de OpenCV sobre un backend FastAPI.",
+        proj4Badge: "Backend", proj4Title: "Nairobi SmartPark",
+        proj4Desc: "Sistema de estacionamiento con Flask y SQLite para Kenia: plazas libres en tiempo real, control de barreras y tarifas escalonadas en Kshs, desde 30 minutos gratis hasta Kshs 500.",
+        contribTitle: "Actividad de Contribuciones", contribTotal: "{n} contribuciones en el último año", contribDay: "{n} contribuciones el {date}",
+        contribDayOne: "1 contribución el {date}", contribDayNone: "Sin contribuciones el {date}", contribLearn: "Cómo se cuentan las contribuciones",
+        contribLess: "Menos", contribMore: "Más", contribError: "No se pudo cargar la actividad en vivo.", contribView: "Ver en GitHub",
         contactTitle: "Ponerse en Contacto", contactSubtitle: "Colaboremos en tu próximo proyecto o sistema backend",
         emailLabel: "Correo Directo", appearanceLabel: "Apariencia", repoLabel: "Repositorio"
     },
     ar: {
         navHome: "الرئيسية", navSkills: "المهارات", navProjects: "المشاريع", navContact: "التواصل",
         letsTalk: "تواصل معي", heroStatus: "متاح للمشاريع والتعاون", heroTitle: "بناء أنظمة الويب والذكاء الاصطناعي الذكية",
-        heroSubtitle: "متخصص في Python و Flask والرؤية الحاسوبية وبرمجيات الخلفية.", btnProjects: "المشاريع",
-        btnContact: "تواصل معي", clickConnect: "انقر على منصة للتواصل", skillsTitle: "اللغات وأطر العمل",
-        skillsSubtitle: "بنية الخلفية البرمجية والأدوات الحديثة", projectsTitle: "المشاريع المميزة",
-        projectsSubtitle: "أنظمة برمجية ورؤية حاسوبية مختارة", proj1Title: "معرف الصور الفلكية",
-        proj1Desc: "تحديد الأجرام السماوية واستخراج الميزات باستخدام نماذج التعلم العميق.",
-        proj2Title: "مرشح تتبع الوجه", proj2Desc: "خط معالجة للرؤية الحاسوبية منخفض زمن الاستجابة لتطبيق مرشحات ديناميكية على الفيديو المباشر.",
-        proj3Title: "نظام مواقف السيارات في نيروبي", proj3Desc: "منصة مؤتمتة لإدارة مواقف السيارات في المناطق الحضرية مع تخصيص فوري للمواقف وتسجيل المدفوعات.",
+        heroSubtitle: "تطوير بلغات Python و C و C++ مع التركيز على الذكاء الاصطناعي وتعلم الآلة والرؤية الحاسوبية وأنظمة الخلفية.", btnProjects: "المشاريع",
+        btnContact: "تواصل معي", clickConnect: "انقر على منصة للتواصل",
+        skillsTitle: "المهارات والأدوات", skillsSubtitle: "اللغات وأطر العمل التي بُنيت بها مشاريعي",
+        skillGroupLang: "لغات البرمجة", skillGroupAI: "الذكاء الاصطناعي وتعلم الآلة", skillGroupBackend: "الخلفية والأدوات",
+        skillAiml: "الذكاء الاصطناعي وتعلم الآلة", skillAimlDesc: "رؤية حاسوبية · فرز المخاطر بنماذج اللغة · تصدير النماذج",
+        projectsTitle: "المشاريع المميزة", projectsSubtitle: "أقوى أعمالي على GitHub، من فرز المخاطر بالذكاء الاصطناعي إلى الرؤية الحاسوبية الفورية",
+        proj1Badge: "ذكاء اصطناعي · أثر اجتماعي", proj1Title: "AmaniHaven",
+        proj1Desc: "دعم مجاني وسري للصحة النفسية عبر USSD والرسائل القصيرة لأي هاتف بسيط، بالإنجليزية أو السواحيلية. تقيّم القواعد غير المتصلة و Claude مستوى الخطر وتنبّه المستشارين خلال ثوانٍ.",
+        proj2Badge: "رؤية فورية", proj2Title: "فلتر بوابة اليدين",
+        proj2Desc: "أحِط وجهك بيديك فتتحول المساحة بين أصابعك إلى بوابة بفلتر مباشر. يتحكم تتبع اليدين في MediaPipe بثمانية تأثيرات، من النقاط النصفية إلى التصوير الحراري.",
+        proj3Badge: "رؤية حاسوبية", proj3Title: "معرف الصور الفلكية",
+        proj3Desc: "ارفع صورة للسماء أو شغّل الكاميرا، فيحدد النظام النجوم والسدم ونوى المجرات ويفهرسها باستخدام تحليل OpenCV الكلاسيكي وخادم FastAPI.",
+        proj4Badge: "الخلفية", proj4Title: "نيروبي سمارت بارك",
+        proj4Desc: "نظام مواقف بـ Flask و SQLite لمواقف كينيا: عدد المواقف الشاغرة لحظيًا، والتحكم في البوابات، وتسعير متدرج بالشلن الكيني من 30 دقيقة مجانية حتى 500 شلن.",
+        contribTitle: "نشاط المساهمات", contribTotal: "{n} مساهمة خلال العام الماضي", contribDay: "{n} مساهمة في {date}",
+        contribDayOne: "مساهمة واحدة في {date}", contribDayNone: "لا مساهمات في {date}", contribLearn: "تعرّف على طريقة احتساب المساهمات",
+        contribLess: "أقل", contribMore: "أكثر", contribError: "تعذّر تحميل النشاط المباشر حاليًا.", contribView: "عرض على GitHub",
         contactTitle: "تواصل معي", contactSubtitle: "دعنا نتعاون في مشروعك القادم أو نظام البرمجيات الخلفية",
         emailLabel: "البريد الإلكتروني المباشر", appearanceLabel: "المظهر", repoLabel: "مستودع الكود"
     },
     fr: {
         navHome: "Accueil", navSkills: "Compétences", navProjects: "Projets", navContact: "Contact",
         letsTalk: "Discutons", heroStatus: "Disponible pour projets et collaborations", heroTitle: "Création de Systèmes Web et d'IA Intelligents",
-        heroSubtitle: "Spécialisé en Python, Flask, vision par ordinateur et développement backend.", btnProjects: "Projets",
-        btnContact: "Contact", clickConnect: "Cliquez sur une plateforme pour vous connecter", skillsTitle: "Langages & Frameworks",
-        skillsSubtitle: "Architecture backend full-stack & outils modernes", projectsTitle: "Projets En Vedette",
-        projectsSubtitle: "Sélection de systèmes backend et de vision par ordinateur", proj1Title: "Identificateur d'Images Célestes",
-        proj1Desc: "Identification d'objets astronomiques et extraction de caractéristiques propulsées par l'apprentissage profond.",
-        proj2Title: "Filtre de Suivi Facial", proj2Desc: "Pipeline de vision par ordinateur à faible latence appliquant des filtres spatiaux en temps réel.",
-        proj3Title: "Système de Stationnement de Nairobi", proj3Desc: "Plateforme automatisée de gestion du stationnement urbain gérant l'attribution des places en temps réel.",
+        heroSubtitle: "Développement en Python, C et C++, axé sur l'IA, l'apprentissage automatique, la vision par ordinateur et les systèmes backend.", btnProjects: "Projets",
+        btnContact: "Contact", clickConnect: "Cliquez sur une plateforme pour vous connecter",
+        skillsTitle: "Compétences & Outils", skillsSubtitle: "Les langages et frameworks derrière mes projets",
+        skillGroupLang: "Langages", skillGroupAI: "IA & Apprentissage Automatique", skillGroupBackend: "Backend & Outils",
+        skillAiml: "IA & Apprentissage Automatique", skillAimlDesc: "Vision par ordinateur · triage par LLM · export de modèles",
+        projectsTitle: "Projets En Vedette", projectsSubtitle: "Mes meilleurs projets sur GitHub, du triage par IA à la vision par ordinateur en temps réel",
+        proj1Badge: "IA · Impact Social", proj1Title: "AmaniHaven",
+        proj1Desc: "Soutien en santé mentale gratuit et confidentiel par USSD et SMS pour tout téléphone basique, en anglais ou en swahili. Des règles hors ligne et Claude évaluent le risque et alertent des conseillers humains en quelques secondes.",
+        proj2Badge: "Vision Temps Réel", proj2Title: "Filtre Portail des Mains",
+        proj2Desc: "Encadrez votre visage avec vos deux mains et l'espace entre vos doigts devient un portail filtré en direct. Le suivi des mains MediaPipe pilote huit effets, de la trame demi-teinte à l'imagerie thermique.",
+        proj3Badge: "Vision par Ordinateur", proj3Title: "Identificateur d'Images Célestes",
+        proj3Desc: "Importez une photo du ciel ou utilisez la webcam : le système encadre et catalogue étoiles, nébuleuses et cœurs galactiques grâce à une analyse OpenCV classique et un backend FastAPI.",
+        proj4Badge: "Backend", proj4Title: "Nairobi SmartPark",
+        proj4Desc: "Système de stationnement Flask et SQLite pour le Kenya : places libres en temps réel, contrôle des barrières et tarification par paliers en Kshs, de 30 minutes gratuites jusqu'à 500 Kshs.",
+        contribTitle: "Activité de Contributions", contribTotal: "{n} contributions au cours de l'année", contribDay: "{n} contributions le {date}",
+        contribDayOne: "1 contribution le {date}", contribDayNone: "Aucune contribution le {date}", contribLearn: "Comment les contributions sont comptées",
+        contribLess: "Moins", contribMore: "Plus", contribError: "Impossible de charger l'activité en direct.", contribView: "Voir sur GitHub",
         contactTitle: "Prendre Contact", contactSubtitle: "Collaborons sur votre prochain projet ou système backend",
         emailLabel: "E-mail Direct", appearanceLabel: "Apparence", repoLabel: "Dépôt de Code"
     }
@@ -99,26 +174,39 @@ const translations = {
 
 // Base Project Metadata
 const projectData = {
-    celestial: {
-        title: "Celestial Image Identifier",
-        description: "An AI-powered application designed to detect and identify celestial features, constellations, and astronomical structures from optical captures or direct webcam input.",
-        tech: ["Python", "PyTorch", "OpenCV", "Flask"],
-        github: "https://github.com/runie1211"
+    amanihaven: {
+        title: "AmaniHaven",
+        description: "A crisis-aware support line built for people without smartphones or data. Users dial a USSD code or send an SMS and get instant, clinician-reviewable self-help in English or Kiswahili. Offline rules run first, and Claude adds a second opinion that can only raise a risk level, never lower it. Crisis and abuse cases page human counselors through a dashboard, while phone numbers are hashed and encrypted and messages are deleted after 30 days.",
+        tech: ["Python", "FastAPI", "Claude API", "Pydantic", "SQLite", "Docker", "pytest", "Africa's Talking"],
+        github: "https://github.com/808kirai/AmaniHaven"
     },
     facetracking: {
-        title: "Face Tracking Filter",
-        description: "A high-performance computer vision pipeline utilizing real-time face tracking, centroid positioning, and spatial overlay mapping.",
-        tech: ["OpenCV", "Python", "NumPy"],
-        github: "https://github.com/runie1211"
+        title: "Hand Portal Face Filter",
+        description: "A real-time webcam effect built with OpenCV and MediaPipe. The thumb and index fingertips of both hands become the four corners of a portal, smoothed to avoid jitter and free to tilt or stretch as your hands move. Only the inside of the portal is filtered, and each time you frame again it cycles to the next of eight effects. It can also record to MP4 at the real frame rate.",
+        tech: ["Python", "OpenCV", "MediaPipe", "NumPy"],
+        github: "https://github.com/808kirai/face-tracking-filter"
+    },
+    celestial: {
+        title: "Celestial Image Identifier",
+        description: "A full-stack computer vision app for space imagery. The FastAPI backend first checks that an image actually shows a dark sky, then uses brightness thresholds, contour shape and color saturation to separate bright stars, emission nebulae, clusters and galaxy cores. The browser frontend supports file uploads and live webcam capture, and lists each detection in a side catalog.",
+        tech: ["Python", "FastAPI", "OpenCV", "NumPy", "JavaScript", "HTML5 Canvas"],
+        github: "https://github.com/808kirai/Celestial-Image-Identifier"
     },
     nairobi: {
-        title: "Nairobi Parking System",
-        description: "Automated urban parking infrastructure built with Python/Flask & SQLite to handle real-time spot reservations, status tracking, and payment verification.",
-        tech: ["Python", "Flask", "SQLite", "JavaScript"],
-        github: "https://github.com/runie1211/Nairobi-Parking-System",
+        title: "Nairobi SmartPark",
+        description: "A parking management backend designed for Kenyan facilities. Entry and exit endpoints track active sessions, enforce lot capacity and trigger the barrier gates, and exit billing follows tiered Kenyan Shilling rates: free for the first 30 minutes, then Kshs 50, 100, 300 and 500. A test script seeds backdated sessions to verify every billing tier.",
+        tech: ["Python", "Flask", "SQLite"],
+        github: "https://github.com/808kirai/Nairobi-Parking-System",
         hasLiveApi: true
     }
 };
+
+// Shared State
+let currentLang = 'en';
+let contribState = 'loading';   // 'loading' | 'ready' | 'error'
+let contribDays = null;
+let contribTotal = 0;
+let contribFetchedAt = 0;
 
 // Safe localStorage helpers (storage can throw in private mode or when blocked)
 function readPref(key) {
@@ -127,6 +215,20 @@ function readPref(key) {
 
 function savePref(key, value) {
     try { localStorage.setItem(key, value); } catch (e) { /* ignore */ }
+}
+
+// Translation helpers
+function t(key) {
+    const dict = translations[currentLang] || translations.en;
+    return dict[key] || translations.en[key] || '';
+}
+
+function fillTemplate(template, values) {
+    return template.replace(/\{(\w+)\}/g, (_, name) => values[name]);
+}
+
+function intlLocale() {
+    return currentLang === 'zh' ? 'zh-CN' : currentLang;
 }
 
 // Theme Switching Logic
@@ -154,21 +256,25 @@ if (langSelect) {
 }
 
 function updateLanguage(lang) {
-    const dict = translations[lang] || translations.en;
-    
-    if (lang === 'ar') {
+    currentLang = translations[lang] ? lang : 'en';
+    const dict = translations[currentLang];
+
+    if (currentLang === 'ar') {
         document.documentElement.setAttribute('dir', 'rtl');
     } else {
         document.documentElement.removeAttribute('dir');
     }
-    document.documentElement.setAttribute('lang', translations[lang] ? lang : 'en');
+    document.documentElement.setAttribute('lang', currentLang);
 
     document.querySelectorAll('[data-i18n]').forEach(elem => {
         const key = elem.getAttribute('data-i18n');
         if (dict[key]) elem.textContent = dict[key];
     });
 
-    savePref('portfolio-lang', lang);
+    // Month and weekday labels in the contribution graph follow the language too
+    renderContributions();
+
+    savePref('portfolio-lang', currentLang);
 }
 
 const savedLang = readPref('portfolio-lang') || 'en';
@@ -197,6 +303,168 @@ if ('IntersectionObserver' in window) {
     revealElems.forEach(elem => elem.classList.add('is-visible'));
 }
 
+// Live GitHub Contribution Graph
+function parseDay(dateStr) {
+    return new Date(dateStr + 'T00:00:00Z');
+}
+
+// An empty last-365-days grid, shown while loading or if the API is unreachable
+function emptyYear() {
+    const days = [];
+    const today = new Date();
+    const end = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
+    for (let i = 364; i >= 0; i--) {
+        const d = new Date(end - i * 86400000);
+        days.push({ date: d.toISOString().slice(0, 10), count: 0, level: 0 });
+    }
+    return days;
+}
+
+function renderContributions() {
+    const graph = document.getElementById('contrib-graph');
+    const totalElem = document.getElementById('contrib-total');
+    if (!graph || !totalElem) return;
+
+    const days = contribState === 'ready' ? contribDays : emptyYear();
+    const locale = intlLocale();
+    const monthFmt = new Intl.DateTimeFormat(locale, { month: 'short', timeZone: 'UTC' });
+    const weekdayFmt = new Intl.DateTimeFormat(locale, { weekday: 'short', timeZone: 'UTC' });
+    const frag = document.createDocumentFragment();
+
+    // First column: blank corner, then Mon / Wed / Fri labels (Jan 7, 2024 was a Sunday)
+    frag.appendChild(document.createElement('span'));
+    for (let d = 0; d < 7; d++) {
+        const label = document.createElement('span');
+        label.className = 'contrib-day';
+        if (d % 2 === 1) label.textContent = weekdayFmt.format(new Date(Date.UTC(2024, 0, 7 + d)));
+        frag.appendChild(label);
+    }
+
+    // Weeks run Sunday to Saturday, so pad the first week up to the first day's weekday
+    const leading = parseDay(days[0].date).getUTCDay();
+    const cells = new Array(leading).fill(null).concat(days);
+    const weekCount = Math.ceil(cells.length / 7);
+
+    // Label a column when its month changes, skipping labels that would collide
+    const monthCols = [];
+    for (let w = 0; w < weekCount; w++) {
+        const firstDay = cells.slice(w * 7, w * 7 + 7).find(Boolean);
+        const month = parseDay(firstDay.date).getUTCMonth();
+        if (!monthCols.length || monthCols[monthCols.length - 1].month !== month) {
+            monthCols.push({ col: w, month, date: parseDay(firstDay.date) });
+        }
+    }
+    const labelAt = new Map();
+    monthCols.forEach((m, i) => {
+        const next = monthCols[i + 1];
+        if (!next || next.col - m.col >= 3) labelAt.set(m.col, monthFmt.format(m.date));
+    });
+
+    for (let w = 0; w < weekCount; w++) {
+        const monthLabel = document.createElement('span');
+        monthLabel.className = 'contrib-month';
+        monthLabel.textContent = labelAt.get(w) || '';
+        frag.appendChild(monthLabel);
+
+        for (let d = 0; d < 7; d++) {
+            const day = cells[w * 7 + d];
+            if (day === undefined) break;
+            const cell = document.createElement('i');
+            cell.className = 'contrib-cell';
+            if (day === null) {
+                cell.classList.add('is-pad');
+            } else {
+                cell.dataset.level = Math.min(4, Math.max(0, day.level));
+                cell.dataset.date = day.date;
+                cell.dataset.count = day.count;
+            }
+            frag.appendChild(cell);
+        }
+    }
+
+    graph.replaceChildren(frag);
+    graph.classList.toggle('is-loading', contribState === 'loading');
+
+    if (contribState === 'ready') {
+        const totalText = fillTemplate(t('contribTotal'), { n: contribTotal.toLocaleString(locale) });
+        totalElem.textContent = totalText;
+        graph.setAttribute('aria-label', totalText);
+    } else if (contribState === 'error') {
+        const link = document.createElement('a');
+        link.href = `https://github.com/${GITHUB_USER}`;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = t('contribView');
+        totalElem.replaceChildren(`${t('contribError')} `, link);
+    } else {
+        totalElem.textContent = ' ';
+    }
+
+    // Show the most recent weeks first when the graph is wider than its card
+    const scroller = document.getElementById('contrib-scroll');
+    if (scroller) scroller.scrollLeft = scroller.scrollWidth;
+}
+
+async function loadContributions() {
+    try {
+        const response = await fetch(CONTRIB_API);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        if (!Array.isArray(data.contributions) || !data.contributions.length) throw new Error('No data');
+
+        contribDays = data.contributions;
+        contribTotal = (data.total && data.total.lastYear) ??
+            contribDays.reduce((sum, day) => sum + day.count, 0);
+        contribState = 'ready';
+        contribFetchedAt = Date.now();
+    } catch (err) {
+        console.warn('GitHub contributions unavailable:', err.message);
+        // Keep showing the last good data if a background refresh fails
+        if (contribState !== 'ready') contribState = 'error';
+    }
+    renderContributions();
+}
+
+loadContributions();
+
+// Refresh while the page stays open, and whenever the tab comes back after a while
+setInterval(() => {
+    if (document.visibilityState === 'visible') loadContributions();
+}, CONTRIB_REFRESH_MS);
+
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && Date.now() - contribFetchedAt > CONTRIB_REFRESH_MS) {
+        loadContributions();
+    }
+});
+
+// Contribution tooltip, positioned above the hovered day
+const contribCard = document.getElementById('contrib-card');
+const contribGraph = document.getElementById('contrib-graph');
+const contribTooltip = document.getElementById('contrib-tooltip');
+
+if (contribCard && contribGraph && contribTooltip) {
+    contribGraph.addEventListener('mouseover', (e) => {
+        const cell = e.target.closest('.contrib-cell[data-date]');
+        if (!cell || contribState !== 'ready') return;
+
+        const count = Number(cell.dataset.count);
+        const date = new Intl.DateTimeFormat(intlLocale(), { month: 'long', day: 'numeric', timeZone: 'UTC' })
+            .format(parseDay(cell.dataset.date));
+        const key = count === 0 ? 'contribDayNone' : count === 1 ? 'contribDayOne' : 'contribDay';
+        contribTooltip.textContent = fillTemplate(t(key), { n: count, date });
+
+        const cardRect = contribCard.getBoundingClientRect();
+        const cellRect = cell.getBoundingClientRect();
+        contribTooltip.style.left = `${cellRect.left - cardRect.left + cellRect.width / 2}px`;
+        contribTooltip.style.top = `${cellRect.top - cardRect.top}px`;
+        contribTooltip.hidden = false;
+    });
+
+    contribGraph.addEventListener('mouseleave', () => { contribTooltip.hidden = true; });
+    document.getElementById('contrib-scroll').addEventListener('scroll', () => { contribTooltip.hidden = true; });
+}
+
 // Modal Management Logic
 const modal = document.getElementById('project-modal');
 const modalApiWidget = document.getElementById('modal-api-widget');
@@ -215,9 +483,9 @@ window.openModal = function(projectId) {
     modalDesc.textContent = data.description;
 
     modalTech.innerHTML = '';
-    data.tech.forEach(t => {
+    data.tech.forEach(tech => {
         const span = document.createElement('span');
-        span.textContent = t;
+        span.textContent = tech;
         modalTech.appendChild(span);
     });
 

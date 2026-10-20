@@ -1,4 +1,4 @@
-/* SF Pro font is loaded via <link> in index.html */
+/* Inter font is loaded via <link> in index.html */
 
 /* CSS Variables for Dynamic Dark/Light Theme Switching */
 :root {
@@ -12,8 +12,15 @@
     --accent-inverse: #0a0a0c;
     --card-shadow: rgba(0, 0, 0, 0.4);
     --icon-filter: invert(1);
+
+    /* GitHub-style contribution levels */
+    --contrib-0: #1f1f24;
+    --contrib-1: #0e4429;
+    --contrib-2: #006d32;
+    --contrib-3: #26a641;
+    --contrib-4: #39d353;
     
-    --font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
     /* Motion: one easing curve and duration shared by every transition */
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -39,6 +46,12 @@
     --accent-inverse: #ffffff;
     --card-shadow: rgba(0, 0, 0, 0.08);
     --icon-filter: invert(0);
+
+    --contrib-0: #ebedf0;
+    --contrib-1: #9be9a8;
+    --contrib-2: #40c463;
+    --contrib-3: #30a14e;
+    --contrib-4: #216e39;
 }
 
 /* Base Styles */
@@ -226,14 +239,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #10b981;
-    box-shadow: 0 0 8px #10b981;
-}
-
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
@@ -331,11 +336,61 @@ body {
 }
 
 /* Skills Grid */
+.skill-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    width: 100%;
+}
+
+.skill-group-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+    gap: 1rem;
     width: 100%;
+}
+
+.skill-glyph {
+    font-size: 30px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: transform var(--dur) var(--ease-out);
+}
+
+.skill-card:hover .skill-glyph {
+    transform: scale(1.1);
+}
+
+.skill-card.skill-card--feature {
+    grid-column: span 2;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.skill-feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.skill-card--feature small {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
 }
 
 .skill-card {
@@ -378,9 +433,276 @@ body {
 /* Bento Projects Grid */
 .projects-bento {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
     width: 100%;
+}
+
+/* Hand-drawn project sketches */
+.svg-defs {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.card-visual {
+    aspect-ratio: 2 / 1;
+    margin-bottom: 1.25rem;
+    border-radius: 14px;
+    overflow: hidden;
+    background-color: var(--bg-tertiary);
+    background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+    background-size: 14px 14px;
+    transition: background-color var(--dur) var(--ease-out);
+}
+
+.card-visual--night {
+    background: #0b1020;
+}
+
+.card-visual svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s var(--ease-out);
+}
+
+.bento-card:hover .card-visual svg {
+    transform: scale(1.035) rotate(-0.6deg);
+}
+
+.sk {
+    fill: none;
+    stroke: var(--text-primary);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.sk-soft { stroke: var(--text-secondary); }
+.sk-accent { stroke: var(--card-accent); }
+.sk-paper { fill: var(--bg-secondary); }
+.sk-fill-accent { fill: var(--card-accent); }
+.sk-fill-ink { fill: var(--text-primary); }
+
+.sk-finger-out,
+.sk-finger-in {
+    fill: none;
+    stroke-linecap: round;
+}
+
+.sk-finger-out {
+    stroke: var(--text-primary);
+    stroke-width: 9;
+}
+
+.sk-finger-in {
+    stroke: var(--bg-secondary);
+    stroke-width: 6;
+}
+
+.sk-mono {
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: 6.5px;
+    fill: var(--text-primary);
+}
+
+.sk-mono-lg {
+    font-size: 7.5px;
+}
+
+.sk-mono-total {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.sk-note {
+    font-family: 'Caveat', cursive;
+    font-size: 14px;
+    font-weight: 600;
+    fill: var(--text-secondary);
+}
+
+.sk-note--night {
+    fill: #cbd5e1;
+}
+
+/* Live GitHub Contribution Graph */
+.contrib-card {
+    position: relative;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    scroll-snap-align: start;
+    scroll-margin-top: 6rem;
+    transition: var(--transition-surface);
+}
+
+.contrib-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contrib-head h3 {
+    font-size: 1.1rem;
+}
+
+.contrib-total {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.contrib-user {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color var(--dur) var(--ease-out);
+}
+
+.contrib-user:hover {
+    color: var(--text-primary);
+}
+
+.contrib-scroll {
+    overflow-x: auto;
+    direction: ltr;
+    padding-bottom: 0.25rem;
+    scrollbar-width: thin;
+}
+
+.contrib-graph {
+    --cell: 11px;
+    --gap: 3px;
+    display: grid;
+    grid-template-rows: 15px repeat(7, var(--cell));
+    grid-template-columns: auto;
+    grid-auto-columns: var(--cell);
+    grid-auto-flow: column;
+    gap: var(--gap);
+    width: max-content;
+    margin-inline: auto;
+    direction: ltr;
+    font-size: 0.7rem;
+    color: var(--text-primary);
+}
+
+@media (min-width: 1100px) {
+    .contrib-graph {
+        --cell: 13px;
+    }
+}
+
+.contrib-graph .contrib-month,
+.contrib-graph .contrib-day {
+    white-space: nowrap;
+    line-height: 1;
+    color: var(--text-secondary);
+}
+
+.contrib-graph .contrib-day {
+    padding-right: 6px;
+    align-self: center;
+    font-size: 0.65rem;
+}
+
+.contrib-cell {
+    display: inline-block;
+    width: var(--cell, 11px);
+    height: var(--cell, 11px);
+    border-radius: 2px;
+    background: var(--contrib-0);
+    outline: 1px solid rgba(127, 127, 127, 0.08);
+    outline-offset: -1px;
+    transition: background-color 0.6s var(--ease-out);
+}
+
+.contrib-cell[data-level="1"] { background: var(--contrib-1); }
+.contrib-cell[data-level="2"] { background: var(--contrib-2); }
+.contrib-cell[data-level="3"] { background: var(--contrib-3); }
+.contrib-cell[data-level="4"] { background: var(--contrib-4); }
+.contrib-cell.is-pad { visibility: hidden; }
+
+.contrib-graph.is-loading .contrib-cell {
+    animation: contribShimmer 1.6s var(--ease-in-out) infinite;
+}
+
+@keyframes contribShimmer {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+}
+
+.contrib-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.contrib-foot a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--dur) var(--ease-out);
+}
+
+.contrib-foot a:hover {
+    color: var(--text-primary);
+}
+
+.contrib-legend {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.contrib-legend .contrib-cell {
+    --cell: 11px;
+}
+
+.contrib-legend span:first-child { margin-right: 4px; }
+.contrib-legend span:last-child { margin-left: 4px; }
+
+.contrib-error {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding: 0.5rem 0;
+}
+
+.contrib-error a {
+    color: var(--text-primary);
+}
+
+.contrib-tooltip {
+    position: absolute;
+    z-index: 5;
+    padding: 0.4rem 0.65rem;
+    border-radius: 6px;
+    background: var(--text-primary);
+    color: var(--accent-inverse);
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+    pointer-events: none;
+    transform: translate(-50%, calc(-100% - 8px));
+}
+
+.contrib-tooltip[hidden] {
+    display: none;
 }
 
 .bento-card {
@@ -762,6 +1084,19 @@ select:focus-visible,
 
     .site-footer {
         padding: 2rem 1.5rem 6rem 1.5rem;
+    }
+
+    .projects-bento {
+        grid-template-columns: 1fr;
+    }
+
+    .contrib-card {
+        padding: 1.25rem 1rem;
+    }
+
+    .contrib-head {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
     .appearance-widget {
