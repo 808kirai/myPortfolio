@@ -49,6 +49,13 @@ const translations = {
         contribMore: "More",
         contribError: "Couldn't load live activity right now.",
         contribView: "View on GitHub",
+        navCerts: "Certifications",
+        certsTitle: "Certifications",
+        certsSubtitle: "Courses I've completed in AI and machine learning",
+        certCredential: "Credential ID",
+        certVerify: "Verify",
+        certHint: "Tap the stack to shuffle",
+        certOpen: "Full size",
         contactTitle: "Get In Touch",
         contactSubtitle: "Let's collaborate on your next project or backend system",
         emailLabel: "Direct Email",
@@ -75,6 +82,7 @@ const translations = {
         contribTitle: "贡献活动", contribTotal: "过去一年共 {n} 次贡献", contribDay: "{date}：{n} 次贡献",
         contribDayOne: "{date}：1 次贡献", contribDayNone: "{date}：无贡献", contribLearn: "了解贡献的统计方式",
         contribLess: "少", contribMore: "多", contribError: "暂时无法加载实时活动。", contribView: "在 GitHub 上查看",
+        navCerts: "证书", certsTitle: "证书", certsSubtitle: "我完成的人工智能与机器学习课程", certCredential: "证书编号", certVerify: "验证", certHint: "点击卡片切换", certOpen: "查看大图",
         contactTitle: "取得联系", contactSubtitle: "让我们在您的下一个项目或后端系统上展开合作",
         emailLabel: "电子邮箱", appearanceLabel: "外观主题", repoLabel: "代码仓库"
     },
@@ -98,6 +106,7 @@ const translations = {
         contribTitle: "योगदान गतिविधि", contribTotal: "पिछले एक वर्ष में {n} योगदान", contribDay: "{date} को {n} योगदान",
         contribDayOne: "{date} को 1 योगदान", contribDayNone: "{date} को कोई योगदान नहीं", contribLearn: "जानें कि योगदान कैसे गिने जाते हैं",
         contribLess: "कम", contribMore: "अधिक", contribError: "लाइव गतिविधि अभी लोड नहीं हो सकी।", contribView: "GitHub पर देखें",
+        navCerts: "प्रमाणपत्र", certsTitle: "प्रमाणपत्र", certsSubtitle: "AI और मशीन लर्निंग में पूरे किए गए मेरे कोर्स", certCredential: "क्रेडेंशियल ID", certVerify: "सत्यापित करें", certHint: "बदलने के लिए स्टैक पर टैप करें", certOpen: "पूरा आकार",
         contactTitle: "संपर्क में रहें", contactSubtitle: "आइए अपनी अगली परियोजना या बैकएंड सिस्टम पर एक साथ काम करें",
         emailLabel: "डायरेक्ट ईमेल", appearanceLabel: "दिखावट", repoLabel: "रिपॉजिटरी"
     },
@@ -121,6 +130,7 @@ const translations = {
         contribTitle: "Actividad de Contribuciones", contribTotal: "{n} contribuciones en el último año", contribDay: "{n} contribuciones el {date}",
         contribDayOne: "1 contribución el {date}", contribDayNone: "Sin contribuciones el {date}", contribLearn: "Cómo se cuentan las contribuciones",
         contribLess: "Menos", contribMore: "Más", contribError: "No se pudo cargar la actividad en vivo.", contribView: "Ver en GitHub",
+        navCerts: "Certificaciones", certsTitle: "Certificaciones", certsSubtitle: "Cursos que he completado en IA y aprendizaje automático", certCredential: "ID de credencial", certVerify: "Verificar", certHint: "Toca la pila para barajar", certOpen: "Tamaño completo",
         contactTitle: "Ponerse en Contacto", contactSubtitle: "Colaboremos en tu próximo proyecto o sistema backend",
         emailLabel: "Correo Directo", appearanceLabel: "Apariencia", repoLabel: "Repositorio"
     },
@@ -144,6 +154,7 @@ const translations = {
         contribTitle: "نشاط المساهمات", contribTotal: "{n} مساهمة خلال العام الماضي", contribDay: "{n} مساهمة في {date}",
         contribDayOne: "مساهمة واحدة في {date}", contribDayNone: "لا مساهمات في {date}", contribLearn: "تعرّف على طريقة احتساب المساهمات",
         contribLess: "أقل", contribMore: "أكثر", contribError: "تعذّر تحميل النشاط المباشر حاليًا.", contribView: "عرض على GitHub",
+        navCerts: "الشهادات", certsTitle: "الشهادات", certsSubtitle: "دورات أكملتها في الذكاء الاصطناعي وتعلم الآلة", certCredential: "رقم الاعتماد", certVerify: "تحقق", certHint: "انقر على المجموعة للتبديل", certOpen: "الحجم الكامل",
         contactTitle: "تواصل معي", contactSubtitle: "دعنا نتعاون في مشروعك القادم أو نظام البرمجيات الخلفية",
         emailLabel: "البريد الإلكتروني المباشر", appearanceLabel: "المظهر", repoLabel: "مستودع الكود"
     },
@@ -167,6 +178,7 @@ const translations = {
         contribTitle: "Activité de Contributions", contribTotal: "{n} contributions au cours de l'année", contribDay: "{n} contributions le {date}",
         contribDayOne: "1 contribution le {date}", contribDayNone: "Aucune contribution le {date}", contribLearn: "Comment les contributions sont comptées",
         contribLess: "Moins", contribMore: "Plus", contribError: "Impossible de charger l'activité en direct.", contribView: "Voir sur GitHub",
+        navCerts: "Certifications", certsTitle: "Certifications", certsSubtitle: "Les cours que j'ai suivis en IA et apprentissage automatique", certCredential: "ID de certification", certVerify: "Vérifier", certHint: "Touchez la pile pour mélanger", certOpen: "Taille réelle",
         contactTitle: "Prendre Contact", contactSubtitle: "Collaborons sur votre prochain projet ou système backend",
         emailLabel: "E-mail Direct", appearanceLabel: "Apparence", repoLabel: "Dépôt de Code"
     }
@@ -238,9 +250,23 @@ const htmlElem = document.documentElement;
 
 if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-        const currentTheme = htmlElem.getAttribute('data-theme');
-        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        const nextTheme = htmlElem.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+
+        // Sweep the new theme across the page with a slanted edge where the browser supports it
+        if (!document.startViewTransition || prefersReducedMotion()) {
+            setTheme(nextTheme);
+            return;
+        }
+        htmlElem.classList.add('theme-switching');
+        const endSwitch = () => htmlElem.classList.remove('theme-switching');
+        const transition = document.startViewTransition(() => setTheme(nextTheme));
+        transition.finished.finally(endSwitch);
+        setTimeout(endSwitch, 1500);   // safety net so hover transitions never stay disabled
     });
+}
+
+function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
 function setTheme(theme) {
@@ -271,7 +297,11 @@ function updateLanguage(lang) {
         if (dict[key]) elem.textContent = dict[key];
     });
 
-    // Month and weekday labels in the contribution graph follow the language too
+    // Certificate dates, plus month and weekday labels in the contribution graph, follow the language too
+    const certDateFmt = new Intl.DateTimeFormat(intlLocale(), { month: 'short', year: 'numeric', timeZone: 'UTC' });
+    document.querySelectorAll('.cert-date[datetime]').forEach(elem => {
+        elem.textContent = certDateFmt.format(parseDay(elem.getAttribute('datetime')));
+    });
     renderContributions();
 
     savePref('portfolio-lang', currentLang);
@@ -463,6 +493,126 @@ if (contribCard && contribGraph && contribTooltip) {
 
     contribGraph.addEventListener('mouseleave', () => { contribTooltip.hidden = true; });
     document.getElementById('contrib-scroll').addEventListener('scroll', () => { contribTooltip.hidden = true; });
+}
+
+// Certificate Stack: the top card swings out in 3D and drops to the back of the deck
+const certDeck = document.getElementById('cert-deck');
+const CERT_AUTOPLAY_MS = 4000;
+
+if (certDeck) {
+    const cards = Array.from(certDeck.querySelectorAll('.cert-card'));
+    const thumbs = document.querySelectorAll('.cert-thumb[data-cert]');
+    const openLink = document.getElementById('cert-open');
+    let order = cards.map((_, i) => i);
+    let animating = false;
+    let pausedUntil = 0;
+    let hovering = false;
+    let inView = false;
+
+    // Cards behind the top one fan out up and to the right, slightly turned
+    function pose(pos) {
+        if (pos === 0) return { transform: 'translate3d(0, 0, 0) rotate(0deg)', filter: 'brightness(1)', zIndex: 10 };
+        return {
+            transform: `translate3d(${pos * 16}px, ${pos * -10}px, ${pos * -40}px) rotate(${pos * 4}deg)`,
+            filter: `brightness(${1 - pos * 0.08})`,
+            zIndex: 10 - pos
+        };
+    }
+
+    function applyPoses() {
+        order.forEach((cardIndex, pos) => {
+            const card = cards[cardIndex];
+            const p = pose(pos);
+            card.style.transform = p.transform;
+            card.style.filter = p.filter;
+            card.style.zIndex = p.zIndex;
+            card.tabIndex = pos === 0 ? 0 : -1;
+            card.setAttribute('aria-hidden', pos === 0 ? 'false' : 'true');
+        });
+
+        const top = cards[order[0]];
+        thumbs.forEach(thumb => thumb.classList.toggle('is-active', thumb.dataset.cert === top.dataset.cert));
+        if (openLink) openLink.href = top.querySelector('img').getAttribute('src');
+    }
+
+    // Move the top card to the back, or bring a chosen card to the front
+    function shuffle(targetIndex) {
+        if (animating || cards.length < 2) return;
+        const leavingIndex = order[0];
+        if (targetIndex === leavingIndex) return;
+
+        const oldOrder = order.slice();
+        order = targetIndex === undefined
+            ? oldOrder.slice(1).concat(leavingIndex)
+            : [targetIndex].concat(oldOrder.filter(i => i !== targetIndex && i !== leavingIndex), leavingIndex);
+
+        if (prefersReducedMotion()) {
+            applyPoses();
+            return;
+        }
+
+        animating = true;
+        const backPose = pose(order.length - 1);
+        const animations = [];
+
+        // The leaving card swings open to the right like a door, then tucks in behind the deck
+        const leaving = cards[leavingIndex];
+        animations.push(leaving.animate([
+            { transform: pose(0).transform, filter: 'brightness(1)', zIndex: 20, offset: 0 },
+            { transform: 'translate3d(62%, -6%, 60px) rotateY(-58deg) rotate(6deg)', filter: 'brightness(1)', zIndex: 20, offset: 0.45 },
+            { transform: 'translate3d(60%, -6%, -60px) rotateY(-50deg) rotate(6deg)', filter: 'brightness(0.95)', zIndex: 0, offset: 0.5 },
+            { transform: backPose.transform, filter: backPose.filter, zIndex: 0, offset: 1 }
+        ], { duration: 900, easing: 'cubic-bezier(0.65, 0, 0.35, 1)' }));
+
+        // Everyone else slides one step forward
+        order.forEach((cardIndex, pos) => {
+            if (cardIndex === leavingIndex) return;
+            const from = pose(oldOrder.indexOf(cardIndex));
+            const to = pose(pos);
+            animations.push(cards[cardIndex].animate([
+                { transform: from.transform, filter: from.filter },
+                { transform: to.transform, filter: to.filter }
+            ], { duration: 700, delay: 120, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'backwards' }));
+        });
+
+        applyPoses();
+        Promise.all(animations.map(a => a.finished)).finally(() => { animating = false; });
+    }
+
+    function pauseAutoplay() {
+        pausedUntil = Date.now() + 8000;
+    }
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => { pauseAutoplay(); shuffle(); });
+    });
+
+    thumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+            const target = cards.findIndex(card => card.dataset.cert === thumb.dataset.cert);
+            pauseAutoplay();
+            shuffle(target);
+        });
+    });
+
+    certDeck.addEventListener('mouseenter', () => { hovering = true; });
+    certDeck.addEventListener('mouseleave', () => { hovering = false; });
+
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(entries => {
+            inView = entries[0].isIntersecting;
+        }, { threshold: 0.4 }).observe(certDeck);
+    }
+
+    // Shuffle on its own while visible, like a slow photo carousel
+    setInterval(() => {
+        if (inView && !hovering && document.visibilityState === 'visible' &&
+            Date.now() > pausedUntil && !prefersReducedMotion()) {
+            shuffle();
+        }
+    }, CERT_AUTOPLAY_MS);
+
+    applyPoses();
 }
 
 // Modal Management Logic

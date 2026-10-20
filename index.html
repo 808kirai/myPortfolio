@@ -59,6 +59,7 @@
         <nav class="nav-links">
             <a href="#hero" data-i18n="navHome">Home</a>
             <a href="#skills" data-i18n="navSkills">Skills</a>
+            <a href="#certifications" data-i18n="navCerts">Certifications</a>
             <a href="#projects" data-i18n="navProjects">Projects</a>
             <a href="#contact" data-i18n="navContact">Contact</a>
         </nav>
@@ -221,6 +222,69 @@
                             <span>Git</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications" class="snap-section">
+            <div class="section-header reveal">
+                <h2 data-i18n="certsTitle">Certifications</h2>
+                <p data-i18n="certsSubtitle">Courses I've completed in AI and machine learning</p>
+            </div>
+
+            <div class="certs-layout reveal" style="--reveal-delay: 0.15s">
+                <ol class="cert-timeline">
+                    <li class="cert-item">
+                        <time class="cert-date" datetime="2026-08-31">Aug 2026</time>
+                        <div class="cert-body">
+                            <h3>Machine Learning for Beginners</h3>
+                            <p class="cert-issuer">Sololearn</p>
+                            <p class="cert-id"><span data-i18n="certCredential">Credential ID</span> CC-JCG8QPNN</p>
+                            <div class="cert-actions">
+                                <button type="button" class="cert-thumb" data-cert="sololearn" aria-label="Show the Machine Learning for Beginners certificate">
+                                    <img src="assets/certificates/sololearn-machine-learning-for-beginners-thumb.jpg" alt="" width="240" height="169" loading="lazy">
+                                </button>
+                                <a class="cert-verify" href="https://www.sololearn.com/certificates/CC-JCG8QPNN" target="_blank" rel="noopener noreferrer">
+                                    <span data-i18n="certVerify">Verify</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cert-item">
+                        <time class="cert-date" datetime="2026-05-29">May 2026</time>
+                        <div class="cert-body">
+                            <h3>AWS AI Practitioner Challenge</h3>
+                            <p class="cert-issuer">Udacity · Accenture</p>
+                            <p class="cert-id"><span data-i18n="certCredential">Credential ID</span> c61d9870-34a5-11f1-98d3-f31c3e892518</p>
+                            <div class="cert-actions">
+                                <button type="button" class="cert-thumb" data-cert="aws" aria-label="Show the AWS AI Practitioner Challenge certificate">
+                                    <img src="assets/certificates/aws-ai-practitioner-challenge-thumb.jpg" alt="" width="240" height="185" loading="lazy">
+                                </button>
+                                <a class="cert-verify" href="https://www.udacity.com/certificate/e/c61d9870-34a5-11f1-98d3-f31c3e892518" target="_blank" rel="noopener noreferrer">
+                                    <span data-i18n="certVerify">Verify</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+
+                <!-- 3D certificate stack: the top card swings away and drops to the back -->
+                <div class="cert-stage">
+                    <div class="cert-deck" id="cert-deck" role="group" aria-roledescription="carousel" aria-label="Certificates">
+                        <button type="button" class="cert-card" data-cert="sololearn" aria-label="Next certificate">
+                            <img src="assets/certificates/sololearn-machine-learning-for-beginners.jpg" alt="Sololearn certificate: Machine Learning for Beginners, awarded to Rooney James" width="1599" height="1129">
+                        </button>
+                        <button type="button" class="cert-card" data-cert="aws" aria-label="Next certificate">
+                            <img src="assets/certificates/aws-ai-practitioner-challenge.jpg" alt="Udacity certificate: AWS AI Practitioner Challenge, awarded to Rooney James" width="1600" height="1236">
+                        </button>
+                    </div>
+                    <p class="cert-hint">
+                        <span data-i18n="certHint">Tap the stack to shuffle</span>
+                        <a id="cert-open" href="assets/certificates/sololearn-machine-learning-for-beginners.jpg" target="_blank" rel="noopener noreferrer">
+                            <span data-i18n="certOpen">Full size</span> <i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i>
+                        </a>
+                    </p>
                 </div>
             </div>
         </section>
