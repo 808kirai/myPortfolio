@@ -38,7 +38,7 @@ const translations = {
         btnContact: "联系我", clickConnect: "点击社交平台进行连接", skillsTitle: "编程语言与框架",
         skillsSubtitle: "全栈后端架构与现代开发工具", projectsTitle: "精选项目", projectsSubtitle: "核心后端与计算机视觉系统",
         proj1Title: "天体图像识别系统", proj1Desc: "基于深度学习模型的天体识别与特征提取分析系统。",
-        proj2Title: "人脸追踪滤镜", proj2Desc: "用于实时视频流动态空间滤镜处理的高低延迟计算机视觉管道。",
+        proj2Title: "人脸追踪滤镜", proj2Desc: "用于实时视频流动态空间滤镜处理的低延迟计算机视觉管道。",
         proj3Title: "内罗毕智能停车系统", proj3Desc: "处理实时车位分配与支付记录的自动化城市停车管理平台。",
         contactTitle: "取得联系", contactSubtitle: "让我们在您的下一个项目或后端系统上展开合作",
         emailLabel: "电子邮箱", appearanceLabel: "外观主题", repoLabel: "代码仓库"
@@ -77,8 +77,8 @@ const translations = {
         skillsSubtitle: "بنية الخلفية البرمجية والأدوات الحديثة", projectsTitle: "المشاريع المميزة",
         projectsSubtitle: "أنظمة برمجية ورؤية حاسوبية مختارة", proj1Title: "معرف الصور الفلكية",
         proj1Desc: "تحديد الأجرام السماوية واستخراج الميزات باستخدام نماذج التعلم العميق.",
-        proj2Title: "مرشح تتبع الوجه", proj2Desc: "خط معالجة الرؤية الحاسوبية منخفض التجميع لتطبيق مرشحات ديناميكية على الفيديو المباشر.",
-        proj3Title: "نظام مواقف السيارات في نيروبي", proj3Desc: "منصة مؤتمنة لإدارة مواقف السيارات في المناطق الحضرية مع تخصيص المباشر للمساحات وتخصيص المدفوعات.",
+        proj2Title: "مرشح تتبع الوجه", proj2Desc: "خط معالجة للرؤية الحاسوبية منخفض زمن الاستجابة لتطبيق مرشحات ديناميكية على الفيديو المباشر.",
+        proj3Title: "نظام مواقف السيارات في نيروبي", proj3Desc: "منصة مؤتمتة لإدارة مواقف السيارات في المناطق الحضرية مع تخصيص فوري للمواقف وتسجيل المدفوعات.",
         contactTitle: "تواصل معي", contactSubtitle: "دعنا نتعاون في مشروعك القادم أو نظام البرمجيات الخلفية",
         emailLabel: "البريد الإلكتروني المباشر", appearanceLabel: "المظهر", repoLabel: "مستودع الكود"
     },
@@ -93,7 +93,7 @@ const translations = {
         proj2Title: "Filtre de Suivi Facial", proj2Desc: "Pipeline de vision par ordinateur à faible latence appliquant des filtres spatiaux en temps réel.",
         proj3Title: "Système de Stationnement de Nairobi", proj3Desc: "Plateforme automatisée de gestion du stationnement urbain gérant l'attribution des places en temps réel.",
         contactTitle: "Prendre Contact", contactSubtitle: "Collaborons sur votre prochain projet ou système backend",
-        emailLabel: "Correo Directo", appearanceLabel: "Apparence", repoLabel: "Dépôt Code"
+        emailLabel: "E-mail Direct", appearanceLabel: "Apparence", repoLabel: "Dépôt de Code"
     }
 };
 
@@ -120,14 +120,19 @@ const projectData = {
     }
 };
 
+// Safe localStorage helpers (storage can throw in private mode or when blocked)
+function readPref(key) {
+    try { return localStorage.getItem(key); } catch (e) { return null; }
+}
+
+function savePref(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) { /* ignore */ }
+}
+
 // Theme Switching Logic
+// The initial theme is applied by the inline script in <head> to avoid a flash on load.
 const themeToggleBtn = document.getElementById('theme-toggle');
 const htmlElem = document.documentElement;
-
-const savedTheme = localStorage.getItem('portfolio-theme') || 
-    (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-
-setTheme(savedTheme);
 
 if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
@@ -138,7 +143,7 @@ if (themeToggleBtn) {
 
 function setTheme(theme) {
     htmlElem.setAttribute('data-theme', theme);
-    localStorage.setItem('portfolio-theme', theme);
+    savePref('portfolio-theme', theme);
 }
 
 // Language Selector Logic
@@ -156,22 +161,48 @@ function updateLanguage(lang) {
     } else {
         document.documentElement.removeAttribute('dir');
     }
+    document.documentElement.setAttribute('lang', translations[lang] ? lang : 'en');
 
     document.querySelectorAll('[data-i18n]').forEach(elem => {
         const key = elem.getAttribute('data-i18n');
         if (dict[key]) elem.textContent = dict[key];
     });
 
-    localStorage.setItem('portfolio-lang', lang);
+    savePref('portfolio-lang', lang);
 }
 
-const savedLang = localStorage.getItem('portfolio-lang') || 'en';
+const savedLang = readPref('portfolio-lang') || 'en';
 if (langSelect) langSelect.value = savedLang;
 updateLanguage(savedLang);
 
+// Footer Year
+const footerYear = document.getElementById('footer-year');
+if (footerYear) footerYear.textContent = new Date().getFullYear();
+
+// Scroll Reveal: fade content in once as it enters the viewport
+const revealElems = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    revealElems.forEach(elem => revealObserver.observe(elem));
+} else {
+    revealElems.forEach(elem => elem.classList.add('is-visible'));
+}
+
 // Modal Management Logic
-window.openModal = async function(projectId) {
-    const modal = document.getElementById('project-modal');
+const modal = document.getElementById('project-modal');
+const modalApiWidget = document.getElementById('modal-api-widget');
+let lastFocusedElem = null;
+
+window.openModal = function(projectId) {
     const modalTitle = document.getElementById('modal-title');
     const modalDesc = document.getElementById('modal-description');
     const modalTech = document.getElementById('modal-tech');
@@ -182,7 +213,7 @@ window.openModal = async function(projectId) {
 
     modalTitle.textContent = data.title;
     modalDesc.textContent = data.description;
-    
+
     modalTech.innerHTML = '';
     data.tech.forEach(t => {
         const span = document.createElement('span');
@@ -192,47 +223,85 @@ window.openModal = async function(projectId) {
 
     modalGithub.href = data.github;
 
-    if (data.hasLiveApi) {
-        await loadLiveParkingData(modalDesc);
-    }
+    // Clear any live data left over from a previously opened project
+    modalApiWidget.hidden = true;
+    modalApiWidget.innerHTML = '';
 
+    lastFocusedElem = document.activeElement;
     modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    modal.querySelector('.modal-close').focus();
+
+    if (data.hasLiveApi && isLocalDev()) {
+        loadLiveParkingData(projectId);
+    }
 };
 
-window.closeModal = function(force = false) {
-    const modal = document.getElementById('project-modal');
-    if (force && modal) modal.classList.remove('active');
+window.closeModal = function() {
+    if (!modal || !modal.classList.contains('active')) return;
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    if (lastFocusedElem) lastFocusedElem.focus();
 };
+
+if (modal) {
+    // Close when clicking the dimmed backdrop (not the dialog itself)
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    modal.querySelector('.modal-close').addEventListener('click', closeModal);
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+});
+
+// Project Cards: open on click, Enter, or Space
+document.querySelectorAll('.bento-card[data-project]').forEach(card => {
+    card.addEventListener('click', () => openModal(card.dataset.project));
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openModal(card.dataset.project);
+        }
+    });
+});
+
+// The Flask backend only runs locally, so skip the request for public visitors
+// (browsers may otherwise show them a "local network access" permission prompt).
+function isLocalDev() {
+    return ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+}
 
 // Live Flask API Spot Status Loader
-async function loadLiveParkingData(targetElem) {
+async function loadLiveParkingData(projectId) {
     try {
         const response = await fetch(`${API_BASE_URL}/spots`);
         if (!response.ok) throw new Error('Backend offline');
-        
-        const spots = await response.json();
-        
-        let apiContainer = document.getElementById('modal-api-widget');
-        if (!apiContainer) {
-            apiContainer = document.createElement('div');
-            apiContainer.id = 'modal-api-widget';
-            apiContainer.style.marginTop = '1.5rem';
-            apiContainer.style.padding = '1rem';
-            apiContainer.style.background = 'var(--bg-tertiary)';
-            apiContainer.style.borderRadius = '12px';
-            targetElem.insertAdjacentElement('afterend', apiContainer);
-        }
 
-        let spotsHtml = `<strong style="display:block; margin-bottom:0.5rem;">Live Flask Spot Status:</strong><ul style="list-style:none; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">`;
+        const spots = await response.json();
+
+        // Ignore the response if the user has since closed or switched projects
+        if (!modal.classList.contains('active') ||
+            document.getElementById('modal-title').textContent !== projectData[projectId].title) return;
+
+        const heading = document.createElement('strong');
+        heading.textContent = 'Live Flask Spot Status:';
+
+        const list = document.createElement('ul');
         spots.forEach(spot => {
-            const statusColor = spot.is_occupied ? '#ef4444' : '#10b981';
-            const statusText = spot.is_occupied ? `Occupied (${spot.vehicle_plate})` : 'Available';
-            spotsHtml += `<li style="padding:0.4rem; background:var(--bg-secondary); border-radius:6px; font-size:0.85rem;">
-                <strong>${spot.spot_number}</strong>: <span style="color:${statusColor}">${statusText}</span>
-            </li>`;
+            const item = document.createElement('li');
+            const number = document.createElement('strong');
+            number.textContent = spot.spot_number;
+            const status = document.createElement('span');
+            status.className = spot.is_occupied ? 'spot-occupied' : 'spot-available';
+            status.textContent = spot.is_occupied ? `Occupied (${spot.vehicle_plate})` : 'Available';
+            item.append(number, ': ', status);
+            list.appendChild(item);
         });
-        spotsHtml += `</ul>`;
-        apiContainer.innerHTML = spotsHtml;
+
+        modalApiWidget.replaceChildren(heading, list);
+        modalApiWidget.hidden = false;
 
     } catch (err) {
         console.warn('Flask API unavailable locally:', err.message);

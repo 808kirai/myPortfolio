@@ -4,7 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kirai | AI/ML & Backend Developer</title>
-    
+    <meta name="description" content="Kirai — AI/ML and backend developer specializing in Python, Flask, computer vision, and backend systems.">
+    <meta name="author" content="Kirai">
+
+    <!-- Social Share Previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kirai | AI/ML & Backend Developer">
+    <meta property="og:description" content="Building intelligent web and AI systems with Python, Flask, and computer vision.">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0c'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='-apple-system,Segoe UI,sans-serif' font-size='38' font-weight='700' fill='%23fefefe'%3EK%3C/text%3E%3C/svg%3E">
+
+    <!-- Apply saved theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem('portfolio-theme'); } catch (e) {}
+            if (!theme) theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.add('js');
+        })();
+    </script>
+
     <!-- SF Pro Font Import -->
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display">
     
@@ -50,8 +72,9 @@
 
         <!-- HERO SECTION -->
         <section id="hero" class="snap-section">
-            <div class="hero-content">
+            <div class="hero-content reveal">
                 <div class="pill-badge">
+                    <span class="status-dot" aria-hidden="true"></span>
                     <span data-i18n="heroStatus">Available for Projects and Collaborations</span>
                 </div>
                 <h1 class="hero-title" data-i18n="heroTitle">Building Intelligent AI and Web Systems</h1>
@@ -61,7 +84,7 @@
                     <a href="#projects" class="btn btn-primary">
                         <span data-i18n="btnProjects">Projects</span> <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    <a href="https://wa.me/254740060124?text=Hi%20Kirai" target="_blank" class="btn btn-outline">
+                    <a href="https://wa.me/254740060124?text=Hi%20Kirai" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
                         <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btnContact">Contact</span>
                     </a>
                 </div>
@@ -73,16 +96,16 @@
                         <i class="fa-solid fa-arrow-right bounce-arrow"></i>
                     </div>
                     <div class="social-platforms-grid">
-                        <a href="https://github.com/808kirai" target="_blank" class="platform-card" title="GitHub">
+                        <a href="https://github.com/808kirai" target="_blank" rel="noopener noreferrer" class="platform-card" title="GitHub">
                             <i class="fa-brands fa-github"></i> GitHub
                         </a>
-                        <a href="www.linkedin.com/in/808kirai" target="_blank" class="platform-card" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/808kirai" target="_blank" rel="noopener noreferrer" class="platform-card" title="LinkedIn">
                             <i class="fa-brands fa-linkedin"></i> LinkedIn
                         </a>
-                        <a href="https://www.tiktok.com/@808kirai" target="_blank" class="platform-card" title="TikTok">
+                        <a href="https://www.tiktok.com/@808kirai" target="_blank" rel="noopener noreferrer" class="platform-card" title="TikTok">
                             <i class="fa-brands fa-tiktok"></i> TikTok
                         </a>
-                        <a href="https://instagram.com/kirai808" target="_blank" class="platform-card" title="Instagram">
+                        <a href="https://instagram.com/kirai808" target="_blank" rel="noopener noreferrer" class="platform-card" title="Instagram">
                             <i class="fa-brands fa-instagram"></i> Instagram
                         </a>
                     </div>
@@ -92,12 +115,12 @@
 
         <!-- SKILLS SECTION -->
         <section id="skills" class="snap-section">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2 data-i18n="skillsTitle">Languages & Frameworks</h2>
-                <p data-i18n="skillsSubtitle">Full-stack backend architecture & modern toolS</p>
+                <p data-i18n="skillsSubtitle">Full-stack backend architecture & modern tooling</p>
             </div>
 
-            <div class="skills-grid">
+            <div class="skills-grid reveal" style="--reveal-delay: 0.15s">
                 <div class="skill-card">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
                     <span>Python</span>
@@ -135,13 +158,13 @@
 
         <!-- PROJECTS SECTION -->
         <section id="projects" class="snap-section">
-            <div class="section-header">
-                <h2 data-i18n="projectsTitle">Personal Projects</h2>
-                <p data-i18n="projectsSubtitle">Backend & Computer Vision Projects</p>
+            <div class="section-header reveal">
+                <h2 data-i18n="projectsTitle">Featured Projects</h2>
+                <p data-i18n="projectsSubtitle">Selected backend & computer vision systems</p>
             </div>
 
-            <div class="projects-bento">
-                <div class="bento-card" onclick="openModal('celestial')">
+            <div class="projects-bento reveal" style="--reveal-delay: 0.15s">
+                <div class="bento-card" data-project="celestial" role="button" tabindex="0" aria-haspopup="dialog">
                     <div class="card-badge">AI / Vision</div>
                     <h3 data-i18n="proj1Title">Celestial Image Identifier</h3>
                     <p data-i18n="proj1Desc">Astronomical feature identification and feature extraction powered by deep learning models.</p>
@@ -150,7 +173,7 @@
                     </div>
                 </div>
 
-                <div class="bento-card" onclick="openModal('facetracking')">
+                <div class="bento-card" data-project="facetracking" role="button" tabindex="0" aria-haspopup="dialog">
                     <div class="card-badge">Real-Time CV</div>
                     <h3 data-i18n="proj2Title">Face Tracking Filter</h3>
                     <p data-i18n="proj2Desc">Low-latency computer vision pipeline applying dynamic spatial filters on real-time video streams.</p>
@@ -159,9 +182,9 @@
                     </div>
                 </div>
 
-                <div class="bento-card" onclick="openModal('nairobi')">
+                <div class="bento-card" data-project="nairobi" role="button" tabindex="0" aria-haspopup="dialog">
                     <div class="card-badge">Full-Stack</div>
-                    <h3 data-i18n="proj3Title">Parking System</h3>
+                    <h3 data-i18n="proj3Title">Nairobi Parking System</h3>
                     <p data-i18n="proj3Desc">Automated urban parking management platform handling real-time spot allocation & payment logging.</p>
                     <div class="card-tech">
                         <span>Flask</span><span>SQLite</span><span>JS</span>
@@ -172,13 +195,13 @@
 
         <!-- CONTACT SECTION -->
         <section id="contact" class="snap-section">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2 data-i18n="contactTitle">Get In Touch</h2>
                 <p data-i18n="contactSubtitle">Let's collaborate on your next project or backend system</p>
             </div>
 
-            <div class="contact-cards">
-                <a href="https://wa.me/254740600124?text=Hi%20Kirai,%20I'd%20like%20to%20connect!" target="_blank" class="contact-card">
+            <div class="contact-cards reveal" style="--reveal-delay: 0.15s">
+                <a href="https://wa.me/254740060124?text=Hi%20Kirai,%20I'd%20like%20to%20connect!" target="_blank" rel="noopener noreferrer" class="contact-card">
                     <div class="contact-icon-wrapper">
                         <i class="fa-brands fa-whatsapp"></i>
                     </div>
@@ -204,23 +227,29 @@
 
     </main>
 
+    <footer class="site-footer">
+        <span>&copy; <span id="footer-year">2026</span> Kirai</span>
+        <a href="#hero" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+    </footer>
+
     <!-- Bottom-Right Appearance (Theme) Switcher Widget -->
     <div class="appearance-widget">
-        <button id="theme-toggle" class="appearance-btn" aria-label="Toggle Appearance">
+        <button id="theme-toggle" type="button" class="appearance-btn" aria-label="Toggle Appearance">
             <i class="fa-solid fa-circle-half-stroke theme-icon"></i>
             <span data-i18n="appearanceLabel">Appearance</span>
         </button>
     </div>
 
     <!-- Modal Dialog -->
-    <div id="project-modal" class="modal-overlay" onclick="closeModal(event)">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal(true)">&times;</button>
+    <div id="project-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button type="button" class="modal-close" aria-label="Close">&times;</button>
             <h3 id="modal-title">Project Details</h3>
             <p id="modal-description">Detailed overview</p>
+            <div id="modal-api-widget" class="api-widget" hidden></div>
             <div id="modal-tech" class="card-tech"></div>
             <div class="modal-actions">
-                <a id="modal-github" href="#" target="_blank" class="btn btn-primary">
+                <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     <i class="fa-brands fa-github"></i> <span data-i18n="repoLabel">Repository</span>
                 </a>
             </div>

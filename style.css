@@ -1,5 +1,4 @@
-/* SF Pro Font Import */
-@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+/* SF Pro font is loaded via <link> in index.html */
 
 /* CSS Variables for Dynamic Dark/Light Theme Switching */
 :root {
@@ -15,6 +14,18 @@
     --icon-filter: invert(1);
     
     --font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    /* Motion: one easing curve and duration shared by every transition */
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --dur: 0.45s;
+    --transition-surface:
+        background-color var(--dur) var(--ease-out),
+        border-color var(--dur) var(--ease-out),
+        color var(--dur) var(--ease-out),
+        box-shadow var(--dur) var(--ease-out),
+        transform var(--dur) var(--ease-out),
+        opacity var(--dur) var(--ease-out);
 }
 
 [data-theme="light"] {
@@ -39,13 +50,22 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
     font-family: var(--font-family);
+}
+
+/* Firm one-section-per-screen snapping on larger screens; proximity elsewhere so
+   tall sections on small screens can still be scrolled through freely */
+@media (min-width: 769px) and (min-height: 700px) {
+    html {
+        scroll-snap-type: y mandatory;
+    }
 }
 
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color var(--dur) var(--ease-out), color var(--dur) var(--ease-out);
     overflow-x: hidden;
     line-height: 1.5;
 }
@@ -65,7 +85,7 @@ body {
     -webkit-backdrop-filter: blur(20px);
     z-index: 100;
     border-bottom: 1px solid var(--border-color);
-    transition: background 0.4s ease, border-color 0.4s ease;
+    transition: background-color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
 }
 
 [data-theme="light"] .navbar {
@@ -88,7 +108,7 @@ body {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color var(--dur) var(--ease-out);
 }
 
 .nav-links a:hover {
@@ -110,7 +130,7 @@ body {
     border: 1px solid var(--border-color);
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
-    transition: all 0.3s ease;
+    transition: var(--transition-surface);
 }
 
 .lang-selector-wrapper:hover {
@@ -149,7 +169,7 @@ body {
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-surface);
 }
 
 .btn-primary {
@@ -181,6 +201,8 @@ body {
 
 .snap-section {
     min-height: 100vh;
+    min-height: 100svh;
+    scroll-snap-align: start;
     padding: 8rem 3rem 4rem 3rem;
     display: flex;
     flex-direction: column;
@@ -231,6 +253,7 @@ body {
 
 .hero-actions {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 3rem;
 }
@@ -252,15 +275,8 @@ body {
     letter-spacing: 0.5px;
 }
 
-.pulse-dot-small {
-    width: 6px;
-    height: 6px;
-    background: var(--text-primary);
-    border-radius: 50%;
-}
-
 .bounce-arrow {
-    animation: bounceRight 2s infinite;
+    animation: bounceRight 2s var(--ease-in-out) infinite;
 }
 
 @keyframes bounceRight {
@@ -285,7 +301,7 @@ body {
     text-decoration: none;
     color: var(--text-primary);
     background: var(--bg-secondary);
-    transition: all 0.3s ease;
+    transition: var(--transition-surface);
     font-size: 0.9rem;
     font-weight: 500;
 }
@@ -332,12 +348,17 @@ body {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    transition: all 0.3s ease;
+    transition: var(--transition-surface);
 }
 
 .skill-card img {
     width: 36px;
     height: 36px;
+    transition: transform var(--dur) var(--ease-out), filter var(--dur) var(--ease-out);
+}
+
+.skill-card:hover img {
+    transform: scale(1.1);
 }
 
 .skill-icon-adapt {
@@ -368,7 +389,7 @@ body {
     border-radius: 20px;
     padding: 2rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition-surface);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -436,7 +457,7 @@ body {
     border-radius: 20px;
     text-decoration: none;
     color: var(--text-primary);
-    transition: all 0.3s ease;
+    transition: var(--transition-surface);
 }
 
 .contact-card:hover {
@@ -497,7 +518,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 8px 24px var(--card-shadow);
-    transition: all 0.3s ease;
+    transition: var(--transition-surface);
 }
 
 .appearance-btn:hover {
@@ -507,6 +528,11 @@ body {
 
 .theme-icon {
     font-size: 0.95rem;
+    transition: transform 0.6s var(--ease-out);
+}
+
+[data-theme="light"] .theme-icon {
+    transform: rotate(180deg);
 }
 
 /* Modal Overlay */
@@ -522,13 +548,15 @@ body {
     align-items: center;
     justify-content: center;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.35s var(--ease-out), visibility 0.35s var(--ease-out);
     z-index: 2000;
 }
 
 .modal-overlay.active {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
 }
 
@@ -540,12 +568,12 @@ body {
     max-width: 500px;
     width: 90%;
     position: relative;
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
+    transform: translateY(24px) scale(0.97);
+    transition: transform 0.5s var(--ease-out);
 }
 
 .modal-overlay.active .modal-content {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
 .modal-close {
@@ -557,10 +585,12 @@ body {
     color: var(--text-secondary);
     font-size: 1.5rem;
     cursor: pointer;
+    transition: color var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
 }
 
 .modal-close:hover {
     color: var(--text-primary);
+    transform: rotate(90deg);
 }
 
 .modal-content h3 {
@@ -577,6 +607,95 @@ body {
     margin-top: 1.5rem;
 }
 
+/* Live Flask API Widget (shown only when the backend runs locally) */
+.api-widget {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--bg-tertiary);
+    border-radius: 12px;
+}
+
+.api-widget[hidden] {
+    display: none;
+}
+
+.api-widget strong:first-child {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.api-widget ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.api-widget li {
+    padding: 0.4rem;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.spot-available { color: #10b981; }
+.spot-occupied { color: #ef4444; }
+
+/* Footer */
+.site-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 3rem 6rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    /* Lets mandatory snapping settle at the very bottom so the footer stays reachable */
+    scroll-snap-align: end;
+}
+
+.site-footer a {
+    color: var(--text-secondary);
+    transition: color var(--dur) var(--ease-out);
+}
+
+.site-footer a:hover {
+    color: var(--text-primary);
+}
+
+/* Scroll Reveal: content eases up into view as each section snaps in.
+   The .js class is set in <head>, so content stays visible if JavaScript is off. */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+    transition-delay: var(--reveal-delay, 0s);
+}
+
+.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Press feedback (after the :hover rules so it wins while pressed) */
+.btn:active,
+.platform-card:active,
+.appearance-btn:active {
+    transform: translateY(0) scale(0.97);
+    transition-duration: 0.15s;
+}
+
+/* Keyboard Focus */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+.bento-card:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 3px;
+}
+
 /* RTL Language Adjustments */
 [dir="rtl"] {
     direction: rtl;
@@ -587,8 +706,40 @@ body {
     flex-direction: row-reverse;
 }
 
+/* The bounce animation sets transform, so the RTL flip must live inside its keyframes */
 [dir="rtl"] .bounce-arrow {
+    animation-name: bounceLeft;
+}
+
+[dir="rtl"] .hero-actions .fa-arrow-right {
     transform: scaleX(-1);
+}
+
+@keyframes bounceLeft {
+    0%, 20%, 50%, 80%, 100% { transform: scaleX(-1) translateX(0); }
+    40% { transform: scaleX(-1) translateX(4px); }
+    60% { transform: scaleX(-1) translateX(2px); }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+        scroll-snap-type: none;
+    }
+
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* Responsive Styles */
@@ -607,6 +758,10 @@ body {
 
     .hero-title {
         font-size: 2.4rem;
+    }
+
+    .site-footer {
+        padding: 2rem 1.5rem 6rem 1.5rem;
     }
 
     .appearance-widget {

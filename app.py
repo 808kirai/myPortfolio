@@ -1,3 +1,4 @@
+import os
 import sqlite3
 import requests
 from flask import Flask, jsonify, request
@@ -90,12 +91,15 @@ def release_spot():
         return jsonify({'error': 'Missing spot_number'}), 400
 
     conn = get_db_connection()
-    conn.execute(
+    cursor = conn.execute(
         'UPDATE parking_spots SET is_occupied = 0, vehicle_plate = NULL, updated_at = CURRENT_TIMESTAMP WHERE spot_number = ?',
         (spot_number,)
     )
     conn.commit()
     conn.close()
+
+    if cursor.rowcount == 0:
+        return jsonify({'error': f'Spot {spot_number} not found'}), 404
 
     return jsonify({'status': 'success', 'message': f'Spot {spot_number} is now free'}), 200
 
@@ -109,10 +113,11 @@ def github_contributions_proxy(username):
         if res.status_code == 200:
             return jsonify(res.json())
         return jsonify({'error': 'Failed to retrieve GitHub activity'}), res.status_code
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
+    except requests.RequestException:
+        return jsonify({'error': 'GitHub activity service unavailable'}), 502
 
 
 if __name__ == '__main__':
     init_db()
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # Debug mode exposes an interactive debugger that can run code; opt in with FLASK_DEBUG=1
+    app.run(host='0.0.0.0', port=5000, debug=os.environ.get('FLASK_DEBUG') == '1')
