@@ -1197,6 +1197,11 @@ select:focus-visible,
     flex-direction: row-reverse;
 }
 
+/* The project sketches are drawn in English, so their text stays left to right */
+[dir="rtl"] .card-visual svg {
+    direction: ltr;
+}
+
 /* The bounce animation sets transform, so the RTL flip must live inside its keyframes */
 [dir="rtl"] .bounce-arrow {
     animation-name: bounceLeft;
