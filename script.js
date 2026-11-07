@@ -60,6 +60,12 @@ const translations = {
         contactSubtitle: "Let's collaborate on your next project or backend system",
         certInProgress: "In progress · Week 1: search algorithms",
         certAttendance: "Certificate of attendance",
+        navHack: "Hackathons",
+        hackTitle: "Hackathons",
+        hack1Place: "2nd place",
+        hack1Desc: "Lead coder on GemmaSight",
+        hack2Place: "4th place",
+        hack2Desc: "Designed the architecture and chose the tools for an AI study tool for students",
         emailLabel: "Direct Email",
         appearanceLabel: "Appearance",
         repoLabel: "Repository"
@@ -87,6 +93,7 @@ const translations = {
         navCerts: "证书", certsTitle: "证书", certsSubtitle: "我在人工智能与机器学习方面的课程与活动", certCredential: "证书编号", certVerify: "验证", certHint: "点击卡片切换", certOpen: "查看大图",
         contactTitle: "取得联系", contactSubtitle: "让我们在您的下一个项目或后端系统上展开合作",
         certInProgress: "进行中 · 第 1 周：搜索算法", certAttendance: "参会证书",
+        navHack: "黑客松", hackTitle: "黑客松", hackSubtitle: "与团队一起在截止时间前完成作品", hack1Place: "第 2 名", hack1Desc: "GemmaSight 的主力开发者", hack2Place: "第 4 名", hack2Desc: "为面向学生的 AI 学习工具设计架构并选择技术",
         emailLabel: "电子邮箱", appearanceLabel: "外观主题", repoLabel: "代码仓库"
     },
     hi: {
@@ -112,6 +119,7 @@ const translations = {
         navCerts: "प्रमाणपत्र", certsTitle: "प्रमाणपत्र", certsSubtitle: "AI और मशीन लर्निंग में मेरे कोर्स और कार्यक्रम", certCredential: "क्रेडेंशियल ID", certVerify: "सत्यापित करें", certHint: "बदलने के लिए स्टैक पर टैप करें", certOpen: "पूरा आकार",
         contactTitle: "संपर्क में रहें", contactSubtitle: "आइए अपनी अगली परियोजना या बैकएंड सिस्टम पर एक साथ काम करें",
         certInProgress: "जारी · सप्ताह 1: सर्च एल्गोरिदम", certAttendance: "उपस्थिति प्रमाणपत्र",
+        navHack: "हैकाथॉन", hackTitle: "हैकाथॉन", hackSubtitle: "टीम के साथ समय-सीमा में निर्माण", hack1Place: "दूसरा स्थान", hack1Desc: "GemmaSight पर मुख्य कोडर", hack2Place: "चौथा स्थान", hack2Desc: "छात्रों के लिए एक AI स्टडी टूल का आर्किटेक्चर डिज़ाइन किया और टूल चुने",
         emailLabel: "डायरेक्ट ईमेल", appearanceLabel: "दिखावट", repoLabel: "रिपॉजिटरी"
     },
     es: {
@@ -137,6 +145,7 @@ const translations = {
         navCerts: "Certificaciones", certsTitle: "Certificaciones", certsSubtitle: "Cursos y eventos en IA y aprendizaje automático", certCredential: "ID de credencial", certVerify: "Verificar", certHint: "Toca la pila para barajar", certOpen: "Tamaño completo",
         contactTitle: "Ponerse en Contacto", contactSubtitle: "Colaboremos en tu próximo proyecto o sistema backend",
         certInProgress: "En curso · Semana 1: algoritmos de búsqueda", certAttendance: "Certificado de asistencia",
+        navHack: "Hackatones", hackTitle: "Hackatones", hackSubtitle: "Construyendo en equipo contra el reloj", hack1Place: "2.º lugar", hack1Desc: "Programador principal de GemmaSight", hack2Place: "4.º lugar", hack2Desc: "Diseñé la arquitectura y elegí las herramientas de una herramienta de estudio con IA para estudiantes",
         emailLabel: "Correo Directo", appearanceLabel: "Apariencia", repoLabel: "Repositorio"
     },
     ar: {
@@ -162,6 +171,7 @@ const translations = {
         navCerts: "الشهادات", certsTitle: "الشهادات", certsSubtitle: "دورات وفعاليات في الذكاء الاصطناعي وتعلم الآلة", certCredential: "رقم الاعتماد", certVerify: "تحقق", certHint: "انقر على المجموعة للتبديل", certOpen: "الحجم الكامل",
         contactTitle: "تواصل معي", contactSubtitle: "دعنا نتعاون في مشروعك القادم أو نظام البرمجيات الخلفية",
         certInProgress: "قيد الدراسة · الأسبوع 1: خوارزميات البحث", certAttendance: "شهادة حضور",
+        navHack: "الهاكاثونات", hackTitle: "الهاكاثونات", hackSubtitle: "البناء ضمن فريق وتحت ضغط الوقت", hack1Place: "المركز الثاني", hack1Desc: "المبرمج الرئيسي لمشروع GemmaSight", hack2Place: "المركز الرابع", hack2Desc: "صممت البنية واخترت الأدوات لأداة دراسة بالذكاء الاصطناعي للطلاب",
         emailLabel: "البريد الإلكتروني المباشر", appearanceLabel: "المظهر", repoLabel: "مستودع الكود"
     },
     fr: {
@@ -187,6 +197,7 @@ const translations = {
         navCerts: "Certifications", certsTitle: "Certifications", certsSubtitle: "Cours et événements en IA et apprentissage automatique", certCredential: "ID de certification", certVerify: "Vérifier", certHint: "Touchez la pile pour mélanger", certOpen: "Taille réelle",
         contactTitle: "Prendre Contact", contactSubtitle: "Collaborons sur votre prochain projet ou système backend",
         certInProgress: "En cours · Semaine 1 : algorithmes de recherche", certAttendance: "Certificat de participation",
+        navHack: "Hackathons", hackTitle: "Hackathons", hackSubtitle: "Construire en équipe, contre la montre", hack1Place: "2e place", hack1Desc: "Développeur principal de GemmaSight", hack2Place: "4e place", hack2Desc: "J'ai conçu l'architecture et choisi les outils d'un outil d'étude par IA pour les étudiants",
         emailLabel: "E-mail Direct", appearanceLabel: "Apparence", repoLabel: "Dépôt de Code"
     }
 };

@@ -587,6 +587,23 @@ body {
     color: var(--text-secondary);
 }
 
+/* Hackathons: the same timeline as the certificates, with the placing as a small pill */
+.hack-timeline {
+    width: 100%;
+    max-width: 720px;
+}
+
+.hack-place {
+    display: inline-block;
+    margin: 0.2rem 0 0.35rem;
+    padding: 0.15rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
 /* Theme switch: the new theme sweeps across the page behind a slanted edge */
 html.theme-switching *,
 html.theme-switching *::before,
