@@ -1,5 +1,4 @@
-// GitHub Profile & Local API Configuration
-const API_BASE_URL = 'http://127.0.0.1:5000/api';
+// GitHub Profile Configuration
 const GITHUB_USER = '808kirai';
 const CONTRIB_API = `https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`;
 const CONTRIB_REFRESH_MS = 5 * 60 * 1000;
@@ -24,21 +23,21 @@ const translations = {
         skillGroupAI: "AI & Machine Learning",
         skillGroupBackend: "Backend & Tools",
         skillAiml: "AI & Machine Learning",
-        skillAimlDesc: "Computer vision · LLM risk triage · model export",
+        skillAimlDesc: "LLM apps · computer vision · risk triage",
         projectsTitle: "Featured Projects",
-        projectsSubtitle: "My strongest work on GitHub, from AI triage to real-time computer vision",
-        proj1Badge: "AI · Social Impact",
-        proj1Title: "AmaniHaven",
-        proj1Desc: "Free, confidential mental health support over USSD and SMS for any basic phone, in English or Kiswahili. Offline rules and Claude triage risk and alert human counselors within seconds.",
-        proj2Badge: "Real-Time CV",
-        proj2Title: "Hand Portal Face Filter",
-        proj2Desc: "Frame your face with both hands and the space between your fingers becomes a live filter portal. MediaPipe hand tracking drives eight effects, from halftone to thermal.",
-        proj3Badge: "Computer Vision",
-        proj3Title: "Celestial Image Identifier",
-        proj3Desc: "Upload a sky photo or stream a webcam and it boxes and catalogs stars, nebulae and galaxy cores using classical OpenCV analysis behind a FastAPI backend.",
-        proj4Badge: "Backend",
-        proj4Title: "Nairobi SmartPark",
-        proj4Desc: "Flask and SQLite parking system for Kenyan lots: real-time slot counts, barrier gate control, and tiered Kshs billing from 30 free minutes up to Kshs 500.",
+        projectsSubtitle: "My strongest work, from AI study tools to offline computer vision",
+        proj1Badge: "AI · Education · Live",
+        proj1Title: "Rahah",
+        proj1Desc: "A study platform that routes each question to a faster or stronger Claude model, marks homework from a photo, cites the page of your notes, and turns notes into tests, flashcards and a revision plan. Pay by M-Pesa or card.",
+        proj2Badge: "AI · Social Impact",
+        proj2Title: "AmaniHaven",
+        proj2Desc: "Free, confidential mental health support over USSD and SMS for any basic phone, in English or Kiswahili. Offline rules and Claude triage risk and alert human counselors within seconds.",
+        proj3Badge: "Vision AI · Accessibility",
+        proj3Title: "GemmaSight",
+        proj3Desc: "A phone-camera assistant for blind and low-vision people. It reads labels, medicine and money aloud, flags trip hazards first, and guides you to lost objects with clock directions and beeps, in English or Kiswahili.",
+        proj4Badge: "Edge Computer Vision",
+        proj4Title: "NeuSE",
+        proj4Desc: "An offline thermal-imaging pipeline for search and rescue. Contrast enhancement, heat thresholding and contour detection find warm areas, each logged with its box and processing time on a local dashboard that needs no network.",
         contribTitle: "Contribution activity",
         contribTotal: "{n} contributions in the last year",
         contribDay: "{n} contributions on {date}",
@@ -62,10 +61,12 @@ const translations = {
         certAttendance: "Certificate of attendance",
         navHack: "Hackathons",
         hackTitle: "Hackathons",
+        hackSubtitle: "Building with a team against the clock",
         hack1Place: "2nd place",
         hack1Desc: "Lead coder on GemmaSight",
         hack2Place: "4th place",
         hack2Desc: "Designed the architecture and chose the tools for an AI study tool for students",
+        demoLabel: "Live demo",
         emailLabel: "Direct Email",
         appearanceLabel: "Appearance",
         repoLabel: "Repository"
@@ -77,16 +78,16 @@ const translations = {
         btnContact: "联系我", clickConnect: "点击社交平台进行连接",
         skillsTitle: "技能与工具", skillsSubtitle: "支撑我项目的编程语言与框架",
         skillGroupLang: "编程语言", skillGroupAI: "人工智能与机器学习", skillGroupBackend: "后端与工具",
-        skillAiml: "人工智能与机器学习", skillAimlDesc: "计算机视觉 · LLM 风险分诊 · 模型导出",
-        projectsTitle: "精选项目", projectsSubtitle: "我在 GitHub 上的代表作，从 AI 风险分诊到实时计算机视觉",
-        proj1Badge: "AI · 社会公益", proj1Title: "AmaniHaven",
-        proj1Desc: "通过 USSD 和短信为任何普通手机提供免费、保密的心理健康支持，支持英语和斯瓦希里语。离线规则与 Claude 共同评估风险，并在数秒内通知人工咨询师。",
-        proj2Badge: "实时视觉", proj2Title: "手势传送门滤镜",
-        proj2Desc: "用双手框住脸，手指之间的区域就会变成实时滤镜传送门。MediaPipe 手部追踪驱动八种效果，从半色调到热成像。",
-        proj3Badge: "计算机视觉", proj3Title: "天体图像识别系统",
-        proj3Desc: "上传星空照片或开启摄像头，系统会基于 FastAPI 后端和经典 OpenCV 分析，框选并编目恒星、星云和星系核心。",
-        proj4Badge: "后端", proj4Title: "内罗毕智能停车系统",
-        proj4Desc: "面向肯尼亚停车场的 Flask 与 SQLite 系统：实时车位统计、道闸控制，以及从前 30 分钟免费到最高 500 先令的分级计费。",
+        skillAiml: "人工智能与机器学习", skillAimlDesc: "LLM 应用 · 计算机视觉 · 风险分诊",
+        projectsTitle: "精选项目", projectsSubtitle: "我最有代表性的作品，从 AI 学习平台到离线计算机视觉",
+        proj1Badge: "AI · 教育 · 已上线", proj1Title: "Rahah",
+        proj1Desc: "面向学生的学习平台：按学科把每个问题交给更快或更强的 Claude 模型，拍照批改作业，回答注明笔记页码，并把笔记变成测验、抽认卡和复习计划。支持 M-Pesa 或银行卡付款。",
+        proj2Badge: "AI · 社会公益", proj2Title: "AmaniHaven",
+        proj2Desc: "通过 USSD 和短信为任何普通手机提供免费、保密的心理健康支持，支持英语和斯瓦希里语。离线规则与 Claude 共同评估风险，并在数秒内通知人工咨询师。",
+        proj3Badge: "视觉 AI · 无障碍", proj3Title: "GemmaSight",
+        proj3Desc: "为盲人和低视力人群打造的手机摄像头助手。它会朗读标签、药品和钱币信息，优先提醒绊倒危险，并用钟点方向和提示音引导你找到丢失的物品，支持英语和斯瓦希里语。",
+        proj4Badge: "边缘计算机视觉", proj4Title: "NeuSE",
+        proj4Desc: "用于搜救的离线热成像流程。通过对比度增强、热阈值和轮廓检测找出温热区域，记录每个检测框和处理时间，并可在无需网络的本地仪表盘上查看。",
         contribTitle: "贡献活动", contribTotal: "过去一年共 {n} 次贡献", contribDay: "{date}：{n} 次贡献",
         contribDayOne: "{date}：1 次贡献", contribDayNone: "{date}：无贡献", contribLearn: "了解贡献的统计方式",
         contribLess: "少", contribMore: "多", contribError: "暂时无法加载实时活动。", contribView: "在 GitHub 上查看",
@@ -94,6 +95,7 @@ const translations = {
         contactTitle: "取得联系", contactSubtitle: "让我们在您的下一个项目或后端系统上展开合作",
         certInProgress: "进行中 · 第 1 周：搜索算法", certAttendance: "参会证书",
         navHack: "黑客松", hackTitle: "黑客松", hackSubtitle: "与团队一起在截止时间前完成作品", hack1Place: "第 2 名", hack1Desc: "GemmaSight 的主力开发者", hack2Place: "第 4 名", hack2Desc: "为面向学生的 AI 学习工具设计架构并选择技术",
+        demoLabel: "在线演示",
         emailLabel: "电子邮箱", appearanceLabel: "外观主题", repoLabel: "代码仓库"
     },
     hi: {
@@ -103,16 +105,16 @@ const translations = {
         btnContact: "संपर्क करें", clickConnect: "जुड़ने के लिए प्लेटफ़ॉर्म पर क्लिक करें",
         skillsTitle: "कौशल और टूल्स", skillsSubtitle: "मेरी परियोजनाओं के पीछे की भाषाएं और फ्रेमवर्क",
         skillGroupLang: "प्रोग्रामिंग भाषाएं", skillGroupAI: "AI और मशीन लर्निंग", skillGroupBackend: "बैकएंड और टूल्स",
-        skillAiml: "AI और मशीन लर्निंग", skillAimlDesc: "कंप्यूटर विज़न · LLM जोखिम आकलन · मॉडल एक्सपोर्ट",
-        projectsTitle: "प्रमुख परियोजनाएं", projectsSubtitle: "GitHub पर मेरा सबसे मज़बूत काम, AI जोखिम आकलन से लेकर रियल-टाइम कंप्यूटर विज़न तक",
-        proj1Badge: "AI · सामाजिक प्रभाव", proj1Title: "AmaniHaven",
-        proj1Desc: "किसी भी साधारण फ़ोन के लिए USSD और SMS पर मुफ़्त, गोपनीय मानसिक स्वास्थ्य सहायता, अंग्रेज़ी या स्वाहिली में। ऑफ़लाइन नियम और Claude जोखिम का आकलन करते हैं और कुछ ही सेकंड में मानव काउंसलर को सूचित करते हैं।",
-        proj2Badge: "रियल-टाइम CV", proj2Title: "हैंड पोर्टल फेस फ़िल्टर",
-        proj2Desc: "दोनों हाथों से अपना चेहरा फ्रेम करें और उंगलियों के बीच की जगह एक लाइव फ़िल्टर पोर्टल बन जाती है। MediaPipe हैंड ट्रैकिंग हाफ़टोन से थर्मल तक आठ इफ़ेक्ट चलाती है।",
-        proj3Badge: "कंप्यूटर विज़न", proj3Title: "खगोलीय छवि पहचानकर्ता",
-        proj3Desc: "आकाश की फ़ोटो अपलोड करें या वेबकैम चलाएं, और यह FastAPI बैकएंड पर क्लासिकल OpenCV विश्लेषण से तारों, नीहारिकाओं और आकाशगंगा केंद्रों को चिह्नित और सूचीबद्ध करता है।",
-        proj4Badge: "बैकएंड", proj4Title: "नैरोबी स्मार्टपार्क",
-        proj4Desc: "केन्याई पार्किंग के लिए Flask और SQLite सिस्टम: रियल-टाइम खाली स्थान, बैरियर गेट नियंत्रण, और पहले 30 मिनट मुफ़्त से लेकर Kshs 500 तक की स्तरीय बिलिंग।",
+        skillAiml: "AI और मशीन लर्निंग", skillAimlDesc: "LLM ऐप्स · कंप्यूटर विज़न · जोखिम आकलन",
+        projectsTitle: "प्रमुख परियोजनाएं", projectsSubtitle: "मेरा सबसे मज़बूत काम, AI स्टडी टूल से लेकर ऑफ़लाइन कंप्यूटर विज़न तक",
+        proj1Badge: "AI · शिक्षा · लाइव", proj1Title: "Rahah",
+        proj1Desc: "छात्रों के लिए एक स्टडी प्लेटफ़ॉर्म जो हर सवाल को तेज़ या ज़्यादा सक्षम Claude मॉडल को भेजता है, फ़ोटो से होमवर्क जाँचता है, नोट्स का पेज बताता है, और नोट्स को टेस्ट, फ़्लैशकार्ड और रिवीज़न प्लान में बदलता है। M-Pesa या कार्ड से भुगतान।",
+        proj2Badge: "AI · सामाजिक प्रभाव", proj2Title: "AmaniHaven",
+        proj2Desc: "किसी भी साधारण फ़ोन के लिए USSD और SMS पर मुफ़्त, गोपनीय मानसिक स्वास्थ्य सहायता, अंग्रेज़ी या स्वाहिली में। ऑफ़लाइन नियम और Claude जोखिम का आकलन करते हैं और कुछ ही सेकंड में मानव काउंसलर को सूचित करते हैं।",
+        proj3Badge: "विज़न AI · सुलभता", proj3Title: "GemmaSight",
+        proj3Desc: "दृष्टिहीन और कम दृष्टि वाले लोगों के लिए फ़ोन-कैमरा सहायक। यह लेबल, दवा और पैसे पढ़कर सुनाता है, ठोकर के खतरे पहले बताता है, और घड़ी की दिशाओं व बीप से खोई चीज़ तक ले जाता है, अंग्रेज़ी या स्वाहिली में।",
+        proj4Badge: "एज कंप्यूटर विज़न", proj4Title: "NeuSE",
+        proj4Desc: "खोज और बचाव के लिए ऑफ़लाइन थर्मल इमेजिंग पाइपलाइन। कंट्रास्ट बढ़ाने, हीट थ्रेशोल्डिंग और कंटूर डिटेक्शन से गर्म क्षेत्र मिलते हैं, और हर डिटेक्शन अपने बॉक्स और प्रोसेसिंग समय के साथ बिना नेटवर्क वाले लोकल डैशबोर्ड पर दर्ज होता है।",
         contribTitle: "योगदान गतिविधि", contribTotal: "पिछले एक वर्ष में {n} योगदान", contribDay: "{date} को {n} योगदान",
         contribDayOne: "{date} को 1 योगदान", contribDayNone: "{date} को कोई योगदान नहीं", contribLearn: "जानें कि योगदान कैसे गिने जाते हैं",
         contribLess: "कम", contribMore: "अधिक", contribError: "लाइव गतिविधि अभी लोड नहीं हो सकी।", contribView: "GitHub पर देखें",
@@ -120,6 +122,7 @@ const translations = {
         contactTitle: "संपर्क में रहें", contactSubtitle: "आइए अपनी अगली परियोजना या बैकएंड सिस्टम पर एक साथ काम करें",
         certInProgress: "जारी · सप्ताह 1: सर्च एल्गोरिदम", certAttendance: "उपस्थिति प्रमाणपत्र",
         navHack: "हैकाथॉन", hackTitle: "हैकाथॉन", hackSubtitle: "टीम के साथ समय-सीमा में निर्माण", hack1Place: "दूसरा स्थान", hack1Desc: "GemmaSight पर मुख्य कोडर", hack2Place: "चौथा स्थान", hack2Desc: "छात्रों के लिए एक AI स्टडी टूल का आर्किटेक्चर डिज़ाइन किया और टूल चुने",
+        demoLabel: "लाइव डेमो",
         emailLabel: "डायरेक्ट ईमेल", appearanceLabel: "दिखावट", repoLabel: "रिपॉजिटरी"
     },
     es: {
@@ -129,16 +132,16 @@ const translations = {
         btnContact: "Contacto", clickConnect: "Haz clic en una plataforma para conectar",
         skillsTitle: "Habilidades y Herramientas", skillsSubtitle: "Los lenguajes y frameworks detrás de mis proyectos",
         skillGroupLang: "Lenguajes", skillGroupAI: "IA y Aprendizaje Automático", skillGroupBackend: "Backend y Herramientas",
-        skillAiml: "IA y Aprendizaje Automático", skillAimlDesc: "Visión por computadora · triaje con LLM · exportación de modelos",
-        projectsTitle: "Proyectos Destacados", projectsSubtitle: "Mi mejor trabajo en GitHub, desde triaje con IA hasta visión por computadora en tiempo real",
-        proj1Badge: "IA · Impacto Social", proj1Title: "AmaniHaven",
-        proj1Desc: "Apoyo de salud mental gratuito y confidencial por USSD y SMS para cualquier teléfono básico, en inglés o suajili. Reglas sin conexión y Claude evalúan el riesgo y alertan a consejeros humanos en segundos.",
-        proj2Badge: "Visión en Tiempo Real", proj2Title: "Filtro Portal de Manos",
-        proj2Desc: "Enmarca tu cara con ambas manos y el espacio entre tus dedos se convierte en un portal con filtro en vivo. El seguimiento de manos de MediaPipe controla ocho efectos, del semitono al térmico.",
-        proj3Badge: "Visión por Computadora", proj3Title: "Identificador de Imágenes Celestiales",
-        proj3Desc: "Sube una foto del cielo o usa la webcam y el sistema enmarca y cataloga estrellas, nebulosas y núcleos galácticos con análisis clásico de OpenCV sobre un backend FastAPI.",
-        proj4Badge: "Backend", proj4Title: "Nairobi SmartPark",
-        proj4Desc: "Sistema de estacionamiento con Flask y SQLite para Kenia: plazas libres en tiempo real, control de barreras y tarifas escalonadas en Kshs, desde 30 minutos gratis hasta Kshs 500.",
+        skillAiml: "IA y Aprendizaje Automático", skillAimlDesc: "Apps con LLM · visión por computadora · triaje de riesgo",
+        projectsTitle: "Proyectos Destacados", projectsSubtitle: "Mi mejor trabajo, desde herramientas de estudio con IA hasta visión por computadora sin conexión",
+        proj1Badge: "IA · Educación · En vivo", proj1Title: "Rahah",
+        proj1Desc: "Una plataforma de estudio que envía cada pregunta a un modelo Claude más rápido o más potente, corrige tareas a partir de una foto, cita la página de tus apuntes y convierte los apuntes en exámenes, tarjetas y un plan de repaso. Pago con M-Pesa o tarjeta.",
+        proj2Badge: "IA · Impacto Social", proj2Title: "AmaniHaven",
+        proj2Desc: "Apoyo de salud mental gratuito y confidencial por USSD y SMS para cualquier teléfono básico, en inglés o suajili. Reglas sin conexión y Claude evalúan el riesgo y alertan a consejeros humanos en segundos.",
+        proj3Badge: "IA de Visión · Accesibilidad", proj3Title: "GemmaSight",
+        proj3Desc: "Un asistente con la cámara del teléfono para personas ciegas y con baja visión. Lee en voz alta etiquetas, medicinas y dinero, avisa primero de los obstáculos y guía hacia objetos perdidos con direcciones de reloj y pitidos, en inglés o suajili.",
+        proj4Badge: "Visión en el Borde", proj4Title: "NeuSE",
+        proj4Desc: "Un sistema de imagen térmica sin conexión para búsqueda y rescate. El realce de contraste, el umbral de calor y la detección de contornos encuentran zonas cálidas; cada detección se registra con su recuadro y tiempo de proceso en un panel local que no necesita red.",
         contribTitle: "Actividad de Contribuciones", contribTotal: "{n} contribuciones en el último año", contribDay: "{n} contribuciones el {date}",
         contribDayOne: "1 contribución el {date}", contribDayNone: "Sin contribuciones el {date}", contribLearn: "Cómo se cuentan las contribuciones",
         contribLess: "Menos", contribMore: "Más", contribError: "No se pudo cargar la actividad en vivo.", contribView: "Ver en GitHub",
@@ -146,6 +149,7 @@ const translations = {
         contactTitle: "Ponerse en Contacto", contactSubtitle: "Colaboremos en tu próximo proyecto o sistema backend",
         certInProgress: "En curso · Semana 1: algoritmos de búsqueda", certAttendance: "Certificado de asistencia",
         navHack: "Hackatones", hackTitle: "Hackatones", hackSubtitle: "Construyendo en equipo contra el reloj", hack1Place: "2.º lugar", hack1Desc: "Programador principal de GemmaSight", hack2Place: "4.º lugar", hack2Desc: "Diseñé la arquitectura y elegí las herramientas de una herramienta de estudio con IA para estudiantes",
+        demoLabel: "Demo en vivo",
         emailLabel: "Correo Directo", appearanceLabel: "Apariencia", repoLabel: "Repositorio"
     },
     ar: {
@@ -155,16 +159,16 @@ const translations = {
         btnContact: "تواصل معي", clickConnect: "انقر على منصة للتواصل",
         skillsTitle: "المهارات والأدوات", skillsSubtitle: "اللغات وأطر العمل التي بُنيت بها مشاريعي",
         skillGroupLang: "لغات البرمجة", skillGroupAI: "الذكاء الاصطناعي وتعلم الآلة", skillGroupBackend: "الخلفية والأدوات",
-        skillAiml: "الذكاء الاصطناعي وتعلم الآلة", skillAimlDesc: "رؤية حاسوبية · فرز المخاطر بنماذج اللغة · تصدير النماذج",
-        projectsTitle: "المشاريع المميزة", projectsSubtitle: "أقوى أعمالي على GitHub، من فرز المخاطر بالذكاء الاصطناعي إلى الرؤية الحاسوبية الفورية",
-        proj1Badge: "ذكاء اصطناعي · أثر اجتماعي", proj1Title: "AmaniHaven",
-        proj1Desc: "دعم مجاني وسري للصحة النفسية عبر USSD والرسائل القصيرة لأي هاتف بسيط، بالإنجليزية أو السواحيلية. تقيّم القواعد غير المتصلة و Claude مستوى الخطر وتنبّه المستشارين خلال ثوانٍ.",
-        proj2Badge: "رؤية فورية", proj2Title: "فلتر بوابة اليدين",
-        proj2Desc: "أحِط وجهك بيديك فتتحول المساحة بين أصابعك إلى بوابة بفلتر مباشر. يتحكم تتبع اليدين في MediaPipe بثمانية تأثيرات، من النقاط النصفية إلى التصوير الحراري.",
-        proj3Badge: "رؤية حاسوبية", proj3Title: "معرف الصور الفلكية",
-        proj3Desc: "ارفع صورة للسماء أو شغّل الكاميرا، فيحدد النظام النجوم والسدم ونوى المجرات ويفهرسها باستخدام تحليل OpenCV الكلاسيكي وخادم FastAPI.",
-        proj4Badge: "الخلفية", proj4Title: "نيروبي سمارت بارك",
-        proj4Desc: "نظام مواقف بـ Flask و SQLite لمواقف كينيا: عدد المواقف الشاغرة لحظيًا، والتحكم في البوابات، وتسعير متدرج بالشلن الكيني من 30 دقيقة مجانية حتى 500 شلن.",
+        skillAiml: "الذكاء الاصطناعي وتعلم الآلة", skillAimlDesc: "تطبيقات نماذج اللغة · رؤية حاسوبية · فرز المخاطر",
+        projectsTitle: "المشاريع المميزة", projectsSubtitle: "أقوى أعمالي، من أدوات الدراسة بالذكاء الاصطناعي إلى الرؤية الحاسوبية دون اتصال",
+        proj1Badge: "ذكاء اصطناعي · تعليم · مباشر", proj1Title: "Rahah",
+        proj1Desc: "منصة دراسة للطلاب توجّه كل سؤال إلى نموذج Claude أسرع أو أقوى، وتصحح الواجبات من صورة، وتذكر صفحة الملاحظات التي جاء منها الجواب، وتحوّل الملاحظات إلى اختبارات وبطاقات تعليمية وخطة مراجعة. الدفع عبر M-Pesa أو البطاقة.",
+        proj2Badge: "ذكاء اصطناعي · أثر اجتماعي", proj2Title: "AmaniHaven",
+        proj2Desc: "دعم مجاني وسري للصحة النفسية عبر USSD والرسائل القصيرة لأي هاتف بسيط، بالإنجليزية أو السواحيلية. تقيّم القواعد غير المتصلة و Claude مستوى الخطر وتنبّه المستشارين خلال ثوانٍ.",
+        proj3Badge: "رؤية بالذكاء الاصطناعي · إتاحة", proj3Title: "GemmaSight",
+        proj3Desc: "مساعد بكاميرا الهاتف للمكفوفين وضعاف البصر. يقرأ بصوت عالٍ الملصقات والأدوية والنقود، وينبّه أولًا إلى مخاطر التعثر، ويرشد إلى الأشياء المفقودة باتجاهات الساعة وإشارات صوتية، بالإنجليزية أو السواحيلية.",
+        proj4Badge: "رؤية حاسوبية طرفية", proj4Title: "NeuSE",
+        proj4Desc: "نظام تصوير حراري يعمل دون اتصال لعمليات البحث والإنقاذ. يحدد المناطق الدافئة بتحسين التباين وعتبة الحرارة واكتشاف الحواف، ويسجل كل اكتشاف مع إطاره ووقت معالجته على لوحة محلية لا تحتاج إلى شبكة.",
         contribTitle: "نشاط المساهمات", contribTotal: "{n} مساهمة خلال العام الماضي", contribDay: "{n} مساهمة في {date}",
         contribDayOne: "مساهمة واحدة في {date}", contribDayNone: "لا مساهمات في {date}", contribLearn: "تعرّف على طريقة احتساب المساهمات",
         contribLess: "أقل", contribMore: "أكثر", contribError: "تعذّر تحميل النشاط المباشر حاليًا.", contribView: "عرض على GitHub",
@@ -172,6 +176,7 @@ const translations = {
         contactTitle: "تواصل معي", contactSubtitle: "دعنا نتعاون في مشروعك القادم أو نظام البرمجيات الخلفية",
         certInProgress: "قيد الدراسة · الأسبوع 1: خوارزميات البحث", certAttendance: "شهادة حضور",
         navHack: "الهاكاثونات", hackTitle: "الهاكاثونات", hackSubtitle: "البناء ضمن فريق وتحت ضغط الوقت", hack1Place: "المركز الثاني", hack1Desc: "المبرمج الرئيسي لمشروع GemmaSight", hack2Place: "المركز الرابع", hack2Desc: "صممت البنية واخترت الأدوات لأداة دراسة بالذكاء الاصطناعي للطلاب",
+        demoLabel: "عرض مباشر",
         emailLabel: "البريد الإلكتروني المباشر", appearanceLabel: "المظهر", repoLabel: "مستودع الكود"
     },
     fr: {
@@ -181,16 +186,16 @@ const translations = {
         btnContact: "Contact", clickConnect: "Cliquez sur une plateforme pour vous connecter",
         skillsTitle: "Compétences & Outils", skillsSubtitle: "Les langages et frameworks derrière mes projets",
         skillGroupLang: "Langages", skillGroupAI: "IA & Apprentissage Automatique", skillGroupBackend: "Backend & Outils",
-        skillAiml: "IA & Apprentissage Automatique", skillAimlDesc: "Vision par ordinateur · triage par LLM · export de modèles",
-        projectsTitle: "Projets En Vedette", projectsSubtitle: "Mes meilleurs projets sur GitHub, du triage par IA à la vision par ordinateur en temps réel",
-        proj1Badge: "IA · Impact Social", proj1Title: "AmaniHaven",
-        proj1Desc: "Soutien en santé mentale gratuit et confidentiel par USSD et SMS pour tout téléphone basique, en anglais ou en swahili. Des règles hors ligne et Claude évaluent le risque et alertent des conseillers humains en quelques secondes.",
-        proj2Badge: "Vision Temps Réel", proj2Title: "Filtre Portail des Mains",
-        proj2Desc: "Encadrez votre visage avec vos deux mains et l'espace entre vos doigts devient un portail filtré en direct. Le suivi des mains MediaPipe pilote huit effets, de la trame demi-teinte à l'imagerie thermique.",
-        proj3Badge: "Vision par Ordinateur", proj3Title: "Identificateur d'Images Célestes",
-        proj3Desc: "Importez une photo du ciel ou utilisez la webcam : le système encadre et catalogue étoiles, nébuleuses et cœurs galactiques grâce à une analyse OpenCV classique et un backend FastAPI.",
-        proj4Badge: "Backend", proj4Title: "Nairobi SmartPark",
-        proj4Desc: "Système de stationnement Flask et SQLite pour le Kenya : places libres en temps réel, contrôle des barrières et tarification par paliers en Kshs, de 30 minutes gratuites jusqu'à 500 Kshs.",
+        skillAiml: "IA & Apprentissage Automatique", skillAimlDesc: "Applications LLM · vision par ordinateur · triage des risques",
+        projectsTitle: "Projets En Vedette", projectsSubtitle: "Mes meilleurs projets, des outils d'étude par IA à la vision par ordinateur hors ligne",
+        proj1Badge: "IA · Éducation · En ligne", proj1Title: "Rahah",
+        proj1Desc: "Une plateforme d'étude qui envoie chaque question à un modèle Claude plus rapide ou plus puissant, corrige les devoirs à partir d'une photo, cite la page de vos notes et transforme les notes en tests, fiches et plan de révision. Paiement par M-Pesa ou carte.",
+        proj2Badge: "IA · Impact Social", proj2Title: "AmaniHaven",
+        proj2Desc: "Soutien en santé mentale gratuit et confidentiel par USSD et SMS pour tout téléphone basique, en anglais ou en swahili. Des règles hors ligne et Claude évaluent le risque et alertent des conseillers humains en quelques secondes.",
+        proj3Badge: "IA de Vision · Accessibilité", proj3Title: "GemmaSight",
+        proj3Desc: "Un assistant caméra pour les personnes aveugles et malvoyantes. Il lit à voix haute étiquettes, médicaments et billets, signale d'abord les obstacles et guide vers les objets perdus avec des directions horaires et des bips, en anglais ou en swahili.",
+        proj4Badge: "Vision Embarquée", proj4Title: "NeuSE",
+        proj4Desc: "Un pipeline d'imagerie thermique hors ligne pour la recherche et le sauvetage. Le rehaussement du contraste, le seuillage thermique et la détection de contours repèrent les zones chaudes ; chaque détection est enregistrée avec son cadre et son temps de traitement sur un tableau de bord local sans réseau.",
         contribTitle: "Activité de Contributions", contribTotal: "{n} contributions au cours de l'année", contribDay: "{n} contributions le {date}",
         contribDayOne: "1 contribution le {date}", contribDayNone: "Aucune contribution le {date}", contribLearn: "Comment les contributions sont comptées",
         contribLess: "Moins", contribMore: "Plus", contribError: "Impossible de charger l'activité en direct.", contribView: "Voir sur GitHub",
@@ -198,36 +203,38 @@ const translations = {
         contactTitle: "Prendre Contact", contactSubtitle: "Collaborons sur votre prochain projet ou système backend",
         certInProgress: "En cours · Semaine 1 : algorithmes de recherche", certAttendance: "Certificat de participation",
         navHack: "Hackathons", hackTitle: "Hackathons", hackSubtitle: "Construire en équipe, contre la montre", hack1Place: "2e place", hack1Desc: "Développeur principal de GemmaSight", hack2Place: "4e place", hack2Desc: "J'ai conçu l'architecture et choisi les outils d'un outil d'étude par IA pour les étudiants",
+        demoLabel: "Démo en ligne",
         emailLabel: "E-mail Direct", appearanceLabel: "Apparence", repoLabel: "Dépôt de Code"
     }
 };
 
 // Base Project Metadata
 const projectData = {
+    rahah: {
+        title: "Rahah",
+        description: "A study platform for Kenyan students. Each question is routed to a faster or stronger Claude model by subject, with token counting and chat trimming to keep cost predictable, and daily limits tracked in money rather than message counts. Answers cite the page of the student's uploaded notes, homework photos are marked, and notes become tests, flashcards and a revision plan. It has email-code sign-up, day-to-term passes paid in KES by M-Pesa or card, and an admin dashboard for revenue and usage. 179 commits and 191 automated tests, all passing.",
+        tech: ["Python", "FastAPI", "Claude API", "SQLite", "JavaScript", "Paystack", "pytest", "Render"],
+        github: "https://github.com/808kirai/Rahah",
+        demo: "https://rahah.onrender.com"
+    },
     amanihaven: {
         title: "AmaniHaven",
-        description: "A crisis-aware support line built for people without smartphones or data. Users dial a USSD code or send an SMS and get instant, clinician-reviewable self-help in English or Kiswahili. Offline rules run first, and Claude adds a second opinion that can only raise a risk level, never lower it. Crisis and abuse cases page human counselors through a dashboard, while phone numbers are hashed and encrypted and messages are deleted after 30 days.",
+        description: "A crisis-aware support line built for people without smartphones or data. Users dial a USSD code or send an SMS and get instant, clinician-reviewable self-help in English or Kiswahili. Offline rules run first, and Claude adds a second opinion that can only raise a risk level, never lower it. Crisis and abuse cases page human counselors through a dashboard, while phone numbers are hashed and encrypted and messages are deleted after 30 days. About 2,200 lines of app code and 74 tests.",
         tech: ["Python", "FastAPI", "Claude API", "Pydantic", "SQLite", "Docker", "pytest", "Africa's Talking"],
-        github: "https://github.com/808kirai/AmaniHaven"
+        github: "https://github.com/808kirai/AmaniHaven",
+        demo: "https://amanihaven.onrender.com/demo"
     },
-    facetracking: {
-        title: "Hand Portal Face Filter",
-        description: "A real-time webcam effect built with OpenCV and MediaPipe. The thumb and index fingertips of both hands become the four corners of a portal, smoothed to avoid jitter and free to tilt or stretch as your hands move. Only the inside of the portal is filtered, and each time you frame again it cycles to the next of eight effects. It can also record to MP4 at the real frame rate.",
-        tech: ["Python", "OpenCV", "MediaPipe", "NumPy"],
-        github: "https://github.com/808kirai/face-tracking-filter"
+    gemmasight: {
+        title: "GemmaSight",
+        description: "A vision assistant for blind and low-vision people, built at an MLH hackathon where our team placed 2nd with me as lead coder. Point a phone forward and tap: Read covers 18 kinds of everyday item and says the key detail first, such as a medicine dose or a note's value, without guessing missing text or reading out a visible PIN. Describe flags trip hazards first with a warning tone and vibration, and Find turns an object's position into clock directions, step distances and beeps. One tap switches speech and answers to Kiswahili. Runs in any phone browser with no install. 44 tests.",
+        tech: ["Python", "FastAPI", "Gemma 4", "JavaScript", "Docker", "pytest"],
+        github: "https://github.com/808kirai/GemmaSight"
     },
-    celestial: {
-        title: "Celestial Image Identifier",
-        description: "A full-stack computer vision app for space imagery. The FastAPI backend first checks that an image actually shows a dark sky, then uses brightness thresholds, contour shape and color saturation to separate bright stars, emission nebulae, clusters and galaxy cores. The browser frontend supports file uploads and live webcam capture, and lists each detection in a side catalog.",
-        tech: ["Python", "FastAPI", "OpenCV", "NumPy", "JavaScript", "HTML5 Canvas"],
-        github: "https://github.com/808kirai/Celestial-Image-Identifier"
-    },
-    nairobi: {
-        title: "Nairobi SmartPark",
-        description: "A parking management backend designed for Kenyan facilities. Entry and exit endpoints track active sessions, enforce lot capacity and trigger the barrier gates, and exit billing follows tiered Kenyan Shilling rates: free for the first 30 minutes, then Kshs 50, 100, 300 and 500. A test script seeds backdated sessions to verify every billing tier.",
-        tech: ["Python", "Flask", "SQLite"],
-        github: "https://github.com/808kirai/Nairobi-Parking-System",
-        hasLiveApi: true
+    neuse: {
+        title: "NeuSE · Neural Sentinel Edge",
+        description: "An early prototype for the Huawei ICT Competition 2026–2027 Innovation Track. Each field unit finds warm areas in thermal footage with no network, using CLAHE contrast enhancement, heat thresholding and contour detection with size filtering. Every detection is logged to SQLite with its position, box, peak intensity and processing time, and a local dashboard reads the log offline. Empty, 16-bit, float and malformed frames are handled safely. Next is a trained MindYOLO person detector to replace the classical baseline. 17 tests and 16 commits.",
+        tech: ["Python", "OpenCV", "NumPy", "Flask", "SQLite", "pytest"],
+        github: "https://github.com/808kirai/NeuSE"
     }
 };
 
@@ -710,7 +717,6 @@ if (certDeck) {
 
 // Modal Management Logic
 const modal = document.getElementById('project-modal');
-const modalApiWidget = document.getElementById('modal-api-widget');
 let lastFocusedElem = null;
 
 window.openModal = function(projectId) {
@@ -734,18 +740,15 @@ window.openModal = function(projectId) {
 
     modalGithub.href = data.github;
 
-    // Clear any live data left over from a previously opened project
-    modalApiWidget.hidden = true;
-    modalApiWidget.innerHTML = '';
+    // A live demo button, for projects that are hosted
+    const modalDemo = document.getElementById('modal-demo');
+    modalDemo.hidden = !data.demo;
+    if (data.demo) modalDemo.href = data.demo;
 
     lastFocusedElem = document.activeElement;
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
     modal.querySelector('.modal-close').focus();
-
-    if (data.hasLiveApi && isLocalDev()) {
-        loadLiveParkingData(projectId);
-    }
 };
 
 window.closeModal = function() {
@@ -777,44 +780,3 @@ document.querySelectorAll('.bento-card[data-project]').forEach(card => {
         }
     });
 });
-
-// The Flask backend only runs locally, so skip the request for public visitors
-// (browsers may otherwise show them a "local network access" permission prompt).
-function isLocalDev() {
-    return ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
-}
-
-// Live Flask API Spot Status Loader
-async function loadLiveParkingData(projectId) {
-    try {
-        const response = await fetch(`${API_BASE_URL}/spots`);
-        if (!response.ok) throw new Error('Backend offline');
-
-        const spots = await response.json();
-
-        // Ignore the response if the user has since closed or switched projects
-        if (!modal.classList.contains('active') ||
-            document.getElementById('modal-title').textContent !== projectData[projectId].title) return;
-
-        const heading = document.createElement('strong');
-        heading.textContent = 'Live Flask Spot Status:';
-
-        const list = document.createElement('ul');
-        spots.forEach(spot => {
-            const item = document.createElement('li');
-            const number = document.createElement('strong');
-            number.textContent = spot.spot_number;
-            const status = document.createElement('span');
-            status.className = spot.is_occupied ? 'spot-occupied' : 'spot-available';
-            status.textContent = spot.is_occupied ? `Occupied (${spot.vehicle_plate})` : 'Available';
-            item.append(number, ': ', status);
-            list.appendChild(item);
-        });
-
-        modalApiWidget.replaceChildren(heading, list);
-        modalApiWidget.hidden = false;
-
-    } catch (err) {
-        console.warn('Flask API unavailable locally:', err.message);
-    }
-}

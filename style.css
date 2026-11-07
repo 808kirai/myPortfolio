@@ -1122,42 +1122,15 @@ html.theme-switching *::after {
 }
 
 .modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
     margin-top: 1.5rem;
 }
 
-/* Live Flask API Widget (shown only when the backend runs locally) */
-.api-widget {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    background: var(--bg-tertiary);
-    border-radius: 12px;
-}
-
-.api-widget[hidden] {
+.btn[hidden] {
     display: none;
 }
-
-.api-widget strong:first-child {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.api-widget ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-}
-
-.api-widget li {
-    padding: 0.4rem;
-    background: var(--bg-secondary);
-    border-radius: 6px;
-    font-size: 0.85rem;
-}
-
-.spot-available { color: #10b981; }
-.spot-occupied { color: #ef4444; }
 
 /* Footer */
 .site-footer {
