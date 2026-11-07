@@ -230,11 +230,32 @@
         <section id="certifications" class="snap-section">
             <div class="section-header reveal">
                 <h2 data-i18n="certsTitle">Certifications</h2>
-                <p data-i18n="certsSubtitle">Courses I've completed in AI and machine learning</p>
+                <p data-i18n="certsSubtitle">Courses and events in AI and machine learning</p>
             </div>
 
             <div class="certs-layout reveal" style="--reveal-delay: 0.15s">
                 <ol class="cert-timeline">
+                    <li class="cert-item">
+                        <time class="cert-date" datetime="2026-11-01">Nov 2026</time>
+                        <div class="cert-body">
+                            <h3>CS50's Introduction to Artificial Intelligence with Python</h3>
+                            <p class="cert-issuer">Harvard · edX</p>
+                            <p class="cert-id" data-i18n="certInProgress">In progress · Week 1: search algorithms</p>
+                        </div>
+                    </li>
+                    <li class="cert-item">
+                        <time class="cert-date" datetime="2026-10-24">Oct 2026</time>
+                        <div class="cert-body">
+                            <h3>Hacktoberfest Hack Day Nairobi × B54</h3>
+                            <p class="cert-issuer">Hacktoberfest · MLH × DEV</p>
+                            <p class="cert-id" data-i18n="certAttendance">Certificate of attendance</p>
+                            <div class="cert-actions">
+                                <button type="button" class="cert-thumb" data-cert="hacktoberfest" aria-label="Show the Hacktoberfest Hack Day Nairobi certificate">
+                                    <img src="assets/certificates/hacktoberfest-2026-hack-day-nairobi-thumb.jpg" alt="" width="240" height="170" loading="lazy">
+                                </button>
+                            </div>
+                        </div>
+                    </li>
                     <li class="cert-item">
                         <time class="cert-date" datetime="2026-08-31">Aug 2026</time>
                         <div class="cert-body">
@@ -272,6 +293,9 @@
                 <!-- 3D certificate stack: the top card swings away and drops to the back -->
                 <div class="cert-stage">
                     <div class="cert-deck" id="cert-deck" role="group" aria-roledescription="carousel" aria-label="Certificates">
+                        <button type="button" class="cert-card" data-cert="hacktoberfest" aria-label="Next certificate">
+                            <img src="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" alt="Hacktoberfest 2026 certificate of attendance: Hacktoberfest Hack Day Nairobi × B54, awarded to Rooney James" width="1600" height="1131">
+                        </button>
                         <button type="button" class="cert-card" data-cert="sololearn" aria-label="Next certificate">
                             <img src="assets/certificates/sololearn-machine-learning-for-beginners.jpg" alt="Sololearn certificate: Machine Learning for Beginners, awarded to Rooney James" width="1599" height="1129">
                         </button>
@@ -281,7 +305,7 @@
                     </div>
                     <p class="cert-hint">
                         <span data-i18n="certHint">Tap the stack to shuffle</span>
-                        <a id="cert-open" href="assets/certificates/sololearn-machine-learning-for-beginners.jpg" target="_blank" rel="noopener noreferrer">
+                        <a id="cert-open" href="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" target="_blank" rel="noopener noreferrer">
                             <span data-i18n="certOpen">Full size</span> <i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i>
                         </a>
                     </p>

@@ -51,13 +51,15 @@ const translations = {
         contribView: "View on GitHub",
         navCerts: "Certifications",
         certsTitle: "Certifications",
-        certsSubtitle: "Courses I've completed in AI and machine learning",
+        certsSubtitle: "Courses and events in AI and machine learning",
         certCredential: "Credential ID",
         certVerify: "Verify",
         certHint: "Tap the stack to shuffle",
         certOpen: "Full size",
         contactTitle: "Get In Touch",
         contactSubtitle: "Let's collaborate on your next project or backend system",
+        certInProgress: "In progress · Week 1: search algorithms",
+        certAttendance: "Certificate of attendance",
         emailLabel: "Direct Email",
         appearanceLabel: "Appearance",
         repoLabel: "Repository"
@@ -82,8 +84,9 @@ const translations = {
         contribTitle: "贡献活动", contribTotal: "过去一年共 {n} 次贡献", contribDay: "{date}：{n} 次贡献",
         contribDayOne: "{date}：1 次贡献", contribDayNone: "{date}：无贡献", contribLearn: "了解贡献的统计方式",
         contribLess: "少", contribMore: "多", contribError: "暂时无法加载实时活动。", contribView: "在 GitHub 上查看",
-        navCerts: "证书", certsTitle: "证书", certsSubtitle: "我完成的人工智能与机器学习课程", certCredential: "证书编号", certVerify: "验证", certHint: "点击卡片切换", certOpen: "查看大图",
+        navCerts: "证书", certsTitle: "证书", certsSubtitle: "我在人工智能与机器学习方面的课程与活动", certCredential: "证书编号", certVerify: "验证", certHint: "点击卡片切换", certOpen: "查看大图",
         contactTitle: "取得联系", contactSubtitle: "让我们在您的下一个项目或后端系统上展开合作",
+        certInProgress: "进行中 · 第 1 周：搜索算法", certAttendance: "参会证书",
         emailLabel: "电子邮箱", appearanceLabel: "外观主题", repoLabel: "代码仓库"
     },
     hi: {
@@ -106,8 +109,9 @@ const translations = {
         contribTitle: "योगदान गतिविधि", contribTotal: "पिछले एक वर्ष में {n} योगदान", contribDay: "{date} को {n} योगदान",
         contribDayOne: "{date} को 1 योगदान", contribDayNone: "{date} को कोई योगदान नहीं", contribLearn: "जानें कि योगदान कैसे गिने जाते हैं",
         contribLess: "कम", contribMore: "अधिक", contribError: "लाइव गतिविधि अभी लोड नहीं हो सकी।", contribView: "GitHub पर देखें",
-        navCerts: "प्रमाणपत्र", certsTitle: "प्रमाणपत्र", certsSubtitle: "AI और मशीन लर्निंग में पूरे किए गए मेरे कोर्स", certCredential: "क्रेडेंशियल ID", certVerify: "सत्यापित करें", certHint: "बदलने के लिए स्टैक पर टैप करें", certOpen: "पूरा आकार",
+        navCerts: "प्रमाणपत्र", certsTitle: "प्रमाणपत्र", certsSubtitle: "AI और मशीन लर्निंग में मेरे कोर्स और कार्यक्रम", certCredential: "क्रेडेंशियल ID", certVerify: "सत्यापित करें", certHint: "बदलने के लिए स्टैक पर टैप करें", certOpen: "पूरा आकार",
         contactTitle: "संपर्क में रहें", contactSubtitle: "आइए अपनी अगली परियोजना या बैकएंड सिस्टम पर एक साथ काम करें",
+        certInProgress: "जारी · सप्ताह 1: सर्च एल्गोरिदम", certAttendance: "उपस्थिति प्रमाणपत्र",
         emailLabel: "डायरेक्ट ईमेल", appearanceLabel: "दिखावट", repoLabel: "रिपॉजिटरी"
     },
     es: {
@@ -130,8 +134,9 @@ const translations = {
         contribTitle: "Actividad de Contribuciones", contribTotal: "{n} contribuciones en el último año", contribDay: "{n} contribuciones el {date}",
         contribDayOne: "1 contribución el {date}", contribDayNone: "Sin contribuciones el {date}", contribLearn: "Cómo se cuentan las contribuciones",
         contribLess: "Menos", contribMore: "Más", contribError: "No se pudo cargar la actividad en vivo.", contribView: "Ver en GitHub",
-        navCerts: "Certificaciones", certsTitle: "Certificaciones", certsSubtitle: "Cursos que he completado en IA y aprendizaje automático", certCredential: "ID de credencial", certVerify: "Verificar", certHint: "Toca la pila para barajar", certOpen: "Tamaño completo",
+        navCerts: "Certificaciones", certsTitle: "Certificaciones", certsSubtitle: "Cursos y eventos en IA y aprendizaje automático", certCredential: "ID de credencial", certVerify: "Verificar", certHint: "Toca la pila para barajar", certOpen: "Tamaño completo",
         contactTitle: "Ponerse en Contacto", contactSubtitle: "Colaboremos en tu próximo proyecto o sistema backend",
+        certInProgress: "En curso · Semana 1: algoritmos de búsqueda", certAttendance: "Certificado de asistencia",
         emailLabel: "Correo Directo", appearanceLabel: "Apariencia", repoLabel: "Repositorio"
     },
     ar: {
@@ -154,8 +159,9 @@ const translations = {
         contribTitle: "نشاط المساهمات", contribTotal: "{n} مساهمة خلال العام الماضي", contribDay: "{n} مساهمة في {date}",
         contribDayOne: "مساهمة واحدة في {date}", contribDayNone: "لا مساهمات في {date}", contribLearn: "تعرّف على طريقة احتساب المساهمات",
         contribLess: "أقل", contribMore: "أكثر", contribError: "تعذّر تحميل النشاط المباشر حاليًا.", contribView: "عرض على GitHub",
-        navCerts: "الشهادات", certsTitle: "الشهادات", certsSubtitle: "دورات أكملتها في الذكاء الاصطناعي وتعلم الآلة", certCredential: "رقم الاعتماد", certVerify: "تحقق", certHint: "انقر على المجموعة للتبديل", certOpen: "الحجم الكامل",
+        navCerts: "الشهادات", certsTitle: "الشهادات", certsSubtitle: "دورات وفعاليات في الذكاء الاصطناعي وتعلم الآلة", certCredential: "رقم الاعتماد", certVerify: "تحقق", certHint: "انقر على المجموعة للتبديل", certOpen: "الحجم الكامل",
         contactTitle: "تواصل معي", contactSubtitle: "دعنا نتعاون في مشروعك القادم أو نظام البرمجيات الخلفية",
+        certInProgress: "قيد الدراسة · الأسبوع 1: خوارزميات البحث", certAttendance: "شهادة حضور",
         emailLabel: "البريد الإلكتروني المباشر", appearanceLabel: "المظهر", repoLabel: "مستودع الكود"
     },
     fr: {
@@ -178,8 +184,9 @@ const translations = {
         contribTitle: "Activité de Contributions", contribTotal: "{n} contributions au cours de l'année", contribDay: "{n} contributions le {date}",
         contribDayOne: "1 contribution le {date}", contribDayNone: "Aucune contribution le {date}", contribLearn: "Comment les contributions sont comptées",
         contribLess: "Moins", contribMore: "Plus", contribError: "Impossible de charger l'activité en direct.", contribView: "Voir sur GitHub",
-        navCerts: "Certifications", certsTitle: "Certifications", certsSubtitle: "Les cours que j'ai suivis en IA et apprentissage automatique", certCredential: "ID de certification", certVerify: "Vérifier", certHint: "Touchez la pile pour mélanger", certOpen: "Taille réelle",
+        navCerts: "Certifications", certsTitle: "Certifications", certsSubtitle: "Cours et événements en IA et apprentissage automatique", certCredential: "ID de certification", certVerify: "Vérifier", certHint: "Touchez la pile pour mélanger", certOpen: "Taille réelle",
         contactTitle: "Prendre Contact", contactSubtitle: "Collaborons sur votre prochain projet ou système backend",
+        certInProgress: "En cours · Semaine 1 : algorithmes de recherche", certAttendance: "Certificat de participation",
         emailLabel: "E-mail Direct", appearanceLabel: "Apparence", repoLabel: "Dépôt de Code"
     }
 };
