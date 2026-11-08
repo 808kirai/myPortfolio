@@ -425,6 +425,30 @@ body {
     font-weight: 600;
 }
 
+/* Spoken language cards: a short code in place of an icon, level underneath */
+.skill-card .skill-code {
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    transition: transform var(--dur) var(--ease-out);
+}
+
+.skill-card:hover .skill-code {
+    transform: scale(1.1);
+}
+
+.skill-level {
+    margin-top: -0.55rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
 .skill-card:hover {
     border-color: var(--text-primary);
     transform: translateY(-4px);
