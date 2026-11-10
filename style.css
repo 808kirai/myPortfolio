@@ -230,10 +230,6 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
     font-size: 0.85rem;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
