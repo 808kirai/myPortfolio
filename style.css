@@ -672,23 +672,6 @@ button {
     font-size: 14px;
 }
 
-.place {
-    display: inline-block;
-    margin-inline-start: 6px;
-    padding: 1px 8px;
-    border-radius: 999px;
-    background: var(--surface);
-    color: var(--muted);
-    font-size: 12px;
-    font-weight: 500;
-    vertical-align: 2px;
-}
-
-.place--gold {
-    background: var(--accent-soft);
-    color: var(--accent-text);
-}
-
 .verify {
     display: inline-flex;
     align-items: center;

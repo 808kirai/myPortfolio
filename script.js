@@ -31,7 +31,7 @@ const translations = {
         lvlNative: "native",
         lvlFluent: "fluent",
         lvlBasic: "basic",
-        winsTitle: "Wins",
+        winsTitle: "Awards and certifications",
         groupHack: "Hackathons",
         groupCerts: "Certificates",
         groupMember: "Memberships",
@@ -44,9 +44,8 @@ const translations = {
         verify: "Verify",
         viewCert: "View certificate",
         close: "Close",
-        memberSince: "Member since April 2026",
-        contribTitle: "On GitHub",
-        contribTotal: "{n} contributions in the last year",
+        contribTitle: "GitHub activity",
+        contribTotal: "Contributions in the last year",
         contribDay: "{n} contributions on {date}",
         contribDayOne: "1 contribution on {date}",
         contribDayNone: "No contributions on {date}",
@@ -62,7 +61,8 @@ const translations = {
         p1Tests: "191 tests",
         p2Tests: "74 tests",
         p3Tests: "44 tests",
-        p4Tests: "17 tests"
+        p4Tests: "17 tests",
+        memberSub: "Member"
     },
     sw: {
         navWork: "Miradi",
@@ -92,7 +92,7 @@ const translations = {
         lvlNative: "lugha ya mama",
         lvlFluent: "kwa ufasaha",
         lvlBasic: "msingi",
-        winsTitle: "Tuzo",
+        winsTitle: "Tuzo na vyeti",
         groupHack: "Hackathon",
         groupCerts: "Vyeti",
         groupMember: "Uanachama",
@@ -105,9 +105,8 @@ const translations = {
         verify: "Thibitisha",
         viewCert: "Tazama cheti",
         close: "Funga",
-        memberSince: "Mwanachama tangu Aprili 2026",
-        contribTitle: "Kwenye GitHub",
-        contribTotal: "Michango {n} mwaka uliopita",
+        contribTitle: "Shughuli za GitHub",
+        contribTotal: "Michango ya mwaka uliopita",
         contribDay: "Michango {n} tarehe {date}",
         contribDayOne: "Mchango 1 tarehe {date}",
         contribDayNone: "Hakuna mchango tarehe {date}",
@@ -123,7 +122,8 @@ const translations = {
         p1Tests: "majaribio 191",
         p2Tests: "majaribio 74",
         p3Tests: "majaribio 44",
-        p4Tests: "majaribio 17"
+        p4Tests: "majaribio 17",
+        memberSub: "Mwanachama"
     },
     zh: {
         navWork: "项目",
@@ -153,7 +153,7 @@ const translations = {
         lvlNative: "母语",
         lvlFluent: "流利",
         lvlBasic: "基础",
-        winsTitle: "荣誉",
+        winsTitle: "奖项与证书",
         groupHack: "黑客松",
         groupCerts: "证书",
         groupMember: "会员",
@@ -166,9 +166,8 @@ const translations = {
         verify: "验证",
         viewCert: "查看证书",
         close: "关闭",
-        memberSince: "2026 年 4 月加入",
         contribTitle: "GitHub 动态",
-        contribTotal: "过去一年 {n} 次贡献",
+        contribTotal: "过去一年的贡献",
         contribDay: "{date}：{n} 次贡献",
         contribDayOne: "{date}：1 次贡献",
         contribDayNone: "{date}：无贡献",
@@ -184,7 +183,8 @@ const translations = {
         p1Tests: "191 个测试",
         p2Tests: "74 个测试",
         p3Tests: "44 个测试",
-        p4Tests: "17 个测试"
+        p4Tests: "17 个测试",
+        memberSub: "会员"
     },
     hi: {
         navWork: "प्रोजेक्ट",
@@ -214,7 +214,7 @@ const translations = {
         lvlNative: "मातृभाषा",
         lvlFluent: "धाराप्रवाह",
         lvlBasic: "बुनियादी",
-        winsTitle: "उपलब्धियाँ",
+        winsTitle: "पुरस्कार और सर्टिफ़िकेट",
         groupHack: "हैकाथॉन",
         groupCerts: "सर्टिफ़िकेट",
         groupMember: "सदस्यता",
@@ -227,9 +227,8 @@ const translations = {
         verify: "सत्यापित करें",
         viewCert: "सर्टिफ़िकेट देखें",
         close: "बंद करें",
-        memberSince: "अप्रैल 2026 से सदस्य",
-        contribTitle: "GitHub पर",
-        contribTotal: "पिछले साल {n} योगदान",
+        contribTitle: "GitHub गतिविधि",
+        contribTotal: "पिछले एक साल का योगदान",
         contribDay: "{date} को {n} योगदान",
         contribDayOne: "{date} को 1 योगदान",
         contribDayNone: "{date} को कोई योगदान नहीं",
@@ -245,7 +244,8 @@ const translations = {
         p1Tests: "191 टेस्ट",
         p2Tests: "74 टेस्ट",
         p3Tests: "44 टेस्ट",
-        p4Tests: "17 टेस्ट"
+        p4Tests: "17 टेस्ट",
+        memberSub: "सदस्य"
     },
     es: {
         navWork: "Proyectos",
@@ -275,7 +275,7 @@ const translations = {
         lvlNative: "nativo",
         lvlFluent: "fluido",
         lvlBasic: "básico",
-        winsTitle: "Logros",
+        winsTitle: "Premios y certificaciones",
         groupHack: "Hackatones",
         groupCerts: "Certificados",
         groupMember: "Membresías",
@@ -288,9 +288,8 @@ const translations = {
         verify: "Verificar",
         viewCert: "Ver certificado",
         close: "Cerrar",
-        memberSince: "Miembro desde abril de 2026",
-        contribTitle: "En GitHub",
-        contribTotal: "{n} contribuciones en el último año",
+        contribTitle: "Actividad en GitHub",
+        contribTotal: "Contribuciones del último año",
         contribDay: "{n} contribuciones el {date}",
         contribDayOne: "1 contribución el {date}",
         contribDayNone: "Sin contribuciones el {date}",
@@ -306,7 +305,8 @@ const translations = {
         p1Tests: "191 tests",
         p2Tests: "74 tests",
         p3Tests: "44 tests",
-        p4Tests: "17 tests"
+        p4Tests: "17 tests",
+        memberSub: "Miembro"
     },
     fr: {
         navWork: "Projets",
@@ -336,7 +336,7 @@ const translations = {
         lvlNative: "natif",
         lvlFluent: "courant",
         lvlBasic: "notions",
-        winsTitle: "Prix",
+        winsTitle: "Prix et certifications",
         groupHack: "Hackathons",
         groupCerts: "Certificats",
         groupMember: "Adhésions",
@@ -349,9 +349,8 @@ const translations = {
         verify: "Vérifier",
         viewCert: "Voir le certificat",
         close: "Fermer",
-        memberSince: "Membre depuis avril 2026",
-        contribTitle: "Sur GitHub",
-        contribTotal: "{n} contributions cette année",
+        contribTitle: "Activité GitHub",
+        contribTotal: "Contributions de l'année écoulée",
         contribDay: "{n} contributions le {date}",
         contribDayOne: "1 contribution le {date}",
         contribDayNone: "Aucune contribution le {date}",
@@ -367,7 +366,8 @@ const translations = {
         p1Tests: "191 tests",
         p2Tests: "74 tests",
         p3Tests: "44 tests",
-        p4Tests: "17 tests"
+        p4Tests: "17 tests",
+        memberSub: "Membre"
     },
     ar: {
         navWork: "المشاريع",
@@ -397,7 +397,7 @@ const translations = {
         lvlNative: "لغتي الأم",
         lvlFluent: "بطلاقة",
         lvlBasic: "مبتدئ",
-        winsTitle: "إنجازات",
+        winsTitle: "الجوائز والشهادات",
         groupHack: "الهاكاثونات",
         groupCerts: "الشهادات",
         groupMember: "العضويات",
@@ -410,9 +410,8 @@ const translations = {
         verify: "تحقق",
         viewCert: "عرض الشهادة",
         close: "إغلاق",
-        memberSince: "عضو منذ أبريل 2026",
-        contribTitle: "على GitHub",
-        contribTotal: "{n} مساهمة خلال العام الماضي",
+        contribTitle: "النشاط على GitHub",
+        contribTotal: "المساهمات خلال العام الماضي",
         contribDay: "{n} مساهمة في {date}",
         contribDayOne: "مساهمة واحدة في {date}",
         contribDayNone: "لا مساهمات في {date}",
@@ -428,7 +427,8 @@ const translations = {
         p1Tests: "191 اختبارًا",
         p2Tests: "74 اختبارًا",
         p3Tests: "44 اختبارًا",
-        p4Tests: "17 اختبارًا"
+        p4Tests: "17 اختبارًا",
+        memberSub: "عضو"
     }
 };
 
