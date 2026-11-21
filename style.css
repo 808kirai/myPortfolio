@@ -1962,3 +1962,80 @@ a.hcard:active {
     color: var(--faint);
     font-size: 12.5px;
 }
+
+/* ==========================================================================
+   Technology rows: each tool's own logo beside its name
+   ========================================================================== */
+
+.techs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+}
+
+.techs li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-2);
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.techs img,
+.techs .logo {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.techs .logo-wide,
+.marquee-row .logo-wide,
+.tlist .logo-wide {
+    width: auto;
+    height: 12px;
+}
+
+.marquee-row .logo-wide {
+    height: 14px;
+}
+
+.tlist .logo-wide {
+    width: 26px;
+    height: auto;
+}
+
+.techs li.techs-note {
+    color: var(--faint);
+    font-weight: 400;
+}
+
+.show-stack .techs,
+.pcard-stack .techs {
+    margin-top: 2px;
+}
+
+.cs-facts dd .techs {
+    margin-top: 6px;
+    gap: 8px 14px;
+}
+
+.marquee-row img {
+    object-fit: contain;
+}
+
+.lang-code {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+}
