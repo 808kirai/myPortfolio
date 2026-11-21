@@ -1,268 +1,115 @@
-// GitHub Profile Configuration
-const GITHUB_USER = '808kirai';
-const CONTRIB_API = `https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`;
-const CONTRIB_REFRESH_MS = 5 * 60 * 1000;
+// ==========================================================================
+// Copy, in every language. Keep it short: one idea per line.
+// ==========================================================================
 
-// Language Translations Object
 const translations = {
     en: {
-        navHome: "Home",
-        navSkills: "Skills",
-        navProjects: "Projects",
-        navContact: "Contact",
-        letsTalk: "Let's Talk",
-        heroStatus: "Available for projects and collaborations",
-        heroTitle: "Building Intelligent Web and AI Systems",
-        heroSubtitle: "Python, C and C++ developer working on AI and machine learning, computer vision, and backend systems.",
-        btnProjects: "Projects",
-        btnContact: "Contact",
-        clickConnect: "Click a platform to connect",
-        skillsTitle: "Skills & Tools",
-        skillsSubtitle: "The languages and frameworks behind my projects",
-        skillGroupLang: "Programming Languages",
-        skillGroupAI: "AI & Machine Learning",
-        skillGroupBackend: "Backend & Tools",
-        skillGroupSpoken: "Spoken Languages",
-        skillAiml: "AI & Machine Learning",
-        skillAimlDesc: "LLM apps · computer vision · risk triage",
-        langEnglish: "English",
-        langKiswahili: "Kiswahili",
-        langMandarin: "Mandarin",
-        levelFluent: "Fluent",
-        levelNative: "Native",
-        levelBasic: "Basic",
-        projectsTitle: "Featured Projects",
-        projectsSubtitle: "My strongest work, from AI study tools to offline computer vision",
-        proj1Badge: "AI · Education · Live",
-        proj1Title: "Rahah",
-        proj1Desc: "A study platform that routes each question to a faster or stronger Claude model, marks homework from a photo, cites the page of your notes, and turns notes into tests, flashcards and a revision plan. Pay by M-Pesa or card.",
-        proj2Badge: "AI · Social Impact",
-        proj2Title: "AmaniHaven",
-        proj2Desc: "Free, confidential mental health support over USSD and SMS for any basic phone, in English or Kiswahili. Offline rules and Claude triage risk and alert human counselors within seconds.",
-        proj3Badge: "Vision AI · Accessibility",
-        proj3Title: "GemmaSight",
-        proj3Desc: "A phone-camera assistant for blind and low-vision people. It reads labels, medicine and money aloud, flags trip hazards first, and guides you to lost objects with clock directions and beeps, in English or Kiswahili.",
-        proj4Badge: "Edge Computer Vision",
-        proj4Title: "NeuSE",
-        proj4Desc: "An offline thermal-imaging pipeline for search and rescue. Contrast enhancement, heat thresholding and contour detection find warm areas, each logged with its box and processing time on a local dashboard that needs no network.",
-        contribTitle: "Contribution activity",
-        contribTotal: "{n} contributions in the last year",
-        contribDay: "{n} contributions on {date}",
-        contribDayOne: "1 contribution on {date}",
-        contribDayNone: "No contributions on {date}",
-        contribLearn: "Learn how we count contributions",
-        contribLess: "Less",
-        contribMore: "More",
-        contribError: "Couldn't load live activity right now.",
-        contribView: "View on GitHub",
-        navCerts: "Certifications",
-        certsTitle: "Certifications",
-        certsSubtitle: "Courses and events in AI and machine learning",
-        certCredential: "Credential ID",
-        certVerify: "Verify",
-        certHint: "Tap the stack to shuffle",
-        certOpen: "Full size",
-        contactTitle: "Get In Touch",
-        contactSubtitle: "Let's collaborate on your next project or backend system",
-        certInProgress: "In progress · Week 1: search algorithms",
-        certAttendance: "Certificate of attendance",
-        navHack: "Hackathons",
-        hackTitle: "Hackathons",
-        hackSubtitle: "Building with a team against the clock",
-        hack1Place: "2nd place",
-        hack1Desc: "Lead coder on GemmaSight",
-        hack2Place: "4th place",
-        hack2Desc: "Designed the architecture and chose the tools for an AI study tool for students",
-        demoLabel: "Live demo",
-        emailLabel: "Direct Email",
-        appearanceLabel: "Appearance",
-        repoLabel: "Repository"
+        navWork: "Work", navStack: "Stack", navWins: "Wins", navContact: "Contact",
+        status: "Open to work",
+        role: "AI/ML and backend · Nairobi",
+        heroLead: "I build AI that", heroAccent: "people actually use.",
+        heroText: "Software engineering student in Nairobi. I build with Python, FastAPI and the Claude API.",
+        btnWork: "See my work", btnChat: "WhatsApp me",
+        stat1: "at an MLH hackathon", stat2: "tests written", stat3: "of Rahah users scored higher",
+        workTitle: "Work", workNote: "Built end to end", replay: "Replay", tagLive: "Live", linkDemo: "Live demo", linkCode: "Code", tagSms: "SMS + USSD", tagMlh: "#2 at MLH", tagHuawei: "Huawei ICT 2026", p1Text: "A study app for Kenyan students. Answers cite the page of your notes, and it marks homework from a photo.", p1Facts: "15 sign-ups · 13 scored higher · 191 tests", p2Text: "Free mental health support by text, on any phone, in English or Kiswahili. Urgent messages reach a real counselor.", p2Facts: "Numbers encrypted · Deleted after 30 days · 74 tests", p3Text: "A camera assistant for blind and low-vision people. It reads labels aloud and guides you to things you've lost.", p3Facts: "Lead coder · 15+ blindfolded testers · 44 tests", p4Text: "Finds warm areas in thermal footage for search and rescue. Runs on a field unit with no network.", p4Facts: "Every detection logged offline · 17 tests",
+        stackTitle: "Stack", stackLang: "Languages", stackAi: "AI and vision", stackBackend: "Backend", stackSpeak: "I speak", langSw: "Kiswahili", langEn: "English", langZh: "Mandarin", lvlNative: "native", lvlFluent: "fluent", lvlBasic: "basic",
+        winsTitle: "Wins", groupHack: "Hackathons", groupCerts: "Certificates", groupMember: "Memberships", place2: "2nd place", place4: "4th place", hack1: "Lead coder on GemmaSight", hack2: "Designed the architecture of an AI study tool", inProgress: "In progress", attended: "Attended", verify: "Verify", viewCert: "View certificate", close: "Close", memberSince: "Member since April 2026", contribTitle: "On GitHub", contribTotal: "{n} contributions in the last year", contribDay: "{n} contributions on {date}", contribDayOne: "1 contribution on {date}", contribDayNone: "No contributions on {date}", contribLess: "Less", contribMore: "More", contribError: "Couldn't load activity right now.", contribView: "See it on GitHub",
+        contactTitle: "Let's build something.", contactText: "Got a project or a role in mind? Message me.", email: "Email",
+        backTop: "Back to top"
+    },
+    sw: {
+        navWork: "Kazi", navStack: "Zana", navWins: "Tuzo", navContact: "Wasiliana",
+        status: "Napatikana kwa kazi",
+        role: "AI/ML na backend · Nairobi",
+        heroLead: "Ninaunda AI ambayo", heroAccent: "watu wanaitumia kweli.",
+        heroText: "Mwanafunzi wa uhandisi wa programu jijini Nairobi. Natumia Python, FastAPI na Claude API.",
+        btnWork: "Tazama kazi zangu", btnChat: "Nitumie WhatsApp",
+        stat1: "katika hackathon ya MLH", stat2: "majaribio niliyoandika", stat3: "ya watumiaji wa Rahah walipata alama bora",
+        workTitle: "Kazi", workNote: "Nimezijenga mwanzo hadi mwisho", replay: "Cheza tena", tagLive: "Iko hewani", linkDemo: "Ijaribu", linkCode: "Msimbo", tagSms: "SMS + USSD", tagMlh: "Nafasi ya 2, MLH", tagHuawei: "Huawei ICT 2026", p1Text: "Programu ya kusoma kwa wanafunzi wa Kenya. Majibu yanataja ukurasa wa maandishi yako, na inasahihisha kazi ya nyumbani kutoka kwa picha.", p1Facts: "Watu 15 wamejiunga · 13 walipata alama bora · Majaribio 191", p2Text: "Msaada wa afya ya akili bure kwa SMS, kwenye simu yoyote, kwa Kiingereza au Kiswahili. Ujumbe wa dharura unamfikia mshauri halisi.", p2Facts: "Namba zimesimbwa · Zinafutwa baada ya siku 30 · Majaribio 74", p3Text: "Msaidizi wa kamera kwa watu wasioona au wenye uoni hafifu. Inasoma lebo kwa sauti na kukuongoza kwa vitu ulivyopoteza.", p3Facts: "Mwandishi mkuu wa msimbo · Wajaribu 15+ waliofumbwa macho · Majaribio 44", p4Text: "Inatambua maeneo yenye joto kwenye picha za joto kwa utafutaji na uokoaji. Inafanya kazi bila mtandao.", p4Facts: "Kila ugunduzi unahifadhiwa bila mtandao · Majaribio 17",
+        stackTitle: "Zana", stackLang: "Lugha za programu", stackAi: "AI na maono", stackBackend: "Backend", stackSpeak: "Ninazungumza", langSw: "Kiswahili", langEn: "Kiingereza", langZh: "Kichina", lvlNative: "lugha ya mama", lvlFluent: "kwa ufasaha", lvlBasic: "msingi",
+        winsTitle: "Tuzo", groupHack: "Hackathon", groupCerts: "Vyeti", groupMember: "Uanachama", place2: "Nafasi ya 2", place4: "Nafasi ya 4", hack1: "Mwandishi mkuu wa msimbo wa GemmaSight", hack2: "Nilibuni muundo wa zana ya kusoma ya AI", inProgress: "Inaendelea", attended: "Nilihudhuria", verify: "Thibitisha", viewCert: "Tazama cheti", close: "Funga", memberSince: "Mwanachama tangu Aprili 2026", contribTitle: "Kwenye GitHub", contribTotal: "Michango {n} mwaka uliopita", contribDay: "Michango {n} tarehe {date}", contribDayOne: "Mchango 1 tarehe {date}", contribDayNone: "Hakuna mchango tarehe {date}", contribLess: "Chache", contribMore: "Nyingi", contribError: "Imeshindwa kupakia shughuli kwa sasa.", contribView: "Tazama GitHub",
+        contactTitle: "Tujenge kitu pamoja.", contactText: "Una mradi au nafasi ya kazi? Nitumie ujumbe.", email: "Barua pepe",
+        backTop: "Rudi juu"
     },
     zh: {
-        navHome: "首页", navSkills: "技能", navProjects: "项目", navContact: "联系",
-        letsTalk: "沟通合作", heroStatus: "可承接项目与合作", heroTitle: "构建智能 Web 与人工智能系统",
-        heroSubtitle: "Python、C 与 C++ 开发者，专注于人工智能与机器学习、计算机视觉及后端系统。", btnProjects: "查看项目",
-        btnContact: "联系我", clickConnect: "点击社交平台进行连接",
-        skillsTitle: "技能与工具", skillsSubtitle: "支撑我项目的编程语言与框架",
-        skillGroupLang: "编程语言", skillGroupAI: "人工智能与机器学习", skillGroupBackend: "后端与工具",
-        skillAiml: "人工智能与机器学习", skillAimlDesc: "LLM 应用 · 计算机视觉 · 风险分诊",
-        skillGroupSpoken: "语言能力", langEnglish: "英语", langKiswahili: "斯瓦希里语", langMandarin: "普通话",
-        levelFluent: "流利", levelNative: "母语", levelBasic: "基础",
-        projectsTitle: "精选项目", projectsSubtitle: "我最有代表性的作品，从 AI 学习平台到离线计算机视觉",
-        proj1Badge: "AI · 教育 · 已上线", proj1Title: "Rahah",
-        proj1Desc: "面向学生的学习平台：按学科把每个问题交给更快或更强的 Claude 模型，拍照批改作业，回答注明笔记页码，并把笔记变成测验、抽认卡和复习计划。支持 M-Pesa 或银行卡付款。",
-        proj2Badge: "AI · 社会公益", proj2Title: "AmaniHaven",
-        proj2Desc: "通过 USSD 和短信为任何普通手机提供免费、保密的心理健康支持，支持英语和斯瓦希里语。离线规则与 Claude 共同评估风险，并在数秒内通知人工咨询师。",
-        proj3Badge: "视觉 AI · 无障碍", proj3Title: "GemmaSight",
-        proj3Desc: "为盲人和低视力人群打造的手机摄像头助手。它会朗读标签、药品和钱币信息，优先提醒绊倒危险，并用钟点方向和提示音引导你找到丢失的物品，支持英语和斯瓦希里语。",
-        proj4Badge: "边缘计算机视觉", proj4Title: "NeuSE",
-        proj4Desc: "用于搜救的离线热成像流程。通过对比度增强、热阈值和轮廓检测找出温热区域，记录每个检测框和处理时间，并可在无需网络的本地仪表盘上查看。",
-        contribTitle: "贡献活动", contribTotal: "过去一年共 {n} 次贡献", contribDay: "{date}：{n} 次贡献",
-        contribDayOne: "{date}：1 次贡献", contribDayNone: "{date}：无贡献", contribLearn: "了解贡献的统计方式",
-        contribLess: "少", contribMore: "多", contribError: "暂时无法加载实时活动。", contribView: "在 GitHub 上查看",
-        navCerts: "证书", certsTitle: "证书", certsSubtitle: "我在人工智能与机器学习方面的课程与活动", certCredential: "证书编号", certVerify: "验证", certHint: "点击卡片切换", certOpen: "查看大图",
-        contactTitle: "取得联系", contactSubtitle: "让我们在您的下一个项目或后端系统上展开合作",
-        certInProgress: "进行中 · 第 1 周：搜索算法", certAttendance: "参会证书",
-        navHack: "黑客松", hackTitle: "黑客松", hackSubtitle: "与团队一起在截止时间前完成作品", hack1Place: "第 2 名", hack1Desc: "GemmaSight 的主力开发者", hack2Place: "第 4 名", hack2Desc: "为面向学生的 AI 学习工具设计架构并选择技术",
-        demoLabel: "在线演示",
-        emailLabel: "电子邮箱", appearanceLabel: "外观主题", repoLabel: "代码仓库"
+        navWork: "作品", navStack: "技术栈", navWins: "荣誉", navContact: "联系",
+        status: "欢迎合作",
+        role: "AI/ML 与后端 · 内罗毕",
+        heroLead: "我做的 AI，", heroAccent: "真的有人在用。",
+        heroText: "内罗毕软件工程专业学生，常用 Python、FastAPI 和 Claude API。",
+        btnWork: "看看作品", btnChat: "WhatsApp 联系",
+        stat1: "MLH 黑客松名次", stat2: "个自动化测试", stat3: "的 Rahah 用户成绩提高",
+        workTitle: "作品", workNote: "从零做到上线", replay: "重播", tagLive: "已上线", linkDemo: "在线演示", linkCode: "代码", tagSms: "短信 + USSD", tagMlh: "MLH 第 2 名", tagHuawei: "华为 ICT 2026", p1Text: "为肯尼亚学生打造的学习应用。回答会注明出自你笔记的哪一页，还能拍照批改作业。", p1Facts: "15 人注册 · 13 人成绩提高 · 191 个测试", p2Text: "通过短信提供免费心理健康支持，任何手机都能用，支持英语和斯瓦希里语。紧急消息会转给真人咨询师。", p2Facts: "号码加密 · 30 天后删除 · 74 个测试", p3Text: "为盲人和低视力人群打造的相机助手。它会朗读标签，并帮你找到丢失的东西。", p3Facts: "主力开发 · 15+ 位蒙眼测试者 · 44 个测试", p4Text: "在热成像画面中找出温热区域，用于搜救。在无网络的现场设备上运行。", p4Facts: "每次检测都离线记录 · 17 个测试",
+        stackTitle: "技术栈", stackLang: "编程语言", stackAi: "AI 与视觉", stackBackend: "后端", stackSpeak: "语言能力", langSw: "斯瓦希里语", langEn: "英语", langZh: "普通话", lvlNative: "母语", lvlFluent: "流利", lvlBasic: "基础",
+        winsTitle: "荣誉", groupHack: "黑客松", groupCerts: "证书", groupMember: "会员", place2: "第 2 名", place4: "第 4 名", hack1: "GemmaSight 主力开发", hack2: "为一款 AI 学习工具设计架构", inProgress: "进行中", attended: "参加", verify: "验证", viewCert: "查看证书", close: "关闭", memberSince: "2026 年 4 月加入", contribTitle: "GitHub 动态", contribTotal: "过去一年 {n} 次贡献", contribDay: "{date}：{n} 次贡献", contribDayOne: "{date}：1 次贡献", contribDayNone: "{date}：无贡献", contribLess: "少", contribMore: "多", contribError: "暂时无法加载动态。", contribView: "去 GitHub 查看",
+        contactTitle: "一起做点东西吧。", contactText: "有项目或职位想聊？给我发消息。", email: "邮箱",
+        backTop: "回到顶部"
     },
     hi: {
-        navHome: "होम", navSkills: "कौशल", navProjects: "परियोजनाएं", navContact: "संपर्क",
-        letsTalk: "बातचीत करें", heroStatus: "परियोजनाओं और सहयोग के लिए उपलब्ध", heroTitle: "इंटेलिजेंट वेब और एआई सिस्टम का निर्माण",
-        heroSubtitle: "Python, C और C++ डेवलपर — AI और मशीन लर्निंग, कंप्यूटर विज़न और बैकएंड सिस्टम।", btnProjects: "परियोजनाएं",
-        btnContact: "संपर्क करें", clickConnect: "जुड़ने के लिए प्लेटफ़ॉर्म पर क्लिक करें",
-        skillsTitle: "कौशल और टूल्स", skillsSubtitle: "मेरी परियोजनाओं के पीछे की भाषाएं और फ्रेमवर्क",
-        skillGroupLang: "प्रोग्रामिंग भाषाएं", skillGroupAI: "AI और मशीन लर्निंग", skillGroupBackend: "बैकएंड और टूल्स",
-        skillAiml: "AI और मशीन लर्निंग", skillAimlDesc: "LLM ऐप्स · कंप्यूटर विज़न · जोखिम आकलन",
-        skillGroupSpoken: "बोली जाने वाली भाषाएं", langEnglish: "अंग्रेज़ी", langKiswahili: "स्वाहिली", langMandarin: "मंदारिन",
-        levelFluent: "धाराप्रवाह", levelNative: "मातृभाषा", levelBasic: "बुनियादी",
-        projectsTitle: "प्रमुख परियोजनाएं", projectsSubtitle: "मेरा सबसे मज़बूत काम, AI स्टडी टूल से लेकर ऑफ़लाइन कंप्यूटर विज़न तक",
-        proj1Badge: "AI · शिक्षा · लाइव", proj1Title: "Rahah",
-        proj1Desc: "छात्रों के लिए एक स्टडी प्लेटफ़ॉर्म जो हर सवाल को तेज़ या ज़्यादा सक्षम Claude मॉडल को भेजता है, फ़ोटो से होमवर्क जाँचता है, नोट्स का पेज बताता है, और नोट्स को टेस्ट, फ़्लैशकार्ड और रिवीज़न प्लान में बदलता है। M-Pesa या कार्ड से भुगतान।",
-        proj2Badge: "AI · सामाजिक प्रभाव", proj2Title: "AmaniHaven",
-        proj2Desc: "किसी भी साधारण फ़ोन के लिए USSD और SMS पर मुफ़्त, गोपनीय मानसिक स्वास्थ्य सहायता, अंग्रेज़ी या स्वाहिली में। ऑफ़लाइन नियम और Claude जोखिम का आकलन करते हैं और कुछ ही सेकंड में मानव काउंसलर को सूचित करते हैं।",
-        proj3Badge: "विज़न AI · सुलभता", proj3Title: "GemmaSight",
-        proj3Desc: "दृष्टिहीन और कम दृष्टि वाले लोगों के लिए फ़ोन-कैमरा सहायक। यह लेबल, दवा और पैसे पढ़कर सुनाता है, ठोकर के खतरे पहले बताता है, और घड़ी की दिशाओं व बीप से खोई चीज़ तक ले जाता है, अंग्रेज़ी या स्वाहिली में।",
-        proj4Badge: "एज कंप्यूटर विज़न", proj4Title: "NeuSE",
-        proj4Desc: "खोज और बचाव के लिए ऑफ़लाइन थर्मल इमेजिंग पाइपलाइन। कंट्रास्ट बढ़ाने, हीट थ्रेशोल्डिंग और कंटूर डिटेक्शन से गर्म क्षेत्र मिलते हैं, और हर डिटेक्शन अपने बॉक्स और प्रोसेसिंग समय के साथ बिना नेटवर्क वाले लोकल डैशबोर्ड पर दर्ज होता है।",
-        contribTitle: "योगदान गतिविधि", contribTotal: "पिछले एक वर्ष में {n} योगदान", contribDay: "{date} को {n} योगदान",
-        contribDayOne: "{date} को 1 योगदान", contribDayNone: "{date} को कोई योगदान नहीं", contribLearn: "जानें कि योगदान कैसे गिने जाते हैं",
-        contribLess: "कम", contribMore: "अधिक", contribError: "लाइव गतिविधि अभी लोड नहीं हो सकी।", contribView: "GitHub पर देखें",
-        navCerts: "प्रमाणपत्र", certsTitle: "प्रमाणपत्र", certsSubtitle: "AI और मशीन लर्निंग में मेरे कोर्स और कार्यक्रम", certCredential: "क्रेडेंशियल ID", certVerify: "सत्यापित करें", certHint: "बदलने के लिए स्टैक पर टैप करें", certOpen: "पूरा आकार",
-        contactTitle: "संपर्क में रहें", contactSubtitle: "आइए अपनी अगली परियोजना या बैकएंड सिस्टम पर एक साथ काम करें",
-        certInProgress: "जारी · सप्ताह 1: सर्च एल्गोरिदम", certAttendance: "उपस्थिति प्रमाणपत्र",
-        navHack: "हैकाथॉन", hackTitle: "हैकाथॉन", hackSubtitle: "टीम के साथ समय-सीमा में निर्माण", hack1Place: "दूसरा स्थान", hack1Desc: "GemmaSight पर मुख्य कोडर", hack2Place: "चौथा स्थान", hack2Desc: "छात्रों के लिए एक AI स्टडी टूल का आर्किटेक्चर डिज़ाइन किया और टूल चुने",
-        demoLabel: "लाइव डेमो",
-        emailLabel: "डायरेक्ट ईमेल", appearanceLabel: "दिखावट", repoLabel: "रिपॉजिटरी"
+        navWork: "काम", navStack: "स्टैक", navWins: "उपलब्धियाँ", navContact: "संपर्क",
+        status: "काम के लिए उपलब्ध",
+        role: "AI/ML और बैकएंड · नैरोबी",
+        heroLead: "मैं ऐसा AI बनाता हूँ", heroAccent: "जिसे लोग सच में इस्तेमाल करते हैं।",
+        heroText: "नैरोबी में सॉफ़्टवेयर इंजीनियरिंग का छात्र। Python, FastAPI और Claude API से बनाता हूँ।",
+        btnWork: "मेरा काम देखें", btnChat: "WhatsApp करें",
+        stat1: "MLH हैकाथॉन में", stat2: "टेस्ट लिखे", stat3: "Rahah यूज़र्स के अंक बढ़े",
+        workTitle: "काम", workNote: "शुरू से आख़िर तक बनाया", replay: "फिर से चलाएँ", tagLive: "लाइव", linkDemo: "लाइव डेमो", linkCode: "कोड", tagSms: "SMS + USSD", tagMlh: "MLH में दूसरा स्थान", tagHuawei: "Huawei ICT 2026", p1Text: "केन्या के छात्रों के लिए स्टडी ऐप। जवाब आपके नोट्स का पेज बताते हैं, और यह फ़ोटो से होमवर्क जाँचता है।", p1Facts: "15 साइन-अप · 13 के अंक बढ़े · 191 टेस्ट", p2Text: "किसी भी फ़ोन पर SMS से मुफ़्त मानसिक स्वास्थ्य सहायता, अंग्रेज़ी या स्वाहिली में। ज़रूरी संदेश असली काउंसलर तक पहुँचते हैं।", p2Facts: "नंबर एन्क्रिप्टेड · 30 दिन बाद डिलीट · 74 टेस्ट", p3Text: "दृष्टिहीन और कम दृष्टि वाले लोगों के लिए कैमरा सहायक। यह लेबल पढ़कर सुनाता है और खोई चीज़ें ढूँढने में मदद करता है।", p3Facts: "मुख्य कोडर · 15+ आँखों पर पट्टी बाँधे टेस्टर · 44 टेस्ट", p4Text: "खोज और बचाव के लिए थर्मल फ़ुटेज में गर्म क्षेत्र ढूँढता है। बिना नेटवर्क वाले फ़ील्ड डिवाइस पर चलता है।", p4Facts: "हर डिटेक्शन ऑफ़लाइन दर्ज · 17 टेस्ट",
+        stackTitle: "स्टैक", stackLang: "भाषाएँ", stackAi: "AI और विज़न", stackBackend: "बैकएंड", stackSpeak: "मैं बोलता हूँ", langSw: "स्वाहिली", langEn: "अंग्रेज़ी", langZh: "मंदारिन", lvlNative: "मातृभाषा", lvlFluent: "धाराप्रवाह", lvlBasic: "बुनियादी",
+        winsTitle: "उपलब्धियाँ", groupHack: "हैकाथॉन", groupCerts: "सर्टिफ़िकेट", groupMember: "सदस्यता", place2: "दूसरा स्थान", place4: "चौथा स्थान", hack1: "GemmaSight पर मुख्य कोडर", hack2: "एक AI स्टडी टूल का आर्किटेक्चर डिज़ाइन किया", inProgress: "जारी", attended: "भाग लिया", verify: "सत्यापित करें", viewCert: "सर्टिफ़िकेट देखें", close: "बंद करें", memberSince: "अप्रैल 2026 से सदस्य", contribTitle: "GitHub पर", contribTotal: "पिछले साल {n} योगदान", contribDay: "{date} को {n} योगदान", contribDayOne: "{date} को 1 योगदान", contribDayNone: "{date} को कोई योगदान नहीं", contribLess: "कम", contribMore: "ज़्यादा", contribError: "अभी गतिविधि लोड नहीं हो सकी।", contribView: "GitHub पर देखें",
+        contactTitle: "चलिए कुछ बनाते हैं।", contactText: "कोई प्रोजेक्ट या नौकरी के बारे में सोच रहे हैं? मुझे मैसेज करें।", email: "ईमेल",
+        backTop: "ऊपर जाएँ"
     },
     es: {
-        navHome: "Inicio", navSkills: "Habilidades", navProjects: "Proyectos", navContact: "Contacto",
-        letsTalk: "Hablemos", heroStatus: "Disponible para proyectos y colaboraciones", heroTitle: "Construyendo Sistemas Web e Inteligencia Artificial",
-        heroSubtitle: "Desarrollo en Python, C y C++ con enfoque en inteligencia artificial, aprendizaje automático, visión por computadora y sistemas backend.", btnProjects: "Proyectos",
-        btnContact: "Contacto", clickConnect: "Haz clic en una plataforma para conectar",
-        skillsTitle: "Habilidades y Herramientas", skillsSubtitle: "Los lenguajes y frameworks detrás de mis proyectos",
-        skillGroupLang: "Lenguajes", skillGroupAI: "IA y Aprendizaje Automático", skillGroupBackend: "Backend y Herramientas",
-        skillAiml: "IA y Aprendizaje Automático", skillAimlDesc: "Apps con LLM · visión por computadora · triaje de riesgo",
-        skillGroupSpoken: "Idiomas", langEnglish: "Inglés", langKiswahili: "Suajili", langMandarin: "Mandarín",
-        levelFluent: "Fluido", levelNative: "Nativo", levelBasic: "Básico",
-        projectsTitle: "Proyectos Destacados", projectsSubtitle: "Mi mejor trabajo, desde herramientas de estudio con IA hasta visión por computadora sin conexión",
-        proj1Badge: "IA · Educación · En vivo", proj1Title: "Rahah",
-        proj1Desc: "Una plataforma de estudio que envía cada pregunta a un modelo Claude más rápido o más potente, corrige tareas a partir de una foto, cita la página de tus apuntes y convierte los apuntes en exámenes, tarjetas y un plan de repaso. Pago con M-Pesa o tarjeta.",
-        proj2Badge: "IA · Impacto Social", proj2Title: "AmaniHaven",
-        proj2Desc: "Apoyo de salud mental gratuito y confidencial por USSD y SMS para cualquier teléfono básico, en inglés o suajili. Reglas sin conexión y Claude evalúan el riesgo y alertan a consejeros humanos en segundos.",
-        proj3Badge: "IA de Visión · Accesibilidad", proj3Title: "GemmaSight",
-        proj3Desc: "Un asistente con la cámara del teléfono para personas ciegas y con baja visión. Lee en voz alta etiquetas, medicinas y dinero, avisa primero de los obstáculos y guía hacia objetos perdidos con direcciones de reloj y pitidos, en inglés o suajili.",
-        proj4Badge: "Visión en el Borde", proj4Title: "NeuSE",
-        proj4Desc: "Un sistema de imagen térmica sin conexión para búsqueda y rescate. El realce de contraste, el umbral de calor y la detección de contornos encuentran zonas cálidas; cada detección se registra con su recuadro y tiempo de proceso en un panel local que no necesita red.",
-        contribTitle: "Actividad de Contribuciones", contribTotal: "{n} contribuciones en el último año", contribDay: "{n} contribuciones el {date}",
-        contribDayOne: "1 contribución el {date}", contribDayNone: "Sin contribuciones el {date}", contribLearn: "Cómo se cuentan las contribuciones",
-        contribLess: "Menos", contribMore: "Más", contribError: "No se pudo cargar la actividad en vivo.", contribView: "Ver en GitHub",
-        navCerts: "Certificaciones", certsTitle: "Certificaciones", certsSubtitle: "Cursos y eventos en IA y aprendizaje automático", certCredential: "ID de credencial", certVerify: "Verificar", certHint: "Toca la pila para barajar", certOpen: "Tamaño completo",
-        contactTitle: "Ponerse en Contacto", contactSubtitle: "Colaboremos en tu próximo proyecto o sistema backend",
-        certInProgress: "En curso · Semana 1: algoritmos de búsqueda", certAttendance: "Certificado de asistencia",
-        navHack: "Hackatones", hackTitle: "Hackatones", hackSubtitle: "Construyendo en equipo contra el reloj", hack1Place: "2.º lugar", hack1Desc: "Programador principal de GemmaSight", hack2Place: "4.º lugar", hack2Desc: "Diseñé la arquitectura y elegí las herramientas de una herramienta de estudio con IA para estudiantes",
-        demoLabel: "Demo en vivo",
-        emailLabel: "Correo Directo", appearanceLabel: "Apariencia", repoLabel: "Repositorio"
-    },
-    ar: {
-        navHome: "الرئيسية", navSkills: "المهارات", navProjects: "المشاريع", navContact: "التواصل",
-        letsTalk: "تواصل معي", heroStatus: "متاح للمشاريع والتعاون", heroTitle: "بناء أنظمة الويب والذكاء الاصطناعي الذكية",
-        heroSubtitle: "تطوير بلغات Python و C و C++ مع التركيز على الذكاء الاصطناعي وتعلم الآلة والرؤية الحاسوبية وأنظمة الخلفية.", btnProjects: "المشاريع",
-        btnContact: "تواصل معي", clickConnect: "انقر على منصة للتواصل",
-        skillsTitle: "المهارات والأدوات", skillsSubtitle: "اللغات وأطر العمل التي بُنيت بها مشاريعي",
-        skillGroupLang: "لغات البرمجة", skillGroupAI: "الذكاء الاصطناعي وتعلم الآلة", skillGroupBackend: "الخلفية والأدوات",
-        skillAiml: "الذكاء الاصطناعي وتعلم الآلة", skillAimlDesc: "تطبيقات نماذج اللغة · رؤية حاسوبية · فرز المخاطر",
-        skillGroupSpoken: "اللغات المحكية", langEnglish: "الإنجليزية", langKiswahili: "السواحيلية", langMandarin: "الماندرين",
-        levelFluent: "بطلاقة", levelNative: "اللغة الأم", levelBasic: "أساسي",
-        projectsTitle: "المشاريع المميزة", projectsSubtitle: "أقوى أعمالي، من أدوات الدراسة بالذكاء الاصطناعي إلى الرؤية الحاسوبية دون اتصال",
-        proj1Badge: "ذكاء اصطناعي · تعليم · مباشر", proj1Title: "Rahah",
-        proj1Desc: "منصة دراسة للطلاب توجّه كل سؤال إلى نموذج Claude أسرع أو أقوى، وتصحح الواجبات من صورة، وتذكر صفحة الملاحظات التي جاء منها الجواب، وتحوّل الملاحظات إلى اختبارات وبطاقات تعليمية وخطة مراجعة. الدفع عبر M-Pesa أو البطاقة.",
-        proj2Badge: "ذكاء اصطناعي · أثر اجتماعي", proj2Title: "AmaniHaven",
-        proj2Desc: "دعم مجاني وسري للصحة النفسية عبر USSD والرسائل القصيرة لأي هاتف بسيط، بالإنجليزية أو السواحيلية. تقيّم القواعد غير المتصلة و Claude مستوى الخطر وتنبّه المستشارين خلال ثوانٍ.",
-        proj3Badge: "رؤية بالذكاء الاصطناعي · إتاحة", proj3Title: "GemmaSight",
-        proj3Desc: "مساعد بكاميرا الهاتف للمكفوفين وضعاف البصر. يقرأ بصوت عالٍ الملصقات والأدوية والنقود، وينبّه أولًا إلى مخاطر التعثر، ويرشد إلى الأشياء المفقودة باتجاهات الساعة وإشارات صوتية، بالإنجليزية أو السواحيلية.",
-        proj4Badge: "رؤية حاسوبية طرفية", proj4Title: "NeuSE",
-        proj4Desc: "نظام تصوير حراري يعمل دون اتصال لعمليات البحث والإنقاذ. يحدد المناطق الدافئة بتحسين التباين وعتبة الحرارة واكتشاف الحواف، ويسجل كل اكتشاف مع إطاره ووقت معالجته على لوحة محلية لا تحتاج إلى شبكة.",
-        contribTitle: "نشاط المساهمات", contribTotal: "{n} مساهمة خلال العام الماضي", contribDay: "{n} مساهمة في {date}",
-        contribDayOne: "مساهمة واحدة في {date}", contribDayNone: "لا مساهمات في {date}", contribLearn: "تعرّف على طريقة احتساب المساهمات",
-        contribLess: "أقل", contribMore: "أكثر", contribError: "تعذّر تحميل النشاط المباشر حاليًا.", contribView: "عرض على GitHub",
-        navCerts: "الشهادات", certsTitle: "الشهادات", certsSubtitle: "دورات وفعاليات في الذكاء الاصطناعي وتعلم الآلة", certCredential: "رقم الاعتماد", certVerify: "تحقق", certHint: "انقر على المجموعة للتبديل", certOpen: "الحجم الكامل",
-        contactTitle: "تواصل معي", contactSubtitle: "دعنا نتعاون في مشروعك القادم أو نظام البرمجيات الخلفية",
-        certInProgress: "قيد الدراسة · الأسبوع 1: خوارزميات البحث", certAttendance: "شهادة حضور",
-        navHack: "الهاكاثونات", hackTitle: "الهاكاثونات", hackSubtitle: "البناء ضمن فريق وتحت ضغط الوقت", hack1Place: "المركز الثاني", hack1Desc: "المبرمج الرئيسي لمشروع GemmaSight", hack2Place: "المركز الرابع", hack2Desc: "صممت البنية واخترت الأدوات لأداة دراسة بالذكاء الاصطناعي للطلاب",
-        demoLabel: "عرض مباشر",
-        emailLabel: "البريد الإلكتروني المباشر", appearanceLabel: "المظهر", repoLabel: "مستودع الكود"
+        navWork: "Proyectos", navStack: "Stack", navWins: "Logros", navContact: "Contacto",
+        status: "Disponible",
+        role: "IA/ML y backend · Nairobi",
+        heroLead: "Creo IA que", heroAccent: "la gente usa de verdad.",
+        heroText: "Estudiante de ingeniería de software en Nairobi. Trabajo con Python, FastAPI y la API de Claude.",
+        btnWork: "Ver proyectos", btnChat: "Escríbeme",
+        stat1: "en un hackathon de MLH", stat2: "tests escritos", stat3: "de usuarios de Rahah mejoró sus notas",
+        workTitle: "Proyectos", workNote: "Hechos de principio a fin", replay: "Repetir", tagLive: "En línea", linkDemo: "Demo", linkCode: "Código", tagSms: "SMS + USSD", tagMlh: "2.º en MLH", tagHuawei: "Huawei ICT 2026", p1Text: "Una app de estudio para estudiantes en Kenia. Las respuestas citan la página de tus apuntes y corrige tareas desde una foto.", p1Facts: "15 registros · 13 mejoraron sus notas · 191 tests", p2Text: "Apoyo gratuito de salud mental por SMS, en cualquier teléfono, en inglés o suajili. Los mensajes urgentes llegan a un consejero real.", p2Facts: "Números cifrados · Se borran a los 30 días · 74 tests", p3Text: "Un asistente de cámara para personas ciegas o con baja visión. Lee etiquetas en voz alta y te guía hacia lo que perdiste.", p3Facts: "Programador principal · 15+ testers con los ojos vendados · 44 tests", p4Text: "Encuentra zonas cálidas en imágenes térmicas para búsqueda y rescate. Funciona en un equipo de campo sin red.", p4Facts: "Cada detección se guarda sin conexión · 17 tests",
+        stackTitle: "Stack", stackLang: "Lenguajes", stackAi: "IA y visión", stackBackend: "Backend", stackSpeak: "Hablo", langSw: "Suajili", langEn: "Inglés", langZh: "Mandarín", lvlNative: "nativo", lvlFluent: "fluido", lvlBasic: "básico",
+        winsTitle: "Logros", groupHack: "Hackatones", groupCerts: "Certificados", groupMember: "Membresías", place2: "2.º lugar", place4: "4.º lugar", hack1: "Programador principal de GemmaSight", hack2: "Diseñé la arquitectura de una herramienta de estudio con IA", inProgress: "En curso", attended: "Asistí", verify: "Verificar", viewCert: "Ver certificado", close: "Cerrar", memberSince: "Miembro desde abril de 2026", contribTitle: "En GitHub", contribTotal: "{n} contribuciones en el último año", contribDay: "{n} contribuciones el {date}", contribDayOne: "1 contribución el {date}", contribDayNone: "Sin contribuciones el {date}", contribLess: "Menos", contribMore: "Más", contribError: "No se pudo cargar la actividad.", contribView: "Verla en GitHub",
+        contactTitle: "Construyamos algo.", contactText: "¿Tienes un proyecto o un puesto en mente? Escríbeme.", email: "Correo",
+        backTop: "Volver arriba"
     },
     fr: {
-        navHome: "Accueil", navSkills: "Compétences", navProjects: "Projets", navContact: "Contact",
-        letsTalk: "Discutons", heroStatus: "Disponible pour projets et collaborations", heroTitle: "Création de Systèmes Web et d'IA Intelligents",
-        heroSubtitle: "Développement en Python, C et C++, axé sur l'IA, l'apprentissage automatique, la vision par ordinateur et les systèmes backend.", btnProjects: "Projets",
-        btnContact: "Contact", clickConnect: "Cliquez sur une plateforme pour vous connecter",
-        skillsTitle: "Compétences & Outils", skillsSubtitle: "Les langages et frameworks derrière mes projets",
-        skillGroupLang: "Langages", skillGroupAI: "IA & Apprentissage Automatique", skillGroupBackend: "Backend & Outils",
-        skillAiml: "IA & Apprentissage Automatique", skillAimlDesc: "Applications LLM · vision par ordinateur · triage des risques",
-        skillGroupSpoken: "Langues parlées", langEnglish: "Anglais", langKiswahili: "Swahili", langMandarin: "Mandarin",
-        levelFluent: "Courant", levelNative: "Langue maternelle", levelBasic: "Notions",
-        projectsTitle: "Projets En Vedette", projectsSubtitle: "Mes meilleurs projets, des outils d'étude par IA à la vision par ordinateur hors ligne",
-        proj1Badge: "IA · Éducation · En ligne", proj1Title: "Rahah",
-        proj1Desc: "Une plateforme d'étude qui envoie chaque question à un modèle Claude plus rapide ou plus puissant, corrige les devoirs à partir d'une photo, cite la page de vos notes et transforme les notes en tests, fiches et plan de révision. Paiement par M-Pesa ou carte.",
-        proj2Badge: "IA · Impact Social", proj2Title: "AmaniHaven",
-        proj2Desc: "Soutien en santé mentale gratuit et confidentiel par USSD et SMS pour tout téléphone basique, en anglais ou en swahili. Des règles hors ligne et Claude évaluent le risque et alertent des conseillers humains en quelques secondes.",
-        proj3Badge: "IA de Vision · Accessibilité", proj3Title: "GemmaSight",
-        proj3Desc: "Un assistant caméra pour les personnes aveugles et malvoyantes. Il lit à voix haute étiquettes, médicaments et billets, signale d'abord les obstacles et guide vers les objets perdus avec des directions horaires et des bips, en anglais ou en swahili.",
-        proj4Badge: "Vision Embarquée", proj4Title: "NeuSE",
-        proj4Desc: "Un pipeline d'imagerie thermique hors ligne pour la recherche et le sauvetage. Le rehaussement du contraste, le seuillage thermique et la détection de contours repèrent les zones chaudes ; chaque détection est enregistrée avec son cadre et son temps de traitement sur un tableau de bord local sans réseau.",
-        contribTitle: "Activité de Contributions", contribTotal: "{n} contributions au cours de l'année", contribDay: "{n} contributions le {date}",
-        contribDayOne: "1 contribution le {date}", contribDayNone: "Aucune contribution le {date}", contribLearn: "Comment les contributions sont comptées",
-        contribLess: "Moins", contribMore: "Plus", contribError: "Impossible de charger l'activité en direct.", contribView: "Voir sur GitHub",
-        navCerts: "Certifications", certsTitle: "Certifications", certsSubtitle: "Cours et événements en IA et apprentissage automatique", certCredential: "ID de certification", certVerify: "Vérifier", certHint: "Touchez la pile pour mélanger", certOpen: "Taille réelle",
-        contactTitle: "Prendre Contact", contactSubtitle: "Collaborons sur votre prochain projet ou système backend",
-        certInProgress: "En cours · Semaine 1 : algorithmes de recherche", certAttendance: "Certificat de participation",
-        navHack: "Hackathons", hackTitle: "Hackathons", hackSubtitle: "Construire en équipe, contre la montre", hack1Place: "2e place", hack1Desc: "Développeur principal de GemmaSight", hack2Place: "4e place", hack2Desc: "J'ai conçu l'architecture et choisi les outils d'un outil d'étude par IA pour les étudiants",
-        demoLabel: "Démo en ligne",
-        emailLabel: "E-mail Direct", appearanceLabel: "Apparence", repoLabel: "Dépôt de Code"
+        navWork: "Projets", navStack: "Stack", navWins: "Prix", navContact: "Contact",
+        status: "Disponible",
+        role: "IA/ML et backend · Nairobi",
+        heroLead: "Je crée de l'IA", heroAccent: "que les gens utilisent vraiment.",
+        heroText: "Étudiant en génie logiciel à Nairobi. Je travaille avec Python, FastAPI et l'API Claude.",
+        btnWork: "Voir mes projets", btnChat: "M'écrire",
+        stat1: "à un hackathon MLH", stat2: "tests écrits", stat3: "des utilisateurs de Rahah ont progressé",
+        workTitle: "Projets", workNote: "Conçus de A à Z", replay: "Rejouer", tagLive: "En ligne", linkDemo: "Démo", linkCode: "Code", tagSms: "SMS + USSD", tagMlh: "2e au MLH", tagHuawei: "Huawei ICT 2026", p1Text: "Une appli de révision pour les élèves kényans. Les réponses citent la page de vos notes, et elle corrige les devoirs à partir d'une photo.", p1Facts: "15 inscrits · 13 ont progressé · 191 tests", p2Text: "Un soutien psychologique gratuit par SMS, sur n'importe quel téléphone, en anglais ou en swahili. Les messages urgents arrivent à un vrai conseiller.", p2Facts: "Numéros chiffrés · Supprimés après 30 jours · 74 tests", p3Text: "Un assistant caméra pour les personnes aveugles et malvoyantes. Il lit les étiquettes à voix haute et guide vers les objets perdus.", p3Facts: "Développeur principal · 15+ testeurs les yeux bandés · 44 tests", p4Text: "Repère les zones chaudes dans des images thermiques pour la recherche et le sauvetage. Tourne sur un boîtier de terrain sans réseau.", p4Facts: "Chaque détection enregistrée hors ligne · 17 tests",
+        stackTitle: "Stack", stackLang: "Langages", stackAi: "IA et vision", stackBackend: "Backend", stackSpeak: "Je parle", langSw: "Swahili", langEn: "Anglais", langZh: "Mandarin", lvlNative: "natif", lvlFluent: "courant", lvlBasic: "notions",
+        winsTitle: "Prix", groupHack: "Hackathons", groupCerts: "Certificats", groupMember: "Adhésions", place2: "2e place", place4: "4e place", hack1: "Développeur principal de GemmaSight", hack2: "J'ai conçu l'architecture d'un outil de révision par IA", inProgress: "En cours", attended: "Participation", verify: "Vérifier", viewCert: "Voir le certificat", close: "Fermer", memberSince: "Membre depuis avril 2026", contribTitle: "Sur GitHub", contribTotal: "{n} contributions cette année", contribDay: "{n} contributions le {date}", contribDayOne: "1 contribution le {date}", contribDayNone: "Aucune contribution le {date}", contribLess: "Moins", contribMore: "Plus", contribError: "Activité indisponible pour le moment.", contribView: "Voir sur GitHub",
+        contactTitle: "Construisons quelque chose.", contactText: "Un projet ou un poste en tête ? Écrivez-moi.", email: "E-mail",
+        backTop: "Haut de page"
+    },
+    ar: {
+        navWork: "أعمالي", navStack: "الأدوات", navWins: "إنجازات", navContact: "تواصل",
+        status: "متاح للعمل",
+        role: "ذكاء اصطناعي وأنظمة خلفية · نيروبي",
+        heroLead: "أبني ذكاءً اصطناعيًا", heroAccent: "يستخدمه الناس فعلًا.",
+        heroText: "طالب هندسة برمجيات في نيروبي. أعمل بـ Python و FastAPI و Claude API.",
+        btnWork: "شاهد أعمالي", btnChat: "راسلني",
+        stat1: "في هاكاثون MLH", stat2: "اختبارًا كتبتها", stat3: "من مستخدمي Rahah تحسّنت درجاتهم",
+        workTitle: "أعمالي", workNote: "بنيتها من البداية إلى النهاية", replay: "إعادة التشغيل", tagLive: "يعمل الآن", linkDemo: "تجربة مباشرة", linkCode: "الكود", tagSms: "SMS + USSD", tagMlh: "المركز الثاني في MLH", tagHuawei: "Huawei ICT 2026", p1Text: "تطبيق دراسة لطلاب كينيا. الإجابات تذكر صفحة ملاحظاتك، ويصحّح الواجبات من صورة.", p1Facts: "15 مشتركًا · 13 تحسّنت درجاتهم · 191 اختبارًا", p2Text: "دعم نفسي مجاني عبر الرسائل القصيرة على أي هاتف، بالإنجليزية أو السواحيلية. الرسائل العاجلة تصل إلى مستشار حقيقي.", p2Facts: "الأرقام مشفّرة · تُحذف بعد 30 يومًا · 74 اختبارًا", p3Text: "مساعد بالكاميرا للمكفوفين وضعاف البصر. يقرأ الملصقات بصوت عالٍ ويرشدك إلى ما أضعته.", p3Facts: "المبرمج الرئيسي · أكثر من 15 مختبرًا معصوبي الأعين · 44 اختبارًا", p4Text: "يحدد المناطق الدافئة في الصور الحرارية لعمليات البحث والإنقاذ. يعمل على جهاز ميداني دون شبكة.", p4Facts: "كل اكتشاف يُسجَّل دون اتصال · 17 اختبارًا",
+        stackTitle: "الأدوات", stackLang: "لغات البرمجة", stackAi: "الذكاء الاصطناعي والرؤية", stackBackend: "الأنظمة الخلفية", stackSpeak: "أتحدث", langSw: "السواحيلية", langEn: "الإنجليزية", langZh: "الماندرين", lvlNative: "لغتي الأم", lvlFluent: "بطلاقة", lvlBasic: "مبتدئ",
+        winsTitle: "إنجازات", groupHack: "الهاكاثونات", groupCerts: "الشهادات", groupMember: "العضويات", place2: "المركز الثاني", place4: "المركز الرابع", hack1: "المبرمج الرئيسي لـ GemmaSight", hack2: "صممت بنية أداة دراسة بالذكاء الاصطناعي", inProgress: "قيد الدراسة", attended: "حضور", verify: "تحقق", viewCert: "عرض الشهادة", close: "إغلاق", memberSince: "عضو منذ أبريل 2026", contribTitle: "على GitHub", contribTotal: "{n} مساهمة خلال العام الماضي", contribDay: "{n} مساهمة في {date}", contribDayOne: "مساهمة واحدة في {date}", contribDayNone: "لا مساهمات في {date}", contribLess: "أقل", contribMore: "أكثر", contribError: "تعذّر تحميل النشاط الآن.", contribView: "شاهده على GitHub",
+        contactTitle: "لنبنِ شيئًا معًا.", contactText: "لديك مشروع أو وظيفة في بالك؟ راسلني.", email: "البريد",
+        backTop: "إلى الأعلى"
     }
 };
 
-// Base Project Metadata
-const projectData = {
-    rahah: {
-        title: "Rahah",
-        description: "A study platform for Kenyan students. Each question is routed to a faster or stronger Claude model by subject, with token counting and chat trimming to keep cost predictable, and daily limits tracked in money rather than message counts. Answers cite the page of the student's uploaded notes, homework photos are marked, and notes become tests, flashcards and a revision plan. It has email-code sign-up, day-to-term passes paid in KES by M-Pesa or card, and an admin dashboard for revenue and usage. 179 commits and 191 automated tests, all passing.",
-        tech: ["Python", "FastAPI", "Claude API", "SQLite", "JavaScript", "Paystack", "pytest", "Render"],
-        github: "https://github.com/808kirai/Rahah",
-        demo: "https://rahah.onrender.com"
-    },
-    amanihaven: {
-        title: "AmaniHaven",
-        description: "A crisis-aware support line built for people without smartphones or data. Users dial a USSD code or send an SMS and get instant, clinician-reviewable self-help in English or Kiswahili. Offline rules run first, and Claude adds a second opinion that can only raise a risk level, never lower it. Crisis and abuse cases page human counselors through a dashboard, while phone numbers are hashed and encrypted and messages are deleted after 30 days. About 2,200 lines of app code and 74 tests.",
-        tech: ["Python", "FastAPI", "Claude API", "Pydantic", "SQLite", "Docker", "pytest", "Africa's Talking"],
-        github: "https://github.com/808kirai/AmaniHaven",
-        demo: "https://amanihaven.onrender.com/demo"
-    },
-    gemmasight: {
-        title: "GemmaSight",
-        description: "A vision assistant for blind and low-vision people, built at an MLH hackathon where our team placed 2nd with me as lead coder. Point a phone forward and tap: Read covers 18 kinds of everyday item and says the key detail first, such as a medicine dose or a note's value, without guessing missing text or reading out a visible PIN. Describe flags trip hazards first with a warning tone and vibration, and Find turns an object's position into clock directions, step distances and beeps. One tap switches speech and answers to Kiswahili. Runs in any phone browser with no install. 44 tests.",
-        tech: ["Python", "FastAPI", "Gemma 4", "JavaScript", "Docker", "pytest"],
-        github: "https://github.com/808kirai/GemmaSight"
-    },
-    neuse: {
-        title: "NeuSE · Neural Sentinel Edge",
-        description: "An early prototype for the Huawei ICT Competition 2026–2027 Innovation Track. Each field unit finds warm areas in thermal footage with no network, using CLAHE contrast enhancement, heat thresholding and contour detection with size filtering. Every detection is logged to SQLite with its position, box, peak intensity and processing time, and a local dashboard reads the log offline. Empty, 16-bit, float and malformed frames are handled safely. Next is a trained MindYOLO person detector to replace the classical baseline. 17 tests and 16 commits.",
-        tech: ["Python", "OpenCV", "NumPy", "Flask", "SQLite", "pytest"],
-        github: "https://github.com/808kirai/NeuSE"
-    }
-};
+// ==========================================================================
+// Helpers
+// ==========================================================================
 
-// Shared State
 let currentLang = 'en';
-let contribState = 'loading';   // 'loading' | 'ready' | 'error'
-let contribDays = null;
-let contribTotal = 0;
-let contribFetchedAt = 0;
 
-// Safe localStorage helpers (storage can throw in private mode or when blocked)
+// Storage can throw in private mode or when blocked
 function readPref(key) {
     try { return localStorage.getItem(key); } catch (e) { return null; }
 }
@@ -271,7 +118,6 @@ function savePref(key, value) {
     try { localStorage.setItem(key, value); } catch (e) { /* ignore */ }
 }
 
-// Translation helpers
 function t(key) {
     const dict = translations[currentLang] || translations.en;
     return dict[key] || translations.en[key] || '';
@@ -282,100 +128,143 @@ function fillTemplate(template, values) {
 }
 
 function intlLocale() {
-    return currentLang === 'zh' ? 'zh-CN' : currentLang;
-}
-
-// Theme Switching Logic
-// The initial theme is applied by the inline script in <head> to avoid a flash on load.
-const themeToggleBtn = document.getElementById('theme-toggle');
-const htmlElem = document.documentElement;
-
-if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-        const nextTheme = htmlElem.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-
-        // Sweep the new theme across the page with a slanted edge where the browser supports it
-        if (!document.startViewTransition || prefersReducedMotion()) {
-            setTheme(nextTheme);
-            return;
-        }
-        htmlElem.classList.add('theme-switching');
-        const endSwitch = () => htmlElem.classList.remove('theme-switching');
-        const transition = document.startViewTransition(() => setTheme(nextTheme));
-        transition.finished.finally(endSwitch);
-        setTimeout(endSwitch, 1500);   // safety net so hover transitions never stay disabled
-    });
+    return { zh: 'zh-CN', sw: 'sw-KE' }[currentLang] || currentLang;
 }
 
 function prefersReducedMotion() {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
+// Listeners that re-render language-dependent parts
+const languageListeners = [];
+
+// ==========================================================================
+// Theme
+// ==========================================================================
+
+const root = document.documentElement;
+const themeToggle = document.getElementById('theme-toggle');
+
+function syncThemeColor(theme) {
+    // The browser bar matches the page, whichever theme was picked by hand
+    document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
+        meta.setAttribute('content', theme === 'dark' ? '#121212' : '#ffffff');
+    });
+}
+
 function setTheme(theme) {
-    htmlElem.setAttribute('data-theme', theme);
+    root.setAttribute('data-theme', theme);
     savePref('portfolio-theme', theme);
+    syncThemeColor(theme);
+    document.dispatchEvent(new CustomEvent('themechange', { detail: theme }));
 }
 
-// Language Selector Logic
+if (readPref('portfolio-theme')) syncThemeColor(root.getAttribute('data-theme'));
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        if (document.startViewTransition && !prefersReducedMotion()) {
+            document.startViewTransition(() => setTheme(next));
+        } else {
+            setTheme(next);
+        }
+    });
+}
+
+// ==========================================================================
+// Language
+// ==========================================================================
+
 const langSelect = document.getElementById('lang-select');
-
-if (langSelect) {
-    langSelect.addEventListener('change', (e) => updateLanguage(e.target.value));
-}
 
 function updateLanguage(lang) {
     currentLang = translations[lang] ? lang : 'en';
     const dict = translations[currentLang];
 
-    if (currentLang === 'ar') {
-        document.documentElement.setAttribute('dir', 'rtl');
-    } else {
-        document.documentElement.removeAttribute('dir');
-    }
-    document.documentElement.setAttribute('lang', currentLang);
+    if (currentLang === 'ar') root.setAttribute('dir', 'rtl');
+    else root.removeAttribute('dir');
+    root.setAttribute('lang', currentLang);
 
     document.querySelectorAll('[data-i18n]').forEach(elem => {
-        const key = elem.getAttribute('data-i18n');
-        if (dict[key]) elem.textContent = dict[key];
+        const value = dict[elem.dataset.i18n] || translations.en[elem.dataset.i18n];
+        if (value) elem.textContent = value;
     });
 
-    // Certificate dates, plus month and weekday labels in the contribution graph, follow the language too
-    const certDateFmt = new Intl.DateTimeFormat(intlLocale(), { month: 'short', year: 'numeric', timeZone: 'UTC' });
-    document.querySelectorAll('.cert-date[datetime]').forEach(elem => {
-        elem.textContent = certDateFmt.format(parseDay(elem.getAttribute('datetime')));
+    document.querySelectorAll('[data-i18n-label]').forEach(elem => {
+        const value = dict[elem.dataset.i18nLabel] || translations.en[elem.dataset.i18nLabel];
+        if (value) elem.setAttribute('aria-label', value);
     });
-    renderContributions();
 
+    // Dates follow the language too
+    const monthFmt = new Intl.DateTimeFormat(intlLocale(), { month: 'short', year: 'numeric', timeZone: 'UTC' });
+    document.querySelectorAll('time[datetime]').forEach(elem => {
+        elem.textContent = monthFmt.format(new Date(elem.getAttribute('datetime') + 'T00:00:00Z'));
+    });
+
+    languageListeners.forEach(fn => fn());
     savePref('portfolio-lang', currentLang);
 }
 
-const savedLang = readPref('portfolio-lang') || 'en';
-if (langSelect) langSelect.value = savedLang;
-updateLanguage(savedLang);
-
-// Footer Year
-const footerYear = document.getElementById('footer-year');
-if (footerYear) footerYear.textContent = new Date().getFullYear();
-
-// Scroll Reveal: fade content in once as it enters the viewport
-const revealElems = document.querySelectorAll('.reveal');
-
-if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.15 });
-
-    revealElems.forEach(elem => revealObserver.observe(elem));
-} else {
-    revealElems.forEach(elem => elem.classList.add('is-visible'));
+if (langSelect) {
+    langSelect.addEventListener('change', e => updateLanguage(e.target.value));
 }
 
-// Live GitHub Contribution Graph
+// ==========================================================================
+// Nav: a hairline appears once the page scrolls under it
+// ==========================================================================
+
+const nav = document.querySelector('.nav');
+
+function syncNav() {
+    if (nav) nav.toggleAttribute('data-scrolled', window.scrollY > 4);
+}
+
+window.addEventListener('scroll', syncNav, { passive: true });
+syncNav();
+
+// ==========================================================================
+// Certificate viewer
+// ==========================================================================
+
+const viewer = document.getElementById('viewer');
+const viewerImg = document.getElementById('viewer-img');
+
+if (viewer && viewerImg && typeof viewer.showModal === 'function') {
+    document.querySelectorAll('.thumb[data-full]').forEach(thumb => {
+        thumb.addEventListener('click', () => {
+            viewerImg.src = thumb.dataset.full;
+            viewerImg.alt = thumb.dataset.alt || '';
+            viewer.showModal();
+        });
+    });
+
+    // Tapping the dimmed backdrop closes it too
+    viewer.addEventListener('click', e => {
+        if (e.target === viewer) viewer.close();
+    });
+} else {
+    // No <dialog> support: open the image itself
+    document.querySelectorAll('.thumb[data-full]').forEach(thumb => {
+        thumb.addEventListener('click', () => window.open(thumb.dataset.full, '_blank', 'noopener'));
+    });
+}
+
+// ==========================================================================
+// Live GitHub contributions
+// ==========================================================================
+
+const GITHUB_USER = '808kirai';
+const CONTRIB_API = `https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`;
+const CONTRIB_REFRESH_MS = 5 * 60 * 1000;
+const RECENT_COMMIT_DAYS = 3;
+
+let contribState = 'loading';   // 'loading' | 'ready' | 'error'
+let contribDays = null;
+let contribTotal = 0;
+let contribFetchedAt = 0;
+let githubBlockedUntil = 0;
+
 function parseDay(dateStr) {
     return new Date(dateStr + 'T00:00:00Z');
 }
@@ -386,8 +275,7 @@ function emptyYear() {
     const today = new Date();
     const end = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
     for (let i = 364; i >= 0; i--) {
-        const d = new Date(end - i * 86400000);
-        days.push({ date: d.toISOString().slice(0, 10), count: 0, level: 0 });
+        days.push({ date: new Date(end - i * 86400000).toISOString().slice(0, 10), count: 0, level: 0 });
     }
     return days;
 }
@@ -403,7 +291,7 @@ function renderContributions() {
     const weekdayFmt = new Intl.DateTimeFormat(locale, { weekday: 'short', timeZone: 'UTC' });
     const frag = document.createDocumentFragment();
 
-    // First column: blank corner, then Mon / Wed / Fri labels (Jan 7, 2024 was a Sunday)
+    // First column: a blank corner, then Mon / Wed / Fri (Jan 7, 2024 was a Sunday)
     frag.appendChild(document.createElement('span'));
     for (let d = 0; d < 7; d++) {
         const label = document.createElement('span');
@@ -469,18 +357,15 @@ function renderContributions() {
         link.textContent = t('contribView');
         totalElem.replaceChildren(`${t('contribError')} `, link);
     } else {
-        totalElem.textContent = ' ';
+        totalElem.textContent = ' ';
     }
 
-    // Show the most recent weeks first when the graph is wider than its card
+    // Newest weeks first when the graph is wider than its card
     const scroller = document.getElementById('contrib-scroll');
     if (scroller) scroller.scrollLeft = scroller.scrollWidth;
 }
 
-// GitHub's own calendar can take hours to count new pushes, so commits from the last few
-// days are also read straight from the repos (the REST API updates within about a minute)
-const RECENT_COMMIT_DAYS = 3;
-let githubBlockedUntil = 0;
+languageListeners.push(renderContributions);
 
 async function githubApi(path) {
     if (Date.now() < githubBlockedUntil) throw new Error('GitHub API rate limited');
@@ -494,7 +379,7 @@ async function githubApi(path) {
     return response.json();
 }
 
-// Commits per UTC day (the calendar is in UTC too), across non-fork repos pushed recently
+// GitHub's calendar can lag by hours, so the last few days also come straight from the repos
 async function fetchRecentCommitCounts() {
     const since = new Date(Date.now() - RECENT_COMMIT_DAYS * 86400000);
     const repos = await githubApi(`/users/${GITHUB_USER}/repos?per_page=100&sort=pushed`);
@@ -512,7 +397,7 @@ async function fetchRecentCommitCounts() {
     return counts;
 }
 
-// Map a count to a 0-4 level using the thresholds the calendar itself uses for this profile
+// A count's 0-4 level, using the thresholds the calendar itself uses for this profile
 function levelFor(count, days) {
     if (count <= 0) return 0;
     let level = 1;
@@ -523,7 +408,6 @@ function levelFor(count, days) {
     return level;
 }
 
-// Take the higher of the calendar count and the live commit count for each recent day
 function mergeRecentCommits(baseDays, baseTotal, recent) {
     const days = baseDays.map(day => ({ ...day }));
     let total = baseTotal;
@@ -566,32 +450,32 @@ async function loadContributions() {
         contribFetchedAt = Date.now();
     } catch (err) {
         console.warn('GitHub contributions unavailable:', err.message);
-        // Keep showing the last good data if a background refresh fails
         if (contribState !== 'ready') contribState = 'error';
     }
     renderContributions();
 }
 
-loadContributions();
+if (document.getElementById('contrib-graph')) {
+    loadContributions();
 
-// Refresh while the page stays open, and whenever the tab comes back after a while
-setInterval(() => {
-    if (document.visibilityState === 'visible') loadContributions();
-}, CONTRIB_REFRESH_MS);
+    setInterval(() => {
+        if (document.visibilityState === 'visible') loadContributions();
+    }, CONTRIB_REFRESH_MS);
 
-document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible' && Date.now() - contribFetchedAt > 2 * 60 * 1000) {
-        loadContributions();
-    }
-});
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible' && Date.now() - contribFetchedAt > 2 * 60 * 1000) {
+            loadContributions();
+        }
+    });
+}
 
-// Contribution tooltip, positioned above the hovered day
-const contribCard = document.getElementById('contrib-card');
+// Tooltip above the day under the pointer (or finger)
+const contribBox = document.getElementById('contrib');
 const contribGraph = document.getElementById('contrib-graph');
 const contribTooltip = document.getElementById('contrib-tooltip');
 
-if (contribCard && contribGraph && contribTooltip) {
-    contribGraph.addEventListener('mouseover', (e) => {
+if (contribBox && contribGraph && contribTooltip) {
+    contribGraph.addEventListener('pointerover', e => {
         const cell = e.target.closest('.contrib-cell[data-date]');
         if (!cell || contribState !== 'ready') return;
 
@@ -601,199 +485,25 @@ if (contribCard && contribGraph && contribTooltip) {
         const key = count === 0 ? 'contribDayNone' : count === 1 ? 'contribDayOne' : 'contribDay';
         contribTooltip.textContent = fillTemplate(t(key), { n: count, date });
 
-        const cardRect = contribCard.getBoundingClientRect();
+        const boxRect = contribBox.getBoundingClientRect();
         const cellRect = cell.getBoundingClientRect();
-        contribTooltip.style.left = `${cellRect.left - cardRect.left + cellRect.width / 2}px`;
-        contribTooltip.style.top = `${cellRect.top - cardRect.top}px`;
+        contribTooltip.style.left = `${cellRect.left - boxRect.left + cellRect.width / 2}px`;
+        contribTooltip.style.top = `${cellRect.top - boxRect.top}px`;
         contribTooltip.hidden = false;
     });
 
-    contribGraph.addEventListener('mouseleave', () => { contribTooltip.hidden = true; });
-    document.getElementById('contrib-scroll').addEventListener('scroll', () => { contribTooltip.hidden = true; });
+    contribGraph.addEventListener('pointerleave', () => { contribTooltip.hidden = true; });
+    document.getElementById('contrib-scroll').addEventListener('scroll', () => { contribTooltip.hidden = true; }, { passive: true });
 }
 
-// Certificate Stack: the top card swings out in 3D and drops to the back of the deck
-const certDeck = document.getElementById('cert-deck');
-const CERT_AUTOPLAY_MS = 4000;
+// ==========================================================================
+// Start
+// ==========================================================================
 
-if (certDeck) {
-    const cards = Array.from(certDeck.querySelectorAll('.cert-card'));
-    const thumbs = document.querySelectorAll('.cert-thumb[data-cert]');
-    const openLink = document.getElementById('cert-open');
-    let order = cards.map((_, i) => i);
-    let animating = false;
-    let pausedUntil = 0;
-    let hovering = false;
-    let inView = false;
+const footerYear = document.getElementById('footer-year');
+if (footerYear) footerYear.textContent = new Date().getFullYear();
 
-    // Cards behind the top one fan out up and to the right, slightly turned
-    function pose(pos) {
-        if (pos === 0) return { transform: 'translate3d(0, 0, 0) rotate(0deg)', filter: 'brightness(1)', zIndex: 10 };
-        return {
-            transform: `translate3d(${pos * 16}px, ${pos * -10}px, ${pos * -40}px) rotate(${pos * 4}deg)`,
-            filter: `brightness(${1 - pos * 0.08})`,
-            zIndex: 10 - pos
-        };
-    }
-
-    function applyPoses() {
-        order.forEach((cardIndex, pos) => {
-            const card = cards[cardIndex];
-            const p = pose(pos);
-            card.style.transform = p.transform;
-            card.style.filter = p.filter;
-            card.style.zIndex = p.zIndex;
-            card.tabIndex = pos === 0 ? 0 : -1;
-            card.setAttribute('aria-hidden', pos === 0 ? 'false' : 'true');
-        });
-
-        const top = cards[order[0]];
-        thumbs.forEach(thumb => thumb.classList.toggle('is-active', thumb.dataset.cert === top.dataset.cert));
-        if (openLink) openLink.href = top.querySelector('img').getAttribute('src');
-    }
-
-    // Move the top card to the back, or bring a chosen card to the front
-    function shuffle(targetIndex) {
-        if (animating || cards.length < 2) return;
-        const leavingIndex = order[0];
-        if (targetIndex === leavingIndex) return;
-
-        const oldOrder = order.slice();
-        order = targetIndex === undefined
-            ? oldOrder.slice(1).concat(leavingIndex)
-            : [targetIndex].concat(oldOrder.filter(i => i !== targetIndex && i !== leavingIndex), leavingIndex);
-
-        if (prefersReducedMotion()) {
-            applyPoses();
-            return;
-        }
-
-        animating = true;
-        const backPose = pose(order.length - 1);
-        const animations = [];
-
-        // The leaving card swings open to the right like a door, then tucks in behind the deck
-        const leaving = cards[leavingIndex];
-        animations.push(leaving.animate([
-            { transform: pose(0).transform, filter: 'brightness(1)', zIndex: 20, offset: 0 },
-            { transform: 'translate3d(62%, -6%, 60px) rotateY(-58deg) rotate(6deg)', filter: 'brightness(1)', zIndex: 20, offset: 0.45 },
-            { transform: 'translate3d(60%, -6%, -60px) rotateY(-50deg) rotate(6deg)', filter: 'brightness(0.95)', zIndex: 0, offset: 0.5 },
-            { transform: backPose.transform, filter: backPose.filter, zIndex: 0, offset: 1 }
-        ], { duration: 900, easing: 'cubic-bezier(0.65, 0, 0.35, 1)' }));
-
-        // Everyone else slides one step forward
-        order.forEach((cardIndex, pos) => {
-            if (cardIndex === leavingIndex) return;
-            const from = pose(oldOrder.indexOf(cardIndex));
-            const to = pose(pos);
-            animations.push(cards[cardIndex].animate([
-                { transform: from.transform, filter: from.filter },
-                { transform: to.transform, filter: to.filter }
-            ], { duration: 700, delay: 120, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'backwards' }));
-        });
-
-        applyPoses();
-        Promise.all(animations.map(a => a.finished)).finally(() => { animating = false; });
-    }
-
-    function pauseAutoplay() {
-        pausedUntil = Date.now() + 8000;
-    }
-
-    cards.forEach(card => {
-        card.addEventListener('click', () => { pauseAutoplay(); shuffle(); });
-    });
-
-    thumbs.forEach(thumb => {
-        thumb.addEventListener('click', () => {
-            const target = cards.findIndex(card => card.dataset.cert === thumb.dataset.cert);
-            pauseAutoplay();
-            shuffle(target);
-        });
-    });
-
-    certDeck.addEventListener('mouseenter', () => { hovering = true; });
-    certDeck.addEventListener('mouseleave', () => { hovering = false; });
-
-    if ('IntersectionObserver' in window) {
-        new IntersectionObserver(entries => {
-            inView = entries[0].isIntersecting;
-        }, { threshold: 0.4 }).observe(certDeck);
-    }
-
-    // Shuffle on its own while visible, like a slow photo carousel
-    setInterval(() => {
-        if (inView && !hovering && document.visibilityState === 'visible' &&
-            Date.now() > pausedUntil && !prefersReducedMotion()) {
-            shuffle();
-        }
-    }, CERT_AUTOPLAY_MS);
-
-    applyPoses();
-}
-
-// Modal Management Logic
-const modal = document.getElementById('project-modal');
-let lastFocusedElem = null;
-
-window.openModal = function(projectId) {
-    const modalTitle = document.getElementById('modal-title');
-    const modalDesc = document.getElementById('modal-description');
-    const modalTech = document.getElementById('modal-tech');
-    const modalGithub = document.getElementById('modal-github');
-
-    const data = projectData[projectId];
-    if (!data || !modal) return;
-
-    modalTitle.textContent = data.title;
-    modalDesc.textContent = data.description;
-
-    modalTech.innerHTML = '';
-    data.tech.forEach(tech => {
-        const span = document.createElement('span');
-        span.textContent = tech;
-        modalTech.appendChild(span);
-    });
-
-    modalGithub.href = data.github;
-
-    // A live demo button, for projects that are hosted
-    const modalDemo = document.getElementById('modal-demo');
-    modalDemo.hidden = !data.demo;
-    if (data.demo) modalDemo.href = data.demo;
-
-    lastFocusedElem = document.activeElement;
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
-    modal.querySelector('.modal-close').focus();
-};
-
-window.closeModal = function() {
-    if (!modal || !modal.classList.contains('active')) return;
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-    if (lastFocusedElem) lastFocusedElem.focus();
-};
-
-if (modal) {
-    // Close when clicking the dimmed backdrop (not the dialog itself)
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
-    modal.querySelector('.modal-close').addEventListener('click', closeModal);
-}
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
-});
-
-// Project Cards: open on click, Enter, or Space
-document.querySelectorAll('.bento-card[data-project]').forEach(card => {
-    card.addEventListener('click', () => openModal(card.dataset.project));
-    card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openModal(card.dataset.project);
-        }
-    });
-});
+const savedLang = readPref('portfolio-lang');
+const startLang = translations[savedLang] ? savedLang : 'en';
+if (langSelect) langSelect.value = startLang;
+updateLanguage(startLang);

@@ -1,614 +1,504 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
     <title>Runie | AI/ML & Backend Developer</title>
-    <meta name="description" content="Kirai — AI/ML and backend developer in Nairobi, Kenya, working in Python, C and C++ on computer vision, LLM-powered services, and backend systems.">
-    <meta name="author" content="Kirai">
+    <meta name="description" content="Runie is an AI/ML and backend developer in Nairobi. I build AI tools with Python, FastAPI and the Claude API.">
+    <meta name="author" content="Runie">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
 
-    <!-- Social Share Previews -->
+    <!-- Social share previews -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kirai-portfolio.vercel.app/">
-    <meta property="og:title" content="Kirai | AI/ML & Backend Developer">
-    <meta property="og:description" content="Building intelligent web and AI systems with Python, C/C++, computer vision, and machine learning.">
+    <meta property="og:title" content="Runie | AI/ML & Backend Developer">
+    <meta property="og:description" content="I build AI tools people actually use. Python, FastAPI, Claude API.">
     <link rel="canonical" href="https://kirai-portfolio.vercel.app/">
     <meta name="twitter:card" content="summary">
+    <meta name="google-site-verification" content="W0T15HVY6O9hcTN6T9vDslqTt6iRddINbWJE_YRFtQE" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0c'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='-apple-system,Segoe UI,sans-serif' font-size='38' font-weight='700' fill='%23fefefe'%3EK%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121212'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='-apple-system,Segoe UI,sans-serif' font-size='38' font-weight='700' fill='%23fefefe'%3ER%3C/text%3E%3C/svg%3E">
 
-    <!-- Apply saved theme before first paint to avoid a flash of the wrong theme -->
+    <!-- Apply the saved or system theme before first paint, so it never flashes -->
     <script>
         (function () {
             var theme;
             try { theme = localStorage.getItem('portfolio-theme'); } catch (e) {}
-            if (!theme) theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
             document.documentElement.setAttribute('data-theme', theme);
-            document.documentElement.classList.add('js');
         })();
     </script>
 
-    <!-- Fonts: Inter for the UI, Caveat for handwritten sketch notes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Inter:wght@400;500;600;700&display=swap">
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
     <link rel="stylesheet" href="style.css">
-    <meta name="google-site-verification" content="W0T15HVY6O9hcTN6T9vDslqTt6iRddINbWJE_YRFtQE" />
+    <link rel="stylesheet" href="stages.css">
 </head>
 <body>
 
-    <!-- Shared SVG filter that gives project sketches a slightly hand-drawn wobble -->
-    <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
-        <defs>
-            <filter id="sketch" x="-5%" y="-5%" width="110%" height="110%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="noise"/>
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
-            </filter>
-        </defs>
-    </svg>
-
-    <!-- Top Navigation Header -->
-    <header class="navbar">
-        <div class="nav-logo">Runie</div>
-        <nav class="nav-links">
-            <a href="#hero" data-i18n="navHome">Home</a>
-            <a href="#skills" data-i18n="navSkills">Skills</a>
-            <a href="#certifications" data-i18n="navCerts">Certifications</a>
-            <a href="#projects" data-i18n="navProjects">Projects</a>
-            <a href="#hackathons" data-i18n="navHack">Hackathons</a>
-            <a href="#contact" data-i18n="navContact">Contact</a>
-        </nav>
-        
-        <div class="nav-right">
-            <!-- Language Selector Dropdown -->
-            <div class="lang-selector-wrapper">
-                <i class="fa-solid fa-globe lang-icon"></i>
-                <select id="lang-select" class="lang-dropdown" aria-label="Select Language">
-                    <option value="en">English</option>
-                    <option value="zh">中文(Mandarin)</option>
-                    <option value="hi">हिंदी(Hindi)</option>
-                    <option value="es">Español</option>
-                    <option value="ar">العربية(Arabic)</option>
-                    <option value="fr">Français</option>
-                </select>
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="#top" class="nav-logo">Runie</a>
+            <nav class="nav-links" aria-label="Sections">
+                <a href="#work" data-i18n="navWork">Work</a>
+                <a href="#stack" data-i18n="navStack">Stack</a>
+                <a href="#wins" data-i18n="navWins">Wins</a>
+                <a href="#contact" data-i18n="navContact">Contact</a>
+            </nav>
+            <div class="nav-tools">
+                <label class="lang">
+                    <i class="ph ph-globe-simple" aria-hidden="true"></i>
+                    <select id="lang-select" aria-label="Language">
+                        <option value="en">EN</option>
+                        <option value="sw">SW</option>
+                        <option value="zh">中文</option>
+                        <option value="hi">हिंदी</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                        <option value="ar">عربي</option>
+                    </select>
+                </label>
+                <button id="theme-toggle" type="button" class="icon-btn" aria-label="Switch theme">
+                    <i class="ph ph-moon theme-moon" aria-hidden="true"></i>
+                    <i class="ph ph-sun theme-sun" aria-hidden="true"></i>
+                </button>
             </div>
-            
-            <a href="#contact" class="btn btn-primary nav-cta" data-i18n="letsTalk">Let's Talk</a>
         </div>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="snap-container">
+    <main id="top" class="page">
 
-        <!-- HERO SECTION -->
-        <section id="hero" class="snap-section">
-            <div class="hero-content reveal">
-                <div class="pill-badge">
-                    <span data-i18n="heroStatus">I'm open to Projects and Collaborations</span>
-                </div>
-                <h1 class="hero-title" data-i18n="heroTitle">Building AI/ML and Web Systems</h1>
-                <p class="hero-subtitle" data-i18n="heroSubtitle">Python, C and C++ developer working on AI/ML and backend systems.</p>
-                
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">
-                        <span data-i18n="btnProjects">Projects</span> <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="https://wa.me/254740060124?text=Hi%20Kirai" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                        <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btnContact">Contact</span>
-                    </a>
-                </div>
-
-                <!-- Social Platforms Grid -->
-                <div class="social-platforms-container">
-                    <div class="click-indicator"> 
-                        <span data-i18n="clickConnect">Select a platform to connect</span> 
-                        <i class="fa-solid fa-arrow-right bounce-arrow"></i>
-                    </div>
-                    <div class="social-platforms-grid">
-                        <a href="https://github.com/808kirai" target="_blank" rel="noopener noreferrer" class="platform-card" title="GitHub">
-                            <i class="fa-brands fa-github"></i> GitHub
-                        </a>
-                        <a href="https://www.linkedin.com/in/808kirai" target="_blank" rel="noopener noreferrer" class="platform-card" title="LinkedIn">
-                            <i class="fa-brands fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="https://www.tiktok.com/@808kirai" target="_blank" rel="noopener noreferrer" class="platform-card" title="TikTok">
-                            <i class="fa-brands fa-tiktok"></i> TikTok
-                        </a>
-                        <a href="https://instagram.com/kirai808" target="_blank" rel="noopener noreferrer" class="platform-card" title="Instagram">
-                            <i class="fa-brands fa-instagram"></i> Instagram
-                        </a>
+        <!-- INTRO -->
+        <section class="intro" aria-labelledby="intro-title">
+            <div class="profile">
+                <img class="avatar" src="https://github.com/808kirai.png?size=192" alt="" width="88" height="88" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'avatar avatar--initial',textContent:'R'}))">
+                <div class="profile-text">
+                    <p class="name">Runie <span class="status"><span class="status-dot" aria-hidden="true"></span><span data-i18n="status">Open to work</span></span></p>
+                    <p class="role" data-i18n="role">AI/ML and backend · Nairobi</p>
+                    <div class="socials">
+                        <a href="https://github.com/808kirai" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ph ph-github-logo" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/808kirai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
+                        <a href="https://www.tiktok.com/@808kirai" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="ph ph-tiktok-logo" aria-hidden="true"></i></a>
+                        <a href="https://instagram.com/kirai808" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
+                        <a href="mailto:runiejames@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
+
+            <h1 id="intro-title" class="intro-title"><span data-i18n="heroLead">I build AI that</span> <span class="accent" data-i18n="heroAccent">people actually use.</span></h1>
+            <p class="intro-text" data-i18n="heroText">Software engineering student in Nairobi. I build with Python, FastAPI and the Claude API.</p>
+
+            <div class="actions">
+                <a href="#work" class="btn btn-primary"><span data-i18n="btnWork">See my work</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                <a href="https://wa.me/254740060124?text=Hi%20Runie" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i> <span data-i18n="btnChat">WhatsApp me</span></a>
+            </div>
+
+            <ul class="stats">
+                <li class="stat">
+                    <span class="stat-value">#2</span>
+                    <span class="stat-label" data-i18n="stat1">at an MLH hackathon</span>
+                </li>
+                <li class="stat">
+                    <span class="stat-value">326</span>
+                    <span class="stat-label" data-i18n="stat2">tests written</span>
+                </li>
+                <li class="stat">
+                    <span class="stat-value">87%</span>
+                    <span class="stat-label" data-i18n="stat3">of Rahah users scored higher</span>
+                </li>
+            </ul>
         </section>
 
-        <!-- SKILLS SECTION -->
-        <section id="skills" class="snap-section">
-            <div class="section-header reveal">
-                <h2 data-i18n="skillsTitle">Skills & Tools</h2>
-                <p data-i18n="skillsSubtitle">The languages and frameworks behind my projects</p>
+        <!-- WORK -->
+        <section id="work" aria-labelledby="work-title">
+            <div class="section-head">
+                <h2 id="work-title" class="section-title" data-i18n="workTitle">Work</h2>
+                <span class="section-note" data-i18n="workNote">Built end to end</span>
             </div>
 
-            <div class="skill-groups reveal" style="--reveal-delay: 0.15s">
-                <div class="skill-group">
-                    <h3 class="skill-group-label" data-i18n="skillGroupLang">Languages</h3>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" loading="lazy">
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-card">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="" loading="lazy">
-                            <span>C</span>
-                        </div>
-                        <div class="skill-card">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="" loading="lazy">
-                            <span>C++</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="skill-group-label" data-i18n="skillGroupAI">AI & Machine Learning</h3>
-                    <div class="skills-grid">
-                        <div class="skill-card skill-card--feature">
-                            <i class="fa-solid fa-brain skill-glyph" aria-hidden="true"></i>
-                            <div class="skill-feature-text">
-                                <span data-i18n="skillAiml">AI & Machine Learning</span>
-                                <small data-i18n="skillAimlDesc">LLM apps · computer vision · risk triage</small>
-                            </div>
-                        </div>
-                        <div class="skill-card">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="" loading="lazy">
-                            <span>OpenCV</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fa-solid fa-hand skill-glyph" aria-hidden="true"></i>
-                            <span>MediaPipe</span>
-                        </div>
-                        <div class="skill-card">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="" loading="lazy">
-                            <span>NumPy</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fa-solid fa-comment-dots skill-glyph" aria-hidden="true"></i>
-                            <span>Claude API</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="skill-group-label" data-i18n="skillGroupBackend">Backend & Tools</h3>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="" loading="lazy">
-                            <span>FastAPI</span>
-                        </div>
-                        <div class="skill-card">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" loading="lazy">
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-card">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytest/pytest-original.svg" alt="" loading="lazy">
-                            <span>pytest</span>
-                        </div>
-                        <div class="skill-card">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" loading="lazy">
-                            <span>Git</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="skill-group-label" data-i18n="skillGroupSpoken">Spoken Languages</h3>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <span class="skill-code" aria-hidden="true">EN</span>
-                            <span data-i18n="langEnglish">English</span>
-                            <small class="skill-level" data-i18n="levelFluent">Fluent</small>
-                        </div>
-                        <div class="skill-card">
-                            <span class="skill-code" aria-hidden="true">SW</span>
-                            <span data-i18n="langKiswahili">Kiswahili</span>
-                            <small class="skill-level" data-i18n="levelNative">Native</small>
-                        </div>
-                        <div class="skill-card">
-                            <span class="skill-code" aria-hidden="true">中文</span>
-                            <span data-i18n="langMandarin">Mandarin</span>
-                            <small class="skill-level" data-i18n="levelBasic">Basic</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CERTIFICATIONS SECTION -->
-        <section id="certifications" class="snap-section">
-            <div class="section-header reveal">
-                <h2 data-i18n="certsTitle">Certifications</h2>
-                <p data-i18n="certsSubtitle">Courses and events in AI and machine learning</p>
-            </div>
-
-            <div class="certs-layout reveal" style="--reveal-delay: 0.15s">
-                <ol class="cert-timeline">
-                    <li class="cert-item">
-                        <time class="cert-date" datetime="2026-11-01">Nov 2026</time>
-                        <div class="cert-body">
-                            <h3>CS50's Introduction to Artificial Intelligence with Python</h3>
-                            <p class="cert-issuer">Harvard · edX</p>
-                            <p class="cert-id" data-i18n="certInProgress">In progress · Week 1: search algorithms</p>
-                        </div>
-                    </li>
-                    <li class="cert-item">
-                        <time class="cert-date" datetime="2026-10-24">Oct 2026</time>
-                        <div class="cert-body">
-                            <h3>Hacktoberfest Hack Day Nairobi × B54</h3>
-                            <p class="cert-issuer">Hacktoberfest · MLH × DEV</p>
-                            <p class="cert-id" data-i18n="certAttendance">Certificate of attendance</p>
-                            <div class="cert-actions">
-                                <button type="button" class="cert-thumb" data-cert="hacktoberfest" aria-label="Show the Hacktoberfest Hack Day Nairobi certificate">
-                                    <img src="assets/certificates/hacktoberfest-2026-hack-day-nairobi-thumb.jpg" alt="" width="240" height="170" loading="lazy">
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="cert-item">
-                        <time class="cert-date" datetime="2026-08-31">Aug 2026</time>
-                        <div class="cert-body">
-                            <h3>Machine Learning for Beginners</h3>
-                            <p class="cert-issuer">Sololearn</p>
-                            <p class="cert-id"><span data-i18n="certCredential">Credential ID</span> CC-JCG8QPNN</p>
-                            <div class="cert-actions">
-                                <button type="button" class="cert-thumb" data-cert="sololearn" aria-label="Show the Machine Learning for Beginners certificate">
-                                    <img src="assets/certificates/sololearn-machine-learning-for-beginners-thumb.jpg" alt="" width="240" height="169" loading="lazy">
-                                </button>
-                                <a class="cert-verify" href="https://www.sololearn.com/certificates/CC-JCG8QPNN" target="_blank" rel="noopener noreferrer">
-                                    <span data-i18n="certVerify">Verify</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="cert-item">
-                        <time class="cert-date" datetime="2026-05-29">May 2026</time>
-                        <div class="cert-body">
-                            <h3>AWS AI Practitioner Challenge</h3>
-                            <p class="cert-issuer">Udacity · Accenture</p>
-                            <p class="cert-id"><span data-i18n="certCredential">Credential ID</span> c61d9870-34a5-11f1-98d3-f31c3e892518</p>
-                            <div class="cert-actions">
-                                <button type="button" class="cert-thumb" data-cert="aws" aria-label="Show the AWS AI Practitioner Challenge certificate">
-                                    <img src="assets/certificates/aws-ai-practitioner-challenge-thumb.jpg" alt="" width="240" height="185" loading="lazy">
-                                </button>
-                                <a class="cert-verify" href="https://www.udacity.com/certificate/e/c61d9870-34a5-11f1-98d3-f31c3e892518" target="_blank" rel="noopener noreferrer">
-                                    <span data-i18n="certVerify">Verify</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                </ol>
-
-                <!-- 3D certificate stack: the top card swings away and drops to the back -->
-                <div class="cert-stage">
-                    <div class="cert-deck" id="cert-deck" role="group" aria-roledescription="carousel" aria-label="Certificates">
-                        <button type="button" class="cert-card" data-cert="hacktoberfest" aria-label="Next certificate">
-                            <img src="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" alt="Hacktoberfest 2026 certificate of attendance: Hacktoberfest Hack Day Nairobi × B54, awarded to Rooney James" width="1600" height="1131">
-                        </button>
-                        <button type="button" class="cert-card" data-cert="sololearn" aria-label="Next certificate">
-                            <img src="assets/certificates/sololearn-machine-learning-for-beginners.jpg" alt="Sololearn certificate: Machine Learning for Beginners, awarded to Rooney James" width="1599" height="1129">
-                        </button>
-                        <button type="button" class="cert-card" data-cert="aws" aria-label="Next certificate">
-                            <img src="assets/certificates/aws-ai-practitioner-challenge.jpg" alt="Udacity certificate: AWS AI Practitioner Challenge, awarded to Rooney James" width="1600" height="1236">
-                        </button>
-                    </div>
-                    <p class="cert-hint">
-                        <span data-i18n="certHint">Tap the stack to shuffle</span>
-                        <a id="cert-open" href="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" target="_blank" rel="noopener noreferrer">
-                            <span data-i18n="certOpen">Full size</span> <i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i>
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS SECTION -->
-        <section id="projects" class="snap-section">
-            <div class="section-header reveal">
-                <h2 data-i18n="projectsTitle">Featured Projects</h2>
-                <p data-i18n="projectsSubtitle">My strongest work, from AI study tools to offline computer vision</p>
-            </div>
-
-            <div class="projects-bento reveal" style="--reveal-delay: 0.15s">
+            <div class="projects">
 
                 <!-- Rahah -->
-                <div class="bento-card" data-project="rahah" role="button" tabindex="0" aria-haspopup="dialog" style="--card-accent: #14b8a6">
-                    <div class="card-visual">
-                        <svg viewBox="0 0 320 160" role="img" aria-label="Sketch of a photographed homework page being marked, next to a chat answer that cites a page of the student's notes">
-                            <g filter="url(#sketch)">
-                                <g transform="rotate(-4 84 82)">
-                                    <rect class="sk sk-paper" x="30" y="16" width="108" height="132" rx="4"/>
-                                    <path class="sk sk-soft" d="M40 36 h88 M40 58 h88 M40 80 h88 M40 102 h88 M40 124 h88" stroke-dasharray="2 4"/>
-                                    <path class="sk sk-accent" d="M114 47 l5 6 l10 -13" stroke-width="2.4"/>
-                                    <path class="sk sk-accent" d="M116 90 l10 10 M126 90 l-10 10" stroke-width="2.4"/>
-                                </g>
-                                <path class="sk sk-accent" d="M22 22 v-10 h10 M146 12 h10 v10 M156 142 v10 h-10 M32 152 h-10 v-10"/>
-                                <path class="sk sk-soft" d="M162 84 q10 -2 16 -10"/>
-                                <path class="sk sk-soft" d="M172 72 l7 1 l-1 7"/>
-                                <rect class="sk sk-accent sk-paper" x="182" y="24" width="126" height="74" rx="10"/>
-                                <path class="sk sk-accent sk-paper" d="M198 98 l-4 10 l14 -10"/>
-                                <rect class="sk sk-soft" x="190" y="78" width="54" height="13" rx="6.5"/>
-                            </g>
-                            <g transform="rotate(-4 84 82)">
-                                <text class="sk-mono sk-mono-lg" x="42" y="33">Q1  2x + 3 = 11</text>
-                                <text class="sk-mono sk-mono-lg" x="58" y="55">x = 4</text>
-                                <text class="sk-mono sk-mono-lg" x="42" y="77">Q2  3(x - 1) = 9</text>
-                                <text class="sk-mono sk-mono-lg" x="58" y="99">x = 3</text>
-                                <text class="sk-note" x="44" y="142">1 of 2 right</text>
-                            </g>
-                            <text class="sk-mono sk-mono-lg" x="190" y="40">Q2: expand the bracket</text>
-                            <text class="sk-mono sk-mono-lg" x="190" y="53">3x - 3 = 9</text>
-                            <text class="sk-mono sk-mono-lg" x="190" y="66">3x = 12, so x = 4</text>
-                            <text class="sk-mono" x="196" y="87">notes p.12</text>
-                            <text class="sk-note" x="312" y="128" text-anchor="end">marks a photo</text>
-                            <text class="sk-note" x="312" y="148" text-anchor="end">cites your notes</text>
-                        </svg>
+                <article class="project">
+                    <div class="stage-fit" data-demo="rahah" data-w="720" data-h="400" data-cw="358" data-ch="380" data-below="560">
+                        <div class="ss-stage rh" aria-hidden="true">
+                            <div class="ss-window rh-win">
+                                <div class="ss-window__bar">
+                                    <span class="ss-window__lights"><i></i><i></i><i></i></span>
+                                    <span class="ss-window__title">Rahah</span>
+                                </div>
+                                <div class="ss-window__body">
+                                    <div class="rh-side">
+                                        <span class="bar rh-side-label" style="width: 54px"></span>
+                                        <div class="rh-subject" data-active><i class="ph-fill ph-function"></i><span>Maths</span></div>
+                                        <div class="rh-subject"><i class="ph-fill ph-dna"></i><span class="bar" style="width: 58px"></span></div>
+                                        <div class="rh-subject"><i class="ph-fill ph-flask"></i><span class="bar" style="width: 72px"></span></div>
+                                        <div class="rh-subject"><i class="ph-fill ph-globe-hemisphere-west"></i><span class="bar" style="width: 50px"></span></div>
+                                    </div>
+                                    <div class="rh-main">
+                                        <div class="rh-thread">
+                                            <div class="rh-past">
+                                                <span class="bar" style="width: 170px"></span>
+                                                <span class="bar" style="width: 88%"></span>
+                                                <span class="bar" style="width: 64%"></span>
+                                            </div>
+                                            <div class="ss-collapse" data-k="sent" data-open>
+                                                <div><div class="rh-q"><span class="rh-q-text">Solve 3(x − 1) = 9</span></div></div>
+                                            </div>
+                                            <div class="ss-collapse" data-k="thinking">
+                                                <div><div class="rh-thinking">Thinking</div></div>
+                                            </div>
+                                            <div class="ss-collapse" data-k="answer" data-open>
+                                                <div>
+                                                    <div class="rh-a">
+                                                        <p class="rh-stream">Expand the bracket: 3x − 3 = 9. Add 3 to both sides, so 3x = 12 and x = 4.</p>
+                                                        <span class="rh-source" data-on><i class="ph-fill ph-file-text"></i>Your notes, page 12</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rh-composer">
+                                            <span class="rh-field"><span class="rh-draft"></span><span class="rh-caret"></span><span class="rh-ph">Ask about your notes</span></span>
+                                            <span class="rh-send"><i class="ph ph-arrow-up"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-badge" data-i18n="proj1Badge">AI · Education · Live</div>
-                    <h3 data-i18n="proj1Title">Rahah</h3>
-                    <p data-i18n="proj1Desc">A study platform that routes each question to a faster or stronger Claude model, marks homework from a photo, cites the page of your notes, and turns notes into tests, flashcards and a revision plan. Pay by M-Pesa or card.</p>
-                    <div class="card-tech">
-                        <span>Python</span><span>FastAPI</span><span>Claude API</span><span>SQLite</span><span>Paystack</span><span>pytest</span>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3 class="project-title">Rahah</h3>
+                            <span class="tag tag--live"><span class="status-dot" aria-hidden="true"></span><span data-i18n="tagLive">Live</span></span>
+                        </div>
+                        <p class="project-text" data-i18n="p1Text">A study app for Kenyan students. Answers cite the page of your notes, and it marks homework from a photo.</p>
+                        <p class="project-facts" data-i18n="p1Facts">15 sign-ups · 13 scored higher · 191 tests</p>
+                        <ul class="chips"><li>Python</li><li>FastAPI</li><li>Claude API</li><li>M-Pesa</li></ul>
+                        <div class="project-links">
+                            <a href="https://rahah.onrender.com" target="_blank" rel="noopener noreferrer"><span data-i18n="linkDemo">Live demo</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <a href="https://github.com/808kirai/Rahah" target="_blank" rel="noopener noreferrer"><span data-i18n="linkCode">Code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <button type="button" class="replay"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span data-i18n="replay">Replay</span></button>
+                        </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- AmaniHaven -->
-                <div class="bento-card" data-project="amanihaven" role="button" tabindex="0" aria-haspopup="dialog" style="--card-accent: #f59e0b">
-                    <div class="card-visual">
-                        <svg viewBox="0 0 320 160" role="img" aria-label="Sketch of a basic feature phone showing the AmaniHaven USSD menu next to an SMS conversation">
-                            <g filter="url(#sketch)">
-                                <rect class="sk sk-paper" x="44" y="12" width="76" height="138" rx="16"/>
-                                <rect class="sk" x="54" y="28" width="56" height="52" rx="3"/>
-                                <line class="sk sk-soft" x1="74" y1="19" x2="90" y2="19"/>
-                                <g class="sk sk-soft">
-                                    <circle cx="64" cy="94" r="4.5"/><circle cx="82" cy="94" r="4.5"/><circle cx="100" cy="94" r="4.5"/>
-                                    <circle cx="64" cy="108" r="4.5"/><circle cx="82" cy="108" r="4.5"/><circle cx="100" cy="108" r="4.5"/>
-                                    <circle cx="64" cy="122" r="4.5"/><circle cx="82" cy="122" r="4.5"/><circle cx="100" cy="122" r="4.5"/>
-                                    <circle cx="64" cy="136" r="4.5"/><circle cx="82" cy="136" r="4.5"/><circle cx="100" cy="136" r="4.5"/>
-                                </g>
-                                <path class="sk sk-paper" d="M152 40 l-9 10 l15 -5"/>
-                                <rect class="sk sk-paper" x="146" y="20" width="124" height="26" rx="10"/>
-                                <path class="sk sk-accent sk-paper" d="M294 90 l11 9 l-17 -3"/>
-                                <rect class="sk sk-accent sk-paper" x="162" y="58" width="140" height="40" rx="10"/>
-                                <path class="sk sk-accent sk-fill-accent" d="M292 50 c0 -4 5 -4 5 0 c0 -4 5 -4 5 0 c0 4 -5 6 -5 8 c0 -2 -5 -4 -5 -8 z"/>
-                                <path class="sk sk-soft" d="M147 121 q-14 -2 -21 -13"/>
-                                <path class="sk sk-soft" d="M123 102 l3 7 l7 -2"/>
-                            </g>
-                            <text class="sk-mono" x="58" y="39">AmaniHaven</text>
-                            <text class="sk-mono" x="58" y="50">1 Talk to us</text>
-                            <text class="sk-mono" x="58" y="60">2 Self-check</text>
-                            <text class="sk-mono" x="58" y="70">3 Breathe</text>
-                            <text class="sk-mono sk-mono-lg" x="155" y="36">stressed, can't sleep</text>
-                            <text class="sk-mono sk-mono-lg" x="171" y="74">Try 4-7-8 breathing</text>
-                            <text class="sk-mono sk-mono-lg" x="171" y="88">tonight. Reply CALL</text>
-                            <text class="sk-note" x="150" y="126">works on any 2G phone</text>
-                            <text class="sk-note" x="150" y="146">English or Kiswahili</text>
-                        </svg>
+                <article class="project project--phone">
+                    <div class="stage-fit" data-demo="amani" data-w="358" data-h="440">
+                        <div class="ss-stage am" aria-hidden="true">
+                            <div class="phone-src am-phone" data-width="326" data-follow-theme>
+                                <i class="ph ph-caret-left am-back"></i>
+                                <div class="am-head">
+                                    <span class="am-avatar">AH</span>
+                                    <span class="am-name">AmaniHaven <i class="ph-fill ph-caret-right"></i></span>
+                                </div>
+                                <div class="am-thread">
+                                    <div class="am-stamp">Text Message · Today 9:41</div>
+                                    <div class="am-row" data-from="me"><span class="am-bubble" data-on>I'm stressed and can't sleep</span></div>
+                                    <div class="am-row" data-from="them">
+                                        <span class="am-bubble" data-on>That sounds hard. Try 4-7-8 breathing tonight.</span>
+                                        <span class="am-typing"><i></i><i></i><i></i></span>
+                                    </div>
+                                    <div class="am-row" data-from="them"><span class="am-bubble" data-on>Reply CALL to talk to a counselor.</span></div>
+                                    <div class="am-row" data-from="me"><span class="am-bubble" data-on>CALL</span></div>
+                                    <div class="am-receipt" data-on>Delivered</div>
+                                    <div class="am-row" data-from="them">
+                                        <span class="am-bubble" data-on>A counselor will call you shortly.</span>
+                                        <span class="am-typing"><i></i><i></i><i></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-badge" data-i18n="proj2Badge">AI · Social Impact</div>
-                    <h3 data-i18n="proj2Title">AmaniHaven</h3>
-                    <p data-i18n="proj2Desc">Free, confidential mental health support over USSD and SMS for any basic phone, in English or Kiswahili. Offline rules and Claude triage risk and alert human counselors within seconds.</p>
-                    <div class="card-tech">
-                        <span>Python</span><span>FastAPI</span><span>Claude API</span><span>SQLite</span><span>Docker</span><span>pytest</span>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3 class="project-title">AmaniHaven</h3>
+                            <span class="tag" data-i18n="tagSms">SMS + USSD</span>
+                        </div>
+                        <p class="project-text" data-i18n="p2Text">Free mental health support by text, on any phone, in English or Kiswahili. Urgent messages reach a real counselor.</p>
+                        <p class="project-facts" data-i18n="p2Facts">Numbers encrypted · Deleted after 30 days · 74 tests</p>
+                        <ul class="chips"><li>Python</li><li>FastAPI</li><li>Claude API</li><li>Docker</li></ul>
+                        <div class="project-links">
+                            <a href="https://amanihaven.onrender.com/demo" target="_blank" rel="noopener noreferrer"><span data-i18n="linkDemo">Live demo</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <a href="https://github.com/808kirai/AmaniHaven" target="_blank" rel="noopener noreferrer"><span data-i18n="linkCode">Code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <button type="button" class="replay"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span data-i18n="replay">Replay</span></button>
+                        </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- GemmaSight -->
-                <div class="bento-card" data-project="gemmasight" role="button" tabindex="0" aria-haspopup="dialog" style="--card-accent: #8b5cf6">
-                    <div class="card-visual">
-                        <svg viewBox="0 0 320 160" role="img" aria-label="Sketch of a phone camera framing a medicine box and reading it aloud, with a clock face pointing to a lost object at 2 o'clock">
-                            <g filter="url(#sketch)">
-                                <rect class="sk sk-paper" x="40" y="10" width="74" height="142" rx="12"/>
-                                <rect class="sk" x="48" y="24" width="58" height="100" rx="3"/>
-                                <rect class="sk sk-paper" x="60" y="50" width="34" height="50" rx="2" transform="rotate(-6 77 75)"/>
-                                <path class="sk sk-soft" d="M64 88 h22 M64 94 h16" transform="rotate(-6 77 75)"/>
-                                <path class="sk sk-accent" d="M54 44 v-6 h6 M94 38 h6 v6 M100 106 v6 h-6 M60 112 h-6 v-6"/>
-                                <circle class="sk sk-accent sk-fill-accent" cx="77" cy="138" r="6"/>
-                                <path class="sk sk-accent" d="M122 62 q7 10 0 20 M130 55 q12 17 0 34"/>
-                                <rect class="sk sk-accent sk-paper" x="146" y="16" width="160" height="48" rx="12"/>
-                                <path class="sk sk-accent sk-paper" d="M160 64 l-6 10 l16 -10"/>
-                                <circle class="sk sk-soft" cx="168" cy="116" r="22"/>
-                                <path class="sk sk-soft" d="M168 96 v4 M188 116 h-4 M168 136 v-4 M148 116 h4"/>
-                                <path class="sk sk-accent" d="M168 116 L182 108" stroke-width="2.2"/>
-                            </g>
-                            <circle cx="187" cy="105" r="3" class="sk-fill-accent"/>
-                            <text class="sk-mono" x="64" y="66" font-weight="700" transform="rotate(-6 77 75)">PARA</text>
-                            <text class="sk-mono" x="64" y="77" transform="rotate(-6 77 75)">500 mg</text>
-                            <text class="sk-mono sk-mono-lg" x="156" y="35">"Paracetamol, 500 mg.</text>
-                            <text class="sk-mono sk-mono-lg" x="156" y="50">Expires March 2027."</text>
-                            <text class="sk-note" x="312" y="112" text-anchor="end">keys at 2 o'clock</text>
-                            <text class="sk-note" x="312" y="138" text-anchor="end">reads it aloud</text>
-                        </svg>
+                <article class="project project--phone project--flip">
+                    <div class="stage-fit" data-demo="gemma" data-w="358" data-h="440">
+                        <div class="ss-stage gs" aria-hidden="true">
+                            <div class="phone-src gs-phone" data-width="326" data-dark>
+                                <div class="gs-top">
+                                    <span class="gs-name">GemmaSight</span>
+                                    <span class="gs-lang">EN</span>
+                                </div>
+                                <div class="gs-view">
+                                    <div class="gs-reticle" data-lock><i></i><i></i><i></i><i></i></div>
+                                    <div class="gs-busy"><span class="gs-spinner"></span>Reading</div>
+                                    <div class="gs-caption" data-on>
+                                        <span class="gs-speak"><i></i><i></i><i></i><i></i></span>
+                                        <p class="gs-text">Paracetamol, 500 mg. Expires March 2027.</p>
+                                    </div>
+                                </div>
+                                <div class="gs-modes">
+                                    <span class="gs-mode gs-mode--read" data-active><i class="ph-fill ph-text-aa"></i>Read<span class="touch"></span></span>
+                                    <span class="gs-mode"><i class="ph-fill ph-eye"></i>Describe</span>
+                                    <span class="gs-mode"><i class="ph-fill ph-magnifying-glass"></i>Find</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-badge" data-i18n="proj3Badge">Vision AI · Accessibility</div>
-                    <h3 data-i18n="proj3Title">GemmaSight</h3>
-                    <p data-i18n="proj3Desc">A phone-camera assistant for blind and low-vision people. It reads labels, medicine and money aloud, flags trip hazards first, and guides you to lost objects with clock directions and beeps, in English or Kiswahili.</p>
-                    <div class="card-tech">
-                        <span>Python</span><span>FastAPI</span><span>Gemma 4</span><span>JavaScript</span><span>Docker</span>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3 class="project-title">GemmaSight</h3>
+                            <span class="tag" data-i18n="tagMlh">#2 at MLH</span>
+                        </div>
+                        <p class="project-text" data-i18n="p3Text">A camera assistant for blind and low-vision people. It reads labels aloud and guides you to things you've lost.</p>
+                        <p class="project-facts" data-i18n="p3Facts">Lead coder · 15+ blindfolded testers · 44 tests</p>
+                        <ul class="chips"><li>Python</li><li>FastAPI</li><li>Gemma 4</li><li>Docker</li></ul>
+                        <div class="project-links">
+                            <a href="https://github.com/808kirai/GemmaSight" target="_blank" rel="noopener noreferrer"><span data-i18n="linkCode">Code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <button type="button" class="replay"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span data-i18n="replay">Replay</span></button>
+                        </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- NeuSE -->
-                <div class="bento-card" data-project="neuse" role="button" tabindex="0" aria-haspopup="dialog" style="--card-accent: #f97316">
-                    <div class="card-visual card-visual--night">
-                        <svg viewBox="0 0 320 160" role="img" aria-label="Thermal camera view with two warm areas boxed and labelled, a local detection log, and a crossed-out network icon">
-                            <defs>
-                                <filter id="heat-glow" x="-50%" y="-50%" width="200%" height="200%">
-                                    <feGaussianBlur stdDeviation="4"/>
-                                </filter>
-                            </defs>
-                            <rect width="320" height="160" fill="#140b2e"/>
-                            <g filter="url(#heat-glow)">
-                                <ellipse cx="92" cy="86" rx="13" ry="23" fill="#f97316" opacity="0.85"/>
-                                <circle cx="92" cy="57" r="8" fill="#f97316" opacity="0.85"/>
-                                <ellipse cx="92" cy="84" rx="6" ry="13" fill="#fde047" opacity="0.9"/>
-                                <circle cx="92" cy="57" r="4" fill="#fde047" opacity="0.9"/>
-                                <ellipse cx="196" cy="111" rx="26" ry="9" fill="#ef4444" opacity="0.7"/>
-                                <ellipse cx="196" cy="111" rx="12" ry="4" fill="#fb923c" opacity="0.8"/>
-                            </g>
-                            <g filter="url(#sketch)" fill="none" stroke-width="1.6">
-                                <rect x="74" y="44" width="36" height="68" stroke="#22c55e"/>
-                                <rect x="166" y="98" width="60" height="26" stroke="#f59e0b"/>
-                                <rect x="236" y="14" width="74" height="62" rx="6" stroke="#475569" fill="#0f172a"/>
-                                <path d="M14 26 q10 -9 20 0 M18 30 q6 -5 12 0" stroke="#cbd5e1"/>
-                                <path d="M12 36 L36 14" stroke="#ef4444"/>
-                            </g>
-                            <circle cx="24" cy="33" r="1.4" fill="#cbd5e1"/>
-                            <g font-family="ui-monospace, Consolas, monospace" font-size="6.5" font-weight="700" fill="#000">
-                                <rect x="74" y="34" width="52" height="10" fill="#22c55e"/><text x="77" y="41.5">#1 warm area</text>
-                                <rect x="166" y="88" width="52" height="10" fill="#f59e0b"/><text x="169" y="95.5">#2 warm area</text>
-                            </g>
-                            <g font-family="ui-monospace, Consolas, monospace" font-size="6.5" fill="#cbd5e1">
-                                <text x="242" y="27" font-weight="700">LOCAL LOG</text>
-                                <text x="242" y="40">#1 box 36x68</text>
-                                <text x="242" y="52">#2 box 60x26</text>
-                                <text x="242" y="64">saved offline</text>
-                            </g>
-                            <text class="sk-note sk-note--night" x="42" y="29">no network needed</text>
-                            <text class="sk-note sk-note--night" x="312" y="148" text-anchor="end">CLAHE → threshold → contours</text>
-                        </svg>
+                <article class="project">
+                    <div class="stage-fit" data-demo="neuse" data-w="720" data-h="400" data-cw="358" data-ch="456" data-below="560">
+                        <div class="ss-stage nx" data-theme="dark" aria-hidden="true">
+                            <div class="ss-window nx-win">
+                                <div class="ss-window__bar">
+                                    <span class="ss-window__lights"><i></i><i></i><i></i></span>
+                                    <span class="ss-window__title">NeuSE · Unit 01</span>
+                                </div>
+                                <div class="ss-window__body">
+                                    <div class="nx-body">
+                                        <div class="nx-label nx-head-frame">Thermal feed <span class="nx-offline"><i class="ph-fill ph-wifi-slash"></i>Offline</span></div>
+                                        <div class="nx-label nx-head-log">Detections <span class="nx-count"><span class="roll"><span style="--n: 2"><span>0</span><span>1</span><span>2</span></span></span></span></div>
+                                        <div class="nx-frame">
+                                            <span class="nx-box nx-box--1" data-on><b>#1</b></span>
+                                            <span class="nx-box nx-box--2" data-on><b>#2</b></span>
+                                        </div>
+                                        <div class="nx-log">
+                                            <div class="ss-collapse" data-k="row2" data-open>
+                                                <div class="nx-wrap"><div class="nx-row"><span class="nx-tag nx-tag--2">#2</span><span>60 × 26 px</span><span class="nx-ms">38 ms</span></div></div>
+                                            </div>
+                                            <div class="ss-collapse" data-k="row1" data-open>
+                                                <div class="nx-wrap"><div class="nx-row"><span class="nx-tag">#1</span><span>36 × 68 px</span><span class="nx-ms">41 ms</span></div></div>
+                                            </div>
+                                            <div class="nx-row nx-old"><span class="bar" style="width: 22px"></span><span class="bar" style="width: 64px"></span><span class="bar" style="width: 30px"></span></div>
+                                            <div class="nx-row nx-old"><span class="bar" style="width: 22px"></span><span class="bar" style="width: 52px"></span><span class="bar" style="width: 30px"></span></div>
+                                            <div class="nx-saved" data-on><i class="ph-fill ph-check-circle"></i>Saved to local log</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-badge" data-i18n="proj4Badge">Edge Computer Vision</div>
-                    <h3 data-i18n="proj4Title">NeuSE</h3>
-                    <p data-i18n="proj4Desc">An offline thermal-imaging pipeline for search and rescue. Contrast enhancement, heat thresholding and contour detection find warm areas, each logged with its box and processing time on a local dashboard that needs no network.</p>
-                    <div class="card-tech">
-                        <span>Python</span><span>OpenCV</span><span>NumPy</span><span>Flask</span><span>SQLite</span>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3 class="project-title">NeuSE</h3>
+                            <span class="tag" data-i18n="tagHuawei">Huawei ICT 2026</span>
+                        </div>
+                        <p class="project-text" data-i18n="p4Text">Finds warm areas in thermal footage for search and rescue. Runs on a field unit with no network.</p>
+                        <p class="project-facts" data-i18n="p4Facts">Every detection logged offline · 17 tests</p>
+                        <ul class="chips"><li>Python</li><li>OpenCV</li><li>NumPy</li><li>SQLite</li></ul>
+                        <div class="project-links">
+                            <a href="https://github.com/808kirai/NeuSE" target="_blank" rel="noopener noreferrer"><span data-i18n="linkCode">Code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <button type="button" class="replay"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span data-i18n="replay">Replay</span></button>
+                        </div>
                     </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- STACK -->
+        <section id="stack" aria-labelledby="stack-title">
+            <div class="section-head">
+                <h2 id="stack-title" class="section-title" data-i18n="stackTitle">Stack</h2>
+            </div>
+            <dl class="stack">
+                <div class="stack-row">
+                    <dt data-i18n="stackLang">Languages</dt>
+                    <dd><ul class="chips"><li>Python</li><li>C</li><li>C++</li></ul></dd>
                 </div>
+                <div class="stack-row">
+                    <dt data-i18n="stackAi">AI and vision</dt>
+                    <dd><ul class="chips"><li>Claude API</li><li>Gemma</li><li>OpenCV</li><li>MediaPipe</li><li>NumPy</li></ul></dd>
+                </div>
+                <div class="stack-row">
+                    <dt data-i18n="stackBackend">Backend</dt>
+                    <dd><ul class="chips"><li>FastAPI</li><li>Docker</li><li>pytest</li><li>Git</li></ul></dd>
+                </div>
+                <div class="stack-row">
+                    <dt data-i18n="stackSpeak">I speak</dt>
+                    <dd>
+                        <ul class="chips">
+                            <li><span data-i18n="langSw">Kiswahili</span> <span class="chip-note" data-i18n="lvlNative">native</span></li>
+                            <li><span data-i18n="langEn">English</span> <span class="chip-note" data-i18n="lvlFluent">fluent</span></li>
+                            <li><span data-i18n="langZh">Mandarin</span> <span class="chip-note" data-i18n="lvlBasic">basic</span></li>
+                        </ul>
+                    </dd>
+                </div>
+            </dl>
+        </section>
+
+        <!-- WINS -->
+        <section id="wins" aria-labelledby="wins-title">
+            <div class="section-head">
+                <h2 id="wins-title" class="section-title" data-i18n="winsTitle">Wins</h2>
             </div>
 
-            <!-- Live GitHub Contribution Graph -->
-            <div class="contrib-card reveal" id="contrib-card">
+            <h3 class="group-label" data-i18n="groupHack">Hackathons</h3>
+            <ol class="timeline">
+                <li class="entry">
+                    <time datetime="2026-10-01">Oct 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">MLH Hackathon <span class="place place--gold" data-i18n="place2">2nd place</span></p>
+                        <p class="entry-sub" data-i18n="hack1">Lead coder on GemmaSight</p>
+                    </div>
+                </li>
+                <li class="entry">
+                    <time datetime="2026-04-01">Apr 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">Google Developer Groups Hackathon <span class="place" data-i18n="place4">4th place</span></p>
+                        <p class="entry-sub" data-i18n="hack2">Designed the architecture of an AI study tool</p>
+                    </div>
+                </li>
+            </ol>
+
+            <h3 class="group-label" data-i18n="groupCerts">Certificates</h3>
+            <ol class="timeline">
+                <li class="entry">
+                    <time datetime="2026-11-01">Nov 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">CS50's Introduction to AI with Python</p>
+                        <p class="entry-sub">Harvard · edX · <span data-i18n="inProgress">In progress</span></p>
+                    </div>
+                </li>
+                <li class="entry">
+                    <time datetime="2026-10-24">Oct 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">Hacktoberfest Hack Day Nairobi × B54</p>
+                        <p class="entry-sub">MLH × DEV · <span data-i18n="attended">Attended</span></p>
+                    </div>
+                    <button type="button" class="thumb" data-full="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" data-alt="Hacktoberfest Hack Day Nairobi certificate of attendance" aria-label="View certificate" data-i18n-label="viewCert">
+                        <img src="assets/certificates/hacktoberfest-2026-hack-day-nairobi-thumb.jpg" alt="" width="240" height="170" loading="lazy">
+                    </button>
+                </li>
+                <li class="entry">
+                    <time datetime="2026-08-31">Aug 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">Machine Learning for Beginners</p>
+                        <p class="entry-sub">Sololearn · <a class="verify" href="https://www.sololearn.com/certificates/CC-JCG8QPNN" target="_blank" rel="noopener noreferrer"><span data-i18n="verify">Verify</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></p>
+                    </div>
+                    <button type="button" class="thumb" data-full="assets/certificates/sololearn-machine-learning-for-beginners.jpg" data-alt="Sololearn Machine Learning for Beginners certificate" aria-label="View certificate" data-i18n-label="viewCert">
+                        <img src="assets/certificates/sololearn-machine-learning-for-beginners-thumb.jpg" alt="" width="240" height="169" loading="lazy">
+                    </button>
+                </li>
+                <li class="entry">
+                    <time datetime="2026-05-29">May 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">AWS AI Practitioner Challenge</p>
+                        <p class="entry-sub">Udacity · Accenture · <a class="verify" href="https://www.udacity.com/certificate/e/c61d9870-34a5-11f1-98d3-f31c3e892518" target="_blank" rel="noopener noreferrer"><span data-i18n="verify">Verify</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></p>
+                    </div>
+                    <button type="button" class="thumb" data-full="assets/certificates/aws-ai-practitioner-challenge.jpg" data-alt="Udacity AWS AI Practitioner Challenge certificate" aria-label="View certificate" data-i18n-label="viewCert">
+                        <img src="assets/certificates/aws-ai-practitioner-challenge-thumb.jpg" alt="" width="240" height="185" loading="lazy">
+                    </button>
+                </li>
+            </ol>
+
+            <h3 class="group-label" data-i18n="groupMember">Memberships</h3>
+            <ol class="timeline">
+                <li class="entry">
+                    <time datetime="2026-04-01">Apr 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">NVIDIA Developer Program</p>
+                        <p class="entry-sub" data-i18n="memberSince">Member since April 2026</p>
+                    </div>
+                </li>
+            </ol>
+
+            <!-- Live GitHub contributions -->
+            <div class="contrib" id="contrib">
                 <div class="contrib-head">
                     <div>
-                        <h3 data-i18n="contribTitle">Contribution activity</h3>
+                        <h3 class="contrib-title" data-i18n="contribTitle">On GitHub</h3>
                         <p id="contrib-total" class="contrib-total">&nbsp;</p>
                     </div>
-                    <a href="https://github.com/808kirai" target="_blank" rel="noopener noreferrer" class="contrib-user">
-                        <bdi>@808kirai</bdi>
-                    </a>
+                    <a href="https://github.com/808kirai" target="_blank" rel="noopener noreferrer" class="contrib-user"><bdi>@808kirai</bdi></a>
                 </div>
                 <div class="contrib-scroll" id="contrib-scroll">
-                    <div id="contrib-graph" class="contrib-graph" role="img" aria-label="GitHub contribution graph for the last year"></div>
+                    <div id="contrib-graph" class="contrib-graph" role="img" aria-label="GitHub contributions in the last year"></div>
                 </div>
-                <div class="contrib-foot">
-                    <a href="https://docs.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile" target="_blank" rel="noopener noreferrer" data-i18n="contribLearn">Learn how we count contributions</a>
-                    <div class="contrib-legend" aria-hidden="true">
-                        <span data-i18n="contribLess">Less</span>
-                        <i class="contrib-cell" data-level="0"></i><i class="contrib-cell" data-level="1"></i><i class="contrib-cell" data-level="2"></i><i class="contrib-cell" data-level="3"></i><i class="contrib-cell" data-level="4"></i>
-                        <span data-i18n="contribMore">More</span>
-                    </div>
+                <div class="contrib-legend" aria-hidden="true">
+                    <span data-i18n="contribLess">Less</span>
+                    <i class="contrib-cell" data-level="0"></i><i class="contrib-cell" data-level="1"></i><i class="contrib-cell" data-level="2"></i><i class="contrib-cell" data-level="3"></i><i class="contrib-cell" data-level="4"></i>
+                    <span data-i18n="contribMore">More</span>
                 </div>
                 <div id="contrib-tooltip" class="contrib-tooltip" role="tooltip" hidden></div>
             </div>
         </section>
 
-        <!-- HACKATHONS SECTION -->
-        <section id="hackathons" class="snap-section">
-            <div class="section-header reveal">
-                <h2 data-i18n="hackTitle">Hackathons</h2>
-                <p data-i18n="hackSubtitle">Building with a team against the clock</p>
-            </div>
-
-            <ol class="cert-timeline hack-timeline reveal" style="--reveal-delay: 0.15s">
-                <li class="cert-item">
-                    <time class="cert-date" datetime="2026-10-01">Oct 2026</time>
-                    <div class="cert-body">
-                        <h3>MLH Hackathon</h3>
-                        <p class="hack-place" data-i18n="hack1Place">2nd place</p>
-                        <p class="cert-issuer" data-i18n="hack1Desc">Lead coder on GemmaSight</p>
-                    </div>
-                </li>
-                <li class="cert-item">
-                    <time class="cert-date" datetime="2026-04-01">Apr 2026</time>
-                    <div class="cert-body">
-                        <h3>Google Developer Groups Hackathon</h3>
-                        <p class="hack-place" data-i18n="hack2Place">4th place</p>
-                        <p class="cert-issuer" data-i18n="hack2Desc">Designed the architecture and chose the tools for an AI study tool for students</p>
-                    </div>
-                </li>
-            </ol>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="snap-section">
-            <div class="section-header reveal">
-                <h2 data-i18n="contactTitle">Get In Touch</h2>
-                <p data-i18n="contactSubtitle">Let's collaborate on your next project or backend system</p>
-            </div>
-
-            <div class="contact-cards reveal" style="--reveal-delay: 0.15s">
-                <a href="https://wa.me/254740060124?text=Hi%20Kirai,%20I'd%20like%20to%20connect!" target="_blank" rel="noopener noreferrer" class="contact-card">
-                    <div class="contact-icon-wrapper">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-                    <div class="contact-info">
+        <!-- CONTACT -->
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title" class="contact-title" data-i18n="contactTitle">Let's build something.</h2>
+            <p class="contact-text" data-i18n="contactText">Got a project or a role in mind? Message me.</p>
+            <ul class="contact-list">
+                <li>
+                    <a href="https://wa.me/254740060124?text=Hi%20Runie" target="_blank" rel="noopener noreferrer" class="contact-row">
+                        <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
                         <span class="contact-label">WhatsApp</span>
-                        <span class="contact-value">+254 740 060 124</span>
-                    </div>
-                    <span class="btn-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-                </a>
-
-                <a href="mailto:runiejames@gmail.com" class="contact-card">
-                    <div class="contact-icon-wrapper">
-                        <i class="fa-regular fa-envelope"></i>
-                    </div>
-                    <div class="contact-info">
-                        <span class="contact-label" data-i18n="emailLabel">Direct Email</span>
-                        <span class="contact-value">runiejames@gmail.com</span>
-                    </div>
-                    <span class="btn-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-                </a>
-            </div>
+                        <span class="contact-value" dir="ltr">+254 740 060 124</span>
+                        <i class="ph ph-arrow-up-right contact-arrow" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:runiejames@gmail.com" class="contact-row">
+                        <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+                        <span class="contact-label" data-i18n="email">Email</span>
+                        <span class="contact-value" dir="ltr">runiejames@gmail.com</span>
+                        <i class="ph ph-arrow-up-right contact-arrow" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/808kirai" target="_blank" rel="noopener noreferrer" class="contact-row">
+                        <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value" dir="ltr">808kirai</span>
+                        <i class="ph ph-arrow-up-right contact-arrow" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
         </section>
 
     </main>
 
-    <footer class="site-footer">
-        <span>&copy; <span id="footer-year">2026</span> Kirai</span>
-        <a href="#hero" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+    <!-- Certificate viewer -->
+    <dialog id="viewer" class="viewer" aria-label="Certificate">
+        <form method="dialog" class="viewer-close-form">
+            <button class="icon-btn viewer-close" aria-label="Close" data-i18n-label="close"><i class="ph ph-x" aria-hidden="true"></i></button>
+        </form>
+        <img id="viewer-img" src="" alt="">
+    </dialog>
+
+    <footer class="footer">
+        <span>&copy; <span id="footer-year">2026</span> Runie · Nairobi</span>
+        <a href="#top" class="footer-top" data-i18n="backTop">Back to top</a>
     </footer>
 
-    <!-- Bottom-Right Appearance (Theme) Switcher Widget -->
-    <div class="appearance-widget">
-        <button id="theme-toggle" type="button" class="appearance-btn" aria-label="Toggle Appearance">
-            <i class="fa-solid fa-circle-half-stroke theme-icon"></i>
-            <span data-i18n="appearanceLabel">Appearance</span>
-        </button>
-    </div>
-
-    <!-- Modal Dialog -->
-    <div id="project-modal" class="modal-overlay" aria-hidden="true">
-        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <button type="button" class="modal-close" aria-label="Close">&times;</button>
-            <h3 id="modal-title">Project Details</h3>
-            <p id="modal-description">Detailed overview</p>
-            <div id="modal-tech" class="card-tech"></div>
-            <div class="modal-actions">
-                <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    <i class="fa-brands fa-github"></i> <span data-i18n="repoLabel">Repository</span>
-                </a>
-                <a id="modal-demo" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline" hidden>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="demoLabel">Live demo</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- JS Script -->
     <script src="script.js"></script>
+    <script src="stages.js"></script>
 </body>
 </html>
