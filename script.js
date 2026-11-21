@@ -90,7 +90,14 @@ const translations = {
         recentTraining: "Currently studying",
         eduTitle: "Education",
         eduDate: "Expected 2029",
-        eduDegree: "Bachelor of Science in Software Engineering"
+        eduDegree: "Bachelor of Science in Software Engineering",
+        navHome: "Home",
+        backHome: "Back to Home",
+        backProjects: "Back to Projects",
+        projTitle: "Selected Projects",
+        projSub: "AI products I've designed, built and tested, from study tools to offline computer vision.",
+        moreGithub: "More on GitHub",
+        ctaTitle: "Got ideas or want to collaborate?"
     },
     sw: {
         navWork: "Miradi",
@@ -179,7 +186,14 @@ const translations = {
         recentTraining: "Ninachosoma sasa",
         eduTitle: "Elimu",
         eduDate: "Ninatarajia 2029",
-        eduDegree: "Shahada ya Sayansi katika Uhandisi wa Programu"
+        eduDegree: "Shahada ya Sayansi katika Uhandisi wa Programu",
+        navHome: "Mwanzo",
+        backHome: "Rudi Mwanzo",
+        backProjects: "Rudi kwa Miradi",
+        projTitle: "Miradi Teule",
+        projSub: "Bidhaa za AI nilizobuni, kujenga na kujaribu, kuanzia zana za kusoma hadi maono ya kompyuta bila mtandao.",
+        moreGithub: "Zaidi kwenye GitHub",
+        ctaTitle: "Una wazo au ungependa tushirikiane?"
     },
     zh: {
         navWork: "项目",
@@ -268,7 +282,14 @@ const translations = {
         recentTraining: "正在学习",
         eduTitle: "教育",
         eduDate: "预计 2029 年",
-        eduDegree: "软件工程理学学士"
+        eduDegree: "软件工程理学学士",
+        navHome: "首页",
+        backHome: "返回首页",
+        backProjects: "返回项目",
+        projTitle: "精选项目",
+        projSub: "我设计、开发并测试过的 AI 产品，从学习工具到离线计算机视觉。",
+        moreGithub: "更多项目见 GitHub",
+        ctaTitle: "有想法，或想一起合作？"
     },
     hi: {
         navWork: "प्रोजेक्ट",
@@ -357,7 +378,14 @@ const translations = {
         recentTraining: "अभी पढ़ रहा हूँ",
         eduTitle: "शिक्षा",
         eduDate: "2029 में अपेक्षित",
-        eduDegree: "सॉफ़्टवेयर इंजीनियरिंग में बैचलर ऑफ़ साइंस"
+        eduDegree: "सॉफ़्टवेयर इंजीनियरिंग में बैचलर ऑफ़ साइंस",
+        navHome: "होम",
+        backHome: "होम पर जाएँ",
+        backProjects: "प्रोजेक्ट पर वापस",
+        projTitle: "चुनिंदा प्रोजेक्ट",
+        projSub: "AI प्रोडक्ट जिन्हें मैंने डिज़ाइन किया, बनाया और टेस्ट किया, स्टडी टूल से लेकर ऑफ़लाइन कंप्यूटर विज़न तक।",
+        moreGithub: "GitHub पर और देखें",
+        ctaTitle: "कोई आइडिया है या साथ काम करना चाहते हैं?"
     },
     es: {
         navWork: "Proyectos",
@@ -446,7 +474,14 @@ const translations = {
         recentTraining: "Estudiando ahora",
         eduTitle: "Educación",
         eduDate: "Previsto 2029",
-        eduDegree: "Licenciatura en Ingeniería de Software"
+        eduDegree: "Licenciatura en Ingeniería de Software",
+        navHome: "Inicio",
+        backHome: "Volver al inicio",
+        backProjects: "Volver a proyectos",
+        projTitle: "Proyectos seleccionados",
+        projSub: "Productos de IA que he diseñado, construido y probado, desde herramientas de estudio hasta visión por computadora sin conexión.",
+        moreGithub: "Más en GitHub",
+        ctaTitle: "¿Tienes una idea o quieres colaborar?"
     },
     fr: {
         navWork: "Projets",
@@ -535,7 +570,14 @@ const translations = {
         recentTraining: "En cours",
         eduTitle: "Formation",
         eduDate: "Prévu en 2029",
-        eduDegree: "Licence en génie logiciel"
+        eduDegree: "Licence en génie logiciel",
+        navHome: "Accueil",
+        backHome: "Retour à l'accueil",
+        backProjects: "Retour aux projets",
+        projTitle: "Projets choisis",
+        projSub: "Des produits d'IA que j'ai conçus, construits et testés, des outils de révision à la vision par ordinateur hors ligne.",
+        moreGithub: "Plus sur GitHub",
+        ctaTitle: "Une idée ou envie de collaborer ?"
     },
     ar: {
         navWork: "المشاريع",
@@ -624,7 +666,14 @@ const translations = {
         recentTraining: "أدرس حاليًا",
         eduTitle: "التعليم",
         eduDate: "متوقع 2029",
-        eduDegree: "بكالوريوس العلوم في هندسة البرمجيات"
+        eduDegree: "بكالوريوس العلوم في هندسة البرمجيات",
+        navHome: "الرئيسية",
+        backHome: "العودة إلى الرئيسية",
+        backProjects: "العودة إلى المشاريع",
+        projTitle: "مشاريع مختارة",
+        projSub: "منتجات ذكاء اصطناعي صممتها وبنيتها واختبرتها، من أدوات الدراسة إلى الرؤية الحاسوبية دون اتصال.",
+        moreGithub: "المزيد على GitHub",
+        ctaTitle: "لديك فكرة أو تريد التعاون؟"
     }
 };
 
@@ -788,7 +837,7 @@ const viewer = document.getElementById('viewer');
 const viewerImg = document.getElementById('viewer-img');
 
 if (viewer && viewerImg && typeof viewer.showModal === 'function') {
-    document.querySelectorAll('.thumb[data-full]').forEach(thumb => {
+    document.querySelectorAll('[data-full]').forEach(thumb => {
         thumb.addEventListener('click', () => {
             viewerImg.src = thumb.dataset.full;
             viewerImg.alt = thumb.dataset.alt || '';
@@ -802,7 +851,7 @@ if (viewer && viewerImg && typeof viewer.showModal === 'function') {
     });
 } else {
     // No <dialog> support: open the image itself
-    document.querySelectorAll('.thumb[data-full]').forEach(thumb => {
+    document.querySelectorAll('[data-full]').forEach(thumb => {
         thumb.addEventListener('click', () => window.open(thumb.dataset.full, '_blank', 'noopener'));
     });
 }
