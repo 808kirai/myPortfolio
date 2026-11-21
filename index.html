@@ -354,7 +354,112 @@
             </dl>
         </section>
 
+        <!-- WINS -->
+        <section id="wins" aria-labelledby="wins-title">
+            <div class="section-head">
+                <h2 id="wins-title" class="section-title" data-i18n="winsTitle">Wins</h2>
+            </div>
+
+            <h3 class="group-label" data-i18n="groupHack">Hackathons</h3>
+            <ol class="timeline">
+                <li class="entry">
+                    <time datetime="2026-10-01">Oct 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">MLH Hackathon <span class="place place--gold" data-i18n="place2">2nd place</span></p>
+                        <p class="entry-sub" data-i18n="hack1">Lead coder on GemmaSight</p>
+                    </div>
+                </li>
+                <li class="entry">
+                    <time datetime="2026-04-01">Apr 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">Google Developer Groups Hackathon <span class="place" data-i18n="place4">4th place</span></p>
+                        <p class="entry-sub" data-i18n="hack2">Designed the architecture of an AI study tool</p>
+                    </div>
+                </li>
+            </ol>
+
+            <h3 class="group-label" data-i18n="groupCerts">Certificates</h3>
+            <ol class="timeline">
+                <li class="entry">
+                    <time datetime="2026-11-01">Nov 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">CS50's Introduction to AI with Python</p>
+                        <p class="entry-sub">Harvard · edX · <span data-i18n="inProgress">In progress</span></p>
+                    </div>
+                </li>
+                <li class="entry">
+                    <time datetime="2026-10-24">Oct 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">Hacktoberfest Hack Day Nairobi × B54</p>
+                        <p class="entry-sub">MLH × DEV · <span data-i18n="attended">Attended</span></p>
+                    </div>
+                    <button type="button" class="thumb" data-full="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" data-alt="Hacktoberfest Hack Day Nairobi certificate of attendance" aria-label="View certificate" data-i18n-label="viewCert">
+                        <img src="assets/certificates/hacktoberfest-2026-hack-day-nairobi-thumb.jpg" alt="" width="240" height="170" loading="lazy">
+                    </button>
+                </li>
+                <li class="entry">
+                    <time datetime="2026-08-31">Aug 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">Machine Learning for Beginners</p>
+                        <p class="entry-sub">Sololearn · <a class="verify" href="https://www.sololearn.com/certificates/CC-JCG8QPNN" target="_blank" rel="noopener noreferrer"><span data-i18n="verify">Verify</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></p>
+                    </div>
+                    <button type="button" class="thumb" data-full="assets/certificates/sololearn-machine-learning-for-beginners.jpg" data-alt="Sololearn Machine Learning for Beginners certificate" aria-label="View certificate" data-i18n-label="viewCert">
+                        <img src="assets/certificates/sololearn-machine-learning-for-beginners-thumb.jpg" alt="" width="240" height="169" loading="lazy">
+                    </button>
+                </li>
+                <li class="entry">
+                    <time datetime="2026-05-29">May 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">AWS AI Practitioner Challenge</p>
+                        <p class="entry-sub">Udacity · Accenture · <a class="verify" href="https://www.udacity.com/certificate/e/c61d9870-34a5-11f1-98d3-f31c3e892518" target="_blank" rel="noopener noreferrer"><span data-i18n="verify">Verify</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></p>
+                    </div>
+                    <button type="button" class="thumb" data-full="assets/certificates/aws-ai-practitioner-challenge.jpg" data-alt="Udacity AWS AI Practitioner Challenge certificate" aria-label="View certificate" data-i18n-label="viewCert">
+                        <img src="assets/certificates/aws-ai-practitioner-challenge-thumb.jpg" alt="" width="240" height="185" loading="lazy">
+                    </button>
+                </li>
+            </ol>
+
+            <h3 class="group-label" data-i18n="groupMember">Memberships</h3>
+            <ol class="timeline">
+                <li class="entry">
+                    <time datetime="2026-04-01">Apr 2026</time>
+                    <div class="entry-body">
+                        <p class="entry-title">NVIDIA Developer Program</p>
+                        <p class="entry-sub" data-i18n="memberSince">Member since April 2026</p>
+                    </div>
+                </li>
+            </ol>
+
+            <!-- Live GitHub contributions -->
+            <div class="contrib" id="contrib">
+                <div class="contrib-head">
+                    <div>
+                        <h3 class="contrib-title" data-i18n="contribTitle">On GitHub</h3>
+                        <p id="contrib-total" class="contrib-total">&nbsp;</p>
+                    </div>
+                    <a href="https://github.com/808kirai" target="_blank" rel="noopener noreferrer" class="contrib-user"><bdi>@808kirai</bdi></a>
+                </div>
+                <div class="contrib-scroll" id="contrib-scroll">
+                    <div id="contrib-graph" class="contrib-graph" role="img" aria-label="GitHub contributions in the last year"></div>
+                </div>
+                <div class="contrib-legend" aria-hidden="true">
+                    <span data-i18n="contribLess">Less</span>
+                    <i class="contrib-cell" data-level="0"></i><i class="contrib-cell" data-level="1"></i><i class="contrib-cell" data-level="2"></i><i class="contrib-cell" data-level="3"></i><i class="contrib-cell" data-level="4"></i>
+                    <span data-i18n="contribMore">More</span>
+                </div>
+                <div id="contrib-tooltip" class="contrib-tooltip" role="tooltip" hidden></div>
+            </div>
+        </section>
+
     </main>
+
+    <!-- Certificate viewer -->
+    <dialog id="viewer" class="viewer" aria-label="Certificate">
+        <form method="dialog" class="viewer-close-form">
+            <button class="icon-btn viewer-close" aria-label="Close" data-i18n-label="close"><i class="ph ph-x" aria-hidden="true"></i></button>
+        </form>
+        <img id="viewer-img" src="" alt="">
+    </dialog>
 
     <footer class="footer">
         <span>&copy; <span id="footer-year">2026</span> Runie · Nairobi</span>
