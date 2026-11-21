@@ -8,14 +8,10 @@ const translations = {
         navContact: "Contact",
         heroText: "I'm a software engineering student at Multimedia University of Kenya. I build AI products with <strong>Python</strong>, <strong>FastAPI</strong>, the <strong>Claude API</strong> and <strong>OpenCV</strong>, from a study platform with real users to offline computer vision for search and rescue.",
         btnWork: "View Projects",
-        workTitle: "Projects",
-        replay: "Replay",
-        linkDemo: "Live demo",
-        linkCode: "Code",
         p1Text: "A study platform for Kenyan students. It answers from their own notes with page citations, marks homework from a photo and takes M-Pesa payments. 13 of the first 15 users reported better CAT scores.",
         p2Text: "Free mental health support over SMS and USSD, so it works on any phone, in English or Kiswahili. Messages that show signs of crisis go to a human counselor. Phone numbers are encrypted and deleted after 30 days.",
         p3Text: "A camera assistant for blind and low-vision people, built on Gemma 4. It reads labels and medicine aloud and guides you to lost objects. It placed 2nd at an MLH hackathon with me as lead coder, and 15 blindfolded testers passed 17 of 21 scenarios.",
-        p4Text: "An offline thermal-imaging prototype for search and rescue, entered in the Huawei ICT Competition 2026–27. It finds warm areas in each frame with OpenCV and logs every detection locally, with no network needed.",
+        p4Text: "An offline thermal-imaging prototype for search and rescue, entered in the Huawei ICT Competition 2026–27. It finds people in thermal drone footage on the unit itself and sends sightings to a command center whenever a link is up.",
         stackTitle: "Skills",
         stackLang: "Languages",
         stackAi: "AI and computer vision",
@@ -66,21 +62,31 @@ const translations = {
         heroLead: "I Build, Test &",
         heroAccent: "Ship.",
         footRole: "Software engineering student",
-        footPlace: "Nairobi, KE"
+        footPlace: "Nairobi, KE",
+        navHigh: "Highlights",
+        navComm: "Community",
+        navStack: "Tech Stack",
+        btnContact: "Contact Me",
+        featTitle: "Featured Projects",
+        viewAll: "View All",
+        kind1: "AI study platform",
+        kind2: "Mental health support over SMS",
+        kind3: "Vision assistant on Gemma 4",
+        kind4: "Offline search and rescue",
+        caseStudy: "Case study",
+        visitSite: "Visit site",
+        tryDemo: "Try the demo",
+        viewCode: "View code"
     },
     sw: {
         navWork: "Miradi",
         navContact: "Wasiliana",
         heroText: "Mimi ni mwanafunzi wa uhandisi wa programu katika Chuo Kikuu cha Multimedia cha Kenya. Ninaunda bidhaa za AI kwa <strong>Python</strong>, <strong>FastAPI</strong>, <strong>Claude API</strong> na <strong>OpenCV</strong>, kuanzia jukwaa la kusoma lenye watumiaji halisi hadi maono ya kompyuta yasiyohitaji mtandao kwa utafutaji na uokoaji.",
         btnWork: "Tazama Miradi",
-        workTitle: "Miradi",
-        replay: "Cheza tena",
-        linkDemo: "Ijaribu",
-        linkCode: "Msimbo",
         p1Text: "Jukwaa la kusoma kwa wanafunzi wa Kenya. Linajibu kutoka kwa maandishi yao wenyewe na kutaja ukurasa, linasahihisha kazi ya nyumbani kutoka kwa picha na linapokea malipo ya M-Pesa. Watumiaji 13 kati ya 15 wa kwanza walisema alama zao za CAT ziliboreka.",
         p2Text: "Msaada wa afya ya akili bure kupitia SMS na USSD, hivyo unafanya kazi kwenye simu yoyote, kwa Kiingereza au Kiswahili. Ujumbe wenye dalili za dharura unapelekwa kwa mshauri halisi. Namba za simu zinasimbwa na kufutwa baada ya siku 30.",
         p3Text: "Msaidizi wa kamera kwa watu wasioona na wenye uoni hafifu, uliojengwa kwa Gemma 4. Unasoma lebo na dawa kwa sauti na kukuongoza kwa vitu vilivyopotea. Ulishika nafasi ya 2 katika hackathon ya MLH nikiwa mwandishi mkuu wa msimbo, na wajaribu 15 waliofumbwa macho walifaulu majaribio 17 kati ya 21.",
-        p4Text: "Mfano wa awali wa picha za joto usiohitaji mtandao kwa utafutaji na uokoaji, ulioshiriki Huawei ICT Competition 2026–27. Unatambua maeneo yenye joto kwenye kila fremu kwa OpenCV na kuhifadhi kila ugunduzi kwenye kifaa.",
+        p4Text: "Mfano wa awali wa picha za joto usiohitaji mtandao kwa utafutaji na uokoaji, ulioshiriki Huawei ICT Competition 2026–27. Unatambua watu kwenye video za joto za ndege isiyo na rubani moja kwa moja kwenye kifaa, na kutuma matokeo kwa kituo cha amri mtandao unapopatikana.",
         stackTitle: "Ujuzi",
         stackLang: "Lugha za programu",
         stackAi: "AI na maono ya kompyuta",
@@ -131,21 +137,31 @@ const translations = {
         heroLead: "Ninajenga, Najaribu na",
         heroAccent: "Kuzindua.",
         footRole: "Mwanafunzi wa uhandisi wa programu",
-        footPlace: "Nairobi, KE"
+        footPlace: "Nairobi, KE",
+        navHigh: "Mambo Muhimu",
+        navComm: "Jamii",
+        navStack: "Teknolojia",
+        btnContact: "Wasiliana Nami",
+        featTitle: "Miradi Teule",
+        viewAll: "Tazama Yote",
+        kind1: "Jukwaa la kusoma la AI",
+        kind2: "Msaada wa afya ya akili kwa SMS",
+        kind3: "Msaidizi wa maono kwa Gemma 4",
+        kind4: "Utafutaji na uokoaji bila mtandao",
+        caseStudy: "Undani wa mradi",
+        visitSite: "Tembelea tovuti",
+        tryDemo: "Jaribu demo",
+        viewCode: "Tazama msimbo"
     },
     zh: {
         navWork: "项目",
         navContact: "联系",
         heroText: "我是肯尼亚多媒体大学软件工程专业的学生。我用 <strong>Python</strong>、<strong>FastAPI</strong>、<strong>Claude API</strong> 和 <strong>OpenCV</strong> 开发 AI 产品，从有真实用户的学习平台，到用于搜救的离线计算机视觉。",
         btnWork: "查看项目",
-        workTitle: "项目",
-        replay: "重播",
-        linkDemo: "在线演示",
-        linkCode: "代码",
         p1Text: "为肯尼亚学生打造的学习平台。它根据学生自己的笔记作答并注明页码，能拍照批改作业，支持 M-Pesa 付款。首批 15 位用户中有 13 位表示 CAT 成绩提高了。",
         p2Text: "通过短信和 USSD 提供免费心理健康支持，任何手机都能用，支持英语和斯瓦希里语。出现危机迹象的消息会转给真人咨询师。手机号码经过加密，30 天后删除。",
         p3Text: "基于 Gemma 4 的相机助手，服务盲人和低视力人群。它能朗读标签和药品信息，并引导用户找到丢失的物品。我担任主力开发，项目在 MLH 黑客松获得第 2 名；15 位蒙眼测试者通过了 21 个场景中的 17 个。",
-        p4Text: "用于搜救的离线热成像原型，参加了华为 ICT 大赛 2026–27。它用 OpenCV 找出每帧中的温热区域，并在本地记录每次检测，无需网络。",
+        p4Text: "用于搜救的离线热成像原型，参加了华为 ICT 大赛 2026–27。它在设备本地从无人机热成像画面中找出人员，并在有网络时把发现发送到指挥中心。",
         stackTitle: "技能",
         stackLang: "编程语言",
         stackAi: "AI 与计算机视觉",
@@ -196,21 +212,31 @@ const translations = {
         heroLead: "构建、测试、",
         heroAccent: "上线。",
         footRole: "软件工程专业学生",
-        footPlace: "肯尼亚 内罗毕"
+        footPlace: "肯尼亚 内罗毕",
+        navHigh: "亮点",
+        navComm: "社区",
+        navStack: "技术栈",
+        btnContact: "联系我",
+        featTitle: "精选项目",
+        viewAll: "查看全部",
+        kind1: "AI 学习平台",
+        kind2: "短信心理健康支持",
+        kind3: "基于 Gemma 4 的视觉助手",
+        kind4: "离线搜救",
+        caseStudy: "案例详情",
+        visitSite: "访问网站",
+        tryDemo: "试用演示",
+        viewCode: "查看代码"
     },
     hi: {
         navWork: "प्रोजेक्ट",
         navContact: "संपर्क",
         heroText: "मैं मल्टीमीडिया यूनिवर्सिटी ऑफ़ केन्या में सॉफ़्टवेयर इंजीनियरिंग का छात्र हूँ। मैं <strong>Python</strong>, <strong>FastAPI</strong>, <strong>Claude API</strong> और <strong>OpenCV</strong> से AI प्रोडक्ट बनाता हूँ, असली यूज़र्स वाले स्टडी प्लेटफ़ॉर्म से लेकर खोज और बचाव के लिए ऑफ़लाइन कंप्यूटर विज़न तक।",
         btnWork: "प्रोजेक्ट देखें",
-        workTitle: "प्रोजेक्ट",
-        replay: "फिर से चलाएँ",
-        linkDemo: "लाइव डेमो",
-        linkCode: "कोड",
         p1Text: "केन्या के छात्रों के लिए स्टडी प्लेटफ़ॉर्म। यह उनके अपने नोट्स से पेज के हवाले के साथ जवाब देता है, फ़ोटो से होमवर्क जाँचता है और M-Pesa से भुगतान लेता है। पहले 15 में से 13 यूज़र्स ने बताया कि उनके CAT अंक बढ़े।",
         p2Text: "SMS और USSD पर मुफ़्त मानसिक स्वास्थ्य सहायता, जो किसी भी फ़ोन पर अंग्रेज़ी या स्वाहिली में चलती है। संकट के संकेत वाले मैसेज एक असली काउंसलर तक जाते हैं। फ़ोन नंबर एन्क्रिप्ट होते हैं और 30 दिन बाद डिलीट हो जाते हैं।",
         p3Text: "दृष्टिहीन और कम दृष्टि वाले लोगों के लिए Gemma 4 पर बना कैमरा सहायक। यह लेबल और दवाइयाँ पढ़कर सुनाता है और खोई चीज़ों तक ले जाता है। मेरे मुख्य कोडर रहते इसने MLH हैकाथॉन में दूसरा स्थान पाया, और आँखों पर पट्टी बाँधे 15 टेस्टर्स 21 में से 17 परिदृश्यों में सफल रहे।",
-        p4Text: "खोज और बचाव के लिए ऑफ़लाइन थर्मल इमेजिंग प्रोटोटाइप, जो Huawei ICT Competition 2026–27 में शामिल हुआ। यह OpenCV से हर फ़्रेम में गर्म क्षेत्र ढूँढता है और हर डिटेक्शन बिना नेटवर्क के लोकल रूप से दर्ज करता है।",
+        p4Text: "खोज और बचाव के लिए ऑफ़लाइन थर्मल इमेजिंग प्रोटोटाइप, जो Huawei ICT Competition 2026–27 में शामिल हुआ। यह ड्रोन के थर्मल फ़ुटेज में लोगों को डिवाइस पर ही ढूँढता है और नेटवर्क मिलते ही नतीजे कमांड सेंटर भेजता है।",
         stackTitle: "कौशल",
         stackLang: "प्रोग्रामिंग भाषाएँ",
         stackAi: "AI और कंप्यूटर विज़न",
@@ -261,21 +287,31 @@ const translations = {
         heroLead: "बनाता हूँ, टेस्ट करता हूँ और",
         heroAccent: "लॉन्च करता हूँ।",
         footRole: "सॉफ़्टवेयर इंजीनियरिंग छात्र",
-        footPlace: "नैरोबी, केन्या"
+        footPlace: "नैरोबी, केन्या",
+        navHigh: "हाइलाइट्स",
+        navComm: "कम्युनिटी",
+        navStack: "टेक स्टैक",
+        btnContact: "संपर्क करें",
+        featTitle: "चुनिंदा प्रोजेक्ट",
+        viewAll: "सभी देखें",
+        kind1: "AI स्टडी प्लेटफ़ॉर्म",
+        kind2: "SMS पर मानसिक स्वास्थ्य सहायता",
+        kind3: "Gemma 4 पर विज़न सहायक",
+        kind4: "ऑफ़लाइन खोज और बचाव",
+        caseStudy: "केस स्टडी",
+        visitSite: "साइट देखें",
+        tryDemo: "डेमो आज़माएँ",
+        viewCode: "कोड देखें"
     },
     es: {
         navWork: "Proyectos",
         navContact: "Contacto",
         heroText: "Soy estudiante de ingeniería de software en la Multimedia University of Kenya. Creo productos de IA con <strong>Python</strong>, <strong>FastAPI</strong>, la <strong>API de Claude</strong> y <strong>OpenCV</strong>, desde una plataforma de estudio con usuarios reales hasta visión por computadora sin conexión para búsqueda y rescate.",
         btnWork: "Ver proyectos",
-        workTitle: "Proyectos",
-        replay: "Repetir",
-        linkDemo: "Demo",
-        linkCode: "Código",
         p1Text: "Una plataforma de estudio para estudiantes en Kenia. Responde a partir de sus propios apuntes citando la página, corrige tareas desde una foto y acepta pagos con M-Pesa. 13 de los primeros 15 usuarios dijeron haber mejorado sus notas de CAT.",
         p2Text: "Apoyo gratuito de salud mental por SMS y USSD, así que funciona en cualquier teléfono, en inglés o suajili. Los mensajes con señales de crisis llegan a un consejero humano. Los números se cifran y se borran a los 30 días.",
         p3Text: "Un asistente de cámara para personas ciegas o con baja visión, hecho con Gemma 4. Lee etiquetas y medicamentos en voz alta y te guía hacia objetos perdidos. Quedó 2.º en un hackathon de MLH conmigo como programador principal, y 15 testers con los ojos vendados superaron 17 de 21 escenarios.",
-        p4Text: "Un prototipo de imagen térmica sin conexión para búsqueda y rescate, presentado al Huawei ICT Competition 2026–27. Encuentra zonas cálidas en cada fotograma con OpenCV y guarda cada detección en local, sin necesidad de red.",
+        p4Text: "Un prototipo de imagen térmica sin conexión para búsqueda y rescate, presentado al Huawei ICT Competition 2026–27. Detecta personas en vídeo térmico de dron en el propio equipo y envía los avistamientos a un centro de mando cuando hay conexión.",
         stackTitle: "Habilidades",
         stackLang: "Lenguajes",
         stackAi: "IA y visión por computadora",
@@ -326,21 +362,31 @@ const translations = {
         heroLead: "Construyo, pruebo y",
         heroAccent: "lanzo.",
         footRole: "Estudiante de ingeniería de software",
-        footPlace: "Nairobi, KE"
+        footPlace: "Nairobi, KE",
+        navHigh: "Destacados",
+        navComm: "Comunidad",
+        navStack: "Tecnologías",
+        btnContact: "Contáctame",
+        featTitle: "Proyectos destacados",
+        viewAll: "Ver todo",
+        kind1: "Plataforma de estudio con IA",
+        kind2: "Apoyo de salud mental por SMS",
+        kind3: "Asistente visual con Gemma 4",
+        kind4: "Búsqueda y rescate sin conexión",
+        caseStudy: "Caso de estudio",
+        visitSite: "Visitar sitio",
+        tryDemo: "Probar la demo",
+        viewCode: "Ver código"
     },
     fr: {
         navWork: "Projets",
         navContact: "Contact",
         heroText: "Je suis étudiant en génie logiciel à la Multimedia University of Kenya. Je crée des produits d'IA avec <strong>Python</strong>, <strong>FastAPI</strong>, l'<strong>API Claude</strong> et <strong>OpenCV</strong>, d'une plateforme de révision avec de vrais utilisateurs à la vision par ordinateur hors ligne pour la recherche et le sauvetage.",
         btnWork: "Voir les projets",
-        workTitle: "Projets",
-        replay: "Rejouer",
-        linkDemo: "Démo",
-        linkCode: "Code",
         p1Text: "Une plateforme de révision pour les élèves kényans. Elle répond à partir de leurs propres notes en citant la page, corrige les devoirs à partir d'une photo et accepte les paiements M-Pesa. 13 des 15 premiers utilisateurs disent avoir amélioré leurs notes de CAT.",
         p2Text: "Un soutien psychologique gratuit par SMS et USSD, qui fonctionne donc sur n'importe quel téléphone, en anglais ou en swahili. Les messages qui montrent des signes de crise sont transmis à un conseiller humain. Les numéros sont chiffrés et supprimés après 30 jours.",
         p3Text: "Un assistant caméra pour les personnes aveugles et malvoyantes, construit avec Gemma 4. Il lit à voix haute étiquettes et médicaments et guide vers les objets perdus. Il a fini 2e d'un hackathon MLH, avec moi comme développeur principal, et 15 testeurs les yeux bandés ont réussi 17 scénarios sur 21.",
-        p4Text: "Un prototype d'imagerie thermique hors ligne pour la recherche et le sauvetage, présenté au Huawei ICT Competition 2026–27. Il repère les zones chaudes de chaque image avec OpenCV et enregistre chaque détection en local, sans réseau.",
+        p4Text: "Un prototype d'imagerie thermique hors ligne pour la recherche et le sauvetage, présenté au Huawei ICT Competition 2026–27. Il repère les personnes dans les images thermiques de drone directement sur l'appareil et envoie les détections à un centre de commandement dès qu'une connexion existe.",
         stackTitle: "Compétences",
         stackLang: "Langages",
         stackAi: "IA et vision par ordinateur",
@@ -391,21 +437,31 @@ const translations = {
         heroLead: "Je conçois, je teste et je",
         heroAccent: "livre.",
         footRole: "Étudiant en génie logiciel",
-        footPlace: "Nairobi, KE"
+        footPlace: "Nairobi, KE",
+        navHigh: "Temps forts",
+        navComm: "Communauté",
+        navStack: "Technologies",
+        btnContact: "Me contacter",
+        featTitle: "Projets phares",
+        viewAll: "Tout voir",
+        kind1: "Plateforme de révision IA",
+        kind2: "Soutien psychologique par SMS",
+        kind3: "Assistant visuel avec Gemma 4",
+        kind4: "Recherche et sauvetage hors ligne",
+        caseStudy: "Étude de cas",
+        visitSite: "Voir le site",
+        tryDemo: "Essayer la démo",
+        viewCode: "Voir le code"
     },
     ar: {
         navWork: "المشاريع",
         navContact: "تواصل",
         heroText: "أنا طالب هندسة برمجيات في جامعة الوسائط المتعددة في كينيا. أبني منتجات ذكاء اصطناعي باستخدام <strong>Python</strong> و<strong>FastAPI</strong> و<strong>Claude API</strong> و<strong>OpenCV</strong>، من منصة دراسة لها مستخدمون حقيقيون إلى رؤية حاسوبية تعمل دون اتصال لعمليات البحث والإنقاذ.",
         btnWork: "عرض المشاريع",
-        workTitle: "المشاريع",
-        replay: "إعادة التشغيل",
-        linkDemo: "تجربة مباشرة",
-        linkCode: "الكود",
         p1Text: "منصة دراسة لطلاب كينيا. تجيب من ملاحظات الطالب نفسه مع ذكر الصفحة، وتصحح الواجبات من صورة، وتقبل الدفع عبر M-Pesa. أفاد 13 من أول 15 مستخدمًا بتحسّن درجاتهم في اختبارات CAT.",
         p2Text: "دعم نفسي مجاني عبر الرسائل القصيرة و USSD، لذا يعمل على أي هاتف، بالإنجليزية أو السواحيلية. الرسائل التي تظهر فيها علامات أزمة تصل إلى مستشار بشري. أرقام الهواتف مشفّرة وتُحذف بعد 30 يومًا.",
         p3Text: "مساعد بالكاميرا للمكفوفين وضعاف البصر، مبني على Gemma 4. يقرأ الملصقات والأدوية بصوت عالٍ ويرشد إلى الأشياء المفقودة. حصل على المركز الثاني في هاكاثون MLH وكنت المبرمج الرئيسي، واجتاز 15 مختبرًا معصوبي الأعين 17 من 21 سيناريو.",
-        p4Text: "نموذج أولي للتصوير الحراري يعمل دون اتصال لعمليات البحث والإنقاذ، شارك في مسابقة Huawei ICT 2026–27. يحدد المناطق الدافئة في كل إطار باستخدام OpenCV ويسجل كل اكتشاف محليًا دون الحاجة إلى شبكة.",
+        p4Text: "نموذج أولي للتصوير الحراري يعمل دون اتصال لعمليات البحث والإنقاذ، شارك في مسابقة Huawei ICT 2026–27. يكتشف الأشخاص في لقطات الطائرات المسيّرة الحرارية على الجهاز نفسه، ويرسل النتائج إلى مركز القيادة عند توفر اتصال.",
         stackTitle: "المهارات",
         stackLang: "لغات البرمجة",
         stackAi: "الذكاء الاصطناعي والرؤية الحاسوبية",
@@ -456,7 +512,21 @@ const translations = {
         heroLead: "أبني، أختبر،",
         heroAccent: "وأُطلق.",
         footRole: "طالب هندسة برمجيات",
-        footPlace: "نيروبي، كينيا"
+        footPlace: "نيروبي، كينيا",
+        navHigh: "أبرز الأعمال",
+        navComm: "المجتمع",
+        navStack: "التقنيات",
+        btnContact: "تواصل معي",
+        featTitle: "مشاريع مختارة",
+        viewAll: "عرض الكل",
+        kind1: "منصة دراسة بالذكاء الاصطناعي",
+        kind2: "دعم نفسي عبر الرسائل القصيرة",
+        kind3: "مساعد بصري مبني على Gemma 4",
+        kind4: "بحث وإنقاذ دون اتصال",
+        caseStudy: "دراسة حالة",
+        visitSite: "زيارة الموقع",
+        tryDemo: "جرّب العرض",
+        viewCode: "عرض الكود"
     }
 };
 
@@ -572,6 +642,32 @@ function updateLanguage(lang) {
 if (langSelect) {
     langSelect.addEventListener('change', e => updateLanguage(e.target.value));
 }
+
+// ==========================================================================
+// Menu: the page links on phones
+// ==========================================================================
+
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+if (menuToggle && menu) {
+    menuToggle.addEventListener('click', () => {
+        const openNow = menu.hidden;
+        menu.hidden = !openNow;
+        menuToggle.setAttribute('aria-expanded', String(openNow));
+        menuToggle.querySelector('i').className = openNow ? 'ph ph-x' : 'ph ph-list';
+    });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !menu.hidden) menuToggle.click();
+    });
+}
+
+// Mark the current page in the nav
+const here = location.pathname.split('/').pop().replace(/\.html$/, '') || 'index';
+document.querySelectorAll('.nav-links a, .menu a').forEach(link => {
+    const target = link.getAttribute('href').replace(/\.html$/, '');
+    if (target === here) link.setAttribute('aria-current', 'page');
+});
 
 // ==========================================================================
 // Nav: a hairline appears once the page scrolls under it

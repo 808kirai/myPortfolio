@@ -33,18 +33,18 @@
 }
 
 :root[data-theme="dark"] {
-    --bg: #121212;
-    --surface: #1a1a1a;
-    --card: #161616;
-    --line: #2a2a2d;
-    --line-strong: #3f3f46;
-    --text: #ffffff;
-    --text-2: #d1d5db;
-    --muted: #9ca3af;
-    --faint: #6b7280;
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --card: #0f0f0f;
+    --line: #1f1f1f;
+    --line-strong: #2e2e2e;
+    --text: #fafafa;
+    --text-2: #d4d4d4;
+    --muted: #a3a3a3;
+    --faint: #737373;
     --accent-text: #4cb3f5;
-    --btn-bg: #ffffff;
-    --btn-text: #000000;
+    --btn-bg: #fafafa;
+    --btn-text: #0a0a0a;
 
     color-scheme: dark;
 }
@@ -433,6 +433,62 @@ strong {
     display: none;
 }
 
+/* Menu: the page links on phones, under the bar */
+.menu-btn {
+    display: inline-grid;
+}
+
+.menu {
+    display: grid;
+    gap: 2px;
+    padding: 8px max(var(--gutter), env(safe-area-inset-right)) 14px max(var(--gutter), env(safe-area-inset-left));
+    border-top: 1px solid var(--line);
+}
+
+.menu[hidden] {
+    display: none;
+}
+
+.menu a {
+    padding: 10px 0;
+    color: var(--text-2);
+    font-size: 17px;
+}
+
+@media (min-width: 680px) {
+    .menu-btn,
+    .menu {
+        display: none !important;
+    }
+}
+
+/* View All, Explore: a quiet text link with a chevron */
+.more-link {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    gap: 4px;
+    min-height: 32px;
+    color: var(--faint);
+    font-size: 14px;
+    transition: color 160ms ease;
+}
+
+.more-link i {
+    font-size: 13px;
+    transition: transform 200ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .more-link:hover {
+        color: var(--text);
+    }
+
+    .more-link:hover i {
+        transform: translateX(2px);
+    }
+}
+
 /* ==========================================================================
    About
    ========================================================================== */
@@ -621,4 +677,9 @@ strong {
     .footer {
         padding-inline: max(24px, env(safe-area-inset-left));
     }
+}
+
+.nav-links a[aria-current="page"],
+.menu a[aria-current="page"] {
+    color: var(--text);
 }
