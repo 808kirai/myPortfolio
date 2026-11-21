@@ -505,35 +505,11 @@ button {
     min-width: 0;
 }
 
-.project-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px 12px;
-}
-
 .project-title {
     font-size: 21px;
     font-weight: 600;
     line-height: 1.3;
     letter-spacing: -0.02em;
-}
-
-.tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 10px;
-    border-radius: 999px;
-    background: var(--surface);
-    color: var(--muted);
-    font-size: 12.5px;
-    font-weight: 500;
-    line-height: 1.4;
-}
-
-.tag--live {
-    padding-left: 8px;
 }
 
 .project-text {
@@ -544,12 +520,10 @@ button {
     line-height: 1.6;
 }
 
-.project-facts {
-    margin-top: 10px;
-    color: var(--text);
+.project-stack {
+    margin-top: 12px;
+    color: var(--faint);
     font-size: 14px;
-    font-weight: 500;
-    font-variant-numeric: tabular-nums;
 }
 
 .chips {
