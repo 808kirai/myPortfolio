@@ -126,10 +126,6 @@ button {
     border-radius: 6px;
 }
 
-.accent {
-    color: var(--accent);
-}
-
 /* ==========================================================================
    Layout
    ========================================================================== */
@@ -423,34 +419,10 @@ button {
 }
 
 .name {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px 12px;
     font-size: 22px;
     font-weight: 600;
     line-height: 1.25;
     letter-spacing: -0.02em;
-}
-
-.status {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 10px 3px 8px;
-    border-radius: 999px;
-    background: var(--surface);
-    color: var(--muted);
-    font-size: 12.5px;
-    font-weight: 500;
-    letter-spacing: 0;
-}
-
-.status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--success);
 }
 
 .role {
@@ -487,8 +459,8 @@ button {
 }
 
 .intro-title {
-    max-width: 18ch;
-    font-size: clamp(32px, 8vw, 48px);
+    max-width: 20ch;
+    font-size: clamp(32px, 8vw, 46px);
     font-weight: 700;
     line-height: 1.08;
     letter-spacing: -0.035em;
@@ -508,56 +480,6 @@ button {
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 28px;
-}
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
-    margin-top: 40px;
-}
-
-.stat {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    min-width: 0;
-    padding: 14px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-}
-
-.stat-value {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.03em;
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-}
-
-.stat-label {
-    color: var(--muted);
-    font-size: 12.5px;
-    line-height: 1.35;
-}
-
-@media (min-width: 640px) {
-    .stats {
-        gap: 12px;
-    }
-
-    .stat {
-        padding: 18px;
-    }
-
-    .stat-value {
-        font-size: 32px;
-    }
-
-    .stat-label {
-        font-size: 14px;
-    }
 }
 
 /* ==========================================================================
