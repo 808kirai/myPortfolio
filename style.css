@@ -699,6 +699,55 @@ button {
 }
 
 /* ==========================================================================
+   Stack
+   ========================================================================== */
+
+.stack {
+    margin: 0;
+    border-top: 1px dashed var(--line-strong);
+}
+
+.stack-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px 0;
+    border-bottom: 1px dashed var(--line-strong);
+}
+
+.stack-row dt {
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.stack-row dd {
+    margin: 0;
+}
+
+.stack-row .chips {
+    margin-top: 0;
+}
+
+.stack-row .chips li {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.chip-note {
+    color: var(--faint);
+}
+
+@media (min-width: 640px) {
+    .stack-row {
+        display: grid;
+        grid-template-columns: 160px minmax(0, 1fr);
+        align-items: center;
+        gap: 24px;
+    }
+}
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 

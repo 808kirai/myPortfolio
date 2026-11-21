@@ -12,6 +12,7 @@ const translations = {
         btnWork: "See my work", btnChat: "WhatsApp me",
         stat1: "at an MLH hackathon", stat2: "tests written", stat3: "of Rahah users scored higher",
         workTitle: "Work", workNote: "Built end to end", replay: "Replay", tagLive: "Live", linkDemo: "Live demo", linkCode: "Code", tagSms: "SMS + USSD", tagMlh: "#2 at MLH", tagHuawei: "Huawei ICT 2026", p1Text: "A study app for Kenyan students. Answers cite the page of your notes, and it marks homework from a photo.", p1Facts: "15 sign-ups · 13 scored higher · 191 tests", p2Text: "Free mental health support by text, on any phone, in English or Kiswahili. Urgent messages reach a real counselor.", p2Facts: "Numbers encrypted · Deleted after 30 days · 74 tests", p3Text: "A camera assistant for blind and low-vision people. It reads labels aloud and guides you to things you've lost.", p3Facts: "Lead coder · 15+ blindfolded testers · 44 tests", p4Text: "Finds warm areas in thermal footage for search and rescue. Runs on a field unit with no network.", p4Facts: "Every detection logged offline · 17 tests",
+        stackTitle: "Stack", stackLang: "Languages", stackAi: "AI and vision", stackBackend: "Backend", stackSpeak: "I speak", langSw: "Kiswahili", langEn: "English", langZh: "Mandarin", lvlNative: "native", lvlFluent: "fluent", lvlBasic: "basic",
         backTop: "Back to top"
     },
     sw: {
@@ -23,6 +24,7 @@ const translations = {
         btnWork: "Tazama kazi zangu", btnChat: "Nitumie WhatsApp",
         stat1: "katika hackathon ya MLH", stat2: "majaribio niliyoandika", stat3: "ya watumiaji wa Rahah walipata alama bora",
         workTitle: "Kazi", workNote: "Nimezijenga mwanzo hadi mwisho", replay: "Cheza tena", tagLive: "Iko hewani", linkDemo: "Ijaribu", linkCode: "Msimbo", tagSms: "SMS + USSD", tagMlh: "Nafasi ya 2, MLH", tagHuawei: "Huawei ICT 2026", p1Text: "Programu ya kusoma kwa wanafunzi wa Kenya. Majibu yanataja ukurasa wa maandishi yako, na inasahihisha kazi ya nyumbani kutoka kwa picha.", p1Facts: "Watu 15 wamejiunga · 13 walipata alama bora · Majaribio 191", p2Text: "Msaada wa afya ya akili bure kwa SMS, kwenye simu yoyote, kwa Kiingereza au Kiswahili. Ujumbe wa dharura unamfikia mshauri halisi.", p2Facts: "Namba zimesimbwa · Zinafutwa baada ya siku 30 · Majaribio 74", p3Text: "Msaidizi wa kamera kwa watu wasioona au wenye uoni hafifu. Inasoma lebo kwa sauti na kukuongoza kwa vitu ulivyopoteza.", p3Facts: "Mwandishi mkuu wa msimbo · Wajaribu 15+ waliofumbwa macho · Majaribio 44", p4Text: "Inatambua maeneo yenye joto kwenye picha za joto kwa utafutaji na uokoaji. Inafanya kazi bila mtandao.", p4Facts: "Kila ugunduzi unahifadhiwa bila mtandao · Majaribio 17",
+        stackTitle: "Zana", stackLang: "Lugha za programu", stackAi: "AI na maono", stackBackend: "Backend", stackSpeak: "Ninazungumza", langSw: "Kiswahili", langEn: "Kiingereza", langZh: "Kichina", lvlNative: "lugha ya mama", lvlFluent: "kwa ufasaha", lvlBasic: "msingi",
         backTop: "Rudi juu"
     },
     zh: {
@@ -34,6 +36,7 @@ const translations = {
         btnWork: "看看作品", btnChat: "WhatsApp 联系",
         stat1: "MLH 黑客松名次", stat2: "个自动化测试", stat3: "的 Rahah 用户成绩提高",
         workTitle: "作品", workNote: "从零做到上线", replay: "重播", tagLive: "已上线", linkDemo: "在线演示", linkCode: "代码", tagSms: "短信 + USSD", tagMlh: "MLH 第 2 名", tagHuawei: "华为 ICT 2026", p1Text: "为肯尼亚学生打造的学习应用。回答会注明出自你笔记的哪一页，还能拍照批改作业。", p1Facts: "15 人注册 · 13 人成绩提高 · 191 个测试", p2Text: "通过短信提供免费心理健康支持，任何手机都能用，支持英语和斯瓦希里语。紧急消息会转给真人咨询师。", p2Facts: "号码加密 · 30 天后删除 · 74 个测试", p3Text: "为盲人和低视力人群打造的相机助手。它会朗读标签，并帮你找到丢失的东西。", p3Facts: "主力开发 · 15+ 位蒙眼测试者 · 44 个测试", p4Text: "在热成像画面中找出温热区域，用于搜救。在无网络的现场设备上运行。", p4Facts: "每次检测都离线记录 · 17 个测试",
+        stackTitle: "技术栈", stackLang: "编程语言", stackAi: "AI 与视觉", stackBackend: "后端", stackSpeak: "语言能力", langSw: "斯瓦希里语", langEn: "英语", langZh: "普通话", lvlNative: "母语", lvlFluent: "流利", lvlBasic: "基础",
         backTop: "回到顶部"
     },
     hi: {
@@ -45,6 +48,7 @@ const translations = {
         btnWork: "मेरा काम देखें", btnChat: "WhatsApp करें",
         stat1: "MLH हैकाथॉन में", stat2: "टेस्ट लिखे", stat3: "Rahah यूज़र्स के अंक बढ़े",
         workTitle: "काम", workNote: "शुरू से आख़िर तक बनाया", replay: "फिर से चलाएँ", tagLive: "लाइव", linkDemo: "लाइव डेमो", linkCode: "कोड", tagSms: "SMS + USSD", tagMlh: "MLH में दूसरा स्थान", tagHuawei: "Huawei ICT 2026", p1Text: "केन्या के छात्रों के लिए स्टडी ऐप। जवाब आपके नोट्स का पेज बताते हैं, और यह फ़ोटो से होमवर्क जाँचता है।", p1Facts: "15 साइन-अप · 13 के अंक बढ़े · 191 टेस्ट", p2Text: "किसी भी फ़ोन पर SMS से मुफ़्त मानसिक स्वास्थ्य सहायता, अंग्रेज़ी या स्वाहिली में। ज़रूरी संदेश असली काउंसलर तक पहुँचते हैं।", p2Facts: "नंबर एन्क्रिप्टेड · 30 दिन बाद डिलीट · 74 टेस्ट", p3Text: "दृष्टिहीन और कम दृष्टि वाले लोगों के लिए कैमरा सहायक। यह लेबल पढ़कर सुनाता है और खोई चीज़ें ढूँढने में मदद करता है।", p3Facts: "मुख्य कोडर · 15+ आँखों पर पट्टी बाँधे टेस्टर · 44 टेस्ट", p4Text: "खोज और बचाव के लिए थर्मल फ़ुटेज में गर्म क्षेत्र ढूँढता है। बिना नेटवर्क वाले फ़ील्ड डिवाइस पर चलता है।", p4Facts: "हर डिटेक्शन ऑफ़लाइन दर्ज · 17 टेस्ट",
+        stackTitle: "स्टैक", stackLang: "भाषाएँ", stackAi: "AI और विज़न", stackBackend: "बैकएंड", stackSpeak: "मैं बोलता हूँ", langSw: "स्वाहिली", langEn: "अंग्रेज़ी", langZh: "मंदारिन", lvlNative: "मातृभाषा", lvlFluent: "धाराप्रवाह", lvlBasic: "बुनियादी",
         backTop: "ऊपर जाएँ"
     },
     es: {
@@ -56,6 +60,7 @@ const translations = {
         btnWork: "Ver proyectos", btnChat: "Escríbeme",
         stat1: "en un hackathon de MLH", stat2: "tests escritos", stat3: "de usuarios de Rahah mejoró sus notas",
         workTitle: "Proyectos", workNote: "Hechos de principio a fin", replay: "Repetir", tagLive: "En línea", linkDemo: "Demo", linkCode: "Código", tagSms: "SMS + USSD", tagMlh: "2.º en MLH", tagHuawei: "Huawei ICT 2026", p1Text: "Una app de estudio para estudiantes en Kenia. Las respuestas citan la página de tus apuntes y corrige tareas desde una foto.", p1Facts: "15 registros · 13 mejoraron sus notas · 191 tests", p2Text: "Apoyo gratuito de salud mental por SMS, en cualquier teléfono, en inglés o suajili. Los mensajes urgentes llegan a un consejero real.", p2Facts: "Números cifrados · Se borran a los 30 días · 74 tests", p3Text: "Un asistente de cámara para personas ciegas o con baja visión. Lee etiquetas en voz alta y te guía hacia lo que perdiste.", p3Facts: "Programador principal · 15+ testers con los ojos vendados · 44 tests", p4Text: "Encuentra zonas cálidas en imágenes térmicas para búsqueda y rescate. Funciona en un equipo de campo sin red.", p4Facts: "Cada detección se guarda sin conexión · 17 tests",
+        stackTitle: "Stack", stackLang: "Lenguajes", stackAi: "IA y visión", stackBackend: "Backend", stackSpeak: "Hablo", langSw: "Suajili", langEn: "Inglés", langZh: "Mandarín", lvlNative: "nativo", lvlFluent: "fluido", lvlBasic: "básico",
         backTop: "Volver arriba"
     },
     fr: {
@@ -67,6 +72,7 @@ const translations = {
         btnWork: "Voir mes projets", btnChat: "M'écrire",
         stat1: "à un hackathon MLH", stat2: "tests écrits", stat3: "des utilisateurs de Rahah ont progressé",
         workTitle: "Projets", workNote: "Conçus de A à Z", replay: "Rejouer", tagLive: "En ligne", linkDemo: "Démo", linkCode: "Code", tagSms: "SMS + USSD", tagMlh: "2e au MLH", tagHuawei: "Huawei ICT 2026", p1Text: "Une appli de révision pour les élèves kényans. Les réponses citent la page de vos notes, et elle corrige les devoirs à partir d'une photo.", p1Facts: "15 inscrits · 13 ont progressé · 191 tests", p2Text: "Un soutien psychologique gratuit par SMS, sur n'importe quel téléphone, en anglais ou en swahili. Les messages urgents arrivent à un vrai conseiller.", p2Facts: "Numéros chiffrés · Supprimés après 30 jours · 74 tests", p3Text: "Un assistant caméra pour les personnes aveugles et malvoyantes. Il lit les étiquettes à voix haute et guide vers les objets perdus.", p3Facts: "Développeur principal · 15+ testeurs les yeux bandés · 44 tests", p4Text: "Repère les zones chaudes dans des images thermiques pour la recherche et le sauvetage. Tourne sur un boîtier de terrain sans réseau.", p4Facts: "Chaque détection enregistrée hors ligne · 17 tests",
+        stackTitle: "Stack", stackLang: "Langages", stackAi: "IA et vision", stackBackend: "Backend", stackSpeak: "Je parle", langSw: "Swahili", langEn: "Anglais", langZh: "Mandarin", lvlNative: "natif", lvlFluent: "courant", lvlBasic: "notions",
         backTop: "Haut de page"
     },
     ar: {
@@ -78,6 +84,7 @@ const translations = {
         btnWork: "شاهد أعمالي", btnChat: "راسلني",
         stat1: "في هاكاثون MLH", stat2: "اختبارًا كتبتها", stat3: "من مستخدمي Rahah تحسّنت درجاتهم",
         workTitle: "أعمالي", workNote: "بنيتها من البداية إلى النهاية", replay: "إعادة التشغيل", tagLive: "يعمل الآن", linkDemo: "تجربة مباشرة", linkCode: "الكود", tagSms: "SMS + USSD", tagMlh: "المركز الثاني في MLH", tagHuawei: "Huawei ICT 2026", p1Text: "تطبيق دراسة لطلاب كينيا. الإجابات تذكر صفحة ملاحظاتك، ويصحّح الواجبات من صورة.", p1Facts: "15 مشتركًا · 13 تحسّنت درجاتهم · 191 اختبارًا", p2Text: "دعم نفسي مجاني عبر الرسائل القصيرة على أي هاتف، بالإنجليزية أو السواحيلية. الرسائل العاجلة تصل إلى مستشار حقيقي.", p2Facts: "الأرقام مشفّرة · تُحذف بعد 30 يومًا · 74 اختبارًا", p3Text: "مساعد بالكاميرا للمكفوفين وضعاف البصر. يقرأ الملصقات بصوت عالٍ ويرشدك إلى ما أضعته.", p3Facts: "المبرمج الرئيسي · أكثر من 15 مختبرًا معصوبي الأعين · 44 اختبارًا", p4Text: "يحدد المناطق الدافئة في الصور الحرارية لعمليات البحث والإنقاذ. يعمل على جهاز ميداني دون شبكة.", p4Facts: "كل اكتشاف يُسجَّل دون اتصال · 17 اختبارًا",
+        stackTitle: "الأدوات", stackLang: "لغات البرمجة", stackAi: "الذكاء الاصطناعي والرؤية", stackBackend: "الأنظمة الخلفية", stackSpeak: "أتحدث", langSw: "السواحيلية", langEn: "الإنجليزية", langZh: "الماندرين", lvlNative: "لغتي الأم", lvlFluent: "بطلاقة", lvlBasic: "مبتدئ",
         backTop: "إلى الأعلى"
     }
 };
