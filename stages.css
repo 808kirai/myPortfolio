@@ -684,11 +684,14 @@
     width: 54px;
     height: 54px;
     border-radius: 50%;
+    overflow: hidden;
     background: linear-gradient(180deg, #a5abb8, #858994);
     color: #fff;
-    font-size: 22px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+    font-size: 46px;
+}
+
+.am-avatar i {
+    translate: 0 9px;
 }
 
 .am-name {
