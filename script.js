@@ -23,20 +23,9 @@ const translations = {
         lvlNative: "native",
         lvlFluent: "fluent",
         lvlBasic: "basic",
-        winsTitle: "Awards and certifications",
-        groupHack: "Hackathons",
-        groupCerts: "Certificates",
-        groupMember: "Memberships",
-        place2: "2nd place",
-        place4: "4th place",
-        hack1: "Lead coder on GemmaSight",
-        hack2: "Designed the architecture of an AI study tool",
-        inProgress: "In progress",
-        attended: "Attended",
-        verify: "Verify",
         viewCert: "View certificate",
         close: "Close",
-        contribTitle: "GitHub activity",
+        contribTitle: "GitHub Activity",
         contribTotal: "Contributions in the last year",
         contribDay: "{n} contributions on {date}",
         contribDayOne: "1 contribution on {date}",
@@ -45,15 +34,14 @@ const translations = {
         contribMore: "More",
         contribError: "Couldn't load activity right now.",
         contribView: "See it on GitHub",
-        contactTitle: "Contact",
-        contactText: "I'm open to projects and collaborations.",
+        contactTitle: "Let's work together.",
+        contactText: "I'm open to projects and collaborations in AI and backend development. Whether you're building something new or improving a product that already exists, I'd like to hear about it.",
         email: "Email",
         backTop: "Back to top",
         p1Tests: "191 tests",
         p2Tests: "74 tests",
         p3Tests: "44 tests",
         p4Tests: "17 tests",
-        memberSub: "Member",
         navExp: "Experience",
         navCerts: "Certifications",
         tag1: "AI Engineering",
@@ -76,7 +64,33 @@ const translations = {
         caseStudy: "Case study",
         visitSite: "Visit site",
         tryDemo: "Try the demo",
-        viewCode: "View code"
+        viewCode: "View code",
+        expTitle: "Experience",
+        viewDetails: "View Details",
+        x1Role: "Lead Coder, GemmaSight",
+        x1Meta: "2nd place · Vision assistant on Gemma 4",
+        x2Role: "Developer, NeuSE",
+        x2Meta: "Innovation Track · Prototype",
+        x3Role: "Architecture and tooling",
+        x3Meta: "4th place · AI study tool for students",
+        memTitle: "Professional Memberships",
+        memSub: "Developer programs and communities I belong to.",
+        memRole: "Member · Since April 2026",
+        memDesc: "Access to NVIDIA's SDKs, training and developer tools for AI and accelerated computing.",
+        commTitle: "Community & Involvement",
+        commLead: "Hackathons, summits and volunteering",
+        commSub: "The events I compete in, learn from and give time to.",
+        eventPhotos: "Event Photos",
+        explore: "Explore",
+        techTitle: "Technologies",
+        certTitle: "Certifications",
+        viewCred: "View credential",
+        certAttend: "MLH × DEV · Certificate of attendance",
+        deckHint: "Tap the stack to shuffle",
+        recentTraining: "Currently studying",
+        eduTitle: "Education",
+        eduDate: "Expected 2029",
+        eduDegree: "Bachelor of Science in Software Engineering"
     },
     sw: {
         navWork: "Miradi",
@@ -98,17 +112,6 @@ const translations = {
         lvlNative: "lugha ya mama",
         lvlFluent: "kwa ufasaha",
         lvlBasic: "msingi",
-        winsTitle: "Tuzo na vyeti",
-        groupHack: "Hackathon",
-        groupCerts: "Vyeti",
-        groupMember: "Uanachama",
-        place2: "Nafasi ya 2",
-        place4: "Nafasi ya 4",
-        hack1: "Mwandishi mkuu wa msimbo wa GemmaSight",
-        hack2: "Nilibuni muundo wa zana ya kusoma ya AI",
-        inProgress: "Inaendelea",
-        attended: "Nilihudhuria",
-        verify: "Thibitisha",
         viewCert: "Tazama cheti",
         close: "Funga",
         contribTitle: "Shughuli za GitHub",
@@ -120,15 +123,14 @@ const translations = {
         contribMore: "Nyingi",
         contribError: "Imeshindwa kupakia shughuli kwa sasa.",
         contribView: "Tazama GitHub",
-        contactTitle: "Wasiliana nami",
-        contactText: "Niko tayari kwa miradi na ushirikiano.",
+        contactTitle: "Tufanye kazi pamoja.",
+        contactText: "Niko tayari kwa miradi na ushirikiano katika AI na backend. Iwe unaunda kitu kipya au unaboresha bidhaa iliyopo, ningependa kusikia kuhusu hilo.",
         email: "Barua pepe",
         backTop: "Rudi juu",
         p1Tests: "majaribio 191",
         p2Tests: "majaribio 74",
         p3Tests: "majaribio 44",
         p4Tests: "majaribio 17",
-        memberSub: "Mwanachama",
         navExp: "Uzoefu",
         navCerts: "Vyeti",
         tag1: "Uhandisi wa AI",
@@ -151,7 +153,33 @@ const translations = {
         caseStudy: "Undani wa mradi",
         visitSite: "Tembelea tovuti",
         tryDemo: "Jaribu demo",
-        viewCode: "Tazama msimbo"
+        viewCode: "Tazama msimbo",
+        expTitle: "Uzoefu",
+        viewDetails: "Tazama Zaidi",
+        x1Role: "Mwandishi Mkuu wa Msimbo, GemmaSight",
+        x1Meta: "Nafasi ya 2 · Msaidizi wa maono kwa Gemma 4",
+        x2Role: "Msanidi, NeuSE",
+        x2Meta: "Innovation Track · Mfano wa awali",
+        x3Role: "Muundo na zana",
+        x3Meta: "Nafasi ya 4 · Zana ya kusoma ya AI kwa wanafunzi",
+        memTitle: "Uanachama wa Kitaaluma",
+        memSub: "Programu za wasanidi na jamii ninazoshiriki.",
+        memRole: "Mwanachama · Tangu Aprili 2026",
+        memDesc: "Ufikiaji wa SDK, mafunzo na zana za wasanidi za NVIDIA kwa AI na kompyuta ya kasi.",
+        commTitle: "Jamii na Ushiriki",
+        commLead: "Hackathon, mikutano na kujitolea",
+        commSub: "Matukio ninayoshindana, kujifunza na kutoa muda wangu.",
+        eventPhotos: "Picha za Matukio",
+        explore: "Gundua",
+        techTitle: "Teknolojia",
+        certTitle: "Vyeti",
+        viewCred: "Tazama cheti",
+        certAttend: "MLH × DEV · Cheti cha kuhudhuria",
+        deckHint: "Gusa mrundo kuchanganya",
+        recentTraining: "Ninachosoma sasa",
+        eduTitle: "Elimu",
+        eduDate: "Ninatarajia 2029",
+        eduDegree: "Shahada ya Sayansi katika Uhandisi wa Programu"
     },
     zh: {
         navWork: "项目",
@@ -173,17 +201,6 @@ const translations = {
         lvlNative: "母语",
         lvlFluent: "流利",
         lvlBasic: "基础",
-        winsTitle: "奖项与证书",
-        groupHack: "黑客松",
-        groupCerts: "证书",
-        groupMember: "会员",
-        place2: "第 2 名",
-        place4: "第 4 名",
-        hack1: "GemmaSight 主力开发",
-        hack2: "为一款 AI 学习工具设计架构",
-        inProgress: "进行中",
-        attended: "参加",
-        verify: "验证",
         viewCert: "查看证书",
         close: "关闭",
         contribTitle: "GitHub 动态",
@@ -195,15 +212,14 @@ const translations = {
         contribMore: "多",
         contribError: "暂时无法加载动态。",
         contribView: "去 GitHub 查看",
-        contactTitle: "联系方式",
-        contactText: "欢迎项目合作与交流。",
+        contactTitle: "一起合作吧。",
+        contactText: "欢迎 AI 与后端开发方面的项目和合作。无论你在做新产品，还是想改进现有产品，都欢迎联系我。",
         email: "邮箱",
         backTop: "回到顶部",
         p1Tests: "191 个测试",
         p2Tests: "74 个测试",
         p3Tests: "44 个测试",
         p4Tests: "17 个测试",
-        memberSub: "会员",
         navExp: "经历",
         navCerts: "证书",
         tag1: "AI 工程",
@@ -226,7 +242,33 @@ const translations = {
         caseStudy: "案例详情",
         visitSite: "访问网站",
         tryDemo: "试用演示",
-        viewCode: "查看代码"
+        viewCode: "查看代码",
+        expTitle: "经历",
+        viewDetails: "查看详情",
+        x1Role: "主力开发，GemmaSight",
+        x1Meta: "第 2 名 · 基于 Gemma 4 的视觉助手",
+        x2Role: "开发者，NeuSE",
+        x2Meta: "创新赛道 · 原型",
+        x3Role: "架构与工具选型",
+        x3Meta: "第 4 名 · 面向学生的 AI 学习工具",
+        memTitle: "专业会员",
+        memSub: "我加入的开发者计划和社区。",
+        memRole: "会员 · 2026 年 4 月起",
+        memDesc: "可使用 NVIDIA 的 SDK、培训和开发者工具，用于 AI 与加速计算。",
+        commTitle: "社区与参与",
+        commLead: "黑客松、峰会与志愿服务",
+        commSub: "我参赛、学习和贡献时间的活动。",
+        eventPhotos: "活动照片",
+        explore: "了解更多",
+        techTitle: "技术",
+        certTitle: "证书",
+        viewCred: "查看证书",
+        certAttend: "MLH × DEV · 参会证书",
+        deckHint: "点击卡片切换",
+        recentTraining: "正在学习",
+        eduTitle: "教育",
+        eduDate: "预计 2029 年",
+        eduDegree: "软件工程理学学士"
     },
     hi: {
         navWork: "प्रोजेक्ट",
@@ -248,17 +290,6 @@ const translations = {
         lvlNative: "मातृभाषा",
         lvlFluent: "धाराप्रवाह",
         lvlBasic: "बुनियादी",
-        winsTitle: "पुरस्कार और सर्टिफ़िकेट",
-        groupHack: "हैकाथॉन",
-        groupCerts: "सर्टिफ़िकेट",
-        groupMember: "सदस्यता",
-        place2: "दूसरा स्थान",
-        place4: "चौथा स्थान",
-        hack1: "GemmaSight पर मुख्य कोडर",
-        hack2: "एक AI स्टडी टूल का आर्किटेक्चर डिज़ाइन किया",
-        inProgress: "जारी",
-        attended: "भाग लिया",
-        verify: "सत्यापित करें",
         viewCert: "सर्टिफ़िकेट देखें",
         close: "बंद करें",
         contribTitle: "GitHub गतिविधि",
@@ -270,15 +301,14 @@ const translations = {
         contribMore: "ज़्यादा",
         contribError: "अभी गतिविधि लोड नहीं हो सकी।",
         contribView: "GitHub पर देखें",
-        contactTitle: "संपर्क",
-        contactText: "मैं प्रोजेक्ट्स और सहयोग के लिए उपलब्ध हूँ।",
+        contactTitle: "चलिए साथ काम करते हैं।",
+        contactText: "मैं AI और बैकएंड डेवलपमेंट में प्रोजेक्ट्स और सहयोग के लिए उपलब्ध हूँ। चाहे आप कुछ नया बना रहे हों या किसी मौजूदा प्रोडक्ट को बेहतर करना चाहते हों, मुझे बताइए।",
         email: "ईमेल",
         backTop: "ऊपर जाएँ",
         p1Tests: "191 टेस्ट",
         p2Tests: "74 टेस्ट",
         p3Tests: "44 टेस्ट",
         p4Tests: "17 टेस्ट",
-        memberSub: "सदस्य",
         navExp: "अनुभव",
         navCerts: "सर्टिफ़िकेट",
         tag1: "AI इंजीनियरिंग",
@@ -301,7 +331,33 @@ const translations = {
         caseStudy: "केस स्टडी",
         visitSite: "साइट देखें",
         tryDemo: "डेमो आज़माएँ",
-        viewCode: "कोड देखें"
+        viewCode: "कोड देखें",
+        expTitle: "अनुभव",
+        viewDetails: "विवरण देखें",
+        x1Role: "मुख्य कोडर, GemmaSight",
+        x1Meta: "दूसरा स्थान · Gemma 4 पर विज़न सहायक",
+        x2Role: "डेवलपर, NeuSE",
+        x2Meta: "इनोवेशन ट्रैक · प्रोटोटाइप",
+        x3Role: "आर्किटेक्चर और टूल्स",
+        x3Meta: "चौथा स्थान · छात्रों के लिए AI स्टडी टूल",
+        memTitle: "पेशेवर सदस्यता",
+        memSub: "डेवलपर प्रोग्राम और कम्युनिटी जिनका मैं हिस्सा हूँ।",
+        memRole: "सदस्य · अप्रैल 2026 से",
+        memDesc: "AI और एक्सेलेरेटेड कंप्यूटिंग के लिए NVIDIA के SDK, ट्रेनिंग और डेवलपर टूल्स तक पहुँच।",
+        commTitle: "कम्युनिटी और भागीदारी",
+        commLead: "हैकाथॉन, समिट और स्वयंसेवा",
+        commSub: "वे इवेंट जिनमें मैं हिस्सा लेता हूँ, सीखता हूँ और समय देता हूँ।",
+        eventPhotos: "इवेंट फ़ोटो",
+        explore: "देखें",
+        techTitle: "टेक्नोलॉजी",
+        certTitle: "सर्टिफ़िकेट",
+        viewCred: "सर्टिफ़िकेट देखें",
+        certAttend: "MLH × DEV · उपस्थिति प्रमाणपत्र",
+        deckHint: "बदलने के लिए स्टैक पर टैप करें",
+        recentTraining: "अभी पढ़ रहा हूँ",
+        eduTitle: "शिक्षा",
+        eduDate: "2029 में अपेक्षित",
+        eduDegree: "सॉफ़्टवेयर इंजीनियरिंग में बैचलर ऑफ़ साइंस"
     },
     es: {
         navWork: "Proyectos",
@@ -323,17 +379,6 @@ const translations = {
         lvlNative: "nativo",
         lvlFluent: "fluido",
         lvlBasic: "básico",
-        winsTitle: "Premios y certificaciones",
-        groupHack: "Hackatones",
-        groupCerts: "Certificados",
-        groupMember: "Membresías",
-        place2: "2.º lugar",
-        place4: "4.º lugar",
-        hack1: "Programador principal de GemmaSight",
-        hack2: "Diseñé la arquitectura de una herramienta de estudio con IA",
-        inProgress: "En curso",
-        attended: "Asistí",
-        verify: "Verificar",
         viewCert: "Ver certificado",
         close: "Cerrar",
         contribTitle: "Actividad en GitHub",
@@ -345,15 +390,14 @@ const translations = {
         contribMore: "Más",
         contribError: "No se pudo cargar la actividad.",
         contribView: "Verla en GitHub",
-        contactTitle: "Contacto",
-        contactText: "Estoy disponible para proyectos y colaboraciones.",
+        contactTitle: "Trabajemos juntos.",
+        contactText: "Estoy abierto a proyectos y colaboraciones en IA y desarrollo backend. Tanto si estás creando algo nuevo como si quieres mejorar un producto que ya existe, me encantará saberlo.",
         email: "Correo",
         backTop: "Volver arriba",
         p1Tests: "191 tests",
         p2Tests: "74 tests",
         p3Tests: "44 tests",
         p4Tests: "17 tests",
-        memberSub: "Miembro",
         navExp: "Experiencia",
         navCerts: "Certificaciones",
         tag1: "Ingeniería de IA",
@@ -376,7 +420,33 @@ const translations = {
         caseStudy: "Caso de estudio",
         visitSite: "Visitar sitio",
         tryDemo: "Probar la demo",
-        viewCode: "Ver código"
+        viewCode: "Ver código",
+        expTitle: "Experiencia",
+        viewDetails: "Ver detalles",
+        x1Role: "Programador principal, GemmaSight",
+        x1Meta: "2.º lugar · Asistente visual con Gemma 4",
+        x2Role: "Desarrollador, NeuSE",
+        x2Meta: "Innovation Track · Prototipo",
+        x3Role: "Arquitectura y herramientas",
+        x3Meta: "4.º lugar · Herramienta de estudio con IA",
+        memTitle: "Membresías profesionales",
+        memSub: "Programas para desarrolladores y comunidades de los que formo parte.",
+        memRole: "Miembro · Desde abril de 2026",
+        memDesc: "Acceso a los SDK, la formación y las herramientas de NVIDIA para IA y computación acelerada.",
+        commTitle: "Comunidad y participación",
+        commLead: "Hackatones, cumbres y voluntariado",
+        commSub: "Los eventos en los que compito, aprendo y colaboro.",
+        eventPhotos: "Fotos de eventos",
+        explore: "Explorar",
+        techTitle: "Tecnologías",
+        certTitle: "Certificaciones",
+        viewCred: "Ver credencial",
+        certAttend: "MLH × DEV · Certificado de asistencia",
+        deckHint: "Toca la pila para barajar",
+        recentTraining: "Estudiando ahora",
+        eduTitle: "Educación",
+        eduDate: "Previsto 2029",
+        eduDegree: "Licenciatura en Ingeniería de Software"
     },
     fr: {
         navWork: "Projets",
@@ -398,17 +468,6 @@ const translations = {
         lvlNative: "natif",
         lvlFluent: "courant",
         lvlBasic: "notions",
-        winsTitle: "Prix et certifications",
-        groupHack: "Hackathons",
-        groupCerts: "Certificats",
-        groupMember: "Adhésions",
-        place2: "2e place",
-        place4: "4e place",
-        hack1: "Développeur principal de GemmaSight",
-        hack2: "J'ai conçu l'architecture d'un outil de révision par IA",
-        inProgress: "En cours",
-        attended: "Participation",
-        verify: "Vérifier",
         viewCert: "Voir le certificat",
         close: "Fermer",
         contribTitle: "Activité GitHub",
@@ -420,15 +479,14 @@ const translations = {
         contribMore: "Plus",
         contribError: "Activité indisponible pour le moment.",
         contribView: "Voir sur GitHub",
-        contactTitle: "Contact",
-        contactText: "Je suis ouvert aux projets et aux collaborations.",
+        contactTitle: "Travaillons ensemble.",
+        contactText: "Je suis ouvert aux projets et collaborations en IA et en développement backend. Que vous lanciez quelque chose de nouveau ou amélioriez un produit existant, parlons-en.",
         email: "E-mail",
         backTop: "Haut de page",
         p1Tests: "191 tests",
         p2Tests: "74 tests",
         p3Tests: "44 tests",
         p4Tests: "17 tests",
-        memberSub: "Membre",
         navExp: "Expérience",
         navCerts: "Certifications",
         tag1: "Ingénierie IA",
@@ -451,7 +509,33 @@ const translations = {
         caseStudy: "Étude de cas",
         visitSite: "Voir le site",
         tryDemo: "Essayer la démo",
-        viewCode: "Voir le code"
+        viewCode: "Voir le code",
+        expTitle: "Expérience",
+        viewDetails: "Voir le détail",
+        x1Role: "Développeur principal, GemmaSight",
+        x1Meta: "2e place · Assistant visuel avec Gemma 4",
+        x2Role: "Développeur, NeuSE",
+        x2Meta: "Innovation Track · Prototype",
+        x3Role: "Architecture et outils",
+        x3Meta: "4e place · Outil de révision par IA",
+        memTitle: "Adhésions professionnelles",
+        memSub: "Les programmes et communautés de développeurs dont je fais partie.",
+        memRole: "Membre · Depuis avril 2026",
+        memDesc: "Accès aux SDK, formations et outils de NVIDIA pour l'IA et le calcul accéléré.",
+        commTitle: "Communauté et engagement",
+        commLead: "Hackathons, sommets et bénévolat",
+        commSub: "Les événements où je participe, j'apprends et je donne de mon temps.",
+        eventPhotos: "Photos",
+        explore: "Explorer",
+        techTitle: "Technologies",
+        certTitle: "Certifications",
+        viewCred: "Voir le certificat",
+        certAttend: "MLH × DEV · Certificat de participation",
+        deckHint: "Touchez la pile pour mélanger",
+        recentTraining: "En cours",
+        eduTitle: "Formation",
+        eduDate: "Prévu en 2029",
+        eduDegree: "Licence en génie logiciel"
     },
     ar: {
         navWork: "المشاريع",
@@ -473,17 +557,6 @@ const translations = {
         lvlNative: "لغتي الأم",
         lvlFluent: "بطلاقة",
         lvlBasic: "مبتدئ",
-        winsTitle: "الجوائز والشهادات",
-        groupHack: "الهاكاثونات",
-        groupCerts: "الشهادات",
-        groupMember: "العضويات",
-        place2: "المركز الثاني",
-        place4: "المركز الرابع",
-        hack1: "المبرمج الرئيسي لـ GemmaSight",
-        hack2: "صممت بنية أداة دراسة بالذكاء الاصطناعي",
-        inProgress: "قيد الدراسة",
-        attended: "حضور",
-        verify: "تحقق",
         viewCert: "عرض الشهادة",
         close: "إغلاق",
         contribTitle: "النشاط على GitHub",
@@ -495,15 +568,14 @@ const translations = {
         contribMore: "أكثر",
         contribError: "تعذّر تحميل النشاط الآن.",
         contribView: "شاهده على GitHub",
-        contactTitle: "تواصل",
-        contactText: "أرحب بالمشاريع والتعاون.",
+        contactTitle: "لنعمل معًا.",
+        contactText: "أرحب بالمشاريع والتعاون في الذكاء الاصطناعي وتطوير الأنظمة الخلفية. سواء كنت تبني شيئًا جديدًا أو تحسّن منتجًا قائمًا، يسعدني أن أسمع منك.",
         email: "البريد",
         backTop: "إلى الأعلى",
         p1Tests: "191 اختبارًا",
         p2Tests: "74 اختبارًا",
         p3Tests: "44 اختبارًا",
         p4Tests: "17 اختبارًا",
-        memberSub: "عضو",
         navExp: "الخبرة",
         navCerts: "الشهادات",
         tag1: "هندسة الذكاء الاصطناعي",
@@ -526,7 +598,33 @@ const translations = {
         caseStudy: "دراسة حالة",
         visitSite: "زيارة الموقع",
         tryDemo: "جرّب العرض",
-        viewCode: "عرض الكود"
+        viewCode: "عرض الكود",
+        expTitle: "الخبرة",
+        viewDetails: "عرض التفاصيل",
+        x1Role: "المبرمج الرئيسي، GemmaSight",
+        x1Meta: "المركز الثاني · مساعد بصري مبني على Gemma 4",
+        x2Role: "مطوّر، NeuSE",
+        x2Meta: "مسار الابتكار · نموذج أولي",
+        x3Role: "البنية والأدوات",
+        x3Meta: "المركز الرابع · أداة دراسة بالذكاء الاصطناعي للطلاب",
+        memTitle: "العضويات المهنية",
+        memSub: "برامج المطورين والمجتمعات التي أنتمي إليها.",
+        memRole: "عضو · منذ أبريل 2026",
+        memDesc: "وصول إلى أدوات NVIDIA ومكتباتها وتدريبها للذكاء الاصطناعي والحوسبة المسرّعة.",
+        commTitle: "المجتمع والمشاركة",
+        commLead: "هاكاثونات وقمم وعمل تطوعي",
+        commSub: "الفعاليات التي أشارك فيها وأتعلم منها وأمنحها وقتي.",
+        eventPhotos: "صور الفعاليات",
+        explore: "استكشف",
+        techTitle: "التقنيات",
+        certTitle: "الشهادات",
+        viewCred: "عرض الشهادة",
+        certAttend: "MLH × DEV · شهادة حضور",
+        deckHint: "انقر على المجموعة للتبديل",
+        recentTraining: "أدرس حاليًا",
+        eduTitle: "التعليم",
+        eduDate: "متوقع 2029",
+        eduDegree: "بكالوريوس العلوم في هندسة البرمجيات"
     }
 };
 
@@ -708,6 +806,141 @@ if (viewer && viewerImg && typeof viewer.showModal === 'function') {
         thumb.addEventListener('click', () => window.open(thumb.dataset.full, '_blank', 'noopener'));
     });
 }
+
+// ==========================================================================
+// Certificate stack: the top card swings out in 3D and drops to the back
+// ==========================================================================
+
+const certDeck = document.getElementById('cert-deck');
+const CERT_AUTOPLAY_MS = 4000;
+
+if (certDeck) {
+    const cards = Array.from(certDeck.querySelectorAll('.deck-card'));
+    const thumbs = document.querySelectorAll('.thumb[data-full]');
+    let order = cards.map((_, i) => i);
+    let animating = false;
+    let pausedUntil = 0;
+    let hovering = false;
+    let inView = false;
+
+    // Cards behind the top one fan out up and to the right, slightly turned
+    function pose(pos) {
+        if (pos === 0) return { transform: 'translate3d(0, 0, 0) rotate(0deg)', filter: 'brightness(1)', zIndex: 10 };
+        return {
+            transform: `translate3d(${pos * 14}px, ${pos * -9}px, ${pos * -40}px) rotate(${pos * 4}deg)`,
+            filter: `brightness(${1 - pos * 0.08})`,
+            zIndex: 10 - pos
+        };
+    }
+
+    function applyPoses() {
+        order.forEach((cardIndex, pos) => {
+            const card = cards[cardIndex];
+            const p = pose(pos);
+            card.style.transform = p.transform;
+            card.style.filter = p.filter;
+            card.style.zIndex = p.zIndex;
+            card.tabIndex = pos === 0 ? 0 : -1;
+            card.setAttribute('aria-hidden', pos === 0 ? 'false' : 'true');
+        });
+        const top = cards[order[0]];
+        thumbs.forEach(thumb => {
+            thumb.classList.toggle('is-active', thumb.dataset.full === top.querySelector('img').getAttribute('src'));
+        });
+    }
+
+    // Move the top card to the back
+    function shuffle() {
+        if (animating || cards.length < 2) return;
+        const leavingIndex = order[0];
+        const oldOrder = order.slice();
+        order = oldOrder.slice(1).concat(leavingIndex);
+
+        if (prefersReducedMotion()) {
+            applyPoses();
+            return;
+        }
+
+        animating = true;
+        const backPose = pose(order.length - 1);
+        const animations = [];
+
+        // The leaving card swings open to the right like a door, then tucks in behind the deck
+        animations.push(cards[leavingIndex].animate([
+            { transform: pose(0).transform, filter: 'brightness(1)', zIndex: 20, offset: 0 },
+            { transform: 'translate3d(62%, -6%, 60px) rotateY(-58deg) rotate(6deg)', filter: 'brightness(1)', zIndex: 20, offset: 0.45 },
+            { transform: 'translate3d(60%, -6%, -60px) rotateY(-50deg) rotate(6deg)', filter: 'brightness(0.95)', zIndex: 0, offset: 0.5 },
+            { transform: backPose.transform, filter: backPose.filter, zIndex: 0, offset: 1 }
+        ], { duration: 900, easing: 'cubic-bezier(0.65, 0, 0.35, 1)' }));
+
+        // Everyone else slides one step forward
+        order.forEach((cardIndex, pos) => {
+            if (cardIndex === leavingIndex) return;
+            const from = pose(oldOrder.indexOf(cardIndex));
+            const to = pose(pos);
+            animations.push(cards[cardIndex].animate([
+                { transform: from.transform, filter: from.filter },
+                { transform: to.transform, filter: to.filter }
+            ], { duration: 700, delay: 120, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'backwards' }));
+        });
+
+        applyPoses();
+        Promise.all(animations.map(a => a.finished)).finally(() => { animating = false; });
+    }
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            pausedUntil = Date.now() + 8000;
+            shuffle();
+        });
+    });
+
+    certDeck.addEventListener('mouseenter', () => { hovering = true; });
+    certDeck.addEventListener('mouseleave', () => { hovering = false; });
+
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(entries => {
+            inView = entries[0].isIntersecting;
+        }, { threshold: 0.4 }).observe(certDeck);
+    }
+
+    // Shuffle on its own while in view, like a slow photo carousel
+    setInterval(() => {
+        if (inView && !hovering && document.visibilityState === 'visible' &&
+            Date.now() > pausedUntil && !prefersReducedMotion()) {
+            shuffle();
+        }
+    }, CERT_AUTOPLAY_MS);
+
+    applyPoses();
+}
+
+// ==========================================================================
+// Technologies: each row is doubled so the drift loops without a seam
+// ==========================================================================
+
+document.querySelectorAll('[data-marquee]').forEach(row => {
+    Array.from(row.children).forEach(item => {
+        const copy = item.cloneNode(true);
+        copy.setAttribute('aria-hidden', 'true');
+        copy.setAttribute('data-copy', '');
+        row.appendChild(copy);
+    });
+});
+
+// ==========================================================================
+// Member card: the real card image takes over once it exists
+// ==========================================================================
+
+document.querySelectorAll('.member-card[data-card-src]').forEach(card => {
+    const img = new Image();
+    img.alt = 'NVIDIA Developer Program membership card for Rooney James';
+    img.onload = () => {
+        card.replaceChildren(img);
+        card.classList.add('member-card--image');
+    };
+    img.src = card.dataset.cardSrc;
+});
 
 // ==========================================================================
 // Live GitHub contributions
