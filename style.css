@@ -11,8 +11,8 @@
     --line-strong: #d1d5db;
     --text: #111827;
     --text-2: #374151;
-    --muted: #6b7280;
-    --faint: #9ca3af;
+    --muted: #4b5563;
+    --faint: #6b7280;
     --accent: #1d9bf0;
     --accent-text: #0b7bc4;
     --btn-bg: #121212;
@@ -40,8 +40,8 @@
     --line-strong: #2e2e2e;
     --text: #fafafa;
     --text-2: #d4d4d4;
-    --muted: #a3a3a3;
-    --faint: #737373;
+    --muted: #c2c2c2;
+    --faint: #8f8f8f;
     --accent-text: #4cb3f5;
     --btn-bg: #fafafa;
     --btn-text: #0a0a0a;
@@ -162,7 +162,7 @@ strong {
 
 .section-title {
     font-size: 26px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.2;
     letter-spacing: -0.02em;
 }
@@ -584,7 +584,7 @@ strong {
     margin-top: 16px;
     color: var(--muted);
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.75;
     text-wrap: pretty;
 }
@@ -1302,7 +1302,7 @@ strong {
     max-width: 52ch;
     color: var(--muted);
     font-size: 15.5px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.75;
 }
 
@@ -1421,7 +1421,7 @@ strong {
 
 .page-title {
     font-size: 32px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.15;
     letter-spacing: -0.025em;
     text-wrap: balance;
@@ -1597,7 +1597,7 @@ strong {
 
 .cs-h {
     font-size: 22px;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: -0.015em;
 }
 
