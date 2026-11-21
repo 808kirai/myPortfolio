@@ -1707,3 +1707,258 @@ strong {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+/* ==========================================================================
+   Experience page
+   ========================================================================== */
+
+.xp--page {
+    gap: 0;
+}
+
+.xp--page .xp-item {
+    padding: 24px 0;
+    border-bottom: 1px dashed var(--line-strong);
+}
+
+.xp--page .xp-item:first-child {
+    padding-top: 0;
+}
+
+.xp--page .caps-link {
+    margin-top: 6px;
+}
+
+/* ==========================================================================
+   Highlights: image cards, the first one wide
+   ========================================================================== */
+
+.hgrid {
+    display: grid;
+    gap: 16px;
+}
+
+.hcard {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    transition: border-color 160ms ease, transform 160ms var(--ease-out);
+}
+
+a.hcard:active {
+    transform: scale(0.99);
+}
+
+.hcard-shot {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: var(--surface);
+}
+
+.hcard-shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 600ms var(--ease-out);
+}
+
+.hcard-shot--card {
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.hcard-body {
+    display: grid;
+    gap: 6px;
+    padding: 16px 18px 20px;
+}
+
+.hcard-title {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.hcard-text {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    a.hcard:hover {
+        border-color: var(--line-strong);
+    }
+
+    a.hcard:hover .hcard-shot img {
+        transform: scale(1.03);
+    }
+}
+
+@media (min-width: 640px) {
+    .hgrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hcard--big {
+        grid-column: 1 / -1;
+    }
+
+    .hcard--big .hcard-shot {
+        aspect-ratio: 16 / 8;
+    }
+}
+
+/* ==========================================================================
+   Community: event cards with their facts
+   ========================================================================== */
+
+.cgrid {
+    display: grid;
+    gap: 14px;
+}
+
+.ccard {
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+    border: 1px dashed var(--line-strong);
+    border-radius: 14px;
+}
+
+.ccard-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.ccard-title {
+    margin-top: 4px;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.ccard-text {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.ccard-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+}
+
+.ccard-facts dt {
+    color: var(--faint);
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.ccard-facts dd {
+    margin-top: 2px;
+    color: var(--text-2);
+    font-size: 14px;
+}
+
+.ccard-thumb {
+    flex: none;
+}
+
+@media (min-width: 640px) {
+    .cgrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    display: grid;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--faint);
+    font-size: 13px;
+    text-align: start;
+    cursor: zoom-in;
+}
+
+.gallery-item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px var(--line);
+    transition: transform 200ms var(--ease-out);
+}
+
+.gallery-item:active img {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   Tech stack page
+   ========================================================================== */
+
+.tgroup {
+    display: grid;
+    gap: 14px;
+    padding-top: 22px;
+    border-top: 1px dashed var(--line-strong);
+}
+
+.tlist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 16px 24px;
+}
+
+.tlist li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tlist img,
+.tlist .logo,
+.tech-glyph {
+    flex: none;
+    width: 26px;
+    height: 26px;
+}
+
+.tech-glyph {
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    font-size: 22px;
+}
+
+.tlist b {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.tlist small {
+    display: block;
+    color: var(--faint);
+    font-size: 12.5px;
+}

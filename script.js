@@ -97,7 +97,16 @@ const translations = {
         projTitle: "Selected Projects",
         projSub: "AI products I've designed, built and tested, from study tools to offline computer vision.",
         moreGithub: "More on GitHub",
-        ctaTitle: "Got ideas or want to collaborate?"
+        ctaTitle: "Got ideas or want to collaborate?",
+        expSub: "Hackathons, competitions and volunteering, and what I did there.",
+        highTitle: "Highlights",
+        highSub: "Selected work, milestones and moments from my journey in tech.",
+        commPageSub: "Hackathons, summits and volunteering that connect my work with the wider tech community.",
+        galleryTitle: "Event Gallery",
+        gallerySub: "Moments from events and meetups.",
+        certSub: "Courses, credentials and training in AI, machine learning and cloud.",
+        stackPageTitle: "Full Tech Stack",
+        stackPageSub: "The tools and technologies I use, and where I've used them."
     },
     sw: {
         navWork: "Miradi",
@@ -193,7 +202,16 @@ const translations = {
         projTitle: "Miradi Teule",
         projSub: "Bidhaa za AI nilizobuni, kujenga na kujaribu, kuanzia zana za kusoma hadi maono ya kompyuta bila mtandao.",
         moreGithub: "Zaidi kwenye GitHub",
-        ctaTitle: "Una wazo au ungependa tushirikiane?"
+        ctaTitle: "Una wazo au ungependa tushirikiane?",
+        expSub: "Hackathon, mashindano na kujitolea, na nilichofanya huko.",
+        highTitle: "Mambo Muhimu",
+        highSub: "Kazi teule, hatua muhimu na matukio katika safari yangu ya teknolojia.",
+        commPageSub: "Hackathon, mikutano na kujitolea vinavyounganisha kazi yangu na jamii pana ya teknolojia.",
+        galleryTitle: "Picha za Matukio",
+        gallerySub: "Matukio kutoka kwenye mikutano na hafla.",
+        certSub: "Kozi, vyeti na mafunzo katika AI, ujifunzaji wa mashine na wingu.",
+        stackPageTitle: "Teknolojia Zote",
+        stackPageSub: "Zana na teknolojia ninazotumia, na nilipozitumia."
     },
     zh: {
         navWork: "项目",
@@ -289,7 +307,16 @@ const translations = {
         projTitle: "精选项目",
         projSub: "我设计、开发并测试过的 AI 产品，从学习工具到离线计算机视觉。",
         moreGithub: "更多项目见 GitHub",
-        ctaTitle: "有想法，或想一起合作？"
+        ctaTitle: "有想法，或想一起合作？",
+        expSub: "黑客松、竞赛和志愿服务，以及我在其中做了什么。",
+        highTitle: "亮点",
+        highSub: "我在技术之路上的精选作品、里程碑和时刻。",
+        commPageSub: "把我的工作与更广泛的技术社区联系起来的黑客松、峰会和志愿服务。",
+        galleryTitle: "活动相册",
+        gallerySub: "活动和聚会中的瞬间。",
+        certSub: "AI、机器学习和云方面的课程、证书和培训。",
+        stackPageTitle: "完整技术栈",
+        stackPageSub: "我使用的工具和技术，以及用在哪些项目里。"
     },
     hi: {
         navWork: "प्रोजेक्ट",
@@ -385,7 +412,16 @@ const translations = {
         projTitle: "चुनिंदा प्रोजेक्ट",
         projSub: "AI प्रोडक्ट जिन्हें मैंने डिज़ाइन किया, बनाया और टेस्ट किया, स्टडी टूल से लेकर ऑफ़लाइन कंप्यूटर विज़न तक।",
         moreGithub: "GitHub पर और देखें",
-        ctaTitle: "कोई आइडिया है या साथ काम करना चाहते हैं?"
+        ctaTitle: "कोई आइडिया है या साथ काम करना चाहते हैं?",
+        expSub: "हैकाथॉन, प्रतियोगिताएँ और स्वयंसेवा, और वहाँ मैंने क्या किया।",
+        highTitle: "हाइलाइट्स",
+        highSub: "टेक में मेरे सफ़र के चुनिंदा काम, उपलब्धियाँ और पल।",
+        commPageSub: "हैकाथॉन, समिट और स्वयंसेवा जो मेरे काम को बड़ी टेक कम्युनिटी से जोड़ते हैं।",
+        galleryTitle: "इवेंट गैलरी",
+        gallerySub: "इवेंट और मीटअप के पल।",
+        certSub: "AI, मशीन लर्निंग और क्लाउड में कोर्स, सर्टिफ़िकेट और ट्रेनिंग।",
+        stackPageTitle: "पूरा टेक स्टैक",
+        stackPageSub: "जिन टूल्स और टेक्नोलॉजी का मैं इस्तेमाल करता हूँ, और कहाँ किया है।"
     },
     es: {
         navWork: "Proyectos",
@@ -481,7 +517,16 @@ const translations = {
         projTitle: "Proyectos seleccionados",
         projSub: "Productos de IA que he diseñado, construido y probado, desde herramientas de estudio hasta visión por computadora sin conexión.",
         moreGithub: "Más en GitHub",
-        ctaTitle: "¿Tienes una idea o quieres colaborar?"
+        ctaTitle: "¿Tienes una idea o quieres colaborar?",
+        expSub: "Hackatones, competiciones y voluntariado, y lo que hice en cada uno.",
+        highTitle: "Destacados",
+        highSub: "Trabajos, hitos y momentos de mi camino en la tecnología.",
+        commPageSub: "Hackatones, cumbres y voluntariado que conectan mi trabajo con la comunidad tecnológica.",
+        galleryTitle: "Galería de eventos",
+        gallerySub: "Momentos de eventos y encuentros.",
+        certSub: "Cursos, credenciales y formación en IA, aprendizaje automático y nube.",
+        stackPageTitle: "Tecnologías completas",
+        stackPageSub: "Las herramientas y tecnologías que uso, y dónde las he usado."
     },
     fr: {
         navWork: "Projets",
@@ -577,7 +622,16 @@ const translations = {
         projTitle: "Projets choisis",
         projSub: "Des produits d'IA que j'ai conçus, construits et testés, des outils de révision à la vision par ordinateur hors ligne.",
         moreGithub: "Plus sur GitHub",
-        ctaTitle: "Une idée ou envie de collaborer ?"
+        ctaTitle: "Une idée ou envie de collaborer ?",
+        expSub: "Hackathons, compétitions et bénévolat, et ce que j'y ai fait.",
+        highTitle: "Temps forts",
+        highSub: "Travaux, étapes et moments de mon parcours dans la tech.",
+        commPageSub: "Hackathons, sommets et bénévolat qui relient mon travail à la communauté tech.",
+        galleryTitle: "Galerie",
+        gallerySub: "Des moments d'événements et de rencontres.",
+        certSub: "Cours, certificats et formations en IA, apprentissage automatique et cloud.",
+        stackPageTitle: "Toutes les technologies",
+        stackPageSub: "Les outils et technologies que j'utilise, et où je les ai utilisés."
     },
     ar: {
         navWork: "المشاريع",
@@ -673,7 +727,16 @@ const translations = {
         projTitle: "مشاريع مختارة",
         projSub: "منتجات ذكاء اصطناعي صممتها وبنيتها واختبرتها، من أدوات الدراسة إلى الرؤية الحاسوبية دون اتصال.",
         moreGithub: "المزيد على GitHub",
-        ctaTitle: "لديك فكرة أو تريد التعاون؟"
+        ctaTitle: "لديك فكرة أو تريد التعاون؟",
+        expSub: "هاكاثونات ومسابقات وعمل تطوعي، وما قمت به فيها.",
+        highTitle: "أبرز الأعمال",
+        highSub: "أعمال مختارة ومحطات ولحظات من رحلتي في التقنية.",
+        commPageSub: "هاكاثونات وقمم وعمل تطوعي تربط عملي بمجتمع التقنية الأوسع.",
+        galleryTitle: "معرض الفعاليات",
+        gallerySub: "لحظات من الفعاليات واللقاءات.",
+        certSub: "دورات وشهادات وتدريب في الذكاء الاصطناعي وتعلم الآلة والسحابة.",
+        stackPageTitle: "كل التقنيات",
+        stackPageSub: "الأدوات والتقنيات التي أستخدمها، وأين استخدمتها."
     }
 };
 
