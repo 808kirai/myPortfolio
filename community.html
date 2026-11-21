@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+    <title>Community | Rooney James</title>
+    <meta name="description" content="Hackathons, summits and volunteering by Rooney James.">
+    <meta name="author" content="Rooney James">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kirai-portfolio.vercel.app/community">
+    <meta property="og:title" content="Community | Rooney James">
+    <meta property="og:description" content="Hackathons, summits and volunteering by Rooney James.">
+    <link rel="canonical" href="https://kirai-portfolio.vercel.app/community">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='-apple-system,Segoe UI,sans-serif' font-size='30' font-weight='700' fill='%23fefefe'%3ERJ%3C/text%3E%3C/svg%3E">
+
+    <script>
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem('portfolio-theme'); } catch (e) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Rooney James, home">RJ</a>
+            <nav class="nav-links" aria-label="Pages">
+                <a href="projects.html" data-i18n="navWork">Projects</a>
+                <a href="experience.html" data-i18n="navExp">Experience</a>
+                <a href="highlights.html" data-i18n="navHigh">Highlights</a>
+                <a href="community.html" data-i18n="navComm">Community</a>
+            </nav>
+            <span class="nav-divider" aria-hidden="true"></span>
+            <div class="nav-tools">
+                <label class="lang">
+                    <i class="ph ph-globe-simple" aria-hidden="true"></i>
+                    <select id="lang-select" aria-label="Language">
+                        <option value="en">EN</option>
+                        <option value="sw">SW</option>
+                        <option value="zh">中文</option>
+                        <option value="hi">हिंदी</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                        <option value="ar">عربي</option>
+                    </select>
+                </label>
+                <button id="theme-toggle" type="button" class="icon-btn" aria-label="Switch theme">
+                    <i class="ph ph-moon theme-moon" aria-hidden="true"></i>
+                    <i class="ph ph-sun theme-sun" aria-hidden="true"></i>
+                </button>
+                <button id="menu-toggle" type="button" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                    <i class="ph ph-list" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <nav id="menu" class="menu" aria-label="Pages" hidden>
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="projects.html" data-i18n="navWork">Projects</a>
+            <a href="experience.html" data-i18n="navExp">Experience</a>
+            <a href="highlights.html" data-i18n="navHigh">Highlights</a>
+            <a href="community.html" data-i18n="navComm">Community</a>
+            <a href="certifications.html" data-i18n="navCerts">Certifications</a>
+            <a href="tech-stack.html" data-i18n="navStack">Tech Stack</a>
+        </nav>
+    </header>
+
+    <main id="top" class="page page--sub">
+
+        <a href="index.html" class="back-link"><i class="ph ph-arrow-left" aria-hidden="true"></i> <span data-i18n="backHome">Back to Home</span></a>
+        <header class="page-head">
+            <h1 class="page-title" data-i18n="commTitle">Community & Involvement</h1>
+            <p class="page-sub" data-i18n="commPageSub">Hackathons, summits and volunteering that connect my work with the wider tech community.</p>
+        </header>
+
+        <div class="cgrid">
+            <article class="ccard">
+                <div class="ccard-top">
+                    <div>
+                        <p class="xp-date">Oct 2026</p>
+                        <h2 class="ccard-title">MLH Hackathon</h2>
+                    </div>
+                    
+                </div>
+                <p class="ccard-text">Built GemmaSight with the team, a camera assistant for blind and low-vision people.</p>
+                <dl class="ccard-facts"><div><dt>Role</dt><dd>Lead coder</dd></div><div><dt>Project</dt><dd>GemmaSight</dd></div><div><dt>Result</dt><dd>2nd place</dd></div></dl>
+            </article>
+            <article class="ccard">
+                <div class="ccard-top">
+                    <div>
+                        <p class="xp-date">Oct 2026</p>
+                        <h2 class="ccard-title">Hacktoberfest Hack Day Nairobi × B54</h2>
+                    </div>
+                    <button type="button" class="thumb ccard-thumb" data-full="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" data-alt="Hacktoberfest Hack Day Nairobi × B54 certificate" aria-label="View certificate"><img src="assets/certificates/hacktoberfest-2026-hack-day-nairobi-thumb.jpg" alt="" loading="lazy"></button>
+                </div>
+                <p class="ccard-text">A day of open source contributions during Hacktoberfest.</p>
+                <dl class="ccard-facts"><div><dt>Role</dt><dd>Participant</dd></div><div><dt>Hosts</dt><dd>MLH × DEV</dd></div><div><dt>Location</dt><dd>Nairobi</dd></div></dl>
+            </article>
+            <article class="ccard">
+                <div class="ccard-top">
+                    <div>
+                        <p class="xp-date">Sep 2026</p>
+                        <h2 class="ccard-title">GDSAI Summit</h2>
+                    </div>
+                    
+                </div>
+                
+                <dl class="ccard-facts"><div><dt>Role</dt><dd>Attendee</dd></div><div><dt>Location</dt><dd>Strathmore University, Nairobi</dd></div></dl>
+            </article>
+            <article class="ccard">
+                <div class="ccard-top">
+                    <div>
+                        <p class="xp-date">Apr 2026</p>
+                        <h2 class="ccard-title">Google Developer Groups Hackathon</h2>
+                    </div>
+                    
+                </div>
+                <p class="ccard-text">Designed the architecture and chose the tools for an AI study tool for students.</p>
+                <dl class="ccard-facts"><div><dt>Role</dt><dd>Architecture and tooling</dd></div><div><dt>Result</dt><dd>4th place</dd></div></dl>
+            </article>
+            <article class="ccard">
+                <div class="ccard-top">
+                    <div>
+                        <p class="xp-date">Jun – Aug 2024</p>
+                        <h2 class="ccard-title">New Life Home Trust</h2>
+                    </div>
+                    
+                </div>
+                
+                <dl class="ccard-facts"><div><dt>Role</dt><dd>Volunteer</dd></div><div><dt>Location</dt><dd>Kenya</dd></div></dl>
+            </article>
+        </div>
+
+        <section id="photos" aria-labelledby="photos-title">
+            <h2 id="photos-title" class="section-title" data-i18n="galleryTitle">Event Gallery</h2>
+            <p class="section-sub" data-i18n="gallerySub">Moments from events and meetups.</p>
+            <div class="gallery">
+                <button type="button" class="gallery-item" data-full="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" data-alt="Hacktoberfest Hack Day Nairobi certificate">
+                    <img src="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" alt="Hacktoberfest Hack Day Nairobi × B54" loading="lazy">
+                    <span>Hacktoberfest Hack Day Nairobi · Oct 2026</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="cta" aria-labelledby="cta-title">
+            <h2 id="cta-title" class="section-title" data-i18n="ctaTitle">Got ideas or want to collaborate?</h2>
+            <ul class="contact-cards contact-cards--row">
+                <li><a class="contact-card" href="mailto:runiejames@gmail.com"><span class="contact-icon"><i class="ph ph-envelope-simple" aria-hidden="true"></i></span><span><span class="caps" data-i18n="email">Email</span><span class="contact-value">runiejames@gmail.com</span></span><i class="ph ph-caret-right contact-arrow" aria-hidden="true"></i></a></li>
+                <li><a class="contact-card" href="https://wa.me/254740060124?text=Hi%20Rooney" target="_blank" rel="noopener noreferrer"><span class="contact-icon"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></span><span><span class="caps">WhatsApp</span><span class="contact-value" dir="ltr">+254 740 060 124</span></span><i class="ph ph-caret-right contact-arrow" aria-hidden="true"></i></a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <dialog id="viewer" class="viewer" aria-label="Image">
+        <form method="dialog" class="viewer-close-form">
+            <button class="icon-btn viewer-close" aria-label="Close" data-i18n-label="close"><i class="ph ph-x" aria-hidden="true"></i></button>
+        </form>
+        <img id="viewer-img" src="" alt="">
+    </dialog>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-line"><span>Rooney James</span> <span class="footer-sep" aria-hidden="true">/</span> <span data-i18n="footRole">Software engineering student</span> <span class="footer-sep" aria-hidden="true">/</span> <span data-i18n="footPlace">Nairobi, KE</span></p>
+            <a href="#top" class="footer-top"><span data-i18n="backTop">Back to top</span> <i class="ph ph-arrow-up" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
