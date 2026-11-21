@@ -1092,6 +1092,78 @@ button {
 }
 
 /* ==========================================================================
+   Contact
+   ========================================================================== */
+
+.contact-title {
+    font-size: clamp(30px, 7vw, 40px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.contact-text {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.contact-list {
+    margin-top: 28px;
+    border-top: 1px solid var(--line);
+}
+
+.contact-row {
+    display: grid;
+    grid-template-columns: 24px auto minmax(0, 1fr) 16px;
+    align-items: center;
+    gap: 12px;
+    min-height: 60px;
+    border-bottom: 1px solid var(--line);
+    transition: color 160ms ease;
+}
+
+.contact-row > i:first-child {
+    color: var(--muted);
+    font-size: 21px;
+}
+
+.contact-label {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.contact-value {
+    overflow: hidden;
+    color: var(--muted);
+    font-size: 15px;
+    text-align: end;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contact-arrow {
+    color: var(--faint);
+    font-size: 15px;
+    transition: transform 200ms var(--ease-out), color 160ms ease;
+}
+
+.contact-row:active {
+    background: var(--surface);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .contact-row:hover .contact-arrow {
+        color: var(--text);
+        transform: translate(2px, -2px);
+    }
+
+    .contact-row:hover .contact-value {
+        color: var(--text);
+    }
+}
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 
@@ -1119,4 +1191,12 @@ button {
     .footer-top:hover {
         color: var(--text);
     }
+}
+
+/* No lone last words in running text */
+.intro-text,
+.project-text,
+.contact-text,
+.entry-sub {
+    text-wrap: pretty;
 }
