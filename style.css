@@ -526,22 +526,6 @@ button {
     font-size: 14px;
 }
 
-.chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 14px;
-}
-
-.chips li {
-    padding: 4px 10px;
-    border: 1px solid var(--line);
-    border-radius: 7px;
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.4;
-}
-
 .project-links {
     display: flex;
     align-items: center;
@@ -619,19 +603,7 @@ button {
 
 .stack-row dd {
     margin: 0;
-}
-
-.stack-row .chips {
-    margin-top: 0;
-}
-
-.stack-row .chips li {
-    color: var(--text);
-    font-size: 14px;
-}
-
-.chip-note {
-    color: var(--faint);
+    font-size: 15px;
 }
 
 @media (min-width: 640px) {
