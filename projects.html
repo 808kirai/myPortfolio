@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+    <title>Projects | Rooney James</title>
+    <meta name="description" content="Selected AI projects by Rooney James: Rahah, AmaniHaven, GemmaSight and NeuSE.">
+    <meta name="author" content="Rooney James">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kirai-portfolio.vercel.app/projects">
+    <meta property="og:title" content="Projects | Rooney James">
+    <meta property="og:description" content="Selected AI projects by Rooney James: Rahah, AmaniHaven, GemmaSight and NeuSE.">
+    <link rel="canonical" href="https://kirai-portfolio.vercel.app/projects">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='-apple-system,Segoe UI,sans-serif' font-size='30' font-weight='700' fill='%23fefefe'%3ERJ%3C/text%3E%3C/svg%3E">
+
+    <script>
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem('portfolio-theme'); } catch (e) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Rooney James, home">RJ</a>
+            <nav class="nav-links" aria-label="Pages">
+                <a href="projects.html" data-i18n="navWork">Projects</a>
+                <a href="experience.html" data-i18n="navExp">Experience</a>
+                <a href="highlights.html" data-i18n="navHigh">Highlights</a>
+                <a href="community.html" data-i18n="navComm">Community</a>
+            </nav>
+            <span class="nav-divider" aria-hidden="true"></span>
+            <div class="nav-tools">
+                <label class="lang">
+                    <i class="ph ph-globe-simple" aria-hidden="true"></i>
+                    <select id="lang-select" aria-label="Language">
+                        <option value="en">EN</option>
+                        <option value="sw">SW</option>
+                        <option value="zh">中文</option>
+                        <option value="hi">हिंदी</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                        <option value="ar">عربي</option>
+                    </select>
+                </label>
+                <button id="theme-toggle" type="button" class="icon-btn" aria-label="Switch theme">
+                    <i class="ph ph-moon theme-moon" aria-hidden="true"></i>
+                    <i class="ph ph-sun theme-sun" aria-hidden="true"></i>
+                </button>
+                <button id="menu-toggle" type="button" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                    <i class="ph ph-list" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <nav id="menu" class="menu" aria-label="Pages" hidden>
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="projects.html" data-i18n="navWork">Projects</a>
+            <a href="experience.html" data-i18n="navExp">Experience</a>
+            <a href="highlights.html" data-i18n="navHigh">Highlights</a>
+            <a href="community.html" data-i18n="navComm">Community</a>
+            <a href="certifications.html" data-i18n="navCerts">Certifications</a>
+            <a href="tech-stack.html" data-i18n="navStack">Tech Stack</a>
+        </nav>
+    </header>
+
+    <main id="top" class="page page--sub">
+
+        <a href="index.html" class="back-link"><i class="ph ph-arrow-left" aria-hidden="true"></i> <span data-i18n="backHome">Back to Home</span></a>
+        <header class="page-head">
+            <h1 class="page-title" data-i18n="projTitle">Selected Projects</h1>
+            <p class="page-sub" data-i18n="projSub">AI products I've designed, built and tested, from study tools to offline computer vision.</p>
+        </header>
+
+        <div class="pgrid">
+            <article class="pcard">
+                <a href="rahah.html" class="pcard-shot" aria-label="Rahah case study">
+                    <img src="assets/projects/rahah/explains.webp" alt="" loading="lazy">
+                </a>
+                <div class="pcard-body">
+                    <h2 class="pcard-title">Rahah</h2>
+                    <p class="pcard-kind" data-i18n="kind1">AI study platform</p>
+                    <p class="pcard-text">A study platform for Kenyan students. It answers from their own notes with page citations, marks homework from a photo and takes M-Pesa payments.</p>
+                    <p class="pcard-stack">Python · FastAPI · Claude API · Paystack</p>
+                </div>
+                <div class="pcard-links"><a class="caps-link" href="rahah.html"><span data-i18n="caseStudy">Case study</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a><a class="caps-link" href="https://rahah.onrender.com" target="_blank" rel="noopener noreferrer"><span data-i18n="visitSite">Visit site</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a><a class="caps-link" href="https://github.com/808kirai/Rahah" target="_blank" rel="noopener noreferrer"><span data-i18n="viewCode">View code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
+            </article>
+            <article class="pcard">
+                <a href="amanihaven.html" class="pcard-shot" aria-label="AmaniHaven case study">
+                    <img src="assets/projects/amanihaven/case.webp" alt="" loading="lazy">
+                </a>
+                <div class="pcard-body">
+                    <h2 class="pcard-title">AmaniHaven</h2>
+                    <p class="pcard-kind" data-i18n="kind2">Mental health support over SMS</p>
+                    <p class="pcard-text">Free mental health support over SMS and USSD, in English or Kiswahili. Messages that show signs of crisis go to a human counselor.</p>
+                    <p class="pcard-stack">Python · FastAPI · Claude API · Africa's Talking</p>
+                </div>
+                <div class="pcard-links"><a class="caps-link" href="amanihaven.html"><span data-i18n="caseStudy">Case study</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a><a class="caps-link" href="https://amanihaven.onrender.com/demo" target="_blank" rel="noopener noreferrer"><span data-i18n="tryDemo">Try the demo</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a><a class="caps-link" href="https://github.com/808kirai/AmaniHaven" target="_blank" rel="noopener noreferrer"><span data-i18n="viewCode">View code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
+            </article>
+            <article class="pcard">
+                <a href="gemmasight.html" class="pcard-shot" aria-label="GemmaSight case study">
+                    <img src="assets/projects/gemmasight/cover.webp" alt="" loading="lazy">
+                </a>
+                <div class="pcard-body">
+                    <h2 class="pcard-title">GemmaSight</h2>
+                    <p class="pcard-kind" data-i18n="kind3">Vision assistant on Gemma 4</p>
+                    <p class="pcard-text">A camera assistant for blind and low-vision people, built on Gemma 4. It reads labels aloud, warns about hazards and guides you to lost objects.</p>
+                    <p class="pcard-stack">Python · FastAPI · Gemma 4 · Docker</p>
+                </div>
+                <div class="pcard-links"><a class="caps-link" href="gemmasight.html"><span data-i18n="caseStudy">Case study</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a><a class="caps-link" href="https://github.com/808kirai/GemmaSight" target="_blank" rel="noopener noreferrer"><span data-i18n="viewCode">View code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
+            </article>
+            <article class="pcard">
+                <a href="neuse.html" class="pcard-shot" aria-label="NeuSE case study">
+                    <img src="assets/projects/neuse/command-center.webp" alt="" loading="lazy">
+                </a>
+                <div class="pcard-body">
+                    <h2 class="pcard-title">NeuSE</h2>
+                    <p class="pcard-kind" data-i18n="kind4">Offline search and rescue</p>
+                    <p class="pcard-text">Finds people in thermal drone footage on the device itself, and sends sightings to a command center whenever a link is up.</p>
+                    <p class="pcard-stack">Python · OpenCV · NumPy · MindSpore</p>
+                </div>
+                <div class="pcard-links"><a class="caps-link" href="neuse.html"><span data-i18n="caseStudy">Case study</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a><a class="caps-link" href="https://github.com/808kirai/NeuSE" target="_blank" rel="noopener noreferrer"><span data-i18n="viewCode">View code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
+            </article>
+        </div>
+        <p class="more-row"><a class="more-link" href="https://github.com/808kirai" target="_blank" rel="noopener noreferrer"><span data-i18n="moreGithub">More on GitHub</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></p>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-line"><span>Rooney James</span> <span class="footer-sep" aria-hidden="true">/</span> <span data-i18n="footRole">Software engineering student</span> <span class="footer-sep" aria-hidden="true">/</span> <span data-i18n="footPlace">Nairobi, KE</span></p>
+            <a href="#top" class="footer-top"><span data-i18n="backTop">Back to top</span> <i class="ph ph-arrow-up" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

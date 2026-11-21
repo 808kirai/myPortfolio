@@ -1,12 +1,14 @@
 // ==========================================================================
-// Project demos (Stageshow rules, plain JS)
-// Each stage is designed at a fixed size and scaled to its column. A narrow
-// column gets its own compact design, not a squeeze. The HTML is the poster:
-// the finished frame people see with reduced motion or before a story plays.
+// Project showcase (Stageshow rules, plain JS)
+// Each stage is designed at a fixed size, scaled to its column, with its
+// own compact design on phones. The HTML is the poster: the finished frame
+// seen with reduced motion, before a story plays, or while swiping past.
 // ==========================================================================
 
 (function () {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const params = location.search;
+    const HOLD = 2600;   // how long a finished story stays before the next one
 
     // ----------------------------------------------------------------------
     // Phone: the kit's iPhone frame (402 × 874pt screen, continuous corners,
@@ -69,10 +71,7 @@
         phone.style.padding = `${pt(BAND)}px`;
         phone.style.borderRadius = `${pt(SCREEN.r + EDGE)}px`;
         phone.style.setProperty('--ps', `${s}px`);
-        if (src.hasAttribute('data-dark')) phone.setAttribute('data-dark', '');
-        if (src.hasAttribute('data-follow-theme')) phone.setAttribute('data-follow-theme', '');
 
-        // Bands: widest first, each a stroke centered on the screen's edge
         const bands = svgEl('svg', { class: 'ss-phone__bands', width: '100%', height: '100%', 'aria-hidden': 'true' });
         const defs = svgEl('defs', {});
         const grad = svgEl('linearGradient', { id: `${id}-band`, x1: '0.2', y1: '0', x2: '0.8', y2: '1' });
@@ -121,13 +120,6 @@
         return phone;
     }
 
-    function syncPhoneThemes() {
-        const dark = document.documentElement.getAttribute('data-theme') === 'dark';
-        document.querySelectorAll('.ss-phone[data-follow-theme]').forEach(phone => {
-            phone.toggleAttribute('data-dark', dark);
-        });
-    }
-
     // ----------------------------------------------------------------------
     // Fit: scale the design to the column, switching to compact when narrow
     // ----------------------------------------------------------------------
@@ -135,6 +127,7 @@
     function fit(box) {
         const stage = box.querySelector('.ss-stage');
         const avail = box.clientWidth;
+        if (!avail) return;
         const compact = box.dataset.cw && avail < Number(box.dataset.below || 560);
         const w = Number(compact ? box.dataset.cw : box.dataset.w);
         const h = Number(compact ? box.dataset.ch : box.dataset.h);
@@ -148,29 +141,38 @@
     }
 
     // ----------------------------------------------------------------------
-    // Helpers for the stories
+    // Helpers
     // ----------------------------------------------------------------------
 
     const on = (node, yes = true) => node && node.toggleAttribute('data-on', yes);
     const open = (node, yes = true) => node && node.toggleAttribute('data-open', yes);
     const flag = (node, name, yes = true) => node && node.toggleAttribute(`data-${name}`, yes);
 
-    // Lay every word out up front, so the text never reflows as it streams
-    function splitWords(node) {
-        const words = node.textContent.trim().split(/\s+/);
-        node.textContent = '';
-        return words.map((word, i) => {
-            const span = el('span', 'w');
-            span.textContent = word;
-            span.setAttribute('data-on', '');
-            node.appendChild(span);
-            if (i < words.length - 1) node.appendChild(document.createTextNode(' '));
-            return span;
+    // Wrap every word of a block in a span, keeping inline markup like <strong>,
+    // so the text is laid out once and streams in without reflowing
+    function wrapWords(root) {
+        const words = [];
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        const texts = [];
+        while (walker.nextNode()) texts.push(walker.currentNode);
+        texts.forEach(node => {
+            if (!node.textContent.trim()) return;
+            const frag = document.createDocumentFragment();
+            node.textContent.split(/(\s+)/).forEach(part => {
+                if (!part) return;
+                if (/^\s+$/.test(part)) {
+                    frag.appendChild(document.createTextNode(part));
+                } else {
+                    const span = el('span', 'w');
+                    span.textContent = part;
+                    span.setAttribute('data-on', '');
+                    frag.appendChild(span);
+                    words.push(span);
+                }
+            });
+            node.replaceWith(frag);
         });
-    }
-
-    function setRoll(roll, n) {
-        roll.firstElementChild.style.setProperty('--n', n);
+        return words;
     }
 
     // ----------------------------------------------------------------------
@@ -178,113 +180,109 @@
     // ----------------------------------------------------------------------
 
     const DEMOS = {
-        // A question typed and sent, Thinking, the answer streaming in, then
-        // the page of the student's notes it came from
+        // A question typed and sent, routed from General study to Science,
+        // and the answer streaming in, in Rahah's own chat
         rahah(stage) {
             const q = stage.querySelector('.rh-q-text').textContent;
-            const composer = stage.querySelector('.rh-composer');
+            const compose = stage.querySelector('.rh-compose');
             const draft = stage.querySelector('.rh-draft');
             const send = stage.querySelector('.rh-send');
+            const hello = stage.querySelector('.rh-hello');
             const sent = stage.querySelector('[data-k="sent"]');
-            const thinking = stage.querySelector('[data-k="thinking"]');
             const answer = stage.querySelector('[data-k="answer"]');
-            const source = stage.querySelector('.rh-source');
-            const words = splitWords(stage.querySelector('.rh-stream'));
+            const subject = stage.querySelector('[data-k="subject"]');
+            const words = wrapWords(stage.querySelector('.rh-a'));
 
             return {
                 reset() {
                     draft.textContent = '';
-                    flag(composer, 'typed', false);
-                    flag(composer, 'focus', true);
+                    flag(compose, 'typed', false);
+                    flag(compose, 'focus', true);
+                    flag(hello, 'gone', false);
                     open(sent, false);
-                    open(thinking, false);
                     open(answer, false);
+                    on(subject, false);
                     words.forEach(w => on(w, false));
-                    on(source, false);
                 },
                 async play(wait) {
                     await wait(700);
-                    flag(composer, 'typed');
+                    flag(compose, 'typed');
                     for (const ch of q) {
                         draft.textContent += ch;
-                        await wait(42);
+                        await wait(40);
                     }
-                    await wait(400);
+                    await wait(380);
                     flag(send, 'pressed');
                     await wait(130);
                     flag(send, 'pressed', false);
                     draft.textContent = '';
-                    flag(composer, 'typed', false);
-                    flag(composer, 'focus', false);
+                    flag(compose, 'typed', false);
+                    flag(compose, 'focus', false);
+                    flag(hello, 'gone');
                     open(sent);
-                    await wait(550);
-                    open(thinking);
-                    await wait(1300);
-                    open(thinking, false);
+                    await wait(650);
+                    on(subject);
+                    await wait(750);
                     open(answer);
                     await wait(300);
                     for (const w of words) {
                         on(w);
-                        await wait(55);
+                        await wait(45);
                     }
-                    await wait(350);
-                    on(source);
                 }
             };
         },
 
-        // A text for help, a reply in seconds, and a counselor on request
+        // A text, a self-help reply, a CALL, and the case opening for the counselor
         amani(stage) {
-            const bubbles = [...stage.querySelectorAll('.am-bubble')];
-            const typing = [...stage.querySelectorAll('.am-typing')];
-            const receipt = stage.querySelector('.am-receipt');
+            const msgs = [...stage.querySelectorAll('.am-msg')];
+            const boards = [...stage.querySelectorAll('.am-board')];
 
             return {
                 reset() {
-                    bubbles.forEach((b, i) => on(b, i === 0));
-                    typing.forEach(t => on(t, false));
-                    on(receipt, false);
+                    msgs.forEach(m => on(m, false));
+                    boards.forEach(b => flag(b, 'case', false));
                 },
                 async play(wait) {
+                    await wait(700);
+                    on(msgs[0]);
+                    await wait(1100);
+                    on(msgs[1]);
+                    await wait(1700);
+                    on(msgs[2]);
                     await wait(900);
-                    on(typing[0]);
-                    await wait(1400);
-                    on(typing[0], false);
-                    on(bubbles[1]);
-                    await wait(900);
-                    on(bubbles[2]);
-                    await wait(1500);
-                    on(bubbles[3]);
-                    await wait(450);
-                    on(receipt);
+                    on(msgs[3]);
                     await wait(800);
-                    on(typing[1]);
-                    await wait(1400);
-                    on(typing[1], false);
-                    on(bubbles[4]);
+                    boards.forEach(b => flag(b, 'case'));
+                    await wait(600);
                 }
             };
         },
 
-        // Tap Read, the frame locks on, and the label is read aloud
+        // Tap Read, the frame is checked, and the label is said aloud
         gemma(stage) {
             const touch = stage.querySelector('.touch');
             const read = stage.querySelector('.gs-mode--read');
-            const reticle = stage.querySelector('.gs-reticle');
             const busy = stage.querySelector('.gs-busy');
-            const caption = stage.querySelector('.gs-caption');
-            const words = splitWords(stage.querySelector('.gs-text'));
+            const ready = stage.querySelector('[data-k="ready"]');
+            const looking = stage.querySelector('[data-k="looking"]');
+            const result = stage.querySelector('[data-k="result"]');
+            const voice = stage.querySelector('.gs-voice');
+            const resultWords = wrapWords(result);
+            const saidWords = wrapWords(stage.querySelector('.gs-said'));
 
             return {
                 reset() {
                     on(touch, false);
                     flag(touch, 'pressed', false);
                     flag(read, 'active', false);
-                    flag(reticle, 'lock', false);
                     on(busy, false);
-                    on(caption, false);
-                    flag(caption, 'speaking', false);
-                    words.forEach(w => on(w, false));
+                    on(ready, true);
+                    on(looking, false);
+                    on(result, false);
+                    resultWords.forEach(w => on(w, false));
+                    saidWords.forEach(w => on(w, false));
+                    flag(voice, 'speaking', false);
                 },
                 async play(wait) {
                     await wait(800);
@@ -293,62 +291,56 @@
                     flag(touch, 'pressed');
                     flag(read, 'pressed');
                     flag(read, 'active');
-                    await wait(160);
+                    await wait(150);
                     flag(touch, 'pressed', false);
                     flag(read, 'pressed', false);
-                    await wait(220);
-                    on(touch, false);
-                    flag(reticle, 'lock');
-                    on(busy);
-                    await wait(1400);
-                    on(busy, false);
-                    on(caption);
-                    flag(caption, 'speaking');
                     await wait(250);
-                    for (const w of words) {
-                        on(w);
+                    on(touch, false);
+                    on(ready, false);
+                    on(looking);
+                    on(busy);
+                    await wait(1600);
+                    on(busy, false);
+                    on(looking, false);
+                    on(result);
+                    flag(voice, 'speaking');
+                    for (let i = 0; i < resultWords.length; i++) {
+                        on(resultWords[i]);
+                        on(saidWords[i]);
                         await wait(150);
                     }
-                    await wait(500);
-                    flag(caption, 'speaking', false);
+                    await wait(450);
+                    flag(voice, 'speaking', false);
                 }
             };
         },
 
-        // Warm areas boxed one by one, each logged as it lands, all offline
+        // A new alert lands, its cluster is ringed on the map, the count rolls
         neuse(stage) {
-            const boxes = [...stage.querySelectorAll('.nx-box')];
-            const rows = [...stage.querySelectorAll('[data-k^="row"]')];
-            const roll = stage.querySelector('.roll');
-            const saved = stage.querySelector('.nx-saved');
+            const alert = stage.querySelector('[data-k="alert"]');
+            const ring = stage.querySelector('.nx-ring');
+            const count = stage.querySelector('[data-k="count"]');
 
             return {
                 reset() {
-                    boxes.forEach(b => on(b, false));
-                    rows.forEach(r => open(r, false));
-                    setRoll(roll, 0);
-                    on(saved, false);
+                    open(alert, false);
+                    on(ring, false);
+                    on(count, false);
                 },
                 async play(wait) {
-                    await wait(900);
-                    on(boxes[0]);
+                    await wait(1100);
+                    open(alert);
                     await wait(380);
-                    open(stage.querySelector('[data-k="row1"]'));
-                    setRoll(roll, 1);
-                    await wait(1300);
-                    on(boxes[1]);
-                    await wait(380);
-                    open(stage.querySelector('[data-k="row2"]'));
-                    setRoll(roll, 2);
-                    await wait(900);
-                    on(saved);
+                    on(ring);
+                    on(count);
+                    await wait(1800);
                 }
             };
         }
     };
 
     // ----------------------------------------------------------------------
-    // Playback: once, as each stage scrolls into view; replay on request
+    // Running a story
     // ----------------------------------------------------------------------
 
     function snap(stage, fn) {
@@ -358,25 +350,43 @@
         stage.removeAttribute('data-snap');
     }
 
+    function stop(box) {
+        if (box._token) box._token.cancelled = true;
+        box._token = null;
+    }
+
     async function play(box) {
         const demo = box._demo;
-        if (!demo) return;
-        if (box._token) box._token.cancelled = true;
+        if (!demo) return false;
+        stop(box);
         const token = { cancelled: false };
         box._token = token;
-        box.removeAttribute('data-done');
-
         const stage = box.querySelector('.ss-stage');
         snap(stage, () => demo.reset());
-
         const wait = ms => new Promise((resolve, reject) => {
             setTimeout(() => (token.cancelled ? reject(new Error('cancelled')) : resolve()), ms);
         });
-
         try {
             await demo.play(wait);
-            if (!token.cancelled) box.setAttribute('data-done', '');
-        } catch (e) { /* replaced by a newer run */ }
+            return !token.cancelled;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    // Show the finished frame by replaying the story on a clock that never
+    // waits, which also measures how long the story runs
+    function poster(box) {
+        stop(box);
+        const stage = box.querySelector('.ss-stage');
+        stage.setAttribute('data-snap', '');
+        box._demo.reset();
+        let total = 0;
+        return box._demo.play(ms => { total += ms; return Promise.resolve(); }).finally(() => {
+            box._length = total;
+            void stage.offsetHeight;
+            stage.removeAttribute('data-snap');
+        });
     }
 
     async function seekTo(box, at) {
@@ -391,20 +401,143 @@
         try { await box._demo.play(wait); } catch (e) { /* stopped at the seek point */ }
     }
 
+    // ----------------------------------------------------------------------
+    // The showcase: tabs, a swipeable track, one story at a time
+    // ----------------------------------------------------------------------
+
+    function showcase(root, boxes) {
+        const track = root.querySelector('[data-track]');
+        const tabs = [...root.querySelectorAll('[role="tab"]')];
+        const slides = [...track.children];
+        const still = reduceMotion.matches || /[?&]poster\b/.test(params);
+        let index = 0;
+        let auto = !still;
+        let visible = false;
+        let advanceTimer = 0;
+        let run = 0;
+
+        const pitch = () => slides[0].offsetWidth + parseFloat(getComputedStyle(track).columnGap || 0);
+
+        function select(i) {
+            tabs.forEach((tab, n) => {
+                const selected = n === i;
+                tab.setAttribute('aria-selected', String(selected));
+                tab.tabIndex = selected ? 0 : -1;
+                tab.removeAttribute('data-running');
+            });
+        }
+
+        async function start(i) {
+            clearTimeout(advanceTimer);
+            boxes.forEach((box, n) => { if (n !== i) poster(box); });
+            const box = slides[i].querySelector('.stage-fit');
+            const tab = tabs[i];
+            if (still || !visible) {
+                poster(box);
+                return;
+            }
+            const mine = ++run;
+            tab.style.setProperty('--run', `${(box._length || 6000) + (auto ? HOLD : 0)}ms`);
+            tab.removeAttribute('data-running');
+            void tab.offsetWidth;
+            tab.setAttribute('data-running', '');
+            const finished = await play(box);
+            if (!finished || mine !== run) return;
+            if (auto) {
+                advanceTimer = setTimeout(() => {
+                    if (auto && visible && mine === run) go((i + 1) % slides.length);
+                }, HOLD);
+            }
+        }
+
+        function activate(i) {
+            if (i === index && tabs[i].hasAttribute('data-running')) return;
+            index = i;
+            select(i);
+            start(i);
+        }
+
+        function go(i) {
+            track.scrollTo({ left: i * pitch(), behavior: still ? 'auto' : 'smooth' });
+            // Browsers without scrollend still land here
+            if (!('onscrollend' in window)) setTimeout(() => settle(), 500);
+        }
+
+        function settle() {
+            const i = Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / pitch())));
+            if (i !== index || !tabs[i].hasAttribute('data-running')) activate(i);
+        }
+
+        // Taking control stops the automatic advance; the stories still play
+        function takeOver() {
+            auto = false;
+            clearTimeout(advanceTimer);
+        }
+
+        tabs.forEach((tab, i) => {
+            tab.addEventListener('click', () => {
+                takeOver();
+                if (i === index) start(i);
+                else go(i);
+            });
+            tab.addEventListener('keydown', e => {
+                const dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+                if (!dir) return;
+                e.preventDefault();
+                takeOver();
+                const next = (index + dir + slides.length) % slides.length;
+                tabs[next].focus();
+                go(next);
+            });
+        });
+
+        track.addEventListener('pointerdown', takeOver, { passive: true });
+        track.addEventListener('wheel', e => { if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) takeOver(); }, { passive: true });
+
+        if ('onscrollend' in window) {
+            track.addEventListener('scrollend', settle);
+        } else {
+            let t = 0;
+            track.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(settle, 140); }, { passive: true });
+        }
+
+        // Keep the same slide in view when the column changes width
+        window.addEventListener('resize', () => { track.scrollLeft = index * pitch(); });
+
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(entries => {
+                const nowVisible = entries[0].isIntersecting;
+                if (nowVisible === visible) return;
+                visible = nowVisible;
+                if (visible) {
+                    start(index);
+                } else {
+                    run++;
+                    clearTimeout(advanceTimer);
+                    boxes.forEach(stop);
+                    tabs.forEach(tab => tab.removeAttribute('data-running'));
+                }
+            }, { threshold: 0.45 }).observe(track);
+        }
+
+        select(0);
+    }
+
+    // ----------------------------------------------------------------------
+    // Start
+    // ----------------------------------------------------------------------
+
     function init() {
         document.querySelectorAll('.phone-src').forEach(buildPhone);
-        syncPhoneThemes();
-        document.addEventListener('themechange', syncPhoneThemes);
 
         const boxes = [...document.querySelectorAll('.stage-fit[data-demo]')];
         boxes.forEach(box => {
             fit(box);
             const make = DEMOS[box.dataset.demo];
-            if (make) box._demo = make(box.querySelector('.ss-stage'));
-
-            const project = box.closest('.project');
-            const replay = project && project.querySelector('.replay');
-            if (replay) replay.addEventListener('click', () => play(box));
+            if (make) {
+                box._demo = make(box.querySelector('.ss-stage'));
+                box._ready = poster(box);
+            }
         });
 
         if ('ResizeObserver' in window) {
@@ -415,35 +548,19 @@
         }
 
         // ?seek=4000 shows every story as it stands 4s in, settled, for review
-        const seek = /[?&]seek=(\d+)/.exec(location.search);
+        const seek = /[?&]seek=(\d+)/.exec(params);
         if (seek) {
-            boxes.forEach(box => seekTo(box, Number(seek[1])));
+            Promise.all(boxes.map(box => box._ready)).then(() => {
+                boxes.forEach(box => seekTo(box, Number(seek[1])));
+                const slide = /[?&]slide=(\d)/.exec(params);
+                const track = document.querySelector('[data-track]');
+                if (slide && track) track.scrollLeft = Number(slide[1]) * (track.children[0].offsetWidth + 24);
+            });
             return;
         }
 
-        // ?autoplay plays every story at once, for checking frames mid-story
-        if (/[?&]autoplay\b/.test(location.search)) {
-            boxes.forEach(box => play(box));
-            return;
-        }
-
-        // A screenshot or reduced motion keeps the poster: the finished frame
-        const posterOnly = reduceMotion.matches || /[?&]poster\b/.test(location.search);
-        if (posterOnly) {
-            boxes.forEach(box => box.setAttribute('data-done', ''));
-            return;
-        }
-
-        if ('IntersectionObserver' in window) {
-            const io = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) return;
-                    io.unobserve(entry.target);
-                    play(entry.target);
-                });
-            }, { threshold: 0.55 });
-            boxes.forEach(box => io.observe(box));
-        }
+        const root = document.querySelector('[data-showcase]');
+        if (root) showcase(root, boxes);
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

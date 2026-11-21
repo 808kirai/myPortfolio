@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
-    <title>Runie | AI/ML & Backend Developer</title>
-    <meta name="description" content="Runie is an AI and backend developer in Nairobi, building AI products with Python, FastAPI and the Claude API.">
-    <meta name="author" content="Runie">
+    <title>Rooney James | AI & Backend Developer</title>
+    <meta name="description" content="Rooney James is an AI and backend developer in Nairobi, building AI products with Python, FastAPI, the Claude API and OpenCV.">
+    <meta name="author" content="Rooney James">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
 
-    <!-- Social share previews -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kirai-portfolio.vercel.app/">
-    <meta property="og:title" content="Runie | AI/ML & Backend Developer">
-    <meta property="og:description" content="AI and backend developer in Nairobi, building AI products with Python, FastAPI and the Claude API.">
+    <meta property="og:title" content="Rooney James | AI & Backend Developer">
+    <meta property="og:description" content="AI and backend developer in Nairobi, building AI products with Python, FastAPI, the Claude API and OpenCV.">
     <link rel="canonical" href="https://kirai-portfolio.vercel.app/">
     <meta name="twitter:card" content="summary">
     <meta name="google-site-verification" content="W0T15HVY6O9hcTN6T9vDslqTt6iRddINbWJE_YRFtQE" />
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121212'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='-apple-system,Segoe UI,sans-serif' font-size='38' font-weight='700' fill='%23fefefe'%3ER%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='-apple-system,Segoe UI,sans-serif' font-size='30' font-weight='700' fill='%23fefefe'%3ERJ%3C/text%3E%3C/svg%3E">
 
-    <!-- Apply the saved or system theme before first paint, so it never flashes -->
     <script>
         (function () {
             var theme;
@@ -32,6 +30,7 @@
         })();
     </script>
 
+    <!-- Inter only for the Rahah and GemmaSight demos, which use it in production -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
@@ -44,13 +43,14 @@
 
     <header class="nav">
         <div class="nav-inner">
-            <a href="#top" class="nav-logo">Runie</a>
-            <nav class="nav-links" aria-label="Sections">
-                <a href="#work" data-i18n="navWork">Projects</a>
-                <a href="#stack" data-i18n="navStack">Skills</a>
-                <a href="#wins" data-i18n="navWins">Awards</a>
-                <a href="#contact" data-i18n="navContact">Contact</a>
+            <a href="index.html" class="nav-logo" aria-label="Rooney James, home">RJ</a>
+            <nav class="nav-links" aria-label="Pages">
+                <a href="projects.html" data-i18n="navWork">Projects</a>
+                <a href="experience.html" data-i18n="navExp">Experience</a>
+                <a href="highlights.html" data-i18n="navHigh">Highlights</a>
+                <a href="community.html" data-i18n="navComm">Community</a>
             </nav>
+            <span class="nav-divider" aria-hidden="true"></span>
             <div class="nav-tools">
                 <label class="lang">
                     <i class="ph ph-globe-simple" aria-hidden="true"></i>
@@ -68,389 +68,503 @@
                     <i class="ph ph-moon theme-moon" aria-hidden="true"></i>
                     <i class="ph ph-sun theme-sun" aria-hidden="true"></i>
                 </button>
+                <button id="menu-toggle" type="button" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                    <i class="ph ph-list" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
+        <nav id="menu" class="menu" aria-label="Pages" hidden>
+            <a href="projects.html" data-i18n="navWork">Projects</a>
+            <a href="experience.html" data-i18n="navExp">Experience</a>
+            <a href="highlights.html" data-i18n="navHigh">Highlights</a>
+            <a href="community.html" data-i18n="navComm">Community</a>
+            <a href="certifications.html" data-i18n="navCerts">Certifications</a>
+            <a href="tech-stack.html" data-i18n="navStack">Tech Stack</a>
+        </nav>
     </header>
 
     <main id="top" class="page">
 
-        <!-- INTRO -->
-        <section class="intro" aria-labelledby="intro-title">
+        <!-- ABOUT -->
+        <section class="about" aria-labelledby="about-title">
             <div class="profile">
-                <img class="avatar" src="https://github.com/808kirai.png?size=192" alt="" width="88" height="88" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'avatar avatar--initial',textContent:'R'}))">
+                <img class="avatar" src="https://github.com/808kirai.png?size=256" alt="Rooney James" width="128" height="128" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'avatar avatar--initial',textContent:'RJ'}))">
                 <div class="profile-text">
-                    <p class="name">Runie</p>
-                    <p class="role" data-i18n="role">Nairobi, Kenya</p>
+                    <p class="name">Rooney James</p>
+                    <p class="tagline"><span data-i18n="tag1">AI Engineering</span> <span aria-hidden="true">·</span> <span data-i18n="tag2">Backend Development</span> <span aria-hidden="true">·</span> <span data-i18n="tag3">Computer Vision</span></p>
                     <div class="socials">
-                        <a href="https://github.com/808kirai" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ph ph-github-logo" aria-hidden="true"></i></a>
-                        <a href="https://www.linkedin.com/in/808kirai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
-                        <a href="https://www.tiktok.com/@808kirai" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="ph ph-tiktok-logo" aria-hidden="true"></i></a>
-                        <a href="https://instagram.com/kirai808" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
-                        <a href="mailto:runiejames@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple" aria-hidden="true"></i></a>
+                        <a href="https://github.com/808kirai" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="ph-fill ph-github-logo" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/808kirai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="ph-fill ph-linkedin-logo" aria-hidden="true"></i></a>
+                        <a href="mailto:runiejames@gmail.com" aria-label="Email" title="Email"><i class="ph-fill ph-envelope-simple" aria-hidden="true"></i></a>
+                        <a href="https://www.tiktok.com/@808kirai" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok"><i class="ph-fill ph-tiktok-logo" aria-hidden="true"></i></a>
+                        <a href="https://instagram.com/kirai808" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="ph-fill ph-instagram-logo" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
 
-            <h1 id="intro-title" class="intro-title" data-i18n="heroTitle">AI and backend developer</h1>
-            <p class="intro-text" data-i18n="heroText">I build AI products in Python, from a study platform with real users to offline computer vision for search and rescue.</p>
+            <h1 id="about-title" class="about-title"><span data-i18n="heroLead">I Build, Test &amp;</span> <span class="accent" data-i18n="heroAccent">Ship.</span></h1>
+            <p class="about-text" data-i18n-html="heroText">I'm a software engineering student at Multimedia University of Kenya. I build AI products with <strong>Python</strong>, <strong>FastAPI</strong>, the <strong>Claude API</strong> and <strong>OpenCV</strong>, from a study platform with real users to offline computer vision for search and rescue.</p>
 
             <div class="actions">
-                <a href="#work" class="btn btn-primary"><span data-i18n="btnWork">View projects</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-                <a href="https://wa.me/254740060124?text=Hi%20Runie" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i> <span data-i18n="btnChat">WhatsApp</span></a>
+                <a href="projects.html" class="btn btn-primary"><span data-i18n="btnWork">View Projects</span> <i class="ph ph-caret-right" aria-hidden="true"></i></a>
+                <a href="#contact" class="btn btn-ghost"><span data-i18n="btnContact">Contact Me</span></a>
             </div>
         </section>
 
-        <!-- WORK -->
-        <section id="work" aria-labelledby="work-title">
+        <!-- FEATURED PROJECTS: one swipeable showcase of animated product shots -->
+        <section id="projects" aria-labelledby="projects-title">
             <div class="section-head">
-                <h2 id="work-title" class="section-title" data-i18n="workTitle">Projects</h2>
+                <h2 id="projects-title" class="section-title" data-i18n="featTitle">Featured Projects</h2>
+                <a href="projects.html" class="more-link"><span data-i18n="viewAll">View All</span> <i class="ph ph-caret-right" aria-hidden="true"></i></a>
             </div>
 
-            <div class="projects">
+            <div class="showcase" data-showcase>
+                <div class="show-tabs" role="tablist" aria-label="Projects">
+                    <button type="button" class="show-tab" role="tab" id="tab-rahah" aria-controls="slide-rahah" aria-selected="true">Rahah<span class="show-bar"></span></button>
+                    <button type="button" class="show-tab" role="tab" id="tab-amani" aria-controls="slide-amani" aria-selected="false" tabindex="-1">AmaniHaven<span class="show-bar"></span></button>
+                    <button type="button" class="show-tab" role="tab" id="tab-gemma" aria-controls="slide-gemma" aria-selected="false" tabindex="-1">GemmaSight<span class="show-bar"></span></button>
+                    <button type="button" class="show-tab" role="tab" id="tab-neuse" aria-controls="slide-neuse" aria-selected="false" tabindex="-1">NeuSE<span class="show-bar"></span></button>
+                </div>
 
-                <!-- Rahah -->
-                <article class="project">
-                    <div class="stage-fit" data-demo="rahah" data-w="720" data-h="400" data-cw="358" data-ch="380" data-below="560">
-                        <div class="ss-stage rh" aria-hidden="true">
-                            <div class="ss-window rh-win">
-                                <div class="ss-window__bar">
-                                    <span class="ss-window__lights"><i></i><i></i><i></i></span>
-                                    <span class="ss-window__title">Rahah</span>
-                                </div>
-                                <div class="ss-window__body">
-                                    <div class="rh-side">
-                                        <span class="bar rh-side-label" style="width: 54px"></span>
-                                        <div class="rh-subject" data-active><i class="ph-fill ph-function"></i><span>Maths</span></div>
-                                        <div class="rh-subject"><i class="ph-fill ph-dna"></i><span class="bar" style="width: 58px"></span></div>
-                                        <div class="rh-subject"><i class="ph-fill ph-flask"></i><span class="bar" style="width: 72px"></span></div>
-                                        <div class="rh-subject"><i class="ph-fill ph-globe-hemisphere-west"></i><span class="bar" style="width: 50px"></span></div>
+                <div class="show-track" data-track>
+
+                    <!-- Rahah -->
+                    <article class="show-slide" role="tabpanel" id="slide-rahah" aria-labelledby="tab-rahah">
+                        <div class="stage-fit" data-demo="rahah" data-w="720" data-h="420" data-cw="358" data-ch="460" data-below="560">
+                            <div class="ss-stage rh" aria-hidden="true">
+                                <div class="ss-window rh-win">
+                                    <div class="ss-window__bar">
+                                        <span class="ss-window__lights"><i></i><i></i><i></i></span>
+                                        <span class="ss-window__url">rahah.onrender.com</span>
                                     </div>
-                                    <div class="rh-main">
-                                        <div class="rh-thread">
-                                            <div class="rh-past">
-                                                <span class="bar" style="width: 170px"></span>
-                                                <span class="bar" style="width: 88%"></span>
-                                                <span class="bar" style="width: 64%"></span>
+                                    <div class="ss-window__body">
+                                        <div class="rh-top">
+                                            <span class="rh-brand"><img src="assets/projects/rahah-logo.svg" alt="">Rahah</span>
+                                            <span class="rh-title">Chat</span>
+                                            <span class="rh-tools">
+                                                <span class="rh-subject"><span class="roll" data-k="subject" data-on><span><i class="ph-fill ph-lightbulb"></i>General study</span><span><span class="rh-dot"></span>Science</span></span><i class="ph ph-caret-down"></i></span>
+                                                <i class="ph ph-trophy"></i>
+                                                <i class="ph ph-sun"></i>
+                                            </span>
+                                        </div>
+                                        <div class="rh-main">
+                                            <div class="rh-thread">
+                                                <p class="rh-hello" data-gone>What are we studying today?</p>
+                                                <div class="ss-collapse" data-k="sent" data-open>
+                                                    <div><div class="rh-q"><span class="rh-q-text">Why do cells divide by mitosis?</span></div></div>
+                                                </div>
+                                                <div class="ss-collapse" data-k="answer" data-open>
+                                                    <div>
+                                                        <div class="rh-a" data-stream>
+                                                            <span class="rh-mark"><img src="assets/projects/rahah-logo.svg" alt=""></span>
+                                                            <p class="rh-lead">In short: to make two identical cells.</p>
+                                                            <p>Each new cell gets a full copy of the DNA, so your body can:</p>
+                                                            <ul>
+                                                                <li><strong>Grow</strong>, by adding more cells</li>
+                                                                <li><strong>Repair</strong> damaged tissue, like healing a cut</li>
+                                                                <li><strong>Replace</strong> old cells, such as skin cells</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="ss-collapse" data-k="sent" data-open>
-                                                <div><div class="rh-q"><span class="rh-q-text">Solve 3(x − 1) = 9</span></div></div>
+                                            <div class="rh-foot">
+                                                <div class="rh-dock">
+                                                    <span><i class="ph ph-house"></i>Home</span>
+                                                    <span data-active><i class="ph-fill ph-chat-centered"></i>Chats &amp; Tests</span>
+                                                    <span><i class="ph ph-bell"></i>Reminders<b class="rh-badge">1</b></span>
+                                                    <span><i class="ph ph-chart-bar"></i>Performance</span>
+                                                    <span><i class="ph ph-user"></i>Account</span>
+                                                </div>
+                                                <div class="rh-compose">
+                                                    <span class="rh-field"><span class="rh-draft"></span><span class="rh-caret"></span><span class="rh-ph">Ask anything, or drop a PDF</span></span>
+                                                    <span class="rh-auto">Auto</span>
+                                                    <span class="rh-send"><i class="ph ph-arrow-up"></i></span>
+                                                </div>
                                             </div>
-                                            <div class="ss-collapse" data-k="thinking">
-                                                <div><div class="rh-thinking">Thinking</div></div>
+                                            <p class="rh-note">Rahah is an AI and can make mistakes. Double-check important facts.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="show-body">
+                            <div class="show-head">
+                                <h3 class="show-title">Rahah</h3>
+                                <span class="show-kind" data-i18n="kind1">AI study platform</span>
+                            </div>
+                            <p class="show-text" data-i18n="p1Text">A study platform for Kenyan students. It answers from their own notes with page citations, marks homework from a photo and takes M-Pesa payments. 13 of the first 15 users reported better CAT scores.</p>
+                            <p class="show-stack">Python · FastAPI · Claude API · Paystack · <span data-i18n="p1Tests">191 tests</span></p>
+                            <div class="show-links">
+                                <a class="caps-link" href="rahah.html"><span data-i18n="caseStudy">Case study</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                                <a class="caps-link" href="https://rahah.onrender.com" target="_blank" rel="noopener noreferrer"><span data-i18n="visitSite">Visit site</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- AmaniHaven -->
+                    <article class="show-slide" role="tabpanel" id="slide-amani" aria-labelledby="tab-amani">
+                        <div class="stage-fit" data-demo="amani" data-w="720" data-h="420" data-cw="358" data-ch="460" data-below="560">
+                            <div class="ss-stage am" aria-hidden="true">
+                                <div class="ss-window am-win">
+                                    <div class="ss-window__bar">
+                                        <span class="ss-window__lights"><i></i><i></i><i></i></span>
+                                        <span class="ss-window__url">amanihaven.onrender.com/demo</span>
+                                    </div>
+                                    <div class="ss-window__body">
+                                        <div class="am-brand"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f6f5c"/><path d="M16 24s-7-4.3-7-9.4A3.9 3.9 0 0 1 16 12a3.9 3.9 0 0 1 7 2.6C23 19.7 16 24 16 24z" fill="#fff"/></svg>AmaniHaven</div>
+                                        <div class="am-cols">
+                                            <div>
+                                                <p class="am-label">Their phone</p>
+                                                <div class="am-phone">
+                                                    <div class="am-screen">
+                                                        <div class="am-status"><span>Safaricom</span><span>2:52 PM</span></div>
+                                                        <div class="am-tabs"><span>Dial</span><span data-active>Messages</span></div>
+                                                        <div class="am-code">88333</div>
+                                                        <div class="am-thread">
+                                                            <span class="am-msg" data-me data-on>I am so stressed about exams<small>2:52 PM</small></span>
+                                                            <span class="am-msg" data-on>Thank you for sharing. Stress shrinks when you break it down. Write the 3 things worrying you most, then one small action for each.<small>2:52 PM</small></span>
+                                                            <span class="am-msg" data-me data-on>CALL<small>2:52 PM</small></span>
+                                                            <span class="am-msg" data-on>Thank you. A counselor will call you on this number as soon as one is free.<small>2:52 PM</small></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="ss-collapse" data-k="answer" data-open>
-                                                <div>
-                                                    <div class="rh-a">
-                                                        <p class="rh-stream">Expand the bracket: 3x − 3 = 9. Add 3 to both sides, so 3x = 12 and x = 4.</p>
-                                                        <span class="rh-source" data-on><i class="ph-fill ph-file-text"></i>Your notes, page 12</span>
+                                            <div class="am-side">
+                                                <p class="am-label">What the counselor sees</p>
+                                                <div class="am-board" data-case>
+                                                    <div class="am-empty"><b>No case yet.</b><p>Most messages get an instant self-help reply and never need a counselor. A case opens here when someone is at risk or asks for a call.</p></div>
+                                                    <div class="am-case">
+                                                        <div class="am-case-top"><b>Needs a check-in</b><span>Case 1 · opened 2:52 PM</span></div>
+                                                        <p class="am-case-meta">Waiting for someone · via SMS · English · +25479****217</p>
+                                                        <p class="am-case-ask">Asked for a counselor to call</p>
+                                                        <div class="am-flags"><span>On-call counselor paged by SMS</span><span>Would like a phone call</span></div>
+                                                        <div class="am-log"><span>I am so stressed about exams</span><span>Thank you for sharing. Stress shrinks when you break it down.</span><span>CALL</span></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="rh-composer">
-                                            <span class="rh-field"><span class="rh-draft"></span><span class="rh-caret"></span><span class="rh-ph">Ask about your notes</span></span>
-                                            <span class="rh-send"><i class="ph ph-arrow-up"></i></span>
+                                    </div>
+                                </div>
+                                <div class="am-board am-sat" data-case>
+                                    <div class="am-case">
+                                        <div class="am-case-top"><b>Needs a check-in</b><span>Case 1 · 2:52 PM</span></div>
+                                        <p class="am-case-ask">Asked for a counselor to call</p>
+                                        <div class="am-flags"><span>On-call counselor paged by SMS</span><span>Would like a phone call</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="show-body">
+                            <div class="show-head">
+                                <h3 class="show-title">AmaniHaven</h3>
+                                <span class="show-kind" data-i18n="kind2">Mental health support over SMS</span>
+                            </div>
+                            <p class="show-text" data-i18n="p2Text">Free mental health support over SMS and USSD, so it works on any phone, in English or Kiswahili. Messages that show signs of crisis go to a human counselor. Phone numbers are encrypted and deleted after 30 days.</p>
+                            <p class="show-stack">Python · FastAPI · Claude API · Africa's Talking · <span data-i18n="p2Tests">74 tests</span></p>
+                            <div class="show-links">
+                                <a class="caps-link" href="amanihaven.html"><span data-i18n="caseStudy">Case study</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                                <a class="caps-link" href="https://amanihaven.onrender.com/demo" target="_blank" rel="noopener noreferrer"><span data-i18n="tryDemo">Try the demo</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- GemmaSight -->
+                    <article class="show-slide" role="tabpanel" id="slide-gemma" aria-labelledby="tab-gemma">
+                        <div class="stage-fit" data-demo="gemma" data-w="720" data-h="420" data-cw="358" data-ch="460" data-below="560">
+                            <div class="ss-stage gs" aria-hidden="true">
+                                <div class="phone-src gs-phone" data-width="250" data-cwidth="270">
+                                    <div class="gs-app">
+                                        <div class="gs-preview"><span class="gs-busy"></span></div>
+                                        <div class="gs-status">
+                                            <span data-k="ready">Ready</span>
+                                            <span data-k="looking">Looking.</span>
+                                            <span data-k="result" data-on data-stream>Paracetamol, 500 milligrams. Use by March 2027.</span>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-head">
-                            <h3 class="project-title">Rahah</h3>
-                        </div>
-                        <p class="project-text" data-i18n="p1Text">A study platform for Kenyan students. It answers from their own notes with page citations, marks homework from a photo and takes M-Pesa payments. 13 of the first 15 users reported better CAT scores.</p>
-                        <p class="project-stack">Python, FastAPI, Claude API, M-Pesa · <span data-i18n="p1Tests">191 tests</span></p>
-                        <div class="project-links">
-                            <a href="https://rahah.onrender.com" target="_blank" rel="noopener noreferrer"><span data-i18n="linkDemo">Live demo</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                            <a href="https://github.com/808kirai/Rahah" target="_blank" rel="noopener noreferrer"><span data-i18n="linkCode">Code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                            <button type="button" class="replay"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span data-i18n="replay">Replay</span></button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- AmaniHaven -->
-                <article class="project project--phone">
-                    <div class="stage-fit" data-demo="amani" data-w="358" data-h="440">
-                        <div class="ss-stage am" aria-hidden="true">
-                            <div class="phone-src am-phone" data-width="326" data-follow-theme>
-                                <i class="ph ph-caret-left am-back"></i>
-                                <div class="am-head">
-                                    <span class="am-avatar"><i class="ph-fill ph-user"></i></span>
-                                    <span class="am-name">AmaniHaven <i class="ph-fill ph-caret-right"></i></span>
-                                </div>
-                                <div class="am-thread">
-                                    <div class="am-stamp">Text Message · Today 9:41</div>
-                                    <div class="am-row" data-from="me"><span class="am-bubble" data-on>I'm stressed and can't sleep</span></div>
-                                    <div class="am-row" data-from="them">
-                                        <span class="am-bubble" data-on>That sounds hard. Try 4-7-8 breathing tonight.</span>
-                                        <span class="am-typing"><i></i><i></i><i></i></span>
-                                    </div>
-                                    <div class="am-row" data-from="them"><span class="am-bubble" data-on>Reply CALL to talk to a counselor.</span></div>
-                                    <div class="am-row" data-from="me"><span class="am-bubble" data-on>CALL</span></div>
-                                    <div class="am-receipt" data-on>Delivered</div>
-                                    <div class="am-row" data-from="them">
-                                        <span class="am-bubble" data-on>A counselor will call you shortly.</span>
-                                        <span class="am-typing"><i></i><i></i><i></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-head">
-                            <h3 class="project-title">AmaniHaven</h3>
-                        </div>
-                        <p class="project-text" data-i18n="p2Text">Free mental health support over SMS and USSD, so it works on any phone, in English or Kiswahili. Messages that show signs of crisis go to a human counselor. Phone numbers are encrypted and deleted after 30 days.</p>
-                        <p class="project-stack">Python, FastAPI, Claude API, Docker · <span data-i18n="p2Tests">74 tests</span></p>
-                        <div class="project-links">
-                            <a href="https://amanihaven.onrender.com/demo" target="_blank" rel="noopener noreferrer"><span data-i18n="linkDemo">Live demo</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                            <a href="https://github.com/808kirai/AmaniHaven" target="_blank" rel="noopener noreferrer"><span data-i18n="linkCode">Code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                            <button type="button" class="replay"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span data-i18n="replay">Replay</span></button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- GemmaSight -->
-                <article class="project project--phone project--flip">
-                    <div class="stage-fit" data-demo="gemma" data-w="358" data-h="440">
-                        <div class="ss-stage gs" aria-hidden="true">
-                            <div class="phone-src gs-phone" data-width="326" data-dark>
-                                <div class="gs-top">
-                                    <span class="gs-name">GemmaSight</span>
-                                    <span class="gs-lang">EN</span>
-                                </div>
-                                <div class="gs-view">
-                                    <div class="gs-reticle" data-lock><i></i><i></i><i></i><i></i></div>
-                                    <div class="gs-busy"><span class="gs-spinner"></span>Reading</div>
-                                    <div class="gs-caption" data-on>
-                                        <span class="gs-speak"><i></i><i></i><i></i><i></i></span>
-                                        <p class="gs-text">Paracetamol, 500 mg. Expires March 2027.</p>
-                                    </div>
-                                </div>
-                                <div class="gs-modes">
-                                    <span class="gs-mode gs-mode--read" data-active><i class="ph-fill ph-text-aa"></i>Read<span class="touch"></span></span>
-                                    <span class="gs-mode"><i class="ph-fill ph-eye"></i>Describe</span>
-                                    <span class="gs-mode"><i class="ph-fill ph-magnifying-glass"></i>Find</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-head">
-                            <h3 class="project-title">GemmaSight</h3>
-                        </div>
-                        <p class="project-text" data-i18n="p3Text">A camera assistant for blind and low-vision people, built on Gemma 4. It reads labels and medicine aloud and guides you to lost objects. It placed 2nd at an MLH hackathon with me as lead coder, and 15 blindfolded testers passed 17 of 21 scenarios.</p>
-                        <p class="project-stack">Python, FastAPI, Gemma 4, Docker · <span data-i18n="p3Tests">44 tests</span></p>
-                        <div class="project-links">
-                            <a href="https://github.com/808kirai/GemmaSight" target="_blank" rel="noopener noreferrer"><span data-i18n="linkCode">Code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                            <button type="button" class="replay"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span data-i18n="replay">Replay</span></button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- NeuSE -->
-                <article class="project">
-                    <div class="stage-fit" data-demo="neuse" data-w="720" data-h="400" data-cw="358" data-ch="456" data-below="560">
-                        <div class="ss-stage nx" data-theme="dark" aria-hidden="true">
-                            <div class="ss-window nx-win">
-                                <div class="ss-window__bar">
-                                    <span class="ss-window__lights"><i></i><i></i><i></i></span>
-                                    <span class="ss-window__title">NeuSE · Unit 01</span>
-                                </div>
-                                <div class="ss-window__body">
-                                    <div class="nx-body">
-                                        <div class="nx-label nx-head-frame">Thermal feed <span class="nx-offline"><i class="ph-fill ph-wifi-slash"></i>Offline</span></div>
-                                        <div class="nx-label nx-head-log">Detections <span class="nx-count"><span class="roll"><span style="--n: 2"><span>0</span><span>1</span><span>2</span></span></span></span></div>
-                                        <div class="nx-frame">
-                                            <span class="nx-box nx-box--1" data-on><b>#1</b></span>
-                                            <span class="nx-box nx-box--2" data-on><b>#2</b></span>
+                                        <div class="gs-modes">
+                                            <span class="gs-mode gs-mode--read" data-active><b>Read</b><small>labels, signs, money</small><span class="touch"></span></span>
+                                            <span class="gs-mode"><b>Describe</b><small>what is ahead</small></span>
+                                            <span class="gs-mode"><b>Find</b><small>tap again to stop</small></span>
+                                            <span class="gs-mode"><b>Ask</b><small>speak a question</small></span>
                                         </div>
-                                        <div class="nx-log">
-                                            <div class="ss-collapse" data-k="row2" data-open>
-                                                <div class="nx-wrap"><div class="nx-row"><span class="nx-tag nx-tag--2">#2</span><span>60 × 26 px</span><span class="nx-ms">38 ms</span></div></div>
+                                        <div class="gs-tools"><span>Repeat</span><span>Clock</span><span>English</span></div>
+                                    </div>
+                                </div>
+                                <div class="gs-voice">
+                                    <div class="gs-voice-head"><span class="gs-wave"><i></i><i></i><i></i><i></i><i></i></span>Spoken aloud</div>
+                                    <p class="gs-said" data-stream>Paracetamol, 500 milligrams. Use by March 2027.</p>
+                                    <p class="gs-lang">English <span aria-hidden="true">·</span> <b>Kiswahili</b> in one tap</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="show-body">
+                            <div class="show-head">
+                                <h3 class="show-title">GemmaSight</h3>
+                                <span class="show-kind" data-i18n="kind3">Vision assistant on Gemma 4</span>
+                            </div>
+                            <p class="show-text" data-i18n="p3Text">A camera assistant for blind and low-vision people, built on Gemma 4. It reads labels and medicine aloud and guides you to lost objects. It placed 2nd at an MLH hackathon with me as lead coder, and 15 blindfolded testers passed 17 of 21 scenarios.</p>
+                            <p class="show-stack">Python · FastAPI · Gemma 4 · Docker · <span data-i18n="p3Tests">44 tests</span></p>
+                            <div class="show-links">
+                                <a class="caps-link" href="gemmasight.html"><span data-i18n="caseStudy">Case study</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                                <a class="caps-link" href="https://github.com/808kirai/GemmaSight" target="_blank" rel="noopener noreferrer"><span data-i18n="viewCode">View code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NeuSE -->
+                    <article class="show-slide" role="tabpanel" id="slide-neuse" aria-labelledby="tab-neuse">
+                        <div class="stage-fit" data-demo="neuse" data-w="720" data-h="420" data-cw="358" data-ch="460" data-below="560">
+                            <div class="ss-stage nx" aria-hidden="true">
+                                <div class="ss-window nx-win">
+                                    <div class="ss-window__bar">
+                                        <span class="ss-window__lights"><i></i><i></i><i></i></span>
+                                        <span class="ss-window__url">neuse command center</span>
+                                    </div>
+                                    <div class="ss-window__body">
+                                        <div class="nx-head">
+                                            <h4>NeuSE Command Center</h4>
+                                            <span class="nx-summary"><span class="nx-units">3 of 3 units online, </span><span class="roll" data-k="count" data-on><span>1,639</span><span>1,655</span></span> sightings</span>
+                                        </div>
+                                        <div class="nx-main">
+                                            <div class="nx-map">
+                                                <span class="nx-zoom"><span>+</span><span>−</span></span>
+                                                <span class="nx-osm">© OpenStreetMap contributors</span>
+                                                <span class="nx-ring" data-on></span>
                                             </div>
-                                            <div class="ss-collapse" data-k="row1" data-open>
-                                                <div class="nx-wrap"><div class="nx-row"><span class="nx-tag">#1</span><span>36 × 68 px</span><span class="nx-ms">41 ms</span></div></div>
+                                            <div class="nx-aside">
+                                                <div class="nx-legend">
+                                                    <span><i class="nx-dot" style="background:#4ade80"></i>Unit online</span>
+                                                    <span><i class="nx-dot" style="background:#f87171"></i>Last 5 min</span>
+                                                    <span><i class="nx-dot" style="background:#fb923c"></i>Last hour</span>
+                                                    <span><i class="nx-dot" style="background:#facc15"></i>Older</span>
+                                                </div>
+                                                <p class="nx-h">Alerts</p>
+                                                <div class="ss-collapse" data-k="alert" data-open>
+                                                    <div class="nx-wrap"><div class="nx-hit nx-hit--new">16 strong sightings near -1.28687, 36.82452<small>just now, by unit-1</small></div></div>
+                                                </div>
+                                                <div class="nx-wrap"><div class="nx-hit">4 strong sightings near -1.29080, 36.81319<small>21 s ago, by unit-3</small></div></div>
+                                                <div class="nx-wrap"><div class="nx-hit">3 strong sightings near -1.28118, 36.81100<small>2 min ago, by unit-2</small></div></div>
+                                                <div class="nx-wrap"><div class="nx-hit">40 strong sightings near -1.28197, 36.81309<small>2 min ago, by unit-2</small></div></div>
                                             </div>
-                                            <div class="nx-row nx-old"><span class="bar" style="width: 22px"></span><span class="bar" style="width: 64px"></span><span class="bar" style="width: 30px"></span></div>
-                                            <div class="nx-row nx-old"><span class="bar" style="width: 22px"></span><span class="bar" style="width: 52px"></span><span class="bar" style="width: 30px"></span></div>
-                                            <div class="nx-saved" data-on><i class="ph-fill ph-check-circle"></i>Saved to local log</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-head">
-                            <h3 class="project-title">NeuSE</h3>
+                        <div class="show-body">
+                            <div class="show-head">
+                                <h3 class="show-title">NeuSE</h3>
+                                <span class="show-kind" data-i18n="kind4">Offline search and rescue</span>
+                            </div>
+                            <p class="show-text" data-i18n="p4Text">An offline thermal-imaging prototype for search and rescue, entered in the Huawei ICT Competition 2026–27. It finds people in thermal drone footage on the unit itself and sends sightings to a command center whenever a link is up.</p>
+                            <p class="show-stack">Python · OpenCV · NumPy · MindSpore · <span data-i18n="p4Tests">17 tests</span></p>
+                            <div class="show-links">
+                                <a class="caps-link" href="neuse.html"><span data-i18n="caseStudy">Case study</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                                <a class="caps-link" href="https://github.com/808kirai/NeuSE" target="_blank" rel="noopener noreferrer"><span data-i18n="viewCode">View code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                            </div>
                         </div>
-                        <p class="project-text" data-i18n="p4Text">An offline thermal-imaging prototype for search and rescue, entered in the Huawei ICT Competition 2026–27. It finds warm areas in each frame with OpenCV and logs every detection locally, with no network needed.</p>
-                        <p class="project-stack">Python, OpenCV, NumPy, SQLite · <span data-i18n="p4Tests">17 tests</span></p>
-                        <div class="project-links">
-                            <a href="https://github.com/808kirai/NeuSE" target="_blank" rel="noopener noreferrer"><span data-i18n="linkCode">Code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                            <button type="button" class="replay"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span data-i18n="replay">Replay</span></button>
-                        </div>
-                    </div>
-                </article>
-
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- STACK -->
-        <section id="stack" aria-labelledby="stack-title">
+        <!-- EXPERIENCE (preview) -->
+        <section id="experience" aria-labelledby="exp-title">
             <div class="section-head">
-                <h2 id="stack-title" class="section-title" data-i18n="stackTitle">Skills</h2>
+                <h2 id="exp-title" class="section-title" data-i18n="expTitle">Experience</h2>
+                <a href="experience.html" class="more-link"><span data-i18n="viewDetails">View Details</span> <i class="ph ph-caret-right" aria-hidden="true"></i></a>
             </div>
-            <dl class="stack">
-                <div class="stack-row">
-                    <dt data-i18n="stackLang">Languages</dt>
-                    <dd>Python, C, C++</dd>
-                </div>
-                <div class="stack-row">
-                    <dt data-i18n="stackAi">AI and computer vision</dt>
-                    <dd>Claude API, Gemma, OpenCV, MediaPipe, NumPy</dd>
-                </div>
-                <div class="stack-row">
-                    <dt data-i18n="stackBackend">Backend and tools</dt>
-                    <dd>FastAPI, Docker, pytest, Git</dd>
-                </div>
-                <div class="stack-row">
-                    <dt data-i18n="stackSpeak">Spoken languages</dt>
-                    <dd><span data-i18n="langSw">Kiswahili</span> (<span data-i18n="lvlNative">native</span>), <span data-i18n="langEn">English</span> (<span data-i18n="lvlFluent">fluent</span>), <span data-i18n="langZh">Mandarin</span> (<span data-i18n="lvlBasic">basic</span>)</dd>
-                </div>
-            </dl>
-        </section>
-
-        <!-- WINS -->
-        <section id="wins" aria-labelledby="wins-title">
-            <div class="section-head">
-                <h2 id="wins-title" class="section-title" data-i18n="winsTitle">Awards and certifications</h2>
-            </div>
-
-            <h3 class="group-label" data-i18n="groupHack">Hackathons</h3>
-            <ol class="timeline">
-                <li class="entry">
-                    <time datetime="2026-10-01">Oct 2026</time>
-                    <div class="entry-body">
-                        <p class="entry-title">MLH Hackathon</p>
-                        <p class="entry-sub"><span data-i18n="place2">2nd place</span> · <span data-i18n="hack1">Lead coder on GemmaSight</span></p>
-                    </div>
-                </li>
-                <li class="entry">
-                    <time datetime="2026-04-01">Apr 2026</time>
-                    <div class="entry-body">
-                        <p class="entry-title">Google Developer Groups Hackathon</p>
-                        <p class="entry-sub"><span data-i18n="place4">4th place</span> · <span data-i18n="hack2">Designed the architecture of an AI study tool</span></p>
-                    </div>
-                </li>
-            </ol>
-
-            <h3 class="group-label" data-i18n="groupCerts">Certificates</h3>
-            <ol class="timeline">
-                <li class="entry">
-                    <time datetime="2026-11-01">Nov 2026</time>
-                    <div class="entry-body">
-                        <p class="entry-title">CS50's Introduction to AI with Python</p>
-                        <p class="entry-sub">Harvard · edX · <span data-i18n="inProgress">In progress</span></p>
-                    </div>
-                </li>
-                <li class="entry">
-                    <time datetime="2026-10-24">Oct 2026</time>
-                    <div class="entry-body">
-                        <p class="entry-title">Hacktoberfest Hack Day Nairobi × B54</p>
-                        <p class="entry-sub">MLH × DEV · <span data-i18n="attended">Attended</span></p>
-                    </div>
-                    <button type="button" class="thumb" data-full="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" data-alt="Hacktoberfest Hack Day Nairobi certificate of attendance" aria-label="View certificate" data-i18n-label="viewCert">
-                        <img src="assets/certificates/hacktoberfest-2026-hack-day-nairobi-thumb.jpg" alt="" width="240" height="170" loading="lazy">
-                    </button>
-                </li>
-                <li class="entry">
-                    <time datetime="2026-08-31">Aug 2026</time>
-                    <div class="entry-body">
-                        <p class="entry-title">Machine Learning for Beginners</p>
-                        <p class="entry-sub">Sololearn · <a class="verify" href="https://www.sololearn.com/certificates/CC-JCG8QPNN" target="_blank" rel="noopener noreferrer"><span data-i18n="verify">Verify</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></p>
-                    </div>
-                    <button type="button" class="thumb" data-full="assets/certificates/sololearn-machine-learning-for-beginners.jpg" data-alt="Sololearn Machine Learning for Beginners certificate" aria-label="View certificate" data-i18n-label="viewCert">
-                        <img src="assets/certificates/sololearn-machine-learning-for-beginners-thumb.jpg" alt="" width="240" height="169" loading="lazy">
-                    </button>
-                </li>
-                <li class="entry">
-                    <time datetime="2026-05-29">May 2026</time>
-                    <div class="entry-body">
-                        <p class="entry-title">AWS AI Practitioner Challenge</p>
-                        <p class="entry-sub">Udacity · Accenture · <a class="verify" href="https://www.udacity.com/certificate/e/c61d9870-34a5-11f1-98d3-f31c3e892518" target="_blank" rel="noopener noreferrer"><span data-i18n="verify">Verify</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></p>
-                    </div>
-                    <button type="button" class="thumb" data-full="assets/certificates/aws-ai-practitioner-challenge.jpg" data-alt="Udacity AWS AI Practitioner Challenge certificate" aria-label="View certificate" data-i18n-label="viewCert">
-                        <img src="assets/certificates/aws-ai-practitioner-challenge-thumb.jpg" alt="" width="240" height="185" loading="lazy">
-                    </button>
-                </li>
-            </ol>
-
-            <h3 class="group-label" data-i18n="groupMember">Memberships</h3>
-            <ol class="timeline">
-                <li class="entry">
-                    <time datetime="2026-04-01">Apr 2026</time>
-                    <div class="entry-body">
-                        <p class="entry-title">NVIDIA Developer Program</p>
-                        <p class="entry-sub" data-i18n="memberSub">Member</p>
-                    </div>
-                </li>
-            </ol>
-
-            <!-- Live GitHub contributions -->
-            <div class="contrib" id="contrib">
-                <div class="contrib-head">
+            <ol class="xp">
+                <li class="xp-item">
+                    <p class="xp-date">Oct 2026</p>
                     <div>
-                        <h3 class="contrib-title" data-i18n="contribTitle">GitHub activity</h3>
-                        <p id="contrib-total" class="contrib-total">&nbsp;</p>
+                        <h3 class="xp-role" data-i18n="x1Role">Lead Coder, GemmaSight</h3>
+                        <p class="xp-org">MLH Hackathon</p>
+                        <p class="xp-meta" data-i18n="x1Meta">2nd place · Vision assistant on Gemma 4</p>
                     </div>
-                    <a href="https://github.com/808kirai" target="_blank" rel="noopener noreferrer" class="contrib-user"><bdi>@808kirai</bdi></a>
+                </li>
+                <li class="xp-item">
+                    <p class="xp-date">2026 – 2027</p>
+                    <div>
+                        <h3 class="xp-role" data-i18n="x2Role">Developer, NeuSE</h3>
+                        <p class="xp-org">Huawei ICT Competition</p>
+                        <p class="xp-meta" data-i18n="x2Meta">Innovation Track · Prototype</p>
+                    </div>
+                </li>
+                <li class="xp-item">
+                    <p class="xp-date">Apr 2026</p>
+                    <div>
+                        <h3 class="xp-role" data-i18n="x3Role">Architecture and tooling</h3>
+                        <p class="xp-org">Google Developer Groups Hackathon</p>
+                        <p class="xp-meta" data-i18n="x3Meta">4th place · AI study tool for students</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- MEMBERSHIPS -->
+        <section aria-labelledby="mem-title">
+            <h2 id="mem-title" class="section-title" data-i18n="memTitle">Professional Memberships</h2>
+            <p class="section-sub" data-i18n="memSub">Developer programs and communities I belong to.</p>
+            <div class="member">
+                <div class="member-text">
+                    <h3 class="member-name">NVIDIA Developer Program</h3>
+                    <p class="caps" data-i18n="memRole">Member · Since April 2026</p>
+                    <p class="member-desc" data-i18n="memDesc">Access to NVIDIA's SDKs, training and developer tools for AI and accelerated computing.</p>
+                    <a class="caps-link" href="https://developer.nvidia.com/" target="_blank" rel="noopener noreferrer"><span>developer.nvidia.com</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
                 </div>
+                <!-- The real card image replaces this when assets/certificates/nvidia-developer-program.jpg exists -->
+                <div class="member-card" data-card-src="assets/certificates/nvidia-developer-program.jpg">
+                    <span class="member-card-kicker">Developer Program</span>
+                    <span class="member-card-name">Rooney James</span>
+                    <span class="member-card-since"><small>Member since</small>04/26</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMUNITY -->
+        <section aria-labelledby="comm-title">
+            <h2 id="comm-title" class="section-title" data-i18n="commTitle">Community &amp; Involvement</h2>
+            <div class="comm-row">
+                <div>
+                    <p class="comm-lead" data-i18n="commLead">Hackathons, summits and volunteering</p>
+                    <p class="comm-sub" data-i18n="commSub">The events I compete in, learn from and give time to.</p>
+                </div>
+                <div class="comm-links">
+                    <a href="community.html#photos" class="more-link" data-i18n="eventPhotos">Event Photos</a>
+                    <a href="community.html" class="more-link"><span data-i18n="explore">Explore</span> <i class="ph ph-caret-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNOLOGIES -->
+        <section aria-labelledby="tech-title">
+            <div class="section-head">
+                <h2 id="tech-title" class="section-title" data-i18n="techTitle">Technologies</h2>
+                <a href="tech-stack.html" class="more-link"><span data-i18n="viewAll">View All</span> <i class="ph ph-caret-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="marquee" aria-label="Technologies I use">
+                <ul class="marquee-row" data-marquee>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt="" loading="lazy">Python</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/fastapi/fastapi-original.svg" alt="" loading="lazy">FastAPI</li>
+                    <li><i class="logo" style="--src: url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/claude.svg); --c: #d97757"></i>Claude API</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/opencv/opencv-original.svg" alt="" loading="lazy">OpenCV</li>
+                    <li><i class="logo" style="--src: url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/mediapipe.svg); --c: #0097a7"></i>MediaPipe</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/numpy/numpy-original.svg" alt="" loading="lazy">NumPy</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/docker/docker-original.svg" alt="" loading="lazy">Docker</li>
+                </ul>
+                <ul class="marquee-row marquee-row--reverse" data-marquee>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/c/c-original.svg" alt="" loading="lazy">C</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/cplusplus/cplusplus-original.svg" alt="" loading="lazy">C++</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/pytest/pytest-original.svg" alt="" loading="lazy">pytest</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/sqlite/sqlite-original.svg" alt="" loading="lazy">SQLite</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-original.svg" alt="" loading="lazy">Git</li>
+                    <li><img class="logo-mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/github/github-original.svg" alt="" loading="lazy">GitHub</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section id="certifications" aria-labelledby="cert-title">
+            <div class="section-head">
+                <h2 id="cert-title" class="section-title" data-i18n="certTitle">Certifications</h2>
+                <a href="certifications.html" class="more-link"><span data-i18n="viewAll">View All</span> <i class="ph ph-caret-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="certs">
+                <ol class="cert-list">
+                    <li class="cert">
+                        <time datetime="2026-08-31">Aug 2026</time>
+                        <button type="button" class="thumb" data-full="assets/certificates/sololearn-machine-learning-for-beginners.jpg" data-alt="Sololearn Machine Learning for Beginners certificate" aria-label="View certificate" data-i18n-label="viewCert"><img src="assets/certificates/sololearn-machine-learning-for-beginners-thumb.jpg" alt="" width="240" height="169" loading="lazy"></button>
+                        <div class="cert-body">
+                            <h3 class="cert-name">Machine Learning for Beginners</h3>
+                            <p class="cert-issuer">Sololearn</p>
+                            <a class="caps-link" href="https://www.sololearn.com/certificates/CC-JCG8QPNN" target="_blank" rel="noopener noreferrer"><span data-i18n="viewCred">View credential</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
+                    <li class="cert">
+                        <time datetime="2026-05-29">May 2026</time>
+                        <button type="button" class="thumb" data-full="assets/certificates/aws-ai-practitioner-challenge.jpg" data-alt="Udacity AWS AI Practitioner Challenge certificate" aria-label="View certificate" data-i18n-label="viewCert"><img src="assets/certificates/aws-ai-practitioner-challenge-thumb.jpg" alt="" width="240" height="185" loading="lazy"></button>
+                        <div class="cert-body">
+                            <h3 class="cert-name">AWS AI Practitioner Challenge</h3>
+                            <p class="cert-issuer">Udacity · Accenture</p>
+                            <a class="caps-link" href="https://www.udacity.com/certificate/e/c61d9870-34a5-11f1-98d3-f31c3e892518" target="_blank" rel="noopener noreferrer"><span data-i18n="viewCred">View credential</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
+                    <li class="cert">
+                        <time datetime="2026-10-24">Oct 2026</time>
+                        <button type="button" class="thumb" data-full="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" data-alt="Hacktoberfest Hack Day Nairobi certificate of attendance" aria-label="View certificate" data-i18n-label="viewCert"><img src="assets/certificates/hacktoberfest-2026-hack-day-nairobi-thumb.jpg" alt="" width="240" height="170" loading="lazy"></button>
+                        <div class="cert-body">
+                            <h3 class="cert-name">Hacktoberfest Hack Day Nairobi × B54</h3>
+                            <p class="cert-issuer" data-i18n="certAttend">MLH × DEV · Certificate of attendance</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <!-- The stack: the top certificate swings out and drops to the back -->
+                <div class="deck-wrap">
+                    <div class="deck" id="cert-deck" role="group" aria-roledescription="carousel" aria-label="Certificates">
+                        <button type="button" class="deck-card" data-cert="sololearn" aria-label="Next certificate"><img src="assets/certificates/sololearn-machine-learning-for-beginners.jpg" alt="Sololearn certificate: Machine Learning for Beginners, awarded to Rooney James" width="1599" height="1129"></button>
+                        <button type="button" class="deck-card" data-cert="aws" aria-label="Next certificate"><img src="assets/certificates/aws-ai-practitioner-challenge.jpg" alt="Udacity certificate: AWS AI Practitioner Challenge, awarded to Rooney James" width="1600" height="1236"></button>
+                        <button type="button" class="deck-card" data-cert="hacktoberfest" aria-label="Next certificate"><img src="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" alt="Hacktoberfest 2026 certificate of attendance, awarded to Rooney James" width="1600" height="1131"></button>
+                    </div>
+                    <p class="deck-hint" data-i18n="deckHint">Tap the stack to shuffle</p>
+                </div>
+            </div>
+            <div class="in-progress">
+                <p class="caps" data-i18n="recentTraining">Currently studying</p>
+                <div class="xp-item">
+                    <p class="xp-date">Nov 2026</p>
+                    <div>
+                        <h3 class="xp-role">CS50's Introduction to AI with Python</h3>
+                        <p class="xp-org">Harvard · edX</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section aria-labelledby="edu-title">
+            <h2 id="edu-title" class="section-title section-title--gap" data-i18n="eduTitle">Education</h2>
+            <div class="xp-item">
+                <p class="xp-date" data-i18n="eduDate">Expected 2029</p>
+                <div>
+                    <h3 class="xp-role" data-i18n="eduDegree">Bachelor of Science in Software Engineering</h3>
+                    <p class="xp-org">Multimedia University of Kenya</p>
+                    <p class="xp-meta">Nairobi, Kenya</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GITHUB ACTIVITY -->
+        <section aria-labelledby="gh-title">
+            <h2 id="gh-title" class="section-title section-title--gap" data-i18n="contribTitle">GitHub Activity</h2>
+            <div class="contrib" id="contrib">
                 <div class="contrib-scroll" id="contrib-scroll">
                     <div id="contrib-graph" class="contrib-graph" role="img" aria-label="GitHub contributions in the last year"></div>
                 </div>
-                <div class="contrib-legend" aria-hidden="true">
-                    <span data-i18n="contribLess">Less</span>
-                    <i class="contrib-cell" data-level="0"></i><i class="contrib-cell" data-level="1"></i><i class="contrib-cell" data-level="2"></i><i class="contrib-cell" data-level="3"></i><i class="contrib-cell" data-level="4"></i>
-                    <span data-i18n="contribMore">More</span>
+                <div class="contrib-foot">
+                    <p id="contrib-total" class="contrib-total">&nbsp;</p>
+                    <div class="contrib-legend" aria-hidden="true">
+                        <span data-i18n="contribLess">Less</span>
+                        <i class="contrib-cell" data-level="0"></i><i class="contrib-cell" data-level="1"></i><i class="contrib-cell" data-level="2"></i><i class="contrib-cell" data-level="3"></i><i class="contrib-cell" data-level="4"></i>
+                        <span data-i18n="contribMore">More</span>
+                    </div>
                 </div>
                 <div id="contrib-tooltip" class="contrib-tooltip" role="tooltip" hidden></div>
             </div>
         </section>
 
         <!-- CONTACT -->
-        <section id="contact" class="contact" aria-labelledby="contact-title">
-            <h2 id="contact-title" class="contact-title" data-i18n="contactTitle">Contact</h2>
-            <p class="contact-text" data-i18n="contactText">I'm open to projects and collaborations.</p>
-            <ul class="contact-list">
-                <li>
-                    <a href="https://wa.me/254740060124?text=Hi%20Runie" target="_blank" rel="noopener noreferrer" class="contact-row">
-                        <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
-                        <span class="contact-label">WhatsApp</span>
-                        <span class="contact-value" dir="ltr">+254 740 060 124</span>
-                        <i class="ph ph-arrow-up-right contact-arrow" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:runiejames@gmail.com" class="contact-row">
-                        <i class="ph ph-envelope-simple" aria-hidden="true"></i>
-                        <span class="contact-label" data-i18n="email">Email</span>
-                        <span class="contact-value" dir="ltr">runiejames@gmail.com</span>
-                        <i class="ph ph-arrow-up-right contact-arrow" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/808kirai" target="_blank" rel="noopener noreferrer" class="contact-row">
-                        <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
-                        <span class="contact-label">LinkedIn</span>
-                        <span class="contact-value" dir="ltr">808kirai</span>
-                        <i class="ph ph-arrow-up-right contact-arrow" aria-hidden="true"></i>
-                    </a>
-                </li>
-            </ul>
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title" class="section-title section-title--gap" data-i18n="contactTitle">Let's work together.</h2>
+            <div class="contact">
+                <p class="contact-text" data-i18n="contactText">I'm open to projects and collaborations in AI and backend development. Whether you're building something new or improving a product that already exists, I'd like to hear about it.</p>
+                <ul class="contact-cards">
+                    <li><a class="contact-card" href="mailto:runiejames@gmail.com"><span class="contact-icon"><i class="ph ph-envelope-simple" aria-hidden="true"></i></span><span><span class="caps" data-i18n="email">Email</span><span class="contact-value">runiejames@gmail.com</span></span><i class="ph ph-caret-right contact-arrow" aria-hidden="true"></i></a></li>
+                    <li><a class="contact-card" href="https://wa.me/254740060124?text=Hi%20Rooney" target="_blank" rel="noopener noreferrer"><span class="contact-icon"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></span><span><span class="caps">WhatsApp</span><span class="contact-value" dir="ltr">+254 740 060 124</span></span><i class="ph ph-caret-right contact-arrow" aria-hidden="true"></i></a></li>
+                    <li><a class="contact-card" href="https://www.linkedin.com/in/808kirai" target="_blank" rel="noopener noreferrer"><span class="contact-icon"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></span><span><span class="caps">LinkedIn</span><span class="contact-value">808kirai</span></span><i class="ph ph-caret-right contact-arrow" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
         </section>
 
     </main>
@@ -464,8 +578,10 @@
     </dialog>
 
     <footer class="footer">
-        <span>&copy; <span id="footer-year">2026</span> Runie · Nairobi</span>
-        <a href="#top" class="footer-top" data-i18n="backTop">Back to top</a>
+        <div class="footer-inner">
+            <p class="footer-line"><span>Rooney James</span> <span class="footer-sep" aria-hidden="true">/</span> <span data-i18n="footRole">Software engineering student</span> <span class="footer-sep" aria-hidden="true">/</span> <span data-i18n="footPlace">Nairobi, KE</span></p>
+            <a href="#top" class="footer-top"><span data-i18n="backTop">Back to top</span> <i class="ph ph-arrow-up" aria-hidden="true"></i></a>
+        </div>
     </footer>
 
     <script src="script.js"></script>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+    <title>Rahah | Rooney James</title>
+    <meta name="description" content="A study platform for Kenyan students. It answers from their own notes with page citations, marks homework from a photo and takes M-Pesa payments.">
+    <meta name="author" content="Rooney James">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kirai-portfolio.vercel.app/rahah">
+    <meta property="og:title" content="Rahah | Rooney James">
+    <meta property="og:description" content="A study platform for Kenyan students. It answers from their own notes with page citations, marks homework from a photo and takes M-Pesa payments.">
+    <link rel="canonical" href="https://kirai-portfolio.vercel.app/rahah">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='-apple-system,Segoe UI,sans-serif' font-size='30' font-weight='700' fill='%23fefefe'%3ERJ%3C/text%3E%3C/svg%3E">
+
+    <script>
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem('portfolio-theme'); } catch (e) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Rooney James, home">RJ</a>
+            <nav class="nav-links" aria-label="Pages">
+                <a href="projects.html" data-i18n="navWork">Projects</a>
+                <a href="experience.html" data-i18n="navExp">Experience</a>
+                <a href="highlights.html" data-i18n="navHigh">Highlights</a>
+                <a href="community.html" data-i18n="navComm">Community</a>
+            </nav>
+            <span class="nav-divider" aria-hidden="true"></span>
+            <div class="nav-tools">
+                <label class="lang">
+                    <i class="ph ph-globe-simple" aria-hidden="true"></i>
+                    <select id="lang-select" aria-label="Language">
+                        <option value="en">EN</option>
+                        <option value="sw">SW</option>
+                        <option value="zh">中文</option>
+                        <option value="hi">हिंदी</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                        <option value="ar">عربي</option>
+                    </select>
+                </label>
+                <button id="theme-toggle" type="button" class="icon-btn" aria-label="Switch theme">
+                    <i class="ph ph-moon theme-moon" aria-hidden="true"></i>
+                    <i class="ph ph-sun theme-sun" aria-hidden="true"></i>
+                </button>
+                <button id="menu-toggle" type="button" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                    <i class="ph ph-list" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <nav id="menu" class="menu" aria-label="Pages" hidden>
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="projects.html" data-i18n="navWork">Projects</a>
+            <a href="experience.html" data-i18n="navExp">Experience</a>
+            <a href="highlights.html" data-i18n="navHigh">Highlights</a>
+            <a href="community.html" data-i18n="navComm">Community</a>
+            <a href="certifications.html" data-i18n="navCerts">Certifications</a>
+            <a href="tech-stack.html" data-i18n="navStack">Tech Stack</a>
+        </nav>
+    </header>
+
+    <main id="top" class="page page--sub">
+
+        <a href="projects.html" class="back-link"><i class="ph ph-arrow-left" aria-hidden="true"></i> <span data-i18n="backProjects">Back to Projects</span></a>
+        <header class="page-head">
+            <p class="caps" data-i18n="caseStudy">Case study</p>
+            <h1 class="page-title page-title--case">Rahah: An AI Study Companion for Kenyan Students</h1>
+            <div class="cs-links"><a class="caps-link" href="https://rahah.onrender.com" target="_blank" rel="noopener noreferrer"><span data-i18n="visitSite">Visit site</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a><a class="caps-link" href="https://github.com/808kirai/Rahah" target="_blank" rel="noopener noreferrer"><span data-i18n="viewCode">View code</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
+        </header>
+
+        <figure class="cs-hero"><img src="assets/projects/rahah/explains.webp" alt="Rahah"></figure>
+
+        <dl class="cs-facts"><div><dt>Status</dt><dd>Live at rahah.onrender.com</dd></div><div><dt>Built with</dt><dd>Python, FastAPI, Claude API, SQLite, Paystack</dd></div><div><dt>Engineering</dt><dd>179 commits · 191 automated tests</dd></div></dl>
+
+        <section class="cs-section">
+            <h2 class="cs-h">Overview</h2>
+            <p class="cs-p">Rahah is a study companion. Students ask about any subject, upload notes, slides or textbook pages, and get answers that point to the page they came from. They then practise with flashcards and tests, and keep track of exams and classes in one place.</p>
+        </section>
+
+        <section class="cs-section">
+            <h2 class="cs-h">Project goal</h2>
+            <p class="cs-p">Build a study tool Kenyan students can afford and trust: answers grounded in their own notes, priced in shillings and paid by M-Pesa, with running costs kept predictable so the price can stay low.</p>
+        </section>
+
+        <section class="cs-section">
+            <h2 class="cs-h">What it does</h2>
+            <ul class="cs-list"><li>Answers stream in as they are written and cite the page and the quoted passage of the student's own notes.</li><li>Each question goes to Claude Haiku, Sonnet or Opus depending on how hard it needs to think. Students only see plain names, with Auto as the default.</li><li>Marks homework from a photo, and turns notes or a past paper into a test with marks, a mark scheme and a model answer for every question.</li><li>Flashcard decks with spaced repetition: a card comes back after 1, 2, 4, 8 or 16 days.</li><li>Reminders and a timetable for exams, CATs and classes, with phone notifications even when Rahah is closed.</li><li>A performance page with the student's average, GPA out of 4.0 and scores over time, plus friends and a weekly leaderboard.</li><li>Pro and Max passes paid by M-Pesa or card through Paystack, with a three-day free trial.</li></ul>
+        </section>
+
+        <section class="cs-section">
+            <h2 class="cs-h">Key screens</h2>
+            <div class="cs-gallery"><figure class="cs-shot"><button type="button" class="cs-zoom" data-full="assets/projects/rahah/explains.webp" data-alt="Explains anything, by subject" aria-label="Enlarge: Explains anything, by subject"><img src="assets/projects/rahah/explains.webp" alt="Explains anything, by subject" loading="lazy"></button><figcaption>Explains anything, by subject</figcaption></figure><figure class="cs-shot"><button type="button" class="cs-zoom" data-full="assets/projects/rahah/marks.webp" data-alt="Marks work from a photo" aria-label="Enlarge: Marks work from a photo"><img src="assets/projects/rahah/marks.webp" alt="Marks work from a photo" loading="lazy"></button><figcaption>Marks work from a photo</figcaption></figure><figure class="cs-shot"><button type="button" class="cs-zoom" data-full="assets/projects/rahah/notes.webp" data-alt="Turns notes into tests and flashcards" aria-label="Enlarge: Turns notes into tests and flashcards"><img src="assets/projects/rahah/notes.webp" alt="Turns notes into tests and flashcards" loading="lazy"></button><figcaption>Turns notes into tests and flashcards</figcaption></figure><figure class="cs-shot"><button type="button" class="cs-zoom" data-full="assets/projects/rahah/plans-light.webp" data-alt="Plans revision around exams" aria-label="Enlarge: Plans revision around exams"><img src="assets/projects/rahah/plans-light.webp" alt="Plans revision around exams" loading="lazy"></button><figcaption>Plans revision around exams</figcaption></figure><figure class="cs-shot"><button type="button" class="cs-zoom" data-full="assets/projects/rahah/progress.webp" data-alt="Tracks progress and GPA" aria-label="Enlarge: Tracks progress and GPA"><img src="assets/projects/rahah/progress.webp" alt="Tracks progress and GPA" loading="lazy"></button><figcaption>Tracks progress and GPA</figcaption></figure><figure class="cs-shot"><button type="button" class="cs-zoom" data-full="assets/projects/rahah/compete.webp" data-alt="A weekly leaderboard with friends" aria-label="Enlarge: A weekly leaderboard with friends"><img src="assets/projects/rahah/compete.webp" alt="A weekly leaderboard with friends" loading="lazy"></button><figcaption>A weekly leaderboard with friends</figcaption></figure></div>
+        </section>
+
+        <section class="cs-section">
+            <h2 class="cs-h">How it's built</h2>
+            <ul class="cs-list"><li>A FastAPI backend on SQLite. Every route checks on the server that the student owns what they ask for.</li><li>Passwords hashed with scrypt, 30-day sessions in a cookie scripts can't read, and a 15-minute wait after 5 wrong passwords.</li><li>Long chats send only their later part to Claude, dropped in blocks of 20 messages so prompt caching keeps working and cost stays predictable.</li><li>Daily limits tracked in money rather than message counts, with a usage and cost box that shows what caching saved.</li></ul>
+        </section>
+
+        <section class="cs-section">
+            <h2 class="cs-h">Where it stands</h2>
+            <p class="cs-p">Of the first 15 students who signed up, 13 (87%) said their CAT scores improved.</p>
+        </section>
+
+        <section class="cta" aria-labelledby="cta-title">
+            <h2 id="cta-title" class="section-title" data-i18n="ctaTitle">Got ideas or want to collaborate?</h2>
+            <ul class="contact-cards contact-cards--row">
+                <li><a class="contact-card" href="mailto:runiejames@gmail.com"><span class="contact-icon"><i class="ph ph-envelope-simple" aria-hidden="true"></i></span><span><span class="caps" data-i18n="email">Email</span><span class="contact-value">runiejames@gmail.com</span></span><i class="ph ph-caret-right contact-arrow" aria-hidden="true"></i></a></li>
+                <li><a class="contact-card" href="https://wa.me/254740060124?text=Hi%20Rooney" target="_blank" rel="noopener noreferrer"><span class="contact-icon"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></span><span><span class="caps">WhatsApp</span><span class="contact-value" dir="ltr">+254 740 060 124</span></span><i class="ph ph-caret-right contact-arrow" aria-hidden="true"></i></a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <dialog id="viewer" class="viewer" aria-label="Image">
+        <form method="dialog" class="viewer-close-form">
+            <button class="icon-btn viewer-close" aria-label="Close" data-i18n-label="close"><i class="ph ph-x" aria-hidden="true"></i></button>
+        </form>
+        <img id="viewer-img" src="" alt="">
+    </dialog>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-line"><span>Rooney James</span> <span class="footer-sep" aria-hidden="true">/</span> <span data-i18n="footRole">Software engineering student</span> <span class="footer-sep" aria-hidden="true">/</span> <span data-i18n="footPlace">Nairobi, KE</span></p>
+            <a href="#top" class="footer-top"><span data-i18n="backTop">Back to top</span> <i class="ph ph-arrow-up" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+    <title>Highlights | Rooney James</title>
+    <meta name="description" content="Selected work, milestones and moments from Rooney James.">
+    <meta name="author" content="Rooney James">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kirai-portfolio.vercel.app/highlights">
+    <meta property="og:title" content="Highlights | Rooney James">
+    <meta property="og:description" content="Selected work, milestones and moments from Rooney James.">
+    <link rel="canonical" href="https://kirai-portfolio.vercel.app/highlights">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='-apple-system,Segoe UI,sans-serif' font-size='30' font-weight='700' fill='%23fefefe'%3ERJ%3C/text%3E%3C/svg%3E">
+
+    <script>
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem('portfolio-theme'); } catch (e) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Rooney James, home">RJ</a>
+            <nav class="nav-links" aria-label="Pages">
+                <a href="projects.html" data-i18n="navWork">Projects</a>
+                <a href="experience.html" data-i18n="navExp">Experience</a>
+                <a href="highlights.html" data-i18n="navHigh">Highlights</a>
+                <a href="community.html" data-i18n="navComm">Community</a>
+            </nav>
+            <span class="nav-divider" aria-hidden="true"></span>
+            <div class="nav-tools">
+                <label class="lang">
+                    <i class="ph ph-globe-simple" aria-hidden="true"></i>
+                    <select id="lang-select" aria-label="Language">
+                        <option value="en">EN</option>
+                        <option value="sw">SW</option>
+                        <option value="zh">中文</option>
+                        <option value="hi">हिंदी</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                        <option value="ar">عربي</option>
+                    </select>
+                </label>
+                <button id="theme-toggle" type="button" class="icon-btn" aria-label="Switch theme">
+                    <i class="ph ph-moon theme-moon" aria-hidden="true"></i>
+                    <i class="ph ph-sun theme-sun" aria-hidden="true"></i>
+                </button>
+                <button id="menu-toggle" type="button" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                    <i class="ph ph-list" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <nav id="menu" class="menu" aria-label="Pages" hidden>
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="projects.html" data-i18n="navWork">Projects</a>
+            <a href="experience.html" data-i18n="navExp">Experience</a>
+            <a href="highlights.html" data-i18n="navHigh">Highlights</a>
+            <a href="community.html" data-i18n="navComm">Community</a>
+            <a href="certifications.html" data-i18n="navCerts">Certifications</a>
+            <a href="tech-stack.html" data-i18n="navStack">Tech Stack</a>
+        </nav>
+    </header>
+
+    <main id="top" class="page page--sub">
+
+        <a href="index.html" class="back-link"><i class="ph ph-arrow-left" aria-hidden="true"></i> <span data-i18n="backHome">Back to Home</span></a>
+        <header class="page-head">
+            <h1 class="page-title" data-i18n="highTitle">Highlights</h1>
+            <p class="page-sub" data-i18n="highSub">Selected work, milestones and moments from my journey in tech.</p>
+        </header>
+
+        <div class="hgrid">
+            <a class="hcard hcard--big" href="gemmasight.html">
+                <span class="hcard-shot"><img src="assets/projects/gemmasight/cover.webp" alt="" loading="lazy"></span>
+                <span class="hcard-body">
+                    <span class="caps">Hackathon · Oct 2026</span>
+                    <span class="hcard-title">2nd place at an MLH hackathon</span>
+                    <span class="hcard-text">Led the code for GemmaSight, a camera assistant for blind and low-vision people built on Gemma 4.</span>
+                </span>
+            </a>
+            <a class="hcard" href="rahah.html">
+                <span class="hcard-shot"><img src="assets/projects/rahah/meet.webp" alt="" loading="lazy"></span>
+                <span class="hcard-body">
+                    <span class="caps">Product</span>
+                    <span class="hcard-title">Rahah is live</span>
+                    <span class="hcard-text">A study platform for Kenyan students. 13 of the first 15 who signed up said their CAT scores improved.</span>
+                </span>
+            </a>
+            <a class="hcard" href="neuse.html">
+                <span class="hcard-shot"><img src="assets/projects/neuse/command-center.webp" alt="" loading="lazy"></span>
+                <span class="hcard-body">
+                    <span class="caps">Competition · 2026–27</span>
+                    <span class="hcard-title">NeuSE enters the Huawei ICT Competition</span>
+                    <span class="hcard-text">An offline search-and-rescue prototype in the Innovation Track, with a live command center map.</span>
+                </span>
+            </a>
+            <a class="hcard" href="amanihaven.html">
+                <span class="hcard-shot"><img src="assets/projects/amanihaven/case.webp" alt="" loading="lazy"></span>
+                <span class="hcard-body">
+                    <span class="caps">Product</span>
+                    <span class="hcard-title">AmaniHaven's public demo</span>
+                    <span class="hcard-text">Try the full SMS and counselor flow on a pretend phone, from a first text to a case opening.</span>
+                </span>
+            </a>
+            <a class="hcard" href="community.html">
+                <span class="hcard-shot"><img src="assets/certificates/hacktoberfest-2026-hack-day-nairobi.jpg" alt="" loading="lazy"></span>
+                <span class="hcard-body">
+                    <span class="caps">Event · Oct 2026</span>
+                    <span class="hcard-title">Hacktoberfest Hack Day Nairobi</span>
+                    <span class="hcard-text">A day of open source contributions with MLH and DEV.</span>
+                </span>
+            </a>
+            <div class="hcard hcard--member">
+                <span class="hcard-shot hcard-shot--card">
+                    <span class="member-card" data-card-src="assets/certificates/nvidia-developer-program.jpg">
+                        <span class="member-card-kicker">Developer Program</span>
+                        <span class="member-card-name">Rooney James</span>
+                        <span class="member-card-since"><small>Member since</small>04/26</span>
+                    </span>
+                </span>
+                <span class="hcard-body">
+                    <span class="caps">Membership · Apr 2026</span>
+                    <span class="hcard-title">Joined the NVIDIA Developer Program</span>
+                    <span class="hcard-text">Access to NVIDIA's SDKs, training and developer tools for AI and accelerated computing.</span>
+                </span>
+            </div>
+        </div>
+
+        <section class="cta" aria-labelledby="cta-title">
+            <h2 id="cta-title" class="section-title" data-i18n="ctaTitle">Got ideas or want to collaborate?</h2>
+            <ul class="contact-cards contact-cards--row">
+                <li><a class="contact-card" href="mailto:runiejames@gmail.com"><span class="contact-icon"><i class="ph ph-envelope-simple" aria-hidden="true"></i></span><span><span class="caps" data-i18n="email">Email</span><span class="contact-value">runiejames@gmail.com</span></span><i class="ph ph-caret-right contact-arrow" aria-hidden="true"></i></a></li>
+                <li><a class="contact-card" href="https://wa.me/254740060124?text=Hi%20Rooney" target="_blank" rel="noopener noreferrer"><span class="contact-icon"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></span><span><span class="caps">WhatsApp</span><span class="contact-value" dir="ltr">+254 740 060 124</span></span><i class="ph ph-caret-right contact-arrow" aria-hidden="true"></i></a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-line"><span>Rooney James</span> <span class="footer-sep" aria-hidden="true">/</span> <span data-i18n="footRole">Software engineering student</span> <span class="footer-sep" aria-hidden="true">/</span> <span data-i18n="footPlace">Nairobi, KE</span></p>
+            <a href="#top" class="footer-top"><span data-i18n="backTop">Back to top</span> <i class="ph ph-arrow-up" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

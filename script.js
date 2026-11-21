@@ -5,21 +5,13 @@
 const translations = {
     en: {
         navWork: "Projects",
-        navStack: "Skills",
-        navWins: "Awards",
         navContact: "Contact",
-        role: "Nairobi, Kenya",
-        heroText: "I build AI products in Python, from a study platform with real users to offline computer vision for search and rescue.",
-        btnWork: "View projects",
-        btnChat: "WhatsApp",
-        workTitle: "Projects",
-        replay: "Replay",
-        linkDemo: "Live demo",
-        linkCode: "Code",
+        heroText: "I'm a software engineering student at Multimedia University of Kenya. I build AI products with <strong>Python</strong>, <strong>FastAPI</strong>, the <strong>Claude API</strong> and <strong>OpenCV</strong>, from a study platform with real users to offline computer vision for search and rescue.",
+        btnWork: "View Projects",
         p1Text: "A study platform for Kenyan students. It answers from their own notes with page citations, marks homework from a photo and takes M-Pesa payments. 13 of the first 15 users reported better CAT scores.",
         p2Text: "Free mental health support over SMS and USSD, so it works on any phone, in English or Kiswahili. Messages that show signs of crisis go to a human counselor. Phone numbers are encrypted and deleted after 30 days.",
         p3Text: "A camera assistant for blind and low-vision people, built on Gemma 4. It reads labels and medicine aloud and guides you to lost objects. It placed 2nd at an MLH hackathon with me as lead coder, and 15 blindfolded testers passed 17 of 21 scenarios.",
-        p4Text: "An offline thermal-imaging prototype for search and rescue, entered in the Huawei ICT Competition 2026–27. It finds warm areas in each frame with OpenCV and logs every detection locally, with no network needed.",
+        p4Text: "An offline thermal-imaging prototype for search and rescue, entered in the Huawei ICT Competition 2026–27. It finds people in thermal drone footage on the unit itself and sends sightings to a command center whenever a link is up.",
         stackTitle: "Skills",
         stackLang: "Languages",
         stackAi: "AI and computer vision",
@@ -31,20 +23,9 @@ const translations = {
         lvlNative: "native",
         lvlFluent: "fluent",
         lvlBasic: "basic",
-        winsTitle: "Awards and certifications",
-        groupHack: "Hackathons",
-        groupCerts: "Certificates",
-        groupMember: "Memberships",
-        place2: "2nd place",
-        place4: "4th place",
-        hack1: "Lead coder on GemmaSight",
-        hack2: "Designed the architecture of an AI study tool",
-        inProgress: "In progress",
-        attended: "Attended",
-        verify: "Verify",
         viewCert: "View certificate",
         close: "Close",
-        contribTitle: "GitHub activity",
+        contribTitle: "GitHub Activity",
         contribTotal: "Contributions in the last year",
         contribDay: "{n} contributions on {date}",
         contribDayOne: "1 contribution on {date}",
@@ -53,34 +34,89 @@ const translations = {
         contribMore: "More",
         contribError: "Couldn't load activity right now.",
         contribView: "See it on GitHub",
-        contactTitle: "Contact",
-        contactText: "I'm open to projects and collaborations.",
+        contactTitle: "Let's work together.",
+        contactText: "I'm open to projects and collaborations in AI and backend development. Whether you're building something new or improving a product that already exists, I'd like to hear about it.",
         email: "Email",
         backTop: "Back to top",
-        heroTitle: "AI and backend developer",
         p1Tests: "191 tests",
         p2Tests: "74 tests",
         p3Tests: "44 tests",
         p4Tests: "17 tests",
-        memberSub: "Member"
+        navExp: "Experience",
+        navCerts: "Certifications",
+        tag1: "AI Engineering",
+        tag2: "Backend Development",
+        tag3: "Computer Vision",
+        heroLead: "I Build, Test &",
+        heroAccent: "Ship.",
+        footRole: "Software engineering student",
+        footPlace: "Nairobi, KE",
+        navHigh: "Highlights",
+        navComm: "Community",
+        navStack: "Tech Stack",
+        btnContact: "Contact Me",
+        featTitle: "Featured Projects",
+        viewAll: "View All",
+        kind1: "AI study platform",
+        kind2: "Mental health support over SMS",
+        kind3: "Vision assistant on Gemma 4",
+        kind4: "Offline search and rescue",
+        caseStudy: "Case study",
+        visitSite: "Visit site",
+        tryDemo: "Try the demo",
+        viewCode: "View code",
+        expTitle: "Experience",
+        viewDetails: "View Details",
+        x1Role: "Lead Coder, GemmaSight",
+        x1Meta: "2nd place · Vision assistant on Gemma 4",
+        x2Role: "Developer, NeuSE",
+        x2Meta: "Innovation Track · Prototype",
+        x3Role: "Architecture and tooling",
+        x3Meta: "4th place · AI study tool for students",
+        memTitle: "Professional Memberships",
+        memSub: "Developer programs and communities I belong to.",
+        memRole: "Member · Since April 2026",
+        memDesc: "Access to NVIDIA's SDKs, training and developer tools for AI and accelerated computing.",
+        commTitle: "Community & Involvement",
+        commLead: "Hackathons, summits and volunteering",
+        commSub: "The events I compete in, learn from and give time to.",
+        eventPhotos: "Event Photos",
+        explore: "Explore",
+        techTitle: "Technologies",
+        certTitle: "Certifications",
+        viewCred: "View credential",
+        certAttend: "MLH × DEV · Certificate of attendance",
+        deckHint: "Tap the stack to shuffle",
+        recentTraining: "Currently studying",
+        eduTitle: "Education",
+        eduDate: "Expected 2029",
+        eduDegree: "Bachelor of Science in Software Engineering",
+        navHome: "Home",
+        backHome: "Back to Home",
+        backProjects: "Back to Projects",
+        projTitle: "Selected Projects",
+        projSub: "AI products I've designed, built and tested, from study tools to offline computer vision.",
+        moreGithub: "More on GitHub",
+        ctaTitle: "Got ideas or want to collaborate?",
+        expSub: "Hackathons, competitions and volunteering, and what I did there.",
+        highTitle: "Highlights",
+        highSub: "Selected work, milestones and moments from my journey in tech.",
+        commPageSub: "Hackathons, summits and volunteering that connect my work with the wider tech community.",
+        galleryTitle: "Event Gallery",
+        gallerySub: "Moments from events and meetups.",
+        certSub: "Courses, credentials and training in AI, machine learning and cloud.",
+        stackPageTitle: "Full Tech Stack",
+        stackPageSub: "The tools and technologies I use, and where I've used them."
     },
     sw: {
         navWork: "Miradi",
-        navStack: "Ujuzi",
-        navWins: "Tuzo",
         navContact: "Wasiliana",
-        role: "Nairobi, Kenya",
-        heroText: "Ninaunda bidhaa za AI kwa Python, kuanzia jukwaa la kusoma lenye watumiaji halisi hadi maono ya kompyuta yanayofanya kazi bila mtandao kwa utafutaji na uokoaji.",
-        btnWork: "Tazama miradi",
-        btnChat: "WhatsApp",
-        workTitle: "Miradi",
-        replay: "Cheza tena",
-        linkDemo: "Ijaribu",
-        linkCode: "Msimbo",
+        heroText: "Mimi ni mwanafunzi wa uhandisi wa programu katika Chuo Kikuu cha Multimedia cha Kenya. Ninaunda bidhaa za AI kwa <strong>Python</strong>, <strong>FastAPI</strong>, <strong>Claude API</strong> na <strong>OpenCV</strong>, kuanzia jukwaa la kusoma lenye watumiaji halisi hadi maono ya kompyuta yasiyohitaji mtandao kwa utafutaji na uokoaji.",
+        btnWork: "Tazama Miradi",
         p1Text: "Jukwaa la kusoma kwa wanafunzi wa Kenya. Linajibu kutoka kwa maandishi yao wenyewe na kutaja ukurasa, linasahihisha kazi ya nyumbani kutoka kwa picha na linapokea malipo ya M-Pesa. Watumiaji 13 kati ya 15 wa kwanza walisema alama zao za CAT ziliboreka.",
         p2Text: "Msaada wa afya ya akili bure kupitia SMS na USSD, hivyo unafanya kazi kwenye simu yoyote, kwa Kiingereza au Kiswahili. Ujumbe wenye dalili za dharura unapelekwa kwa mshauri halisi. Namba za simu zinasimbwa na kufutwa baada ya siku 30.",
         p3Text: "Msaidizi wa kamera kwa watu wasioona na wenye uoni hafifu, uliojengwa kwa Gemma 4. Unasoma lebo na dawa kwa sauti na kukuongoza kwa vitu vilivyopotea. Ulishika nafasi ya 2 katika hackathon ya MLH nikiwa mwandishi mkuu wa msimbo, na wajaribu 15 waliofumbwa macho walifaulu majaribio 17 kati ya 21.",
-        p4Text: "Mfano wa awali wa picha za joto usiohitaji mtandao kwa utafutaji na uokoaji, ulioshiriki Huawei ICT Competition 2026–27. Unatambua maeneo yenye joto kwenye kila fremu kwa OpenCV na kuhifadhi kila ugunduzi kwenye kifaa.",
+        p4Text: "Mfano wa awali wa picha za joto usiohitaji mtandao kwa utafutaji na uokoaji, ulioshiriki Huawei ICT Competition 2026–27. Unatambua watu kwenye video za joto za ndege isiyo na rubani moja kwa moja kwenye kifaa, na kutuma matokeo kwa kituo cha amri mtandao unapopatikana.",
         stackTitle: "Ujuzi",
         stackLang: "Lugha za programu",
         stackAi: "AI na maono ya kompyuta",
@@ -92,17 +128,6 @@ const translations = {
         lvlNative: "lugha ya mama",
         lvlFluent: "kwa ufasaha",
         lvlBasic: "msingi",
-        winsTitle: "Tuzo na vyeti",
-        groupHack: "Hackathon",
-        groupCerts: "Vyeti",
-        groupMember: "Uanachama",
-        place2: "Nafasi ya 2",
-        place4: "Nafasi ya 4",
-        hack1: "Mwandishi mkuu wa msimbo wa GemmaSight",
-        hack2: "Nilibuni muundo wa zana ya kusoma ya AI",
-        inProgress: "Inaendelea",
-        attended: "Nilihudhuria",
-        verify: "Thibitisha",
         viewCert: "Tazama cheti",
         close: "Funga",
         contribTitle: "Shughuli za GitHub",
@@ -114,34 +139,89 @@ const translations = {
         contribMore: "Nyingi",
         contribError: "Imeshindwa kupakia shughuli kwa sasa.",
         contribView: "Tazama GitHub",
-        contactTitle: "Wasiliana nami",
-        contactText: "Niko tayari kwa miradi na ushirikiano.",
+        contactTitle: "Tufanye kazi pamoja.",
+        contactText: "Niko tayari kwa miradi na ushirikiano katika AI na backend. Iwe unaunda kitu kipya au unaboresha bidhaa iliyopo, ningependa kusikia kuhusu hilo.",
         email: "Barua pepe",
         backTop: "Rudi juu",
-        heroTitle: "Msanidi wa AI na backend",
         p1Tests: "majaribio 191",
         p2Tests: "majaribio 74",
         p3Tests: "majaribio 44",
         p4Tests: "majaribio 17",
-        memberSub: "Mwanachama"
+        navExp: "Uzoefu",
+        navCerts: "Vyeti",
+        tag1: "Uhandisi wa AI",
+        tag2: "Uundaji wa Backend",
+        tag3: "Maono ya Kompyuta",
+        heroLead: "Ninajenga, Najaribu na",
+        heroAccent: "Kuzindua.",
+        footRole: "Mwanafunzi wa uhandisi wa programu",
+        footPlace: "Nairobi, KE",
+        navHigh: "Mambo Muhimu",
+        navComm: "Jamii",
+        navStack: "Teknolojia",
+        btnContact: "Wasiliana Nami",
+        featTitle: "Miradi Teule",
+        viewAll: "Tazama Yote",
+        kind1: "Jukwaa la kusoma la AI",
+        kind2: "Msaada wa afya ya akili kwa SMS",
+        kind3: "Msaidizi wa maono kwa Gemma 4",
+        kind4: "Utafutaji na uokoaji bila mtandao",
+        caseStudy: "Undani wa mradi",
+        visitSite: "Tembelea tovuti",
+        tryDemo: "Jaribu demo",
+        viewCode: "Tazama msimbo",
+        expTitle: "Uzoefu",
+        viewDetails: "Tazama Zaidi",
+        x1Role: "Mwandishi Mkuu wa Msimbo, GemmaSight",
+        x1Meta: "Nafasi ya 2 · Msaidizi wa maono kwa Gemma 4",
+        x2Role: "Msanidi, NeuSE",
+        x2Meta: "Innovation Track · Mfano wa awali",
+        x3Role: "Muundo na zana",
+        x3Meta: "Nafasi ya 4 · Zana ya kusoma ya AI kwa wanafunzi",
+        memTitle: "Uanachama wa Kitaaluma",
+        memSub: "Programu za wasanidi na jamii ninazoshiriki.",
+        memRole: "Mwanachama · Tangu Aprili 2026",
+        memDesc: "Ufikiaji wa SDK, mafunzo na zana za wasanidi za NVIDIA kwa AI na kompyuta ya kasi.",
+        commTitle: "Jamii na Ushiriki",
+        commLead: "Hackathon, mikutano na kujitolea",
+        commSub: "Matukio ninayoshindana, kujifunza na kutoa muda wangu.",
+        eventPhotos: "Picha za Matukio",
+        explore: "Gundua",
+        techTitle: "Teknolojia",
+        certTitle: "Vyeti",
+        viewCred: "Tazama cheti",
+        certAttend: "MLH × DEV · Cheti cha kuhudhuria",
+        deckHint: "Gusa mrundo kuchanganya",
+        recentTraining: "Ninachosoma sasa",
+        eduTitle: "Elimu",
+        eduDate: "Ninatarajia 2029",
+        eduDegree: "Shahada ya Sayansi katika Uhandisi wa Programu",
+        navHome: "Mwanzo",
+        backHome: "Rudi Mwanzo",
+        backProjects: "Rudi kwa Miradi",
+        projTitle: "Miradi Teule",
+        projSub: "Bidhaa za AI nilizobuni, kujenga na kujaribu, kuanzia zana za kusoma hadi maono ya kompyuta bila mtandao.",
+        moreGithub: "Zaidi kwenye GitHub",
+        ctaTitle: "Una wazo au ungependa tushirikiane?",
+        expSub: "Hackathon, mashindano na kujitolea, na nilichofanya huko.",
+        highTitle: "Mambo Muhimu",
+        highSub: "Kazi teule, hatua muhimu na matukio katika safari yangu ya teknolojia.",
+        commPageSub: "Hackathon, mikutano na kujitolea vinavyounganisha kazi yangu na jamii pana ya teknolojia.",
+        galleryTitle: "Picha za Matukio",
+        gallerySub: "Matukio kutoka kwenye mikutano na hafla.",
+        certSub: "Kozi, vyeti na mafunzo katika AI, ujifunzaji wa mashine na wingu.",
+        stackPageTitle: "Teknolojia Zote",
+        stackPageSub: "Zana na teknolojia ninazotumia, na nilipozitumia."
     },
     zh: {
         navWork: "项目",
-        navStack: "技能",
-        navWins: "奖项",
         navContact: "联系",
-        role: "肯尼亚 内罗毕",
-        heroText: "我用 Python 开发 AI 产品，从有真实用户的学习平台，到用于搜救的离线计算机视觉。",
+        heroText: "我是肯尼亚多媒体大学软件工程专业的学生。我用 <strong>Python</strong>、<strong>FastAPI</strong>、<strong>Claude API</strong> 和 <strong>OpenCV</strong> 开发 AI 产品，从有真实用户的学习平台，到用于搜救的离线计算机视觉。",
         btnWork: "查看项目",
-        btnChat: "WhatsApp",
-        workTitle: "项目",
-        replay: "重播",
-        linkDemo: "在线演示",
-        linkCode: "代码",
         p1Text: "为肯尼亚学生打造的学习平台。它根据学生自己的笔记作答并注明页码，能拍照批改作业，支持 M-Pesa 付款。首批 15 位用户中有 13 位表示 CAT 成绩提高了。",
         p2Text: "通过短信和 USSD 提供免费心理健康支持，任何手机都能用，支持英语和斯瓦希里语。出现危机迹象的消息会转给真人咨询师。手机号码经过加密，30 天后删除。",
         p3Text: "基于 Gemma 4 的相机助手，服务盲人和低视力人群。它能朗读标签和药品信息，并引导用户找到丢失的物品。我担任主力开发，项目在 MLH 黑客松获得第 2 名；15 位蒙眼测试者通过了 21 个场景中的 17 个。",
-        p4Text: "用于搜救的离线热成像原型，参加了华为 ICT 大赛 2026–27。它用 OpenCV 找出每帧中的温热区域，并在本地记录每次检测，无需网络。",
+        p4Text: "用于搜救的离线热成像原型，参加了华为 ICT 大赛 2026–27。它在设备本地从无人机热成像画面中找出人员，并在有网络时把发现发送到指挥中心。",
         stackTitle: "技能",
         stackLang: "编程语言",
         stackAi: "AI 与计算机视觉",
@@ -153,17 +233,6 @@ const translations = {
         lvlNative: "母语",
         lvlFluent: "流利",
         lvlBasic: "基础",
-        winsTitle: "奖项与证书",
-        groupHack: "黑客松",
-        groupCerts: "证书",
-        groupMember: "会员",
-        place2: "第 2 名",
-        place4: "第 4 名",
-        hack1: "GemmaSight 主力开发",
-        hack2: "为一款 AI 学习工具设计架构",
-        inProgress: "进行中",
-        attended: "参加",
-        verify: "验证",
         viewCert: "查看证书",
         close: "关闭",
         contribTitle: "GitHub 动态",
@@ -175,34 +244,89 @@ const translations = {
         contribMore: "多",
         contribError: "暂时无法加载动态。",
         contribView: "去 GitHub 查看",
-        contactTitle: "联系方式",
-        contactText: "欢迎项目合作与交流。",
+        contactTitle: "一起合作吧。",
+        contactText: "欢迎 AI 与后端开发方面的项目和合作。无论你在做新产品，还是想改进现有产品，都欢迎联系我。",
         email: "邮箱",
         backTop: "回到顶部",
-        heroTitle: "AI 与后端开发者",
         p1Tests: "191 个测试",
         p2Tests: "74 个测试",
         p3Tests: "44 个测试",
         p4Tests: "17 个测试",
-        memberSub: "会员"
+        navExp: "经历",
+        navCerts: "证书",
+        tag1: "AI 工程",
+        tag2: "后端开发",
+        tag3: "计算机视觉",
+        heroLead: "构建、测试、",
+        heroAccent: "上线。",
+        footRole: "软件工程专业学生",
+        footPlace: "肯尼亚 内罗毕",
+        navHigh: "亮点",
+        navComm: "社区",
+        navStack: "技术栈",
+        btnContact: "联系我",
+        featTitle: "精选项目",
+        viewAll: "查看全部",
+        kind1: "AI 学习平台",
+        kind2: "短信心理健康支持",
+        kind3: "基于 Gemma 4 的视觉助手",
+        kind4: "离线搜救",
+        caseStudy: "案例详情",
+        visitSite: "访问网站",
+        tryDemo: "试用演示",
+        viewCode: "查看代码",
+        expTitle: "经历",
+        viewDetails: "查看详情",
+        x1Role: "主力开发，GemmaSight",
+        x1Meta: "第 2 名 · 基于 Gemma 4 的视觉助手",
+        x2Role: "开发者，NeuSE",
+        x2Meta: "创新赛道 · 原型",
+        x3Role: "架构与工具选型",
+        x3Meta: "第 4 名 · 面向学生的 AI 学习工具",
+        memTitle: "专业会员",
+        memSub: "我加入的开发者计划和社区。",
+        memRole: "会员 · 2026 年 4 月起",
+        memDesc: "可使用 NVIDIA 的 SDK、培训和开发者工具，用于 AI 与加速计算。",
+        commTitle: "社区与参与",
+        commLead: "黑客松、峰会与志愿服务",
+        commSub: "我参赛、学习和贡献时间的活动。",
+        eventPhotos: "活动照片",
+        explore: "了解更多",
+        techTitle: "技术",
+        certTitle: "证书",
+        viewCred: "查看证书",
+        certAttend: "MLH × DEV · 参会证书",
+        deckHint: "点击卡片切换",
+        recentTraining: "正在学习",
+        eduTitle: "教育",
+        eduDate: "预计 2029 年",
+        eduDegree: "软件工程理学学士",
+        navHome: "首页",
+        backHome: "返回首页",
+        backProjects: "返回项目",
+        projTitle: "精选项目",
+        projSub: "我设计、开发并测试过的 AI 产品，从学习工具到离线计算机视觉。",
+        moreGithub: "更多项目见 GitHub",
+        ctaTitle: "有想法，或想一起合作？",
+        expSub: "黑客松、竞赛和志愿服务，以及我在其中做了什么。",
+        highTitle: "亮点",
+        highSub: "我在技术之路上的精选作品、里程碑和时刻。",
+        commPageSub: "把我的工作与更广泛的技术社区联系起来的黑客松、峰会和志愿服务。",
+        galleryTitle: "活动相册",
+        gallerySub: "活动和聚会中的瞬间。",
+        certSub: "AI、机器学习和云方面的课程、证书和培训。",
+        stackPageTitle: "完整技术栈",
+        stackPageSub: "我使用的工具和技术，以及用在哪些项目里。"
     },
     hi: {
         navWork: "प्रोजेक्ट",
-        navStack: "कौशल",
-        navWins: "पुरस्कार",
         navContact: "संपर्क",
-        role: "नैरोबी, केन्या",
-        heroText: "मैं Python में AI प्रोडक्ट बनाता हूँ, असली यूज़र्स वाले स्टडी प्लेटफ़ॉर्म से लेकर खोज और बचाव के लिए ऑफ़लाइन कंप्यूटर विज़न तक।",
+        heroText: "मैं मल्टीमीडिया यूनिवर्सिटी ऑफ़ केन्या में सॉफ़्टवेयर इंजीनियरिंग का छात्र हूँ। मैं <strong>Python</strong>, <strong>FastAPI</strong>, <strong>Claude API</strong> और <strong>OpenCV</strong> से AI प्रोडक्ट बनाता हूँ, असली यूज़र्स वाले स्टडी प्लेटफ़ॉर्म से लेकर खोज और बचाव के लिए ऑफ़लाइन कंप्यूटर विज़न तक।",
         btnWork: "प्रोजेक्ट देखें",
-        btnChat: "WhatsApp",
-        workTitle: "प्रोजेक्ट",
-        replay: "फिर से चलाएँ",
-        linkDemo: "लाइव डेमो",
-        linkCode: "कोड",
         p1Text: "केन्या के छात्रों के लिए स्टडी प्लेटफ़ॉर्म। यह उनके अपने नोट्स से पेज के हवाले के साथ जवाब देता है, फ़ोटो से होमवर्क जाँचता है और M-Pesa से भुगतान लेता है। पहले 15 में से 13 यूज़र्स ने बताया कि उनके CAT अंक बढ़े।",
         p2Text: "SMS और USSD पर मुफ़्त मानसिक स्वास्थ्य सहायता, जो किसी भी फ़ोन पर अंग्रेज़ी या स्वाहिली में चलती है। संकट के संकेत वाले मैसेज एक असली काउंसलर तक जाते हैं। फ़ोन नंबर एन्क्रिप्ट होते हैं और 30 दिन बाद डिलीट हो जाते हैं।",
         p3Text: "दृष्टिहीन और कम दृष्टि वाले लोगों के लिए Gemma 4 पर बना कैमरा सहायक। यह लेबल और दवाइयाँ पढ़कर सुनाता है और खोई चीज़ों तक ले जाता है। मेरे मुख्य कोडर रहते इसने MLH हैकाथॉन में दूसरा स्थान पाया, और आँखों पर पट्टी बाँधे 15 टेस्टर्स 21 में से 17 परिदृश्यों में सफल रहे।",
-        p4Text: "खोज और बचाव के लिए ऑफ़लाइन थर्मल इमेजिंग प्रोटोटाइप, जो Huawei ICT Competition 2026–27 में शामिल हुआ। यह OpenCV से हर फ़्रेम में गर्म क्षेत्र ढूँढता है और हर डिटेक्शन बिना नेटवर्क के लोकल रूप से दर्ज करता है।",
+        p4Text: "खोज और बचाव के लिए ऑफ़लाइन थर्मल इमेजिंग प्रोटोटाइप, जो Huawei ICT Competition 2026–27 में शामिल हुआ। यह ड्रोन के थर्मल फ़ुटेज में लोगों को डिवाइस पर ही ढूँढता है और नेटवर्क मिलते ही नतीजे कमांड सेंटर भेजता है।",
         stackTitle: "कौशल",
         stackLang: "प्रोग्रामिंग भाषाएँ",
         stackAi: "AI और कंप्यूटर विज़न",
@@ -214,17 +338,6 @@ const translations = {
         lvlNative: "मातृभाषा",
         lvlFluent: "धाराप्रवाह",
         lvlBasic: "बुनियादी",
-        winsTitle: "पुरस्कार और सर्टिफ़िकेट",
-        groupHack: "हैकाथॉन",
-        groupCerts: "सर्टिफ़िकेट",
-        groupMember: "सदस्यता",
-        place2: "दूसरा स्थान",
-        place4: "चौथा स्थान",
-        hack1: "GemmaSight पर मुख्य कोडर",
-        hack2: "एक AI स्टडी टूल का आर्किटेक्चर डिज़ाइन किया",
-        inProgress: "जारी",
-        attended: "भाग लिया",
-        verify: "सत्यापित करें",
         viewCert: "सर्टिफ़िकेट देखें",
         close: "बंद करें",
         contribTitle: "GitHub गतिविधि",
@@ -236,34 +349,89 @@ const translations = {
         contribMore: "ज़्यादा",
         contribError: "अभी गतिविधि लोड नहीं हो सकी।",
         contribView: "GitHub पर देखें",
-        contactTitle: "संपर्क",
-        contactText: "मैं प्रोजेक्ट्स और सहयोग के लिए उपलब्ध हूँ।",
+        contactTitle: "चलिए साथ काम करते हैं।",
+        contactText: "मैं AI और बैकएंड डेवलपमेंट में प्रोजेक्ट्स और सहयोग के लिए उपलब्ध हूँ। चाहे आप कुछ नया बना रहे हों या किसी मौजूदा प्रोडक्ट को बेहतर करना चाहते हों, मुझे बताइए।",
         email: "ईमेल",
         backTop: "ऊपर जाएँ",
-        heroTitle: "AI और बैकएंड डेवलपर",
         p1Tests: "191 टेस्ट",
         p2Tests: "74 टेस्ट",
         p3Tests: "44 टेस्ट",
         p4Tests: "17 टेस्ट",
-        memberSub: "सदस्य"
+        navExp: "अनुभव",
+        navCerts: "सर्टिफ़िकेट",
+        tag1: "AI इंजीनियरिंग",
+        tag2: "बैकएंड डेवलपमेंट",
+        tag3: "कंप्यूटर विज़न",
+        heroLead: "बनाता हूँ, टेस्ट करता हूँ और",
+        heroAccent: "लॉन्च करता हूँ।",
+        footRole: "सॉफ़्टवेयर इंजीनियरिंग छात्र",
+        footPlace: "नैरोबी, केन्या",
+        navHigh: "हाइलाइट्स",
+        navComm: "कम्युनिटी",
+        navStack: "टेक स्टैक",
+        btnContact: "संपर्क करें",
+        featTitle: "चुनिंदा प्रोजेक्ट",
+        viewAll: "सभी देखें",
+        kind1: "AI स्टडी प्लेटफ़ॉर्म",
+        kind2: "SMS पर मानसिक स्वास्थ्य सहायता",
+        kind3: "Gemma 4 पर विज़न सहायक",
+        kind4: "ऑफ़लाइन खोज और बचाव",
+        caseStudy: "केस स्टडी",
+        visitSite: "साइट देखें",
+        tryDemo: "डेमो आज़माएँ",
+        viewCode: "कोड देखें",
+        expTitle: "अनुभव",
+        viewDetails: "विवरण देखें",
+        x1Role: "मुख्य कोडर, GemmaSight",
+        x1Meta: "दूसरा स्थान · Gemma 4 पर विज़न सहायक",
+        x2Role: "डेवलपर, NeuSE",
+        x2Meta: "इनोवेशन ट्रैक · प्रोटोटाइप",
+        x3Role: "आर्किटेक्चर और टूल्स",
+        x3Meta: "चौथा स्थान · छात्रों के लिए AI स्टडी टूल",
+        memTitle: "पेशेवर सदस्यता",
+        memSub: "डेवलपर प्रोग्राम और कम्युनिटी जिनका मैं हिस्सा हूँ।",
+        memRole: "सदस्य · अप्रैल 2026 से",
+        memDesc: "AI और एक्सेलेरेटेड कंप्यूटिंग के लिए NVIDIA के SDK, ट्रेनिंग और डेवलपर टूल्स तक पहुँच।",
+        commTitle: "कम्युनिटी और भागीदारी",
+        commLead: "हैकाथॉन, समिट और स्वयंसेवा",
+        commSub: "वे इवेंट जिनमें मैं हिस्सा लेता हूँ, सीखता हूँ और समय देता हूँ।",
+        eventPhotos: "इवेंट फ़ोटो",
+        explore: "देखें",
+        techTitle: "टेक्नोलॉजी",
+        certTitle: "सर्टिफ़िकेट",
+        viewCred: "सर्टिफ़िकेट देखें",
+        certAttend: "MLH × DEV · उपस्थिति प्रमाणपत्र",
+        deckHint: "बदलने के लिए स्टैक पर टैप करें",
+        recentTraining: "अभी पढ़ रहा हूँ",
+        eduTitle: "शिक्षा",
+        eduDate: "2029 में अपेक्षित",
+        eduDegree: "सॉफ़्टवेयर इंजीनियरिंग में बैचलर ऑफ़ साइंस",
+        navHome: "होम",
+        backHome: "होम पर जाएँ",
+        backProjects: "प्रोजेक्ट पर वापस",
+        projTitle: "चुनिंदा प्रोजेक्ट",
+        projSub: "AI प्रोडक्ट जिन्हें मैंने डिज़ाइन किया, बनाया और टेस्ट किया, स्टडी टूल से लेकर ऑफ़लाइन कंप्यूटर विज़न तक।",
+        moreGithub: "GitHub पर और देखें",
+        ctaTitle: "कोई आइडिया है या साथ काम करना चाहते हैं?",
+        expSub: "हैकाथॉन, प्रतियोगिताएँ और स्वयंसेवा, और वहाँ मैंने क्या किया।",
+        highTitle: "हाइलाइट्स",
+        highSub: "टेक में मेरे सफ़र के चुनिंदा काम, उपलब्धियाँ और पल।",
+        commPageSub: "हैकाथॉन, समिट और स्वयंसेवा जो मेरे काम को बड़ी टेक कम्युनिटी से जोड़ते हैं।",
+        galleryTitle: "इवेंट गैलरी",
+        gallerySub: "इवेंट और मीटअप के पल।",
+        certSub: "AI, मशीन लर्निंग और क्लाउड में कोर्स, सर्टिफ़िकेट और ट्रेनिंग।",
+        stackPageTitle: "पूरा टेक स्टैक",
+        stackPageSub: "जिन टूल्स और टेक्नोलॉजी का मैं इस्तेमाल करता हूँ, और कहाँ किया है।"
     },
     es: {
         navWork: "Proyectos",
-        navStack: "Habilidades",
-        navWins: "Premios",
         navContact: "Contacto",
-        role: "Nairobi, Kenia",
-        heroText: "Creo productos de IA en Python, desde una plataforma de estudio con usuarios reales hasta visión por computadora sin conexión para búsqueda y rescate.",
+        heroText: "Soy estudiante de ingeniería de software en la Multimedia University of Kenya. Creo productos de IA con <strong>Python</strong>, <strong>FastAPI</strong>, la <strong>API de Claude</strong> y <strong>OpenCV</strong>, desde una plataforma de estudio con usuarios reales hasta visión por computadora sin conexión para búsqueda y rescate.",
         btnWork: "Ver proyectos",
-        btnChat: "WhatsApp",
-        workTitle: "Proyectos",
-        replay: "Repetir",
-        linkDemo: "Demo",
-        linkCode: "Código",
         p1Text: "Una plataforma de estudio para estudiantes en Kenia. Responde a partir de sus propios apuntes citando la página, corrige tareas desde una foto y acepta pagos con M-Pesa. 13 de los primeros 15 usuarios dijeron haber mejorado sus notas de CAT.",
         p2Text: "Apoyo gratuito de salud mental por SMS y USSD, así que funciona en cualquier teléfono, en inglés o suajili. Los mensajes con señales de crisis llegan a un consejero humano. Los números se cifran y se borran a los 30 días.",
         p3Text: "Un asistente de cámara para personas ciegas o con baja visión, hecho con Gemma 4. Lee etiquetas y medicamentos en voz alta y te guía hacia objetos perdidos. Quedó 2.º en un hackathon de MLH conmigo como programador principal, y 15 testers con los ojos vendados superaron 17 de 21 escenarios.",
-        p4Text: "Un prototipo de imagen térmica sin conexión para búsqueda y rescate, presentado al Huawei ICT Competition 2026–27. Encuentra zonas cálidas en cada fotograma con OpenCV y guarda cada detección en local, sin necesidad de red.",
+        p4Text: "Un prototipo de imagen térmica sin conexión para búsqueda y rescate, presentado al Huawei ICT Competition 2026–27. Detecta personas en vídeo térmico de dron en el propio equipo y envía los avistamientos a un centro de mando cuando hay conexión.",
         stackTitle: "Habilidades",
         stackLang: "Lenguajes",
         stackAi: "IA y visión por computadora",
@@ -275,17 +443,6 @@ const translations = {
         lvlNative: "nativo",
         lvlFluent: "fluido",
         lvlBasic: "básico",
-        winsTitle: "Premios y certificaciones",
-        groupHack: "Hackatones",
-        groupCerts: "Certificados",
-        groupMember: "Membresías",
-        place2: "2.º lugar",
-        place4: "4.º lugar",
-        hack1: "Programador principal de GemmaSight",
-        hack2: "Diseñé la arquitectura de una herramienta de estudio con IA",
-        inProgress: "En curso",
-        attended: "Asistí",
-        verify: "Verificar",
         viewCert: "Ver certificado",
         close: "Cerrar",
         contribTitle: "Actividad en GitHub",
@@ -297,34 +454,89 @@ const translations = {
         contribMore: "Más",
         contribError: "No se pudo cargar la actividad.",
         contribView: "Verla en GitHub",
-        contactTitle: "Contacto",
-        contactText: "Estoy disponible para proyectos y colaboraciones.",
+        contactTitle: "Trabajemos juntos.",
+        contactText: "Estoy abierto a proyectos y colaboraciones en IA y desarrollo backend. Tanto si estás creando algo nuevo como si quieres mejorar un producto que ya existe, me encantará saberlo.",
         email: "Correo",
         backTop: "Volver arriba",
-        heroTitle: "Desarrollador de IA y backend",
         p1Tests: "191 tests",
         p2Tests: "74 tests",
         p3Tests: "44 tests",
         p4Tests: "17 tests",
-        memberSub: "Miembro"
+        navExp: "Experiencia",
+        navCerts: "Certificaciones",
+        tag1: "Ingeniería de IA",
+        tag2: "Desarrollo backend",
+        tag3: "Visión por computadora",
+        heroLead: "Construyo, pruebo y",
+        heroAccent: "lanzo.",
+        footRole: "Estudiante de ingeniería de software",
+        footPlace: "Nairobi, KE",
+        navHigh: "Destacados",
+        navComm: "Comunidad",
+        navStack: "Tecnologías",
+        btnContact: "Contáctame",
+        featTitle: "Proyectos destacados",
+        viewAll: "Ver todo",
+        kind1: "Plataforma de estudio con IA",
+        kind2: "Apoyo de salud mental por SMS",
+        kind3: "Asistente visual con Gemma 4",
+        kind4: "Búsqueda y rescate sin conexión",
+        caseStudy: "Caso de estudio",
+        visitSite: "Visitar sitio",
+        tryDemo: "Probar la demo",
+        viewCode: "Ver código",
+        expTitle: "Experiencia",
+        viewDetails: "Ver detalles",
+        x1Role: "Programador principal, GemmaSight",
+        x1Meta: "2.º lugar · Asistente visual con Gemma 4",
+        x2Role: "Desarrollador, NeuSE",
+        x2Meta: "Innovation Track · Prototipo",
+        x3Role: "Arquitectura y herramientas",
+        x3Meta: "4.º lugar · Herramienta de estudio con IA",
+        memTitle: "Membresías profesionales",
+        memSub: "Programas para desarrolladores y comunidades de los que formo parte.",
+        memRole: "Miembro · Desde abril de 2026",
+        memDesc: "Acceso a los SDK, la formación y las herramientas de NVIDIA para IA y computación acelerada.",
+        commTitle: "Comunidad y participación",
+        commLead: "Hackatones, cumbres y voluntariado",
+        commSub: "Los eventos en los que compito, aprendo y colaboro.",
+        eventPhotos: "Fotos de eventos",
+        explore: "Explorar",
+        techTitle: "Tecnologías",
+        certTitle: "Certificaciones",
+        viewCred: "Ver credencial",
+        certAttend: "MLH × DEV · Certificado de asistencia",
+        deckHint: "Toca la pila para barajar",
+        recentTraining: "Estudiando ahora",
+        eduTitle: "Educación",
+        eduDate: "Previsto 2029",
+        eduDegree: "Licenciatura en Ingeniería de Software",
+        navHome: "Inicio",
+        backHome: "Volver al inicio",
+        backProjects: "Volver a proyectos",
+        projTitle: "Proyectos seleccionados",
+        projSub: "Productos de IA que he diseñado, construido y probado, desde herramientas de estudio hasta visión por computadora sin conexión.",
+        moreGithub: "Más en GitHub",
+        ctaTitle: "¿Tienes una idea o quieres colaborar?",
+        expSub: "Hackatones, competiciones y voluntariado, y lo que hice en cada uno.",
+        highTitle: "Destacados",
+        highSub: "Trabajos, hitos y momentos de mi camino en la tecnología.",
+        commPageSub: "Hackatones, cumbres y voluntariado que conectan mi trabajo con la comunidad tecnológica.",
+        galleryTitle: "Galería de eventos",
+        gallerySub: "Momentos de eventos y encuentros.",
+        certSub: "Cursos, credenciales y formación en IA, aprendizaje automático y nube.",
+        stackPageTitle: "Tecnologías completas",
+        stackPageSub: "Las herramientas y tecnologías que uso, y dónde las he usado."
     },
     fr: {
         navWork: "Projets",
-        navStack: "Compétences",
-        navWins: "Prix",
         navContact: "Contact",
-        role: "Nairobi, Kenya",
-        heroText: "Je crée des produits d'IA en Python, d'une plateforme de révision avec de vrais utilisateurs à la vision par ordinateur hors ligne pour la recherche et le sauvetage.",
+        heroText: "Je suis étudiant en génie logiciel à la Multimedia University of Kenya. Je crée des produits d'IA avec <strong>Python</strong>, <strong>FastAPI</strong>, l'<strong>API Claude</strong> et <strong>OpenCV</strong>, d'une plateforme de révision avec de vrais utilisateurs à la vision par ordinateur hors ligne pour la recherche et le sauvetage.",
         btnWork: "Voir les projets",
-        btnChat: "WhatsApp",
-        workTitle: "Projets",
-        replay: "Rejouer",
-        linkDemo: "Démo",
-        linkCode: "Code",
         p1Text: "Une plateforme de révision pour les élèves kényans. Elle répond à partir de leurs propres notes en citant la page, corrige les devoirs à partir d'une photo et accepte les paiements M-Pesa. 13 des 15 premiers utilisateurs disent avoir amélioré leurs notes de CAT.",
         p2Text: "Un soutien psychologique gratuit par SMS et USSD, qui fonctionne donc sur n'importe quel téléphone, en anglais ou en swahili. Les messages qui montrent des signes de crise sont transmis à un conseiller humain. Les numéros sont chiffrés et supprimés après 30 jours.",
         p3Text: "Un assistant caméra pour les personnes aveugles et malvoyantes, construit avec Gemma 4. Il lit à voix haute étiquettes et médicaments et guide vers les objets perdus. Il a fini 2e d'un hackathon MLH, avec moi comme développeur principal, et 15 testeurs les yeux bandés ont réussi 17 scénarios sur 21.",
-        p4Text: "Un prototype d'imagerie thermique hors ligne pour la recherche et le sauvetage, présenté au Huawei ICT Competition 2026–27. Il repère les zones chaudes de chaque image avec OpenCV et enregistre chaque détection en local, sans réseau.",
+        p4Text: "Un prototype d'imagerie thermique hors ligne pour la recherche et le sauvetage, présenté au Huawei ICT Competition 2026–27. Il repère les personnes dans les images thermiques de drone directement sur l'appareil et envoie les détections à un centre de commandement dès qu'une connexion existe.",
         stackTitle: "Compétences",
         stackLang: "Langages",
         stackAi: "IA et vision par ordinateur",
@@ -336,17 +548,6 @@ const translations = {
         lvlNative: "natif",
         lvlFluent: "courant",
         lvlBasic: "notions",
-        winsTitle: "Prix et certifications",
-        groupHack: "Hackathons",
-        groupCerts: "Certificats",
-        groupMember: "Adhésions",
-        place2: "2e place",
-        place4: "4e place",
-        hack1: "Développeur principal de GemmaSight",
-        hack2: "J'ai conçu l'architecture d'un outil de révision par IA",
-        inProgress: "En cours",
-        attended: "Participation",
-        verify: "Vérifier",
         viewCert: "Voir le certificat",
         close: "Fermer",
         contribTitle: "Activité GitHub",
@@ -358,34 +559,89 @@ const translations = {
         contribMore: "Plus",
         contribError: "Activité indisponible pour le moment.",
         contribView: "Voir sur GitHub",
-        contactTitle: "Contact",
-        contactText: "Je suis ouvert aux projets et aux collaborations.",
+        contactTitle: "Travaillons ensemble.",
+        contactText: "Je suis ouvert aux projets et collaborations en IA et en développement backend. Que vous lanciez quelque chose de nouveau ou amélioriez un produit existant, parlons-en.",
         email: "E-mail",
         backTop: "Haut de page",
-        heroTitle: "Développeur IA et backend",
         p1Tests: "191 tests",
         p2Tests: "74 tests",
         p3Tests: "44 tests",
         p4Tests: "17 tests",
-        memberSub: "Membre"
+        navExp: "Expérience",
+        navCerts: "Certifications",
+        tag1: "Ingénierie IA",
+        tag2: "Développement backend",
+        tag3: "Vision par ordinateur",
+        heroLead: "Je conçois, je teste et je",
+        heroAccent: "livre.",
+        footRole: "Étudiant en génie logiciel",
+        footPlace: "Nairobi, KE",
+        navHigh: "Temps forts",
+        navComm: "Communauté",
+        navStack: "Technologies",
+        btnContact: "Me contacter",
+        featTitle: "Projets phares",
+        viewAll: "Tout voir",
+        kind1: "Plateforme de révision IA",
+        kind2: "Soutien psychologique par SMS",
+        kind3: "Assistant visuel avec Gemma 4",
+        kind4: "Recherche et sauvetage hors ligne",
+        caseStudy: "Étude de cas",
+        visitSite: "Voir le site",
+        tryDemo: "Essayer la démo",
+        viewCode: "Voir le code",
+        expTitle: "Expérience",
+        viewDetails: "Voir le détail",
+        x1Role: "Développeur principal, GemmaSight",
+        x1Meta: "2e place · Assistant visuel avec Gemma 4",
+        x2Role: "Développeur, NeuSE",
+        x2Meta: "Innovation Track · Prototype",
+        x3Role: "Architecture et outils",
+        x3Meta: "4e place · Outil de révision par IA",
+        memTitle: "Adhésions professionnelles",
+        memSub: "Les programmes et communautés de développeurs dont je fais partie.",
+        memRole: "Membre · Depuis avril 2026",
+        memDesc: "Accès aux SDK, formations et outils de NVIDIA pour l'IA et le calcul accéléré.",
+        commTitle: "Communauté et engagement",
+        commLead: "Hackathons, sommets et bénévolat",
+        commSub: "Les événements où je participe, j'apprends et je donne de mon temps.",
+        eventPhotos: "Photos",
+        explore: "Explorer",
+        techTitle: "Technologies",
+        certTitle: "Certifications",
+        viewCred: "Voir le certificat",
+        certAttend: "MLH × DEV · Certificat de participation",
+        deckHint: "Touchez la pile pour mélanger",
+        recentTraining: "En cours",
+        eduTitle: "Formation",
+        eduDate: "Prévu en 2029",
+        eduDegree: "Licence en génie logiciel",
+        navHome: "Accueil",
+        backHome: "Retour à l'accueil",
+        backProjects: "Retour aux projets",
+        projTitle: "Projets choisis",
+        projSub: "Des produits d'IA que j'ai conçus, construits et testés, des outils de révision à la vision par ordinateur hors ligne.",
+        moreGithub: "Plus sur GitHub",
+        ctaTitle: "Une idée ou envie de collaborer ?",
+        expSub: "Hackathons, compétitions et bénévolat, et ce que j'y ai fait.",
+        highTitle: "Temps forts",
+        highSub: "Travaux, étapes et moments de mon parcours dans la tech.",
+        commPageSub: "Hackathons, sommets et bénévolat qui relient mon travail à la communauté tech.",
+        galleryTitle: "Galerie",
+        gallerySub: "Des moments d'événements et de rencontres.",
+        certSub: "Cours, certificats et formations en IA, apprentissage automatique et cloud.",
+        stackPageTitle: "Toutes les technologies",
+        stackPageSub: "Les outils et technologies que j'utilise, et où je les ai utilisés."
     },
     ar: {
         navWork: "المشاريع",
-        navStack: "المهارات",
-        navWins: "الجوائز",
         navContact: "تواصل",
-        role: "نيروبي، كينيا",
-        heroText: "أبني منتجات ذكاء اصطناعي بلغة Python، من منصة دراسة لها مستخدمون حقيقيون إلى رؤية حاسوبية تعمل دون اتصال لعمليات البحث والإنقاذ.",
+        heroText: "أنا طالب هندسة برمجيات في جامعة الوسائط المتعددة في كينيا. أبني منتجات ذكاء اصطناعي باستخدام <strong>Python</strong> و<strong>FastAPI</strong> و<strong>Claude API</strong> و<strong>OpenCV</strong>، من منصة دراسة لها مستخدمون حقيقيون إلى رؤية حاسوبية تعمل دون اتصال لعمليات البحث والإنقاذ.",
         btnWork: "عرض المشاريع",
-        btnChat: "WhatsApp",
-        workTitle: "المشاريع",
-        replay: "إعادة التشغيل",
-        linkDemo: "تجربة مباشرة",
-        linkCode: "الكود",
         p1Text: "منصة دراسة لطلاب كينيا. تجيب من ملاحظات الطالب نفسه مع ذكر الصفحة، وتصحح الواجبات من صورة، وتقبل الدفع عبر M-Pesa. أفاد 13 من أول 15 مستخدمًا بتحسّن درجاتهم في اختبارات CAT.",
         p2Text: "دعم نفسي مجاني عبر الرسائل القصيرة و USSD، لذا يعمل على أي هاتف، بالإنجليزية أو السواحيلية. الرسائل التي تظهر فيها علامات أزمة تصل إلى مستشار بشري. أرقام الهواتف مشفّرة وتُحذف بعد 30 يومًا.",
         p3Text: "مساعد بالكاميرا للمكفوفين وضعاف البصر، مبني على Gemma 4. يقرأ الملصقات والأدوية بصوت عالٍ ويرشد إلى الأشياء المفقودة. حصل على المركز الثاني في هاكاثون MLH وكنت المبرمج الرئيسي، واجتاز 15 مختبرًا معصوبي الأعين 17 من 21 سيناريو.",
-        p4Text: "نموذج أولي للتصوير الحراري يعمل دون اتصال لعمليات البحث والإنقاذ، شارك في مسابقة Huawei ICT 2026–27. يحدد المناطق الدافئة في كل إطار باستخدام OpenCV ويسجل كل اكتشاف محليًا دون الحاجة إلى شبكة.",
+        p4Text: "نموذج أولي للتصوير الحراري يعمل دون اتصال لعمليات البحث والإنقاذ، شارك في مسابقة Huawei ICT 2026–27. يكتشف الأشخاص في لقطات الطائرات المسيّرة الحرارية على الجهاز نفسه، ويرسل النتائج إلى مركز القيادة عند توفر اتصال.",
         stackTitle: "المهارات",
         stackLang: "لغات البرمجة",
         stackAi: "الذكاء الاصطناعي والرؤية الحاسوبية",
@@ -397,17 +653,6 @@ const translations = {
         lvlNative: "لغتي الأم",
         lvlFluent: "بطلاقة",
         lvlBasic: "مبتدئ",
-        winsTitle: "الجوائز والشهادات",
-        groupHack: "الهاكاثونات",
-        groupCerts: "الشهادات",
-        groupMember: "العضويات",
-        place2: "المركز الثاني",
-        place4: "المركز الرابع",
-        hack1: "المبرمج الرئيسي لـ GemmaSight",
-        hack2: "صممت بنية أداة دراسة بالذكاء الاصطناعي",
-        inProgress: "قيد الدراسة",
-        attended: "حضور",
-        verify: "تحقق",
         viewCert: "عرض الشهادة",
         close: "إغلاق",
         contribTitle: "النشاط على GitHub",
@@ -419,16 +664,79 @@ const translations = {
         contribMore: "أكثر",
         contribError: "تعذّر تحميل النشاط الآن.",
         contribView: "شاهده على GitHub",
-        contactTitle: "تواصل",
-        contactText: "أرحب بالمشاريع والتعاون.",
+        contactTitle: "لنعمل معًا.",
+        contactText: "أرحب بالمشاريع والتعاون في الذكاء الاصطناعي وتطوير الأنظمة الخلفية. سواء كنت تبني شيئًا جديدًا أو تحسّن منتجًا قائمًا، يسعدني أن أسمع منك.",
         email: "البريد",
         backTop: "إلى الأعلى",
-        heroTitle: "مطوّر ذكاء اصطناعي وأنظمة خلفية",
         p1Tests: "191 اختبارًا",
         p2Tests: "74 اختبارًا",
         p3Tests: "44 اختبارًا",
         p4Tests: "17 اختبارًا",
-        memberSub: "عضو"
+        navExp: "الخبرة",
+        navCerts: "الشهادات",
+        tag1: "هندسة الذكاء الاصطناعي",
+        tag2: "تطوير الأنظمة الخلفية",
+        tag3: "الرؤية الحاسوبية",
+        heroLead: "أبني، أختبر،",
+        heroAccent: "وأُطلق.",
+        footRole: "طالب هندسة برمجيات",
+        footPlace: "نيروبي، كينيا",
+        navHigh: "أبرز الأعمال",
+        navComm: "المجتمع",
+        navStack: "التقنيات",
+        btnContact: "تواصل معي",
+        featTitle: "مشاريع مختارة",
+        viewAll: "عرض الكل",
+        kind1: "منصة دراسة بالذكاء الاصطناعي",
+        kind2: "دعم نفسي عبر الرسائل القصيرة",
+        kind3: "مساعد بصري مبني على Gemma 4",
+        kind4: "بحث وإنقاذ دون اتصال",
+        caseStudy: "دراسة حالة",
+        visitSite: "زيارة الموقع",
+        tryDemo: "جرّب العرض",
+        viewCode: "عرض الكود",
+        expTitle: "الخبرة",
+        viewDetails: "عرض التفاصيل",
+        x1Role: "المبرمج الرئيسي، GemmaSight",
+        x1Meta: "المركز الثاني · مساعد بصري مبني على Gemma 4",
+        x2Role: "مطوّر، NeuSE",
+        x2Meta: "مسار الابتكار · نموذج أولي",
+        x3Role: "البنية والأدوات",
+        x3Meta: "المركز الرابع · أداة دراسة بالذكاء الاصطناعي للطلاب",
+        memTitle: "العضويات المهنية",
+        memSub: "برامج المطورين والمجتمعات التي أنتمي إليها.",
+        memRole: "عضو · منذ أبريل 2026",
+        memDesc: "وصول إلى أدوات NVIDIA ومكتباتها وتدريبها للذكاء الاصطناعي والحوسبة المسرّعة.",
+        commTitle: "المجتمع والمشاركة",
+        commLead: "هاكاثونات وقمم وعمل تطوعي",
+        commSub: "الفعاليات التي أشارك فيها وأتعلم منها وأمنحها وقتي.",
+        eventPhotos: "صور الفعاليات",
+        explore: "استكشف",
+        techTitle: "التقنيات",
+        certTitle: "الشهادات",
+        viewCred: "عرض الشهادة",
+        certAttend: "MLH × DEV · شهادة حضور",
+        deckHint: "انقر على المجموعة للتبديل",
+        recentTraining: "أدرس حاليًا",
+        eduTitle: "التعليم",
+        eduDate: "متوقع 2029",
+        eduDegree: "بكالوريوس العلوم في هندسة البرمجيات",
+        navHome: "الرئيسية",
+        backHome: "العودة إلى الرئيسية",
+        backProjects: "العودة إلى المشاريع",
+        projTitle: "مشاريع مختارة",
+        projSub: "منتجات ذكاء اصطناعي صممتها وبنيتها واختبرتها، من أدوات الدراسة إلى الرؤية الحاسوبية دون اتصال.",
+        moreGithub: "المزيد على GitHub",
+        ctaTitle: "لديك فكرة أو تريد التعاون؟",
+        expSub: "هاكاثونات ومسابقات وعمل تطوعي، وما قمت به فيها.",
+        highTitle: "أبرز الأعمال",
+        highSub: "أعمال مختارة ومحطات ولحظات من رحلتي في التقنية.",
+        commPageSub: "هاكاثونات وقمم وعمل تطوعي تربط عملي بمجتمع التقنية الأوسع.",
+        galleryTitle: "معرض الفعاليات",
+        gallerySub: "لحظات من الفعاليات واللقاءات.",
+        certSub: "دورات وشهادات وتدريب في الذكاء الاصطناعي وتعلم الآلة والسحابة.",
+        stackPageTitle: "كل التقنيات",
+        stackPageSub: "الأدوات والتقنيات التي أستخدمها، وأين استخدمتها."
     }
 };
 
@@ -520,6 +828,12 @@ function updateLanguage(lang) {
         if (value) elem.textContent = value;
     });
 
+    // Our own copy with a little inline markup (bold tech names); never user input
+    document.querySelectorAll('[data-i18n-html]').forEach(elem => {
+        const value = dict[elem.dataset.i18nHtml] || translations.en[elem.dataset.i18nHtml];
+        if (value) elem.innerHTML = value;
+    });
+
     document.querySelectorAll('[data-i18n-label]').forEach(elem => {
         const value = dict[elem.dataset.i18nLabel] || translations.en[elem.dataset.i18nLabel];
         if (value) elem.setAttribute('aria-label', value);
@@ -538,6 +852,32 @@ function updateLanguage(lang) {
 if (langSelect) {
     langSelect.addEventListener('change', e => updateLanguage(e.target.value));
 }
+
+// ==========================================================================
+// Menu: the page links on phones
+// ==========================================================================
+
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+if (menuToggle && menu) {
+    menuToggle.addEventListener('click', () => {
+        const openNow = menu.hidden;
+        menu.hidden = !openNow;
+        menuToggle.setAttribute('aria-expanded', String(openNow));
+        menuToggle.querySelector('i').className = openNow ? 'ph ph-x' : 'ph ph-list';
+    });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !menu.hidden) menuToggle.click();
+    });
+}
+
+// Mark the current page in the nav
+const here = location.pathname.split('/').pop().replace(/\.html$/, '') || 'index';
+document.querySelectorAll('.nav-links a, .menu a').forEach(link => {
+    const target = link.getAttribute('href').replace(/\.html$/, '');
+    if (target === here) link.setAttribute('aria-current', 'page');
+});
 
 // ==========================================================================
 // Nav: a hairline appears once the page scrolls under it
@@ -560,7 +900,7 @@ const viewer = document.getElementById('viewer');
 const viewerImg = document.getElementById('viewer-img');
 
 if (viewer && viewerImg && typeof viewer.showModal === 'function') {
-    document.querySelectorAll('.thumb[data-full]').forEach(thumb => {
+    document.querySelectorAll('[data-full]').forEach(thumb => {
         thumb.addEventListener('click', () => {
             viewerImg.src = thumb.dataset.full;
             viewerImg.alt = thumb.dataset.alt || '';
@@ -574,10 +914,145 @@ if (viewer && viewerImg && typeof viewer.showModal === 'function') {
     });
 } else {
     // No <dialog> support: open the image itself
-    document.querySelectorAll('.thumb[data-full]').forEach(thumb => {
+    document.querySelectorAll('[data-full]').forEach(thumb => {
         thumb.addEventListener('click', () => window.open(thumb.dataset.full, '_blank', 'noopener'));
     });
 }
+
+// ==========================================================================
+// Certificate stack: the top card swings out in 3D and drops to the back
+// ==========================================================================
+
+const certDeck = document.getElementById('cert-deck');
+const CERT_AUTOPLAY_MS = 4000;
+
+if (certDeck) {
+    const cards = Array.from(certDeck.querySelectorAll('.deck-card'));
+    const thumbs = document.querySelectorAll('.thumb[data-full]');
+    let order = cards.map((_, i) => i);
+    let animating = false;
+    let pausedUntil = 0;
+    let hovering = false;
+    let inView = false;
+
+    // Cards behind the top one fan out up and to the right, slightly turned
+    function pose(pos) {
+        if (pos === 0) return { transform: 'translate3d(0, 0, 0) rotate(0deg)', filter: 'brightness(1)', zIndex: 10 };
+        return {
+            transform: `translate3d(${pos * 14}px, ${pos * -9}px, ${pos * -40}px) rotate(${pos * 4}deg)`,
+            filter: `brightness(${1 - pos * 0.08})`,
+            zIndex: 10 - pos
+        };
+    }
+
+    function applyPoses() {
+        order.forEach((cardIndex, pos) => {
+            const card = cards[cardIndex];
+            const p = pose(pos);
+            card.style.transform = p.transform;
+            card.style.filter = p.filter;
+            card.style.zIndex = p.zIndex;
+            card.tabIndex = pos === 0 ? 0 : -1;
+            card.setAttribute('aria-hidden', pos === 0 ? 'false' : 'true');
+        });
+        const top = cards[order[0]];
+        thumbs.forEach(thumb => {
+            thumb.classList.toggle('is-active', thumb.dataset.full === top.querySelector('img').getAttribute('src'));
+        });
+    }
+
+    // Move the top card to the back
+    function shuffle() {
+        if (animating || cards.length < 2) return;
+        const leavingIndex = order[0];
+        const oldOrder = order.slice();
+        order = oldOrder.slice(1).concat(leavingIndex);
+
+        if (prefersReducedMotion()) {
+            applyPoses();
+            return;
+        }
+
+        animating = true;
+        const backPose = pose(order.length - 1);
+        const animations = [];
+
+        // The leaving card swings open to the right like a door, then tucks in behind the deck
+        animations.push(cards[leavingIndex].animate([
+            { transform: pose(0).transform, filter: 'brightness(1)', zIndex: 20, offset: 0 },
+            { transform: 'translate3d(62%, -6%, 60px) rotateY(-58deg) rotate(6deg)', filter: 'brightness(1)', zIndex: 20, offset: 0.45 },
+            { transform: 'translate3d(60%, -6%, -60px) rotateY(-50deg) rotate(6deg)', filter: 'brightness(0.95)', zIndex: 0, offset: 0.5 },
+            { transform: backPose.transform, filter: backPose.filter, zIndex: 0, offset: 1 }
+        ], { duration: 900, easing: 'cubic-bezier(0.65, 0, 0.35, 1)' }));
+
+        // Everyone else slides one step forward
+        order.forEach((cardIndex, pos) => {
+            if (cardIndex === leavingIndex) return;
+            const from = pose(oldOrder.indexOf(cardIndex));
+            const to = pose(pos);
+            animations.push(cards[cardIndex].animate([
+                { transform: from.transform, filter: from.filter },
+                { transform: to.transform, filter: to.filter }
+            ], { duration: 700, delay: 120, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'backwards' }));
+        });
+
+        applyPoses();
+        Promise.all(animations.map(a => a.finished)).finally(() => { animating = false; });
+    }
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            pausedUntil = Date.now() + 8000;
+            shuffle();
+        });
+    });
+
+    certDeck.addEventListener('mouseenter', () => { hovering = true; });
+    certDeck.addEventListener('mouseleave', () => { hovering = false; });
+
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(entries => {
+            inView = entries[0].isIntersecting;
+        }, { threshold: 0.4 }).observe(certDeck);
+    }
+
+    // Shuffle on its own while in view, like a slow photo carousel
+    setInterval(() => {
+        if (inView && !hovering && document.visibilityState === 'visible' &&
+            Date.now() > pausedUntil && !prefersReducedMotion()) {
+            shuffle();
+        }
+    }, CERT_AUTOPLAY_MS);
+
+    applyPoses();
+}
+
+// ==========================================================================
+// Technologies: each row is doubled so the drift loops without a seam
+// ==========================================================================
+
+document.querySelectorAll('[data-marquee]').forEach(row => {
+    Array.from(row.children).forEach(item => {
+        const copy = item.cloneNode(true);
+        copy.setAttribute('aria-hidden', 'true');
+        copy.setAttribute('data-copy', '');
+        row.appendChild(copy);
+    });
+});
+
+// ==========================================================================
+// Member card: the real card image takes over once it exists
+// ==========================================================================
+
+document.querySelectorAll('.member-card[data-card-src]').forEach(card => {
+    const img = new Image();
+    img.alt = 'NVIDIA Developer Program membership card for Rooney James';
+    img.onload = () => {
+        card.replaceChildren(img);
+        card.classList.add('member-card--image');
+    };
+    img.src = card.dataset.cardSrc;
+});
 
 // ==========================================================================
 // Live GitHub contributions
